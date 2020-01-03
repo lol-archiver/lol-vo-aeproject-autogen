@@ -110,13 +110,15 @@ var addCompLine = function(line, event, lid, eid, folderLines, duration) {
 	layerLine.transform.position.setValue([0, 1000]);
 	layerLine.transform.position.expression = E(side + '/' + 'limitPositionLine');
 
+	var colorLine = line.line == '(语气)' ? T.rgb(214, 214, 214) : T.rgb(255, 250, 250);
+
 	var textDocLine = layerLine.sourceText.value;
 	textDocLine.resetCharStyle();
 	textDocLine.fontSize = 48;
-	textDocLine.fillColor = T.rgb(255, 250, 250);
+	textDocLine.fillColor = colorLine;
 	textDocLine.font = 'Source Han Mono';
 	textDocLine.applyStroke = true;
-	textDocLine.strokeColor = T.rgb(255, 250, 250);
+	textDocLine.strokeColor = colorLine;
 	textDocLine.strokeWidth = 2;
 	textDocLine.text = line.line;
 	layerLine.sourceText.setValue(textDocLine);
