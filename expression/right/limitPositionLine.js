@@ -1,0 +1,1 @@
+[thisComp.width - thisLayer.sourceRectAtTime(time).width - 70 - 240, this.value[1]];
