@@ -138,7 +138,7 @@ var addCompStart = function(totalDuration) {
 	effectBlurSplash.blurRadius.setValueAtTime(2, 0);
 	effectBlurSplash.blurRadius.setValueAtTime(4, 7);
 
-	var layerTitle = T.compMain.layers.addText('黑暗之女 安妮');
+	var layerTitle = T.compMain.layers.addText(C.champion.nameShow);
 	layerTitle.transform.position.setValue([40, 150]);
 	layerTitle.transform.opacity.setValueAtTime(0, 100);
 	layerTitle.transform.opacity.setValueAtTime(2, 40);
@@ -185,7 +185,7 @@ var addCompEnd = function(totalDuration) {
 
 	layerThankyou.sourceText.setValue(textDocThankyou);
 
-	var layerInfo = T.compMain.layers.addText('提取/听写/整理/制作\n       by DanoR\n'+C.emote+'\n\n如有错漏，敬请留言');
+	var layerInfo = T.compMain.layers.addText('解包/听写/整理/制作\n       by DanoR\n'+C.emote+'\n\n如有错漏，敬请留言');
 
 	layerInfo.startTime = totalDuration + 4;
 	layerInfo.duration = 4;
@@ -208,11 +208,11 @@ var addCompEnd = function(totalDuration) {
 
 var addCompCounter = function(totalLine, totalDuration, arrDuration) {
 	var layerCounter = T.compMain.layers.addText('');
-	layerCounter.transform.position.setValue([20, 1060]);
+	layerCounter.transform.position.setValue([70, 1020]);
 
 	var textDocCounter = layerCounter.sourceText.value;
 	textDocCounter.resetCharStyle();
-	textDocCounter.fontSize = 34;
+	textDocCounter.fontSize = 24;
 	textDocCounter.fillColor = T.rgb(224, 224, 224);
 	textDocCounter.font = 'Source Han Mono';
 	textDocCounter.applyStroke = true;
@@ -234,9 +234,6 @@ var addCompCounter = function(totalLine, totalDuration, arrDuration) {
 };
 
 (function() {
-	var layerBGM = T.compMain.layers.add(F(C.path.bgm));
-	layerBGM.audio.audioLevels.setValue([-14, -14]);
-
 	var arrEvent = JSON.parse(T.readFile(C.path.lines, 'UTF8'));
 
 	var arrDuration = [];
@@ -250,6 +247,11 @@ var addCompCounter = function(totalLine, totalDuration, arrDuration) {
 
 		totalLine++;
 	});
+
+	var layerBGM = T.compMain.layers.add(F(C.path.bgm));
+	layerBGM.audio.audioLevels.setValue([-11, -11]);
+	layerBGM.audio.audioLevels.setValueAtTime(totalDuration + 4, [-11, -11]);
+	layerBGM.audio.audioLevels.setValueAtTime(totalDuration + 4 + 4, [-96, -96]);
 
 	T.compMain.duration = totalDuration + 8;
 
@@ -293,6 +295,12 @@ var addCompCounter = function(totalLine, totalDuration, arrDuration) {
 	addCompCounter(totalLine, totalDuration, arrDuration);
 
 	addCompEnd(totalDuration);
+
+	var layerWaterMark = T.compMain.layers.add(F(C.path.waterMark));
+	layerWaterMark.transform.scale.setValue([14, 14]);
+	layerWaterMark.transform.position.setValue([40, 1040]);
+	layerWaterMark.startTime = 0;
+	layerWaterMark.duration = totalDuration + 4;
 
 	T.compMain.openInViewer();
 
