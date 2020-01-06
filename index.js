@@ -127,7 +127,7 @@ var addCompLine = function(line, event, lid, eid, folderLines, duration) {
 };
 
 var addCompStart = function(totalDuration) {
-	var splashStart = F('G:/PBEFileRaw/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg');
+	var splashStart = F(C.path.splash);
 	var layerSplashStart = T.compMain.layers.add(splashStart, totalDuration + 8);
 	layerSplashStart.transform.scale.setValueAtTime(0, [200, 200]);
 	layerSplashStart.transform.scale.setValueAtTime(2, [150, 150]);
@@ -157,7 +157,7 @@ var addCompStart = function(totalDuration) {
 };
 
 var addCompEnd = function(totalDuration) {
-	var splashEnd = F('G:/PBEFileRaw/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/1/1000.jpg');
+	var splashEnd = F(C.path.splash);
 	var layerSplashEnd = T.compMain.layers.add(splashEnd, totalDuration + 8);
 	layerSplashEnd.startTime = totalDuration + 2;
 
@@ -185,7 +185,7 @@ var addCompEnd = function(totalDuration) {
 
 	layerThankyou.sourceText.setValue(textDocThankyou);
 
-	var layerInfo = T.compMain.layers.addText('提取/听写/整理/制作\n       by DanoR\n(๑ŐдŐ)b\n\n如有错漏，敬请留言');
+	var layerInfo = T.compMain.layers.addText('提取/听写/整理/制作\n       by DanoR\n'+C.emote+'\n\n如有错漏，敬请留言');
 
 	layerInfo.startTime = totalDuration + 4;
 	layerInfo.duration = 4;

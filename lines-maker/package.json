@@ -1,0 +1,13 @@
+{
+	"name": "lines-maker",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"music-metadata": "^6.0.1"
+	},
+	"devDependencies": {},
+	"scripts": {},
+	"author": "DanoR",
+	"license": "ISC"
+}

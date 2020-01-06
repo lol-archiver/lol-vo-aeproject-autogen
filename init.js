@@ -65,7 +65,7 @@ this.T = {
 	}
 };
 
-var file = new File(C.path.cwd + 'ext.log');
+var file = new File(C.path.logFile);
 file.encoding = 'UTF8';
 file.open('a');
 
