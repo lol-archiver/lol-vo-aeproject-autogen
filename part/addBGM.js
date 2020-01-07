@@ -1,0 +1,16 @@
+P.addBGM = function addBGM() {
+	var footage = F(C.path.bgm);
+
+	var countLoop = Math.ceil((D.full / footage.duration));
+
+	for(var i = 1; i <= countLoop; i++) {
+		var layerBGM = T.compMain.layers.add(footage);
+
+		layerBGM.audio.audioLevels.setValue([-11, -11]);
+
+		if(i == countLoop) {
+			layerBGM.audio.audioLevels.setValueAtTime(D.linesEnd, [-11, -11]);
+			layerBGM.audio.audioLevels.setValueAtTime(D.full, [-96, -96]);
+		}
+	}
+};

@@ -62,6 +62,21 @@ this.T = {
 		});
 
 		return folderItem || parent.items.addFolder(name);
+	},
+	enumLine: function(arrEvent, callback) {
+		var index = 0;
+
+		for(var eid = 0; eid < (arrEvent.length); eid++) {
+			var event = arrEvent[eid];
+
+			for(var lid = 0; lid < event.arrLine.length; lid++) {
+				var line = event.arrLine[lid];
+
+				if(line.duration) {
+					callback(line, event, lid, eid, index++);
+				}
+			}
+		}
 	}
 };
 
@@ -83,5 +98,21 @@ this.L = function log() {
 this.L.end = function() {
 	file.close();
 };
+
+this.D = {
+	interval: C.duration.interval,
+	title: C.duration.title,
+	credit: C.duration.credit
+};
+
+this.P = {};
+// @include 'part/calcDuration.js';
+// @include 'part/addLine.js';
+// @include 'part/addLineScroll.js';
+// @include 'part/addTitle.js';
+// @include 'part/addCredit.js';
+// @include 'part/addBgm.js';
+// @include 'part/addWaterMark.js';
+// @include 'part/addCounter.js';
 
 L('-------date-------'.replace('date', new Date()));
