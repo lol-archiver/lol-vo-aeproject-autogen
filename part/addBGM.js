@@ -7,6 +7,7 @@ P.addBGM = function addBGM() {
 		var layerBGM = T.compMain.layers.add(footage);
 
 		layerBGM.audio.audioLevels.setValue([-11, -11]);
+		layerBGM.startTime = footage.duration * (i - 1);
 
 		if(i == countLoop) {
 			layerBGM.audio.audioLevels.setValueAtTime(D.linesEnd, [-11, -11]);
