@@ -3,7 +3,7 @@ P.addCredit = function addCredit() {
 	var layerSplashEnd = T.compMain.layers.add(splashEnd, D.full);
 	layerSplashEnd.startTime = D.lines + 2;
 
-	layerSplashEnd.transform.scale.setValue([150, 150]);
+	layerSplashEnd.transform.scale.setValue([160, 160]);
 	layerSplashEnd.transform.opacity.setValueAtTime(D.lines + 2, 0);
 	layerSplashEnd.transform.opacity.setValueAtTime(D.lines + 3.4, 100);
 

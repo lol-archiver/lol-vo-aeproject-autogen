@@ -16,9 +16,28 @@
 
 	var accumDuration = D.title;
 	T.enumLine(arrEvent, function(line, event, lid, eid, index) {
-		var compLine = P.addLine(line, event, lid, eid, T.folderLines, D.linesEnd - accumDuration);
+		var yLine = 540;
+		var indexLine = index;
+		var durationLine = line.duration + D.interval + 0.4;
 
-		accumDuration = P.addLineScroll(line, compLine, accumDuration, index);
+		while(yLine >= 180) {
+			yLine -= 360;
+
+			var nextDuration = D.list[++indexLine];
+
+			if(nextDuration) {
+				durationLine += nextDuration + D.interval;
+			}
+			else {
+				break;
+			}
+		}
+
+		var compLine = P.addLine(line, event, lid, eid, T.folderLines, durationLine);
+
+		P.addLineScroll(line, compLine, index, accumDuration, durationLine);
+
+		accumDuration += line.duration + D.interval;
 	});
 
 	P.addCounter();

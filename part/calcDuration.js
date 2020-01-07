@@ -20,5 +20,7 @@ P.calcDuration = function calcDuration() {
 	D.full = D.title + D.lines + D.credit;
 	D.linesEnd = D.title + D.lines;
 
+	L(C.champion.name, D.full.toFixed(2), D.lines.toFixed(2));
+
 	return arrEvent;
 };

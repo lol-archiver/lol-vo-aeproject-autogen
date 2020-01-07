@@ -6,10 +6,11 @@ P.addTitle = function addTitle() {
 	var effectBlurSplash = layerSplashStart.effect.addProperty('ADBE Box Blur2');
 	effectBlurSplash.iterations.setValue(D.title);
 	effectBlurSplash.blurRadius.setValueAtTime(0, 0);
-	effectBlurSplash.blurRadius.setValueAtTime(2, 0);
+	effectBlurSplash.blurRadius.setValueAtTime(1.4, 0);
 	effectBlurSplash.blurRadius.setValueAtTime(4, 7);
 
 	var layerTitle = T.compMain.layers.addText(C.champion.nameShow);
+	layerTitle.outPoint = D.title + 0.4;
 	layerTitle.transform.position.setValue([40, 150]);
 	layerTitle.transform.opacity.setValueAtTime(0, 100);
 	layerTitle.transform.opacity.setValueAtTime(2, 40);
