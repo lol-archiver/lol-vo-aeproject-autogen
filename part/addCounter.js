@@ -21,6 +21,6 @@ P.addCounter = function addCounter() {
 
 	while(now) {
 		layerCounter.sourceText.setValueAtTime(duration, now - 1);
-		duration += D.list[D.length - now--] + D.interval;
+		duration += D.list[D.length - now--][0] + D.interval;
 	}
 };

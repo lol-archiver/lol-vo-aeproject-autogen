@@ -17,7 +17,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	var layerCircleMain = compLine.layers.addShape();
 	var layerPictureMain = compLine.layers.add(F(line.head, T.folderImages));
 	var layerEvent = line.reply ? null : compLine.layers.addText(event.event);
-	var layerLine = compLine.layers.addText(line.line);
+	var layerLineBox = compLine.layers.addBoxText([1, 1], line.line);
 
 	// -------Line Box-------
 	var groupBoxLine = layerBoxLine.content.addProperty('ADBE Vector Group');
@@ -73,7 +73,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 		var textDocEvent = layerEvent.sourceText.value;
 		textDocEvent.resetCharStyle();
-		textDocEvent.fontSize = 48;
+		textDocEvent.fontSize = 50;
 		textDocEvent.fillColor = T.rgb(73, 80, 81);
 		textDocEvent.font = 'Source Han Mono';
 		textDocEvent.applyStroke = true;
@@ -84,21 +84,23 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	}
 
 	// -------Line-------
-	layerLine.transform.position.setValue([0, 1000]);
-	layerLine.transform.position.expression = E(side + '/' + 'limitPositionLine');
+	layerLineBox.transform.position.setValue([0, 1000]);
+	layerLineBox.transform.position.expression = E(side + '/' + 'limitPositionLine');
 
 	var colorLine = line.line == '(语气)' ? T.rgb(214, 214, 214) : T.rgb(255, 250, 250);
 
-	var textDocLine = layerLine.sourceText.value;
+	var textDocLine = layerLineBox.sourceText.value;
 	textDocLine.resetCharStyle();
-	textDocLine.fontSize = 48;
+	textDocLine.fontSize = 50;
 	textDocLine.fillColor = colorLine;
 	textDocLine.font = 'Source Han Mono';
 	textDocLine.applyStroke = true;
 	textDocLine.strokeColor = colorLine;
 	textDocLine.strokeWidth = 2;
+	textDocLine.boxTextSize = line.boxTextSize;
+	textDocLine.leading = 60;
 	textDocLine.text = line.line;
-	layerLine.sourceText.setValue(textDocLine);
+	layerLineBox.sourceText.setValue(textDocLine);
 
 	return compLine;
 };

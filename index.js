@@ -23,10 +23,10 @@
 		while(yLine >= 180) {
 			yLine -= 360;
 
-			var nextDuration = D.list[++indexLine];
+			var lineInfoExtra = D.list[++indexLine];
 
-			if(nextDuration) {
-				durationLine += nextDuration + D.interval;
+			if(lineInfoExtra) {
+				durationLine += lineInfoExtra[0] + D.interval;
 			}
 			else {
 				break;

@@ -6,7 +6,13 @@ P.calcDuration = function calcDuration() {
 	var lengthLine = 0;
 
 	T.enumLine(arrEvent, function(line) {
-		arrDuration.push(line.duration);
+		var result = T.getBoxSize(line.line);
+
+		line.boxLine = result[2];
+		line.boxTextSize = result.slice(0, 2);
+		line.boxHeight = 30 + (40 * 2 + 70) + ((50 + 10) * line.boxLine - 10) + 100;
+
+		arrDuration.push([line.duration, line.boxHeight]);
 
 		linesDuration += line.duration + D.interval;
 

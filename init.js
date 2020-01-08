@@ -66,7 +66,7 @@ this.T = {
 	enumLine: function(arrEvent, callback) {
 		var index = 0;
 
-		for(var eid = 0; eid < (arrEvent.length); eid++) {
+		for(var eid = 0; eid <= (arrEvent.length - 1); eid++) {
 			var event = arrEvent[eid];
 
 			for(var lid = 0; lid < event.arrLine.length; lid++) {
@@ -77,6 +77,30 @@ this.T = {
 				}
 			}
 		}
+	},
+	getBoxSize: function getBoxSize(text) {
+		var fontSize = 50;
+		var heightLeading = 10;
+		var widthMax = 1080;
+
+		var layerLine = T.compMain.layers.addText(text);
+
+		var textDocLine = layerLine.sourceText.value;
+		textDocLine.resetCharStyle();
+		textDocLine.fontSize = fontSize;
+		textDocLine.font = 'Source Han Mono';
+		textDocLine.applyStroke = true;
+		textDocLine.strokeWidth = 2;
+		textDocLine.text = text;
+		layerLine.sourceText.setValue(textDocLine);
+
+		var widthOneLine = layerLine.sourceRectAtTime(0, false).width;
+
+		var lineBox = Math.ceil(widthOneLine / widthMax);
+
+		layerLine.remove();
+
+		return [widthOneLine > widthMax ? widthMax : widthOneLine, lineBox * (fontSize + heightLeading) - heightLeading, lineBox, widthOneLine];
 	}
 };
 
