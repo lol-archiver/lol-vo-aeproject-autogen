@@ -10,7 +10,7 @@ P.addLineScroll = function addLineScroll(line, compLine, index, accumDuration, d
 	var yLine = yCenter + line.boxHeight;
 	var accumDurationLine = accumDuration;
 
-	while(yLine >= line.boxHeight - yCenter) {
+	while(yLine >= -yCenter) {
 		var lineInfoExtra = D.list[index++];
 
 		if(lineInfoExtra) {

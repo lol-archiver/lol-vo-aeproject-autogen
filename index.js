@@ -16,17 +16,22 @@
 
 	var accumDuration = D.title;
 	T.enumLine(arrEvent, function(line, event, lid, eid, index) {
-		var yLine = 540;
+		var yCenter = 540;
+
+		var yLine = yCenter + line.boxHeight;
 		var indexLine = index;
 		var durationLine = line.duration + D.interval + 0.4;
 
-		while(yLine >= 180) {
-			yLine -= 360;
-
-			var lineInfoExtra = D.list[++indexLine];
+		while(yLine >= -yCenter) {
+			var lineInfoExtra = D.list[indexLine++];
 
 			if(lineInfoExtra) {
-				durationLine += lineInfoExtra[0] + D.interval;
+				var nextDuration = lineInfoExtra[0];
+				var nextBoxHeight = lineInfoExtra[1];
+
+				yLine -= nextBoxHeight;
+
+				durationLine += nextDuration + D.interval;
 			}
 			else {
 				break;
