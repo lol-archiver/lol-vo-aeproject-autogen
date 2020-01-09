@@ -12,6 +12,9 @@ const pathAudios = C.path.audios;
 const arrAudioFile = _fs.readdirSync(pathAudios);
 const arrLineText = _fs.readFileSync(C.path.dictation, 'UTF8').split('\n').filter(text => text.trim());
 
+const mapLineReply = {};
+require(C.path.reply).forEach((reply => (mapLineReply[reply.reply]||(mapLineReply[reply.reply]=[])).push(reply)));
+
 (async function() {
 	let isLineStart = false;
 
@@ -59,6 +62,12 @@ const arrLineText = _fs.readFileSync(C.path.dictation, 'UTF8').split('\n').filte
 				head: C.path.head,
 				audio: file ? _pa.join(pathAudios, file) : null
 			});
+
+			const replies = mapLineReply[crc32] || [];
+
+			for(const reply of replies) {
+				arrLine.push(reply);
+			}
 		}
 	}
 
