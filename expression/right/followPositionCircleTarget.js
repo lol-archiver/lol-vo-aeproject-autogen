@@ -1,9 +1,9 @@
-const thatLayer = thisComp.layer(6);
+const thatLayer = thisComp.layer(thisComp.numLayers - 1);
 
 const thisRect = thisLayer.sourceRectAtTime(time);
 const thatRect = thatLayer.sourceRectAtTime(time);
 
 const pointThisCenter = thisLayer.toComp([thisRect.left + thisRect.width / 2, thisRect.top + thisRect.height / 2]);
-const pointText = thatLayer.toComp([thatRect.left + thatRect.width / 2 - thisRect.width / 2 - 80 - 20, thatRect.top + thatRect.height / 2]);
+const pointThat = thatLayer.toComp([thatRect.left, thatRect.top]);
 
-this.value - (pointThisCenter - pointText);
+this.value - (pointThisCenter - pointThat);

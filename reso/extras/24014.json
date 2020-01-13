@@ -1,0 +1,13 @@
+{
+	"event": {
+		"KillChampionPentakill": {
+			"event": "[五杀]"
+		},
+		"KillChampionJax": {
+			"target": "${C.path.project.autogen}reso/heads/24/0.png",
+			"skill": "${C.path.project.autogen}reso/skills/24/R.png"
+		},
+		"": {}
+	},
+	"lines": {}
+}

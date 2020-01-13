@@ -1,7 +1,7 @@
 require('../config');
 
 const _fs = require('fs');
-const _pa = require('path');
+const _pa = require('path').posix;
 
 const Meta = require('music-metadata');
 
@@ -12,8 +12,35 @@ const pathAudios = C.path.audios;
 const arrAudioFile = _fs.readdirSync(pathAudios);
 const arrLineText = _fs.readFileSync(C.path.dictation, 'UTF8').split('\n').filter(text => text.trim());
 
-const mapLineReply = {};
-require(C.path.reply).forEach((reply => (mapLineReply[reply.reply]||(mapLineReply[reply.reply]=[])).push(reply)));
+const mapEventExtra = {};
+const mapLineBefore = {};
+const mapLineAfter = {};
+const mapLineExtra = {};
+
+try {
+	const allInfosExtra = require(C.path.linesExtra);
+
+	for(const [key, extraEvent] of Object.entries(allInfosExtra.event)) {
+		mapEventExtra[key] = extraEvent;
+	}
+
+	for(const [key, extraLines] of Object.entries(allInfosExtra.event)) {
+		for(const extraLine of extraLines) {
+			if(extraLine.oper == 'before') {
+				(mapLineBefore[key] || (mapLineBefore[key] = [])).push(extraLine);
+			}
+			else if(extraLine.oper == 'after') {
+				(mapLineAfter[key] || (mapLineAfter[key] = [])).push(extraLine);
+			}
+			else if(extraLine.oper == 'extra') {
+				(mapLineExtra[key] || (mapLineExtra[key] = [])).push(extraLine);
+			}
+
+			delete extraLine.oper;
+		}
+	}
+}
+catch(error) { error; }
 
 (async function() {
 	let isLineStart = false;
@@ -36,10 +63,14 @@ require(C.path.reply).forEach((reply => (mapLineReply[reply.reply]||(mapLineRepl
 			arrLine = [];
 
 			const eventInfo = {
-				event,
+				event: event.replace(/\[.*?:/, '['),
 				eventRaw,
 				arrLine
 			};
+
+			for(const key in mapEventExtra[eventRaw] || {}) {
+				eventInfo[key] = mapEventExtra[eventRaw][key];
+			}
 
 			arrEvent.push(eventInfo);
 		}
@@ -55,18 +86,33 @@ require(C.path.reply).forEach((reply => (mapLineReply[reply.reply]||(mapLineRepl
 				duration = meta.format.duration;
 			}
 
-			arrLine.push({
+			for(const lineBefore of mapLineBefore[crc32] || []) {
+				lineBefore.side = lineBefore.side ? lineBefore.side : 'left';
+
+				arrLine.push(lineBefore);
+			}
+
+			const lineInfo = {
 				line: line.replace(/\*/g, ''),
 				crc32,
 				duration,
-				head: C.path.head,
-				audio: file ? _pa.join(pathAudios, file) : null
-			});
+				side: 'right',
+				head: '${C.path.project.autogen}reso/heads/${C.champion.id}/${C.skin.id}.png',
+				audio: file ? '${C.path.audios}' + file : null
+			};
 
-			const replies = mapLineReply[crc32] || [];
+			for(const extraInfo of mapLineExtra[crc32] || []) {
+				for(const key in extraInfo) {
+					lineInfo[key] = extraInfo[key];
+				}
+			}
 
-			for(const reply of replies) {
-				arrLine.push(reply);
+			arrLine.push(lineInfo);
+
+			for(const lineAfter of mapLineAfter[crc32] || []) {
+				lineAfter.side = lineAfter.side ? lineAfter.side : 'left';
+
+				arrLine.push(lineAfter);
 			}
 		}
 	}
