@@ -94,7 +94,7 @@ this.T = {
 		textDocLine.text = text;
 		layerLine.sourceText.setValue(textDocLine);
 
-		var widthOneLine = layerLine.sourceRectAtTime(0, false).width;
+		var widthOneLine = layerLine.sourceRectAtTime(0, false).width + 50;
 
 		var lineBox = Math.ceil(widthOneLine / widthMax);
 
