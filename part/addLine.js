@@ -2,11 +2,14 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	if(!line.duration) { return; }
 
 	var indexText = '(' + (eid + 1) + '/' + (lid + 1) + ')';
-	var side = line.side;
-	var colorLineBox = side == 'left' ? (line.colorLineBox ? T.rgb.apply(this, line.colorLineBox) : T.rgb(140, 24, 24)) : T.rgb(31, 170, 241);
 
-	var target = line.target || event.target;
-	var skill = line.skill || event.skill;
+	var side = line.side;
+	var isMain = side == 'right';
+
+	var colorLineBox = !isMain ? (line.colorLineBox ? T.rgb.apply(this, line.colorLineBox) : T.rgb(140, 24, 24)) : T.rgb(31, 170, 241);
+
+	var target = isMain ? line.target || event.target : null;
+	var skill = isMain ? line.skill || event.skill : null;
 
 	var compLine = folderLines.items.addComp(indexText + line.line, 1920, 1080, 1, duration, 60);
 	compLine.bgColor = T.rgb(14, 14, 14);
@@ -16,40 +19,40 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	}
 
 	var layerBoxLine = compLine.layers.addShape();
-	var layerBoxEvent = side == 'right' ? compLine.layers.addShape() : null;
+	var layerBoxEvent = isMain ? compLine.layers.addShape() : null;
 
-	var layerCircleTarget = side == 'right' && target ? compLine.layers.addShape() : null;
-	var layerPictureTarget = side == 'right' && target ? compLine.layers.add(F(T.parseConfig(target), T.folderImages)) : null;
+	var layerCircleTarget = target ? compLine.layers.addShape() : null;
+	var layerPictureTarget = target ? compLine.layers.add(F(T.parseConfig(target), T.folderImages)) : null;
 
 	var layerCircleMain = compLine.layers.addShape();
 	var layerPictureMain = compLine.layers.add(F(T.parseConfig(line.head), T.folderImages));
 
-	var layerPictureSkill = side == 'right' && skill ? compLine.layers.add(F(T.parseConfig(skill), T.folderImages)) : null;
-	var layerSquareSkill = side == 'right' && skill ? compLine.layers.addShape() : null;
+	var layerPictureSkill = skill ? compLine.layers.add(F(T.parseConfig(skill), T.folderImages)) : null;
+	var layerSquareSkill = skill ? compLine.layers.addShape() : null;
 
-	var layerEvent = side == 'right' ? compLine.layers.addText(event.event) : null;
+	var layerEvent = isMain ? compLine.layers.addText(event.event) : null;
 	var layerLineBox = compLine.layers.addBoxText([1, 1], line.line);
 
 	layerBoxLine.name = 'BoxLine';
-	if(side == 'right') { layerBoxEvent.name = 'BoxEvent'; }
+	if(isMain) { layerBoxEvent.name = 'BoxEvent'; }
 
-	if(side == 'right' && target) { layerCircleTarget.name = 'CircleTarget'; }
-	if(side == 'right' && target) { layerPictureTarget.name = 'PictureTarget'; }
+	if(target) { layerCircleTarget.name = 'CircleTarget'; }
+	if(target) { layerPictureTarget.name = 'PictureTarget'; }
 
 	layerCircleMain.name = 'CircleMain';
 	layerPictureMain.name = 'PictureMain';
 
-	if(side == 'right' && skill) { layerPictureSkill.name = 'PictureSkill'; }
-	if(side == 'right' && skill) { layerSquareSkill.name = 'SquareSkill'; }
+	if(skill) { layerPictureSkill.name = 'PictureSkill'; }
+	if(skill) { layerSquareSkill.name = 'SquareSkill'; }
 
-	if(side == 'right') { layerEvent.name = 'Event'; }
+	if(isMain) { layerEvent.name = 'Event'; }
 	layerLineBox.name = 'Line';
 
 	// -------Line Box-------
 	var groupBoxLine = layerBoxLine.content.addProperty('ADBE Vector Group');
 
 	var borderBoxLine = groupBoxLine.content.addProperty('ADBE Vector Shape - Rect');
-	borderBoxLine.size.expression = E(side + '/' + 'followSizeBoxLine');
+	borderBoxLine.size.expression = E(side + '/' + 'followSizeBoxLine').replace('\'${targetWidth}\'', isMain ? 70 : 0);
 	borderBoxLine.roundness.setValue(34);
 	borderBoxLine.position.setValue([0, 0]);
 
@@ -59,7 +62,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	layerBoxLine.transform.position.expression = E(side + '/' + 'followPositionBoxLine');
 
 	// -------Event Box-------
-	if(side == 'right') {
+	if(isMain) {
 		var groupBoxEvent = layerBoxEvent.content.addProperty('ADBE Vector Group');
 
 		var borderBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Shape - Rect');
@@ -94,7 +97,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	layerPictureMain.transform.position.expression = E(side + '/' + 'followPositionCircleMain');
 
 
-	if(side == 'right' && skill) {
+	if(skill) {
 		// -------Skill Square-------
 		var groupSquareSkill = layerSquareSkill.content.addProperty('ADBE Vector Group');
 
@@ -114,7 +117,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 		layerPictureSkill.transform.position.expression = E(side + '/' + 'followPositionSquareSkill');
 	}
 
-	if(side == 'right' && target) {
+	if(target) {
 		// -------Target Circle-------
 		var groupCircleTarget = layerCircleTarget.content.addProperty('ADBE Vector Group');
 
@@ -137,7 +140,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	}
 
 	// -------Event-------
-	if(side == 'right') {
+	if(isMain) {
 		layerEvent.transform.position.expression = E(side + '/' + 'followPositionTextEvent');
 
 		var textDocEvent = layerEvent.sourceText.value;

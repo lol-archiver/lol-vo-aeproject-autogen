@@ -63,7 +63,7 @@ catch(error) { error; }
 			arrLine = [];
 
 			const eventInfo = {
-				event: event.replace(/\[.*?:/, '['),
+				event: event.replace(/\[.*?:/, '[').replace('[','【').replace(']','】'),
 				eventRaw,
 				arrLine
 			};
