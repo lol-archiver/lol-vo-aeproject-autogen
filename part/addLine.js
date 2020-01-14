@@ -19,13 +19,16 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	}
 
 	var layerBoxLine = compLine.layers.addShape();
-	var layerBoxEvent = isMain ? compLine.layers.addShape() : null;
 
-	var layerCircleTarget = target ? compLine.layers.addShape() : null;
-	var layerPictureTarget = target ? compLine.layers.add(F(T.parseConfig(target), T.folderImages)) : null;
+	var layerCircleMainShadow = compLine.layers.addShape();
+
+	var layerBoxEvent = isMain ? compLine.layers.addShape() : null;
 
 	var layerCircleMain = compLine.layers.addShape();
 	var layerPictureMain = compLine.layers.add(F(T.parseConfig(line.head), T.folderImages));
+
+	var layerCircleTarget = target ? compLine.layers.addShape() : null;
+	var layerPictureTarget = target ? compLine.layers.add(F(T.parseConfig(target), T.folderImages)) : null;
 
 	var layerPictureSkill = skill ? compLine.layers.add(F(T.parseConfig(skill), T.folderImages)) : null;
 	var layerSquareSkill = skill ? compLine.layers.addShape() : null;
@@ -40,6 +43,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	if(target) { layerPictureTarget.name = 'PictureTarget'; }
 
 	layerCircleMain.name = 'CircleMain';
+	layerCircleMainShadow.name = 'CircleMainShadow';
 	layerPictureMain.name = 'PictureMain';
 
 	if(skill) { layerPictureSkill.name = 'PictureSkill'; }
@@ -74,6 +78,13 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 		fillBoxEvent.color.setValue(T.rgb(255, 250, 250));
 
 		layerBoxEvent.transform.position.expression = E(side + '/' + 'followPositionBoxEvent');
+
+		var effectDropShadowBoxEvent = layerBoxEvent.effect.addProperty('ADBE Drop Shadow');
+		effectDropShadowBoxEvent.shadowColor.setValue(T.rgb(73, 80, 81));
+		effectDropShadowBoxEvent.direction.setValue(135);
+		effectDropShadowBoxEvent.opacity.setValue((70 / 100) * 255);
+		effectDropShadowBoxEvent.distance.setValue(14);
+		effectDropShadowBoxEvent.softness.setValue(7);
 	}
 
 	// -------Main Circle-------
@@ -91,6 +102,26 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	fillCircleMain.color.setValue(T.rgb(255, 255, 255));
 
 	layerCircleMain.transform.position.expression = E(side + '/' + 'followPositionCircleMain');
+
+	var groupCircleMainShadow = layerCircleMainShadow.content.addProperty('ADBE Vector Group');
+
+	var borderCircleMainShadow = groupCircleMainShadow.content.addProperty('ADBE Vector Shape - Ellipse');
+	borderCircleMainShadow.size.setValue([160, 160]);
+	borderCircleMainShadow.position.setValue([0, 0]);
+
+	var strokeCircleMainShadow = groupCircleMainShadow.content.addProperty('ADBE Vector Graphic - Stroke');
+	strokeCircleMainShadow.color.setValue(T.rgb(255, 250, 250));
+	strokeCircleMainShadow.strokeWidth.setValue(40);
+
+	layerCircleMainShadow.transform.position.expression = E(side + '/' + 'followPositionCircleMain');
+
+	var effectDropShadowCircleMain = layerCircleMainShadow.effect.addProperty('ADBE Drop Shadow');
+	effectDropShadowCircleMain.shadowColor.setValue(T.rgb(73, 80, 81));
+	effectDropShadowCircleMain.direction.setValue(225);
+	effectDropShadowCircleMain.opacity.setValue((70 / 100) * 255);
+	effectDropShadowCircleMain.distance.setValue(11);
+	effectDropShadowCircleMain.softness.setValue(7);
+	effectDropShadowCircleMain.shadowOnly.setValue(1);
 
 	// -------Main Picture-------
 	layerPictureMain.transform.scale.setValue([150, 150]);
@@ -122,7 +153,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 		var groupCircleTarget = layerCircleTarget.content.addProperty('ADBE Vector Group');
 
 		var borderCircleTarget = groupCircleTarget.content.addProperty('ADBE Vector Shape - Ellipse');
-		borderCircleTarget.size.setValue([85, 85]);
+		borderCircleTarget.size.setValue([90, 90]);
 		borderCircleTarget.position.setValue([0, 0]);
 
 		var strokeCircleTarget = groupCircleTarget.content.addProperty('ADBE Vector Graphic - Stroke');
