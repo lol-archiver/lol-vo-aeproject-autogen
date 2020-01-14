@@ -48,6 +48,8 @@ catch(error) { error; }
 	let arrEvent = [];
 	let arrLine;
 
+	let curEventRaw;
+
 	for(const lineText of arrLineText) {
 		if(!isLineStart) {
 			if(lineText == '## Lines:台词') {
@@ -61,9 +63,10 @@ catch(error) { error; }
 			const [event, eventRaw] = lineText.replace('#### ', '').split(' | ');
 
 			arrLine = [];
+			curEventRaw = eventRaw.toLowerCase();
 
 			const eventInfo = {
-				event: event.replace(/\[.*?:/, '[').replace('[','【').replace(']','】'),
+				event: event.replace(/\[.*?:/, '[').replace('[', '【').replace(']', '】'),
 				eventRaw,
 				arrLine
 			};
@@ -78,12 +81,27 @@ catch(error) { error; }
 			const [crc32, line] = lineText.replace('- - `', '').replace('  - `', '').split('`: ');
 
 			let duration = 0;
-			const file = arrAudioFile.find(fileName => fileName.includes(crc32));
+			let audio = null;
 
-			if(file) {
-				const meta = await Meta.parseFile(_pa.join(pathAudios, file));
+			if(curEventRaw == 'pick' || curEventRaw == 'ban') {
+				const file = `${C.path.project.autogen}reso/voices/${C.champion.id}/${curEventRaw}.wav`;
+
+				const meta = await Meta.parseFile(file);
 
 				duration = meta.format.duration;
+
+				audio = '${C.path.project.autogen}reso/voices/${C.champion.id}/' + curEventRaw + '.wav';
+			}
+			else {
+				const file = arrAudioFile.find(fileName => fileName.includes(crc32));
+
+				if(file) {
+					const meta = await Meta.parseFile(_pa.join(pathAudios, file));
+
+					duration = meta.format.duration;
+
+					audio = '${C.path.audios}' + file;
+				}
 			}
 
 			for(const lineBefore of mapLineBefore[crc32] || []) {
@@ -98,7 +116,7 @@ catch(error) { error; }
 				duration,
 				side: 'right',
 				head: '${C.path.project.autogen}reso/heads/${C.champion.id}/${C.skin.id}.png',
-				audio: file ? '${C.path.audios}' + file : null
+				audio
 			};
 
 			for(const extraInfo of mapLineExtra[crc32] || []) {

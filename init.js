@@ -1,4 +1,19 @@
 this.T = {
+	enumLine: function(arrEvent, callback) {
+		var index = 0;
+
+		for(var eid = 0; eid <= (arrEvent.length - 1); eid++) {
+			var event = arrEvent[eid];
+
+			for(var lid = 0; lid < event.arrLine.length; lid++) {
+				var line = event.arrLine[lid];
+
+				if(line.duration) {
+					callback(line, event, lid, eid, index++);
+				}
+			}
+		}
+	},
 	each: function each(parent, callback) {
 		if(!(parent instanceof Project) && !(parent instanceof FolderItem)) { throw 'parent cannot forEach'; }
 		if(!(callback instanceof Function)) { throw 'callback not Function'; }
@@ -62,21 +77,6 @@ this.T = {
 		});
 
 		return folderItem || parent.items.addFolder(name);
-	},
-	enumLine: function(arrEvent, callback) {
-		var index = 0;
-
-		for(var eid = 0; eid <= (1||arrEvent.length - 1); eid++) {
-			var event = arrEvent[eid];
-
-			for(var lid = 0; lid < event.arrLine.length; lid++) {
-				var line = event.arrLine[lid];
-
-				if(line.duration) {
-					callback(line, event, lid, eid, index++);
-				}
-			}
-		}
 	},
 	getBoxSize: function getBoxSize(text) {
 		var fontSize = 50;
