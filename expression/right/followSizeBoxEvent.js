@@ -5,4 +5,4 @@ const textRect = textLayer.sourceRectAtTime(time);
 const boxWidth = textRect.width + margin * 2;
 const boxHeight = textRect.height + margin * 2;
 
-[boxWidth + 40, boxHeight];
+[boxWidth + 70, boxHeight];
