@@ -24,7 +24,7 @@ try {
 		mapEventExtra[key] = extraEvent;
 	}
 
-	for(const [key, extraLines] of Object.entries(allInfosExtra.event)) {
+	for(const [key, extraLines] of Object.entries(allInfosExtra.lines)) {
 		for(const extraLine of extraLines) {
 			if(extraLine.oper == 'before') {
 				(mapLineBefore[key] || (mapLineBefore[key] = [])).push(extraLine);

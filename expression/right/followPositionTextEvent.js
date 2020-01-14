@@ -1,4 +1,4 @@
-const thatLayer = thisComp.layer(6);
+const thatLayer = thisComp.layer('CircleMain');
 
 const thisRect = thisLayer.sourceRectAtTime(time);
 const thatRect = thatLayer.sourceRectAtTime(time);

@@ -11,7 +11,7 @@ P.addBGM = function addBGM() {
 
 		if(i == countLoop) {
 			layerBGM.audio.audioLevels.setValueAtTime(D.linesEnd, [-11, -11]);
-			layerBGM.audio.audioLevels.setValueAtTime(D.full, [-96, -96]);
+			layerBGM.audio.audioLevels.setValueAtTime(D.full, [-45, -45]);
 		}
 	}
 };

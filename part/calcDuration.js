@@ -10,7 +10,7 @@ P.calcDuration = function calcDuration() {
 
 		line.boxLine = result[2];
 		line.boxTextSize = result.slice(0, 2);
-		line.boxHeight = 30 + (40 * 2 + 70) + ((50 + 10) * line.boxLine - 10) + 100;
+		line.boxHeight = 30 + (40 * 2 + 70) + ((50 + 10) * line.boxLine - 10) + 100 + 70;
 
 		arrDuration.push([line.duration, line.boxHeight]);
 

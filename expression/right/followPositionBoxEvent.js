@@ -1,4 +1,4 @@
-const thatLayer = thisComp.layer(2);
+const thatLayer = thisComp.layer('Event');
 
 const thisRect = thisLayer.sourceRectAtTime(time);
 const thatRect = thatLayer.sourceRectAtTime(time);

@@ -66,7 +66,7 @@ this.T = {
 	enumLine: function(arrEvent, callback) {
 		var index = 0;
 
-		for(var eid = 4; eid <= (4 || arrEvent.length - 1); eid++) {
+		for(var eid = 0; eid <= (arrEvent.length - 1); eid++) {
 			var event = arrEvent[eid];
 
 			for(var lid = 0; lid < event.arrLine.length; lid++) {
