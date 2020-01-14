@@ -56,7 +56,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	var groupBoxLine = layerBoxLine.content.addProperty('ADBE Vector Group');
 
 	var borderBoxLine = groupBoxLine.content.addProperty('ADBE Vector Shape - Rect');
-	borderBoxLine.size.expression = E(side + '/' + 'followSizeBoxLine').replace('\'${targetWidth}\'', isMain ? 70 : 0);
+	borderBoxLine.size.expression = E(side + '/' + 'followSizeBoxLine').replace('\'${targetWidth}\'', target ? 70 : 0);
 	borderBoxLine.roundness.setValue(34);
 	borderBoxLine.position.setValue([0, 0]);
 
