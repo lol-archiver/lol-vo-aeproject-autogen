@@ -6,7 +6,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	var side = line.side;
 	var isMain = side == 'right';
 
-	var colorLineBox = !isMain ? (line.colorLineBox ? T.rgb.apply(this, line.colorLineBox) : T.rgb(140, 24, 24)) : T.rgb(31, 170, 241);
+	var colorLineBox = !isMain ? (line.colorLineBox ? T.rgb.apply(this, line.colorLineBox) : T.rgb(144, 34, 34)) : T.rgb(31, 170, 241);
 
 	var target = isMain ? line.target || event.target : null;
 	var skill = isMain ? line.skill || event.skill : null;
@@ -56,7 +56,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	var groupBoxLine = layerBoxLine.content.addProperty('ADBE Vector Group');
 
 	var borderBoxLine = groupBoxLine.content.addProperty('ADBE Vector Shape - Rect');
-	borderBoxLine.size.expression = E(side + '/' + 'followSizeBoxLine').replace('\'${targetWidth}\'', target ? 70 : 0);
+	borderBoxLine.size.expression = E(side + '/' + 'followSizeBoxLine');
 	borderBoxLine.roundness.setValue(34);
 	borderBoxLine.position.setValue([0, 0]);
 
@@ -117,7 +117,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 	var effectDropShadowCircleMain = layerCircleMainShadow.effect.addProperty('ADBE Drop Shadow');
 	effectDropShadowCircleMain.shadowColor.setValue(T.rgb(73, 80, 81));
-	effectDropShadowCircleMain.direction.setValue(225);
+	effectDropShadowCircleMain.direction.setValue(isMain ? 225 : 135);
 	effectDropShadowCircleMain.opacity.setValue((70 / 100) * 255);
 	effectDropShadowCircleMain.distance.setValue(11);
 	effectDropShadowCircleMain.softness.setValue(7);
