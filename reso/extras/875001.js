@@ -1,8 +1,8 @@
 module.exports = {
-	'event': {
-		'SettR': {
-			'skill': '${C.path.project.autogen}reso/skills/875/R.png'
+	event: {
+		SettR: {
+			skill: '${C.path.project.autogen}reso/icons/Sett/R.png'
 		},
 	},
-	'lines': {}
+	lines: {}
 };

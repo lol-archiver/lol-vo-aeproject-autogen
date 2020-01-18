@@ -1,35 +1,35 @@
 module.exports = {
-	'event': {
-		'FirstEncounterBilgewater': {
-			'target': '${C.path.project.autogen}reso/regions/bilgewater.png'
+	event: {
+		FirstEncounterBilgewater: {
+			target: '${C.path.project.autogen}reso/regions/bilgewater.png'
 		},
-		'FirstEncounterNoxians': {
-			'target': '${C.path.project.autogen}reso/regions/noxus.png'
+		FirstEncounterNoxians: {
+			target: '${C.path.project.autogen}reso/regions/noxus.png'
 		},
-		'SettW': {
-			'skill': '${C.path.project.autogen}reso/skills/875/W.png'
+		SettW: {
+			skill: '${C.path.project.autogen}reso/icons/Sett/W.png'
 		},
-		'SettE': {
-			'skill': '${C.path.project.autogen}reso/skills/875/E.png'
+		SettE: {
+			skill: '${C.path.project.autogen}reso/icons/Sett/E.png'
 		},
-		'SettR': {
-			'skill': '${C.path.project.autogen}reso/skills/875/R.png'
+		SettR: {
+			skill: '${C.path.project.autogen}reso/icons/Sett/R.png'
 		}
 	},
-	'lines': {
+	lines: {
 		'CFCEEA36': [
 			{
 				oper: 'after',
 				side: 'left',
 				duration: 0.24,
-				head: '${C.path.project.autogen}reso/heads/555/0.png',
+				head: '${C.path.project.autogen}reso/icons/Pyke/0.png',
 				line: 'ヽ(ｏ`皿′ｏ)ﾉ',
 			},
 			{
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/heads/223/0.png',
+				head: '${C.path.project.autogen}reso/icons/TahmKench/0.png',
 				line: '(╰_╯)#',
 			},
 		],
@@ -38,7 +38,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/heads/119/0.png',
+				head: '${C.path.project.autogen}reso/icons/Draven/0.png',
 				line: '<(－︿－)>',
 			}
 		],
@@ -47,7 +47,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/heads/122/0.png',
+				head: '${C.path.project.autogen}reso/icons/Darius/0.png',
 				line: 'o(ﾟДﾟ)っ',
 			}
 		],
@@ -56,7 +56,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/heads/498/0.png',
+				head: '${C.path.project.autogen}reso/icons/Xayah/0.png',
 				line: 'ミ(ﾉ゜д゜)ﾉ',
 			}
 		],
