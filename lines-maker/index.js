@@ -7,42 +7,55 @@ const Meta = require('music-metadata');
 
 const L = (console || {}).log;
 
-const pathAudios = C.path.audios;
+const parseConfig = function parseConfig(str) {
+	return str.replace(/\$\{.+?\}/g, function(text) {
+		C;
+		try {
+			return eval(text.replace(/(^\$\{)|(\}$)/g, ''));
+		}
+		catch(error) {
+			return text;
+		}
+	});
+};
 
-const arrAudioFile = _fs.readdirSync(pathAudios);
-const arrLineText = _fs.readFileSync(C.path.dictation, 'UTF8').split('\n').filter(text => text.trim());
+const makeLineNormal = async function makeLineNormal() {
+	const pathAudios = C.path.audios;
 
-const mapEventExtra = {};
-const mapLineBefore = {};
-const mapLineAfter = {};
-const mapLineExtra = {};
+	const arrAudioFile = _fs.readdirSync(pathAudios);
+	const arrLineText = _fs.readFileSync(C.path.dictation, 'UTF8').split('\n').filter(text => text.trim());
 
-try {
-	const allInfosExtra = require(C.path.linesExtra);
+	const mapEventExtra = {};
+	const mapLineBefore = {};
+	const mapLineAfter = {};
+	const mapLineExtra = {};
 
-	for(const [key, extraEvent] of Object.entries(allInfosExtra.event)) {
-		mapEventExtra[key] = extraEvent;
-	}
+	try {
+		const allInfosExtra = require(C.path.linesExtra);
 
-	for(const [key, extraLines] of Object.entries(allInfosExtra.lines)) {
-		for(const extraLine of extraLines) {
-			if(extraLine.oper == 'before') {
-				(mapLineBefore[key] || (mapLineBefore[key] = [])).push(extraLine);
+		for(const [key, extraEvent] of Object.entries(allInfosExtra.event)) {
+			mapEventExtra[key] = extraEvent;
+		}
+
+		for(const [key, extraLines] of Object.entries(allInfosExtra.lines)) {
+			for(const extraLine of extraLines) {
+				if(extraLine.oper == 'before') {
+					(mapLineBefore[key] || (mapLineBefore[key] = [])).push(extraLine);
+				}
+				else if(extraLine.oper == 'after') {
+					(mapLineAfter[key] || (mapLineAfter[key] = [])).push(extraLine);
+				}
+				else if(extraLine.oper == 'extra') {
+					(mapLineExtra[key] || (mapLineExtra[key] = [])).push(extraLine);
+				}
+
+				delete extraLine.oper;
 			}
-			else if(extraLine.oper == 'after') {
-				(mapLineAfter[key] || (mapLineAfter[key] = [])).push(extraLine);
-			}
-			else if(extraLine.oper == 'extra') {
-				(mapLineExtra[key] || (mapLineExtra[key] = [])).push(extraLine);
-			}
-
-			delete extraLine.oper;
 		}
 	}
-}
-catch(error) { error; }
+	catch(error) { error; }
 
-(async function() {
+
 	let isLineStart = false;
 
 	let arrEvent = [];
@@ -93,7 +106,7 @@ catch(error) { error; }
 				audio = '${C.path.project.autogen}reso/voices/${C.champion.id}/' + curEventRaw + '.wav';
 			}
 			else {
-				const file = arrAudioFile.find(fileName => fileName.includes(crc32));
+				const file = arrAudioFile.find(fileName => fileName.includes(`[${crc32}]`));
 
 				if(file) {
 					const meta = await Meta.parseFile(_pa.join(pathAudios, file));
@@ -136,6 +149,43 @@ catch(error) { error; }
 	}
 
 	_fs.writeFileSync(C.path.lines, JSON.stringify(arrEvent, null, '\t'));
+};
 
-	L('end');
-})();
+const makeLineSpecial = async function makeLineSpecial() {
+	const arrEvent = require(C.path.linesExtra).events;
+
+	for(const event of arrEvent) {
+		for(const line of event.arrLine) {
+			let audio;
+
+			if(line.aduio) {
+				audio = parseConfig(line.audio);
+			}
+			else if(line.crc32 && line.audioFolder) {
+				const arrAudioFile = _fs.readdirSync(_pa.join(C.path.project.extract, '_final', line.audioFolder));
+
+				const audioFile = arrAudioFile.find(fileName => fileName.includes(`[${line.crc32}]`));
+
+				audio = audioFile ? _pa.join(C.path.project.extract, '_final', line.audioFolder, audioFile) : null;
+
+				line.aduio = '${C.path.project.extract}/_final/' + line.audioFolder + '/' + audioFile;
+			}
+
+			if(audio) {
+				const meta = await Meta.parseFile(audio);
+
+				line.duration = meta.format.duration;
+			}
+		}
+	}
+
+
+	_fs.writeFileSync(C.path.lines, JSON.stringify(arrEvent, null, '\t'));
+};
+
+if(C.specialLines.name) {
+	makeLineSpecial().then(() => L('end'));
+}
+else {
+	makeLineNormal().then(() => L('end'));
+}

@@ -8,8 +8,8 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 	var colorLineBox = !isMain ? (line.colorLineBox ? T.rgb.apply(this, line.colorLineBox) : T.rgb(144, 34, 34)) : T.rgb(31, 170, 241);
 
-	var target = isMain ? line.target || event.target : null;
-	var skill = isMain ? line.skill || event.skill : null;
+	var target = line.target || event.target;
+	var skill = line.skill || event.skill;
 
 	var compLine = folderLines.items.addComp(indexText + line.line, 1920, 1080, 1, duration, 60);
 	compLine.bgColor = T.rgb(14, 14, 14);
@@ -22,7 +22,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 	var layerCircleMainShadow = compLine.layers.addShape();
 
-	var layerBoxEvent = isMain ? compLine.layers.addShape() : null;
+	var layerBoxEvent = compLine.layers.addShape();
 
 	var layerCircleMain = compLine.layers.addShape();
 	var layerPictureMain = compLine.layers.add(F(T.parseConfig(line.head), T.folderImages));
@@ -33,11 +33,11 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	var layerPictureSkill = skill ? compLine.layers.add(F(T.parseConfig(skill), T.folderImages)) : null;
 	var layerSquareSkill = skill ? compLine.layers.addShape() : null;
 
-	var layerEvent = isMain ? compLine.layers.addText(event.event) : null;
+	var layerEvent = compLine.layers.addText(event.event);
 	var layerLineBox = compLine.layers.addBoxText([1, 1], line.line);
 
 	layerBoxLine.name = 'BoxLine';
-	if(isMain) { layerBoxEvent.name = 'BoxEvent'; }
+	layerBoxEvent.name = 'BoxEvent';
 
 	if(target) { layerCircleTarget.name = 'CircleTarget'; }
 	if(target) { layerPictureTarget.name = 'PictureTarget'; }
@@ -49,7 +49,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	if(skill) { layerPictureSkill.name = 'PictureSkill'; }
 	if(skill) { layerSquareSkill.name = 'SquareSkill'; }
 
-	if(isMain) { layerEvent.name = 'Event'; }
+	layerEvent.name = 'Event';
 	layerLineBox.name = 'Line';
 
 	// -------Line Box-------
@@ -66,26 +66,24 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	layerBoxLine.transform.position.expression = E(side + '/' + 'followPositionBoxLine');
 
 	// -------Event Box-------
-	if(isMain) {
-		var groupBoxEvent = layerBoxEvent.content.addProperty('ADBE Vector Group');
+	var groupBoxEvent = layerBoxEvent.content.addProperty('ADBE Vector Group');
 
-		var borderBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Shape - Rect');
-		borderBoxEvent.size.expression = E(side + '/' + 'followSizeBoxEvent');
-		borderBoxEvent.roundness.setValue(24);
-		borderBoxEvent.position.setValue([0, 0]);
+	var borderBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Shape - Rect');
+	borderBoxEvent.size.expression = E(side + '/' + 'followSizeBoxEvent');
+	borderBoxEvent.roundness.setValue(24);
+	borderBoxEvent.position.setValue([0, 0]);
 
-		var fillBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Graphic - Fill');
-		fillBoxEvent.color.setValue(T.rgb(255, 250, 250));
+	var fillBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Graphic - Fill');
+	fillBoxEvent.color.setValue(T.rgb(255, 250, 250));
 
-		layerBoxEvent.transform.position.expression = E(side + '/' + 'followPositionBoxEvent');
+	layerBoxEvent.transform.position.expression = E(side + '/' + 'followPositionBoxEvent');
 
-		var effectDropShadowBoxEvent = layerBoxEvent.effect.addProperty('ADBE Drop Shadow');
-		effectDropShadowBoxEvent.shadowColor.setValue(T.rgb(73, 80, 81));
-		effectDropShadowBoxEvent.direction.setValue(135);
-		effectDropShadowBoxEvent.opacity.setValue((70 / 100) * 255);
-		effectDropShadowBoxEvent.distance.setValue(14);
-		effectDropShadowBoxEvent.softness.setValue(7);
-	}
+	var effectDropShadowBoxEvent = layerBoxEvent.effect.addProperty('ADBE Drop Shadow');
+	effectDropShadowBoxEvent.shadowColor.setValue(T.rgb(73, 80, 81));
+	effectDropShadowBoxEvent.direction.setValue(135);
+	effectDropShadowBoxEvent.opacity.setValue((70 / 100) * 255);
+	effectDropShadowBoxEvent.distance.setValue(14);
+	effectDropShadowBoxEvent.softness.setValue(7);
 
 	// -------Main Circle-------
 	var groupCircleMain = layerCircleMain.content.addProperty('ADBE Vector Group');
@@ -171,20 +169,18 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	}
 
 	// -------Event-------
-	if(isMain) {
-		layerEvent.transform.position.expression = E(side + '/' + 'followPositionTextEvent');
+	layerEvent.transform.position.expression = E(side + '/' + 'followPositionTextEvent');
 
-		var textDocEvent = layerEvent.sourceText.value;
-		textDocEvent.resetCharStyle();
-		textDocEvent.fontSize = 50;
-		textDocEvent.fillColor = T.rgb(73, 80, 81);
-		textDocEvent.font = 'Source Han Mono';
-		textDocEvent.applyStroke = true;
-		textDocEvent.strokeColor = T.rgb(73, 80, 81);
-		textDocEvent.strokeWidth = 2;
-		textDocEvent.text = event.event;
-		layerEvent.sourceText.setValue(textDocEvent);
-	}
+	var textDocEvent = layerEvent.sourceText.value;
+	textDocEvent.resetCharStyle();
+	textDocEvent.fontSize = 50;
+	textDocEvent.fillColor = T.rgb(73, 80, 81);
+	textDocEvent.font = 'Source Han Mono';
+	textDocEvent.applyStroke = true;
+	textDocEvent.strokeColor = T.rgb(73, 80, 81);
+	textDocEvent.strokeWidth = 2;
+	textDocEvent.text = event.event;
+	layerEvent.sourceText.setValue(textDocEvent);
 
 	// -------Line-------
 	layerLineBox.transform.position.setValue([0, 1000]);
