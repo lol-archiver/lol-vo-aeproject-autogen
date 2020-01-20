@@ -97,6 +97,13 @@ this.T = {
 		var widthOneLine = layerLine.sourceRectAtTime(0, false).width + 50;
 
 		var lineBox = Math.ceil(widthOneLine / widthMax);
+		var lineBoxTest = Math.ceil(widthOneLine / (widthMax + 100));
+
+		if(lineBoxTest < lineBox) {
+			lineBox = lineBoxTest;
+
+			widthMax += 100;
+		}
 
 		layerLine.remove();
 
