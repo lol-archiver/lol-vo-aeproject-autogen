@@ -1,20 +1,20 @@
 P.addCredit = function addCredit() {
 	var splashEnd = F(C.path.splash);
 	var layerSplashEnd = T.compMain.layers.add(splashEnd, D.full);
-	layerSplashEnd.startTime = D.lines + 2;
+	layerSplashEnd.startTime = D.linesEnd + 2;
 
 	layerSplashEnd.transform.scale.setValue([160, 160]);
-	layerSplashEnd.transform.opacity.setValueAtTime(D.lines + 2, 0);
-	layerSplashEnd.transform.opacity.setValueAtTime(D.lines + 3.4, 100);
+	layerSplashEnd.transform.opacity.setValueAtTime(D.linesEnd + 2, 0);
+	layerSplashEnd.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 100);
 
 	var layerThankyou = T.compMain.layers.addText('感谢收看！\n');
 
-	layerThankyou.startTime = D.linesEnd;
+	layerThankyou.startTime = D.linesEnd + 3.4;
 	layerThankyou.duration = D.credit;
 
 	layerThankyou.transform.position.setValue([40, 150]);
-	layerThankyou.transform.opacity.setValueAtTime(D.linesEnd, 0);
-	layerThankyou.transform.opacity.setValueAtTime(D.linesEnd + 2, 100);
+	layerThankyou.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 0);
+	layerThankyou.transform.opacity.setValueAtTime(D.linesEnd + 4.5, 100);
 
 	var textDocThankyou = layerThankyou.sourceText.value;
 	textDocThankyou.resetCharStyle();
@@ -29,12 +29,12 @@ P.addCredit = function addCredit() {
 
 	var layerInfo = T.compMain.layers.addText('解包/听写/整理/制作\n       by DanoR\n' + C.emote + '\n\n如有错漏，敬请留言');
 
-	layerInfo.startTime = D.linesEnd;
+	layerInfo.startTime = D.linesEnd + 3.4;
 	layerInfo.duration = D.credit;
 
 	layerInfo.transform.position.setValue([40, 300]);
-	layerInfo.transform.opacity.setValueAtTime(D.linesEnd, 0);
-	layerInfo.transform.opacity.setValueAtTime(D.linesEnd + 2, 100);
+	layerInfo.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 0);
+	layerInfo.transform.opacity.setValueAtTime(D.linesEnd + 4.5, 100);
 
 	var textDocInfo = layerInfo.sourceText.value;
 	textDocInfo.resetCharStyle();

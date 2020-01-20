@@ -8,8 +8,9 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 	var colorLineBox = !isMain ? (line.colorLineBox ? T.rgb.apply(this, line.colorLineBox) : T.rgb(144, 34, 34)) : T.rgb(31, 170, 241);
 
-	var target = line.target || event.target;
-	var skill = line.skill || event.skill;
+	var hasTarget = line.target || event.target;
+	var hasSkill = line.skill || event.skill;
+	var hasEvent = line.showEvent || isMain;
 
 	var compLine = folderLines.items.addComp(indexText + line.line, 1920, 1080, 1, duration, 60);
 	compLine.bgColor = T.rgb(14, 14, 14);
@@ -22,34 +23,34 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 	var layerCircleMainShadow = compLine.layers.addShape();
 
-	var layerBoxEvent = compLine.layers.addShape();
+	var layerBoxEvent = hasEvent ? compLine.layers.addShape() : null;
 
 	var layerCircleMain = compLine.layers.addShape();
 	var layerPictureMain = compLine.layers.add(F(T.parseConfig(line.head), T.folderImages));
 
-	var layerCircleTarget = target ? compLine.layers.addShape() : null;
-	var layerPictureTarget = target ? compLine.layers.add(F(T.parseConfig(target), T.folderImages)) : null;
+	var layerCircleTarget = hasTarget ? compLine.layers.addShape() : null;
+	var layerPictureTarget = hasTarget ? compLine.layers.add(F(T.parseConfig(hasTarget), T.folderImages)) : null;
 
-	var layerPictureSkill = skill ? compLine.layers.add(F(T.parseConfig(skill), T.folderImages)) : null;
-	var layerSquareSkill = skill ? compLine.layers.addShape() : null;
+	var layerPictureSkill = hasSkill ? compLine.layers.add(F(T.parseConfig(hasSkill), T.folderImages)) : null;
+	var layerSquareSkill = hasSkill ? compLine.layers.addShape() : null;
 
-	var layerEvent = compLine.layers.addText(event.event);
+	var layerEvent = hasEvent ? compLine.layers.addText(event.event) : null;
 	var layerLineBox = compLine.layers.addBoxText([1, 1], line.line);
 
 	layerBoxLine.name = 'BoxLine';
-	layerBoxEvent.name = 'BoxEvent';
+	if(hasEvent) { layerBoxEvent.name = 'BoxEvent'; }
 
-	if(target) { layerCircleTarget.name = 'CircleTarget'; }
-	if(target) { layerPictureTarget.name = 'PictureTarget'; }
+	if(hasTarget) { layerCircleTarget.name = 'CircleTarget'; }
+	if(hasTarget) { layerPictureTarget.name = 'PictureTarget'; }
 
 	layerCircleMain.name = 'CircleMain';
 	layerCircleMainShadow.name = 'CircleMainShadow';
 	layerPictureMain.name = 'PictureMain';
 
-	if(skill) { layerPictureSkill.name = 'PictureSkill'; }
-	if(skill) { layerSquareSkill.name = 'SquareSkill'; }
+	if(hasSkill) { layerPictureSkill.name = 'PictureSkill'; }
+	if(hasSkill) { layerSquareSkill.name = 'SquareSkill'; }
 
-	layerEvent.name = 'Event';
+	if(hasEvent) { layerEvent.name = 'Event'; }
 	layerLineBox.name = 'Line';
 
 	// -------Line Box-------
@@ -66,24 +67,26 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	layerBoxLine.transform.position.expression = E(side + '/' + 'followPositionBoxLine');
 
 	// -------Event Box-------
-	var groupBoxEvent = layerBoxEvent.content.addProperty('ADBE Vector Group');
+	if(hasEvent) {
+		var groupBoxEvent = layerBoxEvent.content.addProperty('ADBE Vector Group');
 
-	var borderBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Shape - Rect');
-	borderBoxEvent.size.expression = E(side + '/' + 'followSizeBoxEvent');
-	borderBoxEvent.roundness.setValue(24);
-	borderBoxEvent.position.setValue([0, 0]);
+		var borderBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Shape - Rect');
+		borderBoxEvent.size.expression = E(side + '/' + 'followSizeBoxEvent');
+		borderBoxEvent.roundness.setValue(24);
+		borderBoxEvent.position.setValue([0, 0]);
 
-	var fillBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Graphic - Fill');
-	fillBoxEvent.color.setValue(T.rgb(255, 250, 250));
+		var fillBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Graphic - Fill');
+		fillBoxEvent.color.setValue(T.rgb(255, 250, 250));
 
-	layerBoxEvent.transform.position.expression = E(side + '/' + 'followPositionBoxEvent');
+		layerBoxEvent.transform.position.expression = E(side + '/' + 'followPositionBoxEvent');
 
-	var effectDropShadowBoxEvent = layerBoxEvent.effect.addProperty('ADBE Drop Shadow');
-	effectDropShadowBoxEvent.shadowColor.setValue(T.rgb(73, 80, 81));
-	effectDropShadowBoxEvent.direction.setValue(135);
-	effectDropShadowBoxEvent.opacity.setValue((70 / 100) * 255);
-	effectDropShadowBoxEvent.distance.setValue(14);
-	effectDropShadowBoxEvent.softness.setValue(7);
+		var effectDropShadowBoxEvent = layerBoxEvent.effect.addProperty('ADBE Drop Shadow');
+		effectDropShadowBoxEvent.shadowColor.setValue(T.rgb(73, 80, 81));
+		effectDropShadowBoxEvent.direction.setValue(135);
+		effectDropShadowBoxEvent.opacity.setValue((70 / 100) * 255);
+		effectDropShadowBoxEvent.distance.setValue(14);
+		effectDropShadowBoxEvent.softness.setValue(7);
+	}
 
 	// -------Main Circle-------
 	var groupCircleMain = layerCircleMain.content.addProperty('ADBE Vector Group');
@@ -122,11 +125,11 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	effectDropShadowCircleMain.shadowOnly.setValue(1);
 
 	// -------Main Picture-------
-	layerPictureMain.transform.scale.setValue([150, 150]);
+	layerPictureMain.transform.scale.setValue([150 * (line.flipHor ? -1 : 1), 150]);
 	layerPictureMain.transform.position.expression = E(side + '/' + 'followPositionCircleMain');
 
 
-	if(skill) {
+	if(hasSkill) {
 		// -------Skill Square-------
 		var groupSquareSkill = layerSquareSkill.content.addProperty('ADBE Vector Group');
 
@@ -146,7 +149,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 		layerPictureSkill.transform.position.expression = E(side + '/' + 'followPositionSquareSkill');
 	}
 
-	if(target) {
+	if(hasTarget) {
 		// -------Target Circle-------
 		var groupCircleTarget = layerCircleTarget.content.addProperty('ADBE Vector Group');
 
@@ -169,18 +172,20 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	}
 
 	// -------Event-------
-	layerEvent.transform.position.expression = E(side + '/' + 'followPositionTextEvent');
+	if(hasEvent) {
+		layerEvent.transform.position.expression = E(side + '/' + 'followPositionTextEvent');
 
-	var textDocEvent = layerEvent.sourceText.value;
-	textDocEvent.resetCharStyle();
-	textDocEvent.fontSize = 50;
-	textDocEvent.fillColor = T.rgb(73, 80, 81);
-	textDocEvent.font = 'Source Han Mono';
-	textDocEvent.applyStroke = true;
-	textDocEvent.strokeColor = T.rgb(73, 80, 81);
-	textDocEvent.strokeWidth = 2;
-	textDocEvent.text = event.event;
-	layerEvent.sourceText.setValue(textDocEvent);
+		var textDocEvent = layerEvent.sourceText.value;
+		textDocEvent.resetCharStyle();
+		textDocEvent.fontSize = 50;
+		textDocEvent.fillColor = T.rgb(73, 80, 81);
+		textDocEvent.font = 'Source Han Mono';
+		textDocEvent.applyStroke = true;
+		textDocEvent.strokeColor = T.rgb(73, 80, 81);
+		textDocEvent.strokeWidth = 2;
+		textDocEvent.text = event.event;
+		layerEvent.sourceText.setValue(textDocEvent);
+	}
 
 	// -------Line-------
 	layerLineBox.transform.position.setValue([0, 1000]);

@@ -10,7 +10,7 @@ P.addBGM = function addBGM() {
 		layerBGM.startTime = footage.duration * (i - 1);
 
 		if(i == countLoop) {
-			layerBGM.audio.audioLevels.setValueAtTime(D.linesEnd, [-11, -11]);
+			layerBGM.audio.audioLevels.setValueAtTime(D.full - 4, [-11, -11]);
 			layerBGM.audio.audioLevels.setValueAtTime(D.full, [-45, -45]);
 		}
 	}

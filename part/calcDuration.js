@@ -3,9 +3,13 @@ P.calcDuration = function calcDuration() {
 
 	var arrDuration = [];
 	var linesDuration = 0;
-	var lengthLine = 0;
 
-	T.enumLine(arrEvent, function(line) {
+	D.length = 0;
+	T.enumLine(arrEvent, function() {
+		D.length++;
+	});
+
+	T.enumLine(arrEvent, function(line, event, lid, eid, index) {
 		var result = T.getBoxSize(line.line);
 
 		line.boxLine = result[2];
@@ -14,17 +18,24 @@ P.calcDuration = function calcDuration() {
 
 		arrDuration.push([line.duration, line.boxHeight]);
 
-		linesDuration += line.duration + D.interval;
+		var durationLine = line.duration + D.interval;
 
-		lengthLine++;
+		linesDuration += durationLine;
+
+		line.durationLine = durationLine + 0.4 + (index >= D.length - 3 ? 4 : 0);
 	});
 
 	D.list = arrDuration;
-	D.length = lengthLine;
+
 	D.lines = linesDuration;
+
+	D.credit += 4.5;
 
 	D.full = D.title + D.lines + D.credit;
 	D.linesEnd = D.title + D.lines;
+
+	L(D.lines - 120);
+	L(D.linesEnd - 120);
 
 	L(C.champion.name, D.full.toFixed(2), D.lines.toFixed(2));
 
