@@ -158,7 +158,7 @@ const makeLineSpecial = async function makeLineSpecial() {
 		for(const line of event.arrLine) {
 			let audio;
 
-			if(line.aduio) {
+			if(line.audio) {
 				audio = parseConfig(line.audio);
 			}
 			else if(line.crc32 && line.audioFolder) {
@@ -168,7 +168,7 @@ const makeLineSpecial = async function makeLineSpecial() {
 
 				audio = audioFile ? _pa.join(C.path.project.extract, '_final', line.audioFolder, audioFile) : null;
 
-				line.aduio = '${C.path.project.extract}/_final/' + line.audioFolder + '/' + audioFile;
+				line.audio = '${C.path.project.extract}/_final/' + line.audioFolder + '/' + audioFile;
 			}
 
 			if(audio) {
@@ -179,11 +179,10 @@ const makeLineSpecial = async function makeLineSpecial() {
 		}
 	}
 
-
 	_fs.writeFileSync(C.path.lines, JSON.stringify(arrEvent, null, '\t'));
 };
 
-if(C.specialLines.name) {
+if(C.specialLines) {
 	makeLineSpecial().then(() => L('end'));
 }
 else {
