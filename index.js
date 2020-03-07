@@ -20,10 +20,11 @@
 
 		var yLine = yCenter + line.boxHeight;
 		var indexLine = index;
-		var durationLine = line.duration + D.interval + 0.4;
+
+		var durationLine = line.durationLine;
 
 		while(yLine >= -yCenter) {
-			var lineInfoExtra = D.list[indexLine++];
+			var lineInfoExtra = D.list[++indexLine];
 
 			if(lineInfoExtra) {
 				var nextDuration = lineInfoExtra[0];
