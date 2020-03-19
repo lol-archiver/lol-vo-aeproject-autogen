@@ -7,7 +7,7 @@ const Meta = require('music-metadata');
 
 const L = (console || {}).log;
 
-const parseConfig = function parseConfig(str) {
+const parseConfig = function(str) {
 	return str.replace(/\$\{.+?\}/g, function(text) {
 		C;
 		try {
@@ -17,6 +17,64 @@ const parseConfig = function parseConfig(str) {
 			return text;
 		}
 	});
+};
+
+const formatEvent = function(event) {
+	const [main, cond] = event.replace(']', '').split('[');
+
+	if(!cond) { return main; }
+
+	const [type, detail] = cond.split(':');
+
+	let textCond;
+
+	if('英雄' == type) {
+		if(detail) {
+			textCond = `英雄【${detail}】`;
+		}
+		else {
+			textCond = '英雄';
+		}
+	}
+	else if('皮肤' == type) {
+		const [skin, champ] = detail.split('-');
+
+		if(detail) {
+			textCond = `使用【${skin}】皮肤的【${champ}】`;
+		}
+		else {
+			L('全皮肤？');
+		}
+	}
+	else if('地区' == type) {
+		if(detail) {
+			textCond = `来自【${detail}】地区的英雄`;
+		}
+		else {
+			L('全世界？');
+		}
+	}
+	else if('种族' == type) {
+		if(detail) {
+			textCond = `属于【${detail}】种族的英雄`;
+		}
+		else {
+			L('全生物？');
+		}
+	}
+	else if('多杀' == type) {
+		if(detail) {
+			textCond = `【${detail}】`;
+		}
+		else {
+			L('杀三小？');
+		}
+	}
+	else {
+		L('哈啰？');
+	}
+
+	return main + textCond;
 };
 
 const makeLineNormal = async function makeLineNormal() {
@@ -79,7 +137,7 @@ const makeLineNormal = async function makeLineNormal() {
 			curEventRaw = eventRaw.toLowerCase();
 
 			const eventInfo = {
-				event: event.replace(/\[.*?:/, '[').replace('[', '【').replace(']', '】'),
+				event: formatEvent(event),
 				eventRaw,
 				arrLine
 			};
@@ -183,8 +241,8 @@ const makeLineSpecial = async function makeLineSpecial() {
 };
 
 if(C.specialLines) {
-	makeLineSpecial().then(() => L('end'));
+	makeLineSpecial().then(() => L(`Finished: ${C.specialLines}`));
 }
 else {
-	makeLineNormal().then(() => L('end'));
+	makeLineNormal().then(() => L(`Finished: [${C.idFull}] ${C.skin.name} ${C.champion.name}`));
 }
