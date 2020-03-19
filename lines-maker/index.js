@@ -78,6 +78,14 @@ const formatEvent = function(event) {
 			L('杀三小？');
 		}
 	}
+	else if('技能' == type) {
+		if(detail) {
+			textCond = `【${detail}】`;
+		}
+		else {
+			L('杀三小？');
+		}
+	}
 	else {
 		L('哈啰？');
 	}
@@ -127,7 +135,7 @@ const makeLineNormal = async function makeLineNormal() {
 	let arrEvent = [];
 	let arrLine;
 
-	let curEventRaw;
+	let eventNow;
 
 	for(const lineText of arrLineText) {
 		if(!isLineStart) {
@@ -138,38 +146,38 @@ const makeLineNormal = async function makeLineNormal() {
 			continue;
 		}
 
-		if(lineText.startsWith('#### ')) {
-			const [event, eventRaw] = lineText.replace('#### ', '').split(' | ');
+		if(lineText.startsWith('### ')) {
+			eventNow = lineText.replace('### **', '').replace('**', '').replace(/^\d+ /, '');
 
 			arrLine = [];
-			curEventRaw = eventRaw.toLowerCase();
 
 			const eventInfo = {
-				event: formatEvent(event),
-				eventRaw,
+				event: formatEvent(eventNow),
 				arrLine
 			};
 
-			for(const key in mapEventExtra[eventRaw] || {}) {
-				eventInfo[key] = mapEventExtra[eventRaw][key];
+			for(const key in mapEventExtra[eventNow] || {}) {
+				eventInfo[key] = mapEventExtra[eventNow][key];
 			}
 
 			arrEvent.push(eventInfo);
 		}
 		else {
-			const [crc32, line] = lineText.replace('- - `', '').replace('  - `', '').split('`: ');
+			const [crc32, line] = lineText.replace(/^- `/, '').split('` ');
 
 			let duration = 0;
 			let audio = null;
 
-			if(curEventRaw == 'pick' || curEventRaw == 'ban') {
-				const file = `${C.path.project.autogen}reso/voices/${C.champion.id}/${curEventRaw}.wav`;
+			if(eventNow == '选用' || eventNow == '禁用') {
+				const eventTrans = { 选用:'pick', 禁用:'ban' }[eventNow];
+
+				const file = `${C.path.project.autogen}reso/voices/${C.champion.id}/${eventTrans}.wav`;
 
 				const meta = await Meta.parseFile(file);
 
 				duration = meta.format.duration;
 
-				audio = '${C.path.project.autogen}reso/voices/${C.champion.id}/' + curEventRaw + '.wav';
+				audio = '${C.path.project.autogen}reso/voices/${C.champion.id}/' + eventTrans + '.wav';
 			}
 			else {
 				const file = arrAudioFile.find(fileName => fileName.includes(`[${crc32}]`));
@@ -190,7 +198,7 @@ const makeLineNormal = async function makeLineNormal() {
 			}
 
 			const lineInfo = {
-				line: line.replace(/\*/g, ''),
+				line,
 				crc32,
 				duration,
 				side: 'right',
