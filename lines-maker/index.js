@@ -28,7 +28,24 @@ const formatEvent = function(event) {
 
 	let textCond;
 
-	if('英雄' == type) {
+	if(/(Q|W|E|R)技能/.test(main)) {
+
+		if(detail) {
+			textCond = `【${type}】：${detail}时`;
+		}
+		else {
+			textCond = `【${type}】`;
+		}
+	}
+	else if('P被动' == main) {
+		if(detail) {
+			textCond = `【${type}】：${detail}时`;
+		}
+		else {
+			textCond = `【${type}】`;
+		}
+	}
+	else if('英雄' == type) {
 		if(detail) {
 			textCond = `英雄【${detail}】`;
 		}
@@ -71,14 +88,6 @@ const formatEvent = function(event) {
 		}
 	}
 	else if('多杀' == type) {
-		if(detail) {
-			textCond = `【${detail}】`;
-		}
-		else {
-			L('杀三小？');
-		}
-	}
-	else if('技能' == type) {
 		if(detail) {
 			textCond = `【${detail}】`;
 		}
@@ -169,7 +178,7 @@ const makeLineNormal = async function makeLineNormal() {
 			let audio = null;
 
 			if(eventNow == '选用' || eventNow == '禁用') {
-				const eventTrans = { 选用:'pick', 禁用:'ban' }[eventNow];
+				const eventTrans = { 选用: 'pick', 禁用: 'ban' }[eventNow];
 
 				const file = `${C.path.project.autogen}reso/voices/${C.champion.id}/${eventTrans}.wav`;
 
