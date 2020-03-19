@@ -46,6 +46,14 @@ const formatEvent = function(event) {
 			L('全皮肤？');
 		}
 	}
+	else if('系列' == type) {
+		if(detail) {
+			textCond = `使用【${detail}】系列的英雄`;
+		}
+		else {
+			L('全系列？');
+		}
+	}
 	else if('地区' == type) {
 		if(detail) {
 			textCond = `来自【${detail}】地区的英雄`;
