@@ -8,7 +8,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 	var colorLineBox = !isMain ? (line.colorLineBox ? T.rgb.apply(this, line.colorLineBox) : T.rgb(144, 34, 34)) : T.rgb(31, 170, 241);
 
-	var hasTarget = line.target || event.target;
+	var hasTarget = isMain ? line.target || event.target : false;
 	var hasSkill = line.skill || event.skill;
 	var hasEvent = line.showEvent || isMain;
 
