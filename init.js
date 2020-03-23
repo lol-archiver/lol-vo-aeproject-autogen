@@ -82,8 +82,9 @@ this.T = {
 		var fontSize = 50;
 		var heightLeading = 10;
 		var widthMax = 1080;
+		var heightMax = 1080;
 
-		var layerLine = T.compMain.layers.addText(text);
+		var layerLine = T.compMain.layers.addBoxText([widthMax, heightMax], text);
 
 		var textDocLine = layerLine.sourceText.value;
 		textDocLine.resetCharStyle();
@@ -92,22 +93,30 @@ this.T = {
 		textDocLine.applyStroke = true;
 		textDocLine.strokeWidth = 2;
 		textDocLine.text = text;
+		textDocLine.name = 'Test';
 		layerLine.sourceText.setValue(textDocLine);
 
-		var widthOneLine = layerLine.sourceRectAtTime(0, false).width + 50;
+		var rect = layerLine.sourceRectAtTime(0, false);
 
-		var lineBox = Math.ceil(widthOneLine / widthMax);
-		var lineBoxTest = Math.ceil(widthOneLine / (widthMax + 100));
+		var widthBox = Math.ceil(rect.width) + 50;
+		var lineBox = Math.round((rect.height - 50) / 60) + 1;
 
-		if(lineBoxTest < lineBox) {
-			lineBox = lineBoxTest;
+		return [widthBox, lineBox * (fontSize + heightLeading) - heightLeading, lineBox, widthBox];
 
-			widthMax += 100;
-		}
+		// var widthOneLine = layerLine.sourceRectAtTime(0, false).width + 50;
 
-		layerLine.remove();
+		// var lineBox = Math.ceil(widthOneLine / widthMax) + 1;
+		// var lineBoxTest = Math.ceil(widthOneLine / (widthMax + 100));
 
-		return [widthOneLine > widthMax ? widthMax : widthOneLine, lineBox * (fontSize + heightLeading) - heightLeading, lineBox, widthOneLine];
+		// if(lineBoxTest < lineBox) {
+		// 	lineBox = lineBoxTest;
+
+		// 	widthMax += 100;
+		// }
+
+		// layerLine.remove();
+
+		// return [widthOneLine > widthMax ? widthMax : widthOneLine, lineBox * (fontSize + heightLeading) - heightLeading, lineBox, widthOneLine];
 	},
 	parseConfig: function parseConfig(str) {
 		return str.replace(/\$\{.+?\}/g, function(text) {

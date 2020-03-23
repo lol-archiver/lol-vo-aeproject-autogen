@@ -1,33 +1,33 @@
 module.exports = {
 	event: {
-		FirstEncounterAsheSkin11: {
+		'初遇[皮肤:御星魔矢 艾希]': {
 			target: '${C.path.project.autogen}reso/icons/Ashe/11.png'
 		},
-		FirstEncounterJhinSkin05: {
+		'初遇[皮肤:暗星尊 烬]': {
 			target: '${C.path.project.autogen}reso/icons/Jhin/5.png'
 		},
-		FirstEncounterMalphiteSkin23: {
+		'初遇[皮肤:暗星 墨菲特]': {
 			target: '${C.path.project.autogen}reso/icons/Malphite/23.png'
 		},
-		FirstEncounterMordekaiserSkin06: {
+		'初遇[皮肤:暗星 莫德凯撒]': {
 			target: '${C.path.project.autogen}reso/icons/Mordekaiser/6.png'
 		},
-		FirstEncounterThreshSkin05: {
+		'初遇[皮肤:暗星 锤石]': {
 			target: '${C.path.project.autogen}reso/icons/Thresh/5.png'
 		},
-		FirstEncounterXerathSkin05: {
+		'初遇[皮肤:暗星 泽拉斯]': {
 			target: '${C.path.project.autogen}reso/icons/Xerath/5.png'
 		},
-		LuxLightBindingMis_OnHit: {
+		'Q技能[光之束缚:命中]': {
 			skill: '${C.path.project.autogen}reso/icons/Lux/Q.png'
 		},
-		LuxPrismaticWave: {
+		'W技能[曲光屏障]': {
 			skill: '${C.path.project.autogen}reso/icons/Lux/W.png'
 		},
-		LuxLightStrikeKugel_OnBuffDeactivate: {
+		'E技能[透光奇点]LuxLightStrikeKugel_OnBuffDeactivate': {
 			skill: '${C.path.project.autogen}reso/icons/Lux/E.png'
 		},
-		LuxMaliceCannon: {
+		'R技能[终极闪光]': {
 			skill: '${C.path.project.autogen}reso/icons/Lux/R.png'
 		}
 	},

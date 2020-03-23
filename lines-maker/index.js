@@ -20,84 +20,104 @@ const parseConfig = function(str) {
 };
 
 const formatEvent = function(event) {
-	const [main, cond] = event.replace(']', '').split('[');
+	const [main, ...conds] = event.replace(']', '').split('[');
 
-	if(!cond) { return main; }
+	let resultEvent = main;
 
-	const [type, info] = cond.split(':');
+	resultEvent += conds.map(cond => {
+		const [type, info] = cond.split(':');
 
-	let textCond;
+		let result;
 
-	if(/(Q|W|E|R)技能/.test(main)) {
+		if(/(Q|W|E|R)技能/.test(main)) {
 
-		if(info) {
-			textCond = `【${type}】：${info}时`;
+			if(info) {
+				result = `【${type}】：${info}时`;
+			}
+			else {
+				result = `【${type}】`;
+			}
+		}
+		else if('P被动' == main) {
+			if(info) {
+				result = `【${type}】：${info}时`;
+			}
+			else {
+				result = `【${type}】`;
+			}
+		}
+		else if('英雄' == type || '生物' == type || '建筑' == type || '道具' == type) {
+			if(info) {
+				result = `${type}【${info}】`;
+			}
+			else {
+				result = type;
+			}
+		}
+		else if('特效' == type) {
+			if(info) {
+				result = `：触发【${info}】时`;
+			}
+			else {
+				L('全皮肤？');
+			}
+		}
+		else if('皮肤' == type) {
+			if(info) {
+				result = `【${info}】`;
+			}
+			else {
+				L('全皮肤？', event);
+			}
+		}
+		else if('系列' == type) {
+			if(info) {
+				result = `【${info}】系列的英雄`;
+			}
+			else {
+				L('全系列？', event);
+			}
+		}
+		else if('地区' == type) {
+			if(info) {
+				result = `【${info}】地区的英雄`;
+			}
+			else {
+				L('全世界？', event);
+			}
+		}
+		else if('种族' == type) {
+			if(info) {
+				result = `【${info}】种族的英雄`;
+			}
+			else {
+				L('全生物？', event);
+			}
+		}
+		else if('多杀' == type || '连杀' == type) {
+			if(info) {
+				result = `【${info}】`;
+			}
+			else {
+				L('杀三小？', event);
+			}
+		}
+		else if('阵营' == type) {
+			if(info) {
+				result = `【${info}】阵营`;
+			}
+			else {
+				L('八卦阵？', event);
+			}
 		}
 		else {
-			textCond = `【${type}】`;
+			L('哈啰？', event);
 		}
-	}
-	else if('P被动' == main) {
-		if(info) {
-			textCond = `【${type}】：${info}时`;
-		}
-		else {
-			textCond = `【${type}】`;
-		}
-	}
-	else if('英雄' == type) {
-		if(info) {
-			textCond = `英雄【${info}】`;
-		}
-		else {
-			textCond = '英雄';
-		}
-	}
-	else if('皮肤' == type) {
-		if(info) {
-			textCond = `【${info}】`;
-		}
-		else {
-			L('全皮肤？');
-		}
-	}
-	else if('系列' == type) {
-		if(info) {
-			textCond = `【${info}】系列的英雄`;
-		}
-		else {
-			L('全系列？');
-		}
-	}
-	else if('地区' == type) {
-		if(info) {
-			textCond = `【${info}】地区的英雄`;
-		}
-		else {
-			L('全世界？');
-		}
-	}
-	else if('种族' == type) {
-		if(info) {
-			textCond = `【${info}】种族的英雄`;
-		}
-		else {
-			L('全生物？');
-		}
-	}
-	else if('多杀' == type) {
-		if(info) {
-			textCond = `【${info}】`;
-		}
-		else {
-			L('杀三小？');
-		}
-	}
-	else {
-		L('哈啰？');
-	}
 
-	return main + textCond;
+		return result;
+	}).join('');
+
+	return resultEvent;
 };
 
 const makeLineNormal = async function makeLineNormal() {
@@ -205,7 +225,7 @@ const makeLineNormal = async function makeLineNormal() {
 			}
 
 			const lineInfo = {
-				line,
+				line: line.replace(/\\n/g, '\n'),
 				crc32,
 				duration,
 				side: 'right',
