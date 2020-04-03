@@ -154,7 +154,7 @@ const makeLineNormal = async function makeLineNormal() {
 			}
 		}
 	}
-	catch(error) { error; }
+	catch(error) { L(error); }
 
 
 	let isLineStart = false;
