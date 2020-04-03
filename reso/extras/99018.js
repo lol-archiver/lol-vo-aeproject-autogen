@@ -24,7 +24,7 @@ module.exports = {
 		'W技能[曲光屏障]': {
 			skill: '${C.path.project.autogen}reso/icons/Lux/W.png'
 		},
-		'E技能[透光奇点]OnBuffDeactivate': {
+		'E技能[透光奇点:引爆]': {
 			skill: '${C.path.project.autogen}reso/icons/Lux/E.png'
 		},
 		'R技能[终极闪光]': {
