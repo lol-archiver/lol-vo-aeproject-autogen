@@ -23,6 +23,7 @@ const formatEvent = function(event) {
 	const [main, ...conds] = event.replace(']', '').split('[');
 
 	let resultEvent = main;
+	let resultOverwrite;
 
 	resultEvent += conds.map(cond => {
 		const [type, info] = cond.split(':');
@@ -32,7 +33,7 @@ const formatEvent = function(event) {
 		if(/(Q|W|E|R)技能/.test(main)) {
 
 			if(info) {
-				result = `【${type}】：${info}时`;
+				result = `【${type}】${info}时`;
 			}
 			else {
 				result = `【${type}】`;
@@ -40,11 +41,14 @@ const formatEvent = function(event) {
 		}
 		else if('P被动' == main) {
 			if(info) {
-				result = `【${type}】：${info}时`;
+				result = `【${type}】${info}时`;
 			}
 			else {
 				result = `【${type}】`;
 			}
+		}
+		else if('移动' == main) {
+			resultOverwrite = `${type}移动`;
 		}
 		else if('英雄' == type || '生物' == type || '建筑' == type || '道具' == type) {
 			if(info) {
@@ -73,6 +77,10 @@ const formatEvent = function(event) {
 		else if('系列' == type) {
 			if(info) {
 				result = `【${info}】系列的英雄`;
+
+				if(main == '初次移动') {
+					result = '且' + result + '在场';
+				}
 			}
 			else {
 				L('全系列？', event);
@@ -110,6 +118,14 @@ const formatEvent = function(event) {
 				L('八卦阵？', event);
 			}
 		}
+		else if('行为' == type) {
+			if(info) {
+				result = `对方【${info}】行为`;
+			}
+			else {
+				L('三头六臂？', event);
+			}
+		}
 		else {
 			L('哈啰？', event);
 		}
@@ -117,7 +133,7 @@ const formatEvent = function(event) {
 		return result;
 	}).join('');
 
-	return resultEvent;
+	return resultOverwrite || resultEvent;
 };
 
 const makeLineNormal = async function makeLineNormal() {
@@ -179,7 +195,7 @@ const makeLineNormal = async function makeLineNormal() {
 			arrLine = [];
 
 			const eventInfo = {
-				event: formatEvent(eventNow),
+				event: eventNow.split('、').map(event => formatEvent(event)).join('、'),
 				arrLine
 			};
 

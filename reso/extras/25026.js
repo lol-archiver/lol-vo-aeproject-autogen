@@ -1,4 +1,5 @@
 module.exports = {
+	emote: 'o(*≧▽≦)ツ',
 	event: {
 		'初遇[英雄:安妮]': {
 			target: '${C.path.project.autogen}reso/icons/Annie/0.png'
@@ -30,10 +31,10 @@ module.exports = {
 		'击杀[皮肤:魔女 乐芙兰]': {
 			target: '${C.path.project.autogen}reso/icons/LeBlanc/20.png'
 		},
-		'初遇[皮肤:日(月)蚀骑士 蕾欧娜]': {
+		'初遇[皮肤:日月之蚀 蕾欧娜]': {
 			target: '${C.path.project.autogen}reso/icons/Leona/10_11.png'
 		},
-		'击杀[皮肤:日(月)蚀骑士 蕾欧娜]': {
+		'击杀[皮肤:日月之蚀 蕾欧娜]': {
 			target: '${C.path.project.autogen}reso/icons/Leona/10_11.png'
 		},
 		'初遇[皮肤:魔女 丽桑卓]': {
@@ -60,7 +61,7 @@ module.exports = {
 		'攻击[皮肤:魔女 乐芙兰]': {
 			target: '${C.path.project.autogen}reso/icons/LeBlanc/20.png'
 		},
-		'攻击[皮肤:日(月)蚀骑士 蕾欧娜]': {
+		'攻击[皮肤:日月之蚀 蕾欧娜]': {
 			target: '${C.path.project.autogen}reso/icons/Leona/10_11.png'
 		},
 		'攻击[皮肤:魔女 婕拉]': {

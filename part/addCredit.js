@@ -7,7 +7,7 @@ P.addCredit = function addCredit() {
 	layerSplashEnd.transform.opacity.setValueAtTime(D.linesEnd + 2, 0);
 	layerSplashEnd.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 100);
 
-	var layerThankyou = T.compMain.layers.addText('感谢收看！\n');
+	var layerThankyou = T.compMain.layers.addText('感谢观看！\n');
 
 	layerThankyou.startTime = D.linesEnd + 3.4;
 	layerThankyou.duration = D.credit;
@@ -27,7 +27,7 @@ P.addCredit = function addCredit() {
 
 	layerThankyou.sourceText.setValue(textDocThankyou);
 
-	var layerInfo = T.compMain.layers.addText('解包/听写/整理/制作\n       by DanoR\n' + C.emote + '\n\n如有错漏，敬请留言');
+	var layerInfo = T.compMain.layers.addText('解包/听写/整理/制作\n    by DanoR(Nuogz)\n\n' + C.emote + '\n\n如有错漏，敬请留言');
 
 	layerInfo.startTime = D.linesEnd + 3.4;
 	layerInfo.duration = D.credit;
