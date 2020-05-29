@@ -19,121 +19,123 @@ const parseConfig = function(str) {
 	});
 };
 
-const formatEvent = function(event) {
-	const [main, ...conds] = event.replace(']', '').split('[');
+const parseCond = function(type, ...arrParam) {
+	let result = '';
 
-	let resultEvent = main;
-	let resultOverwrite;
+	// 技能
+	if(/^([QWER]技能|P被动)$/.test(type)) {
+		const [nameSkill, timing] = arrParam;
 
-	resultEvent += conds.map(cond => {
-		const [type, info] = cond.split(':');
+		result = `${type}【${nameSkill}】`;
 
-		let result;
+		if(timing) {
+			result += `且${timing}时`;
+		}
+	}
+	// 攻击特效
+	else if('特效' == type) {
+		const [cond] = arrParam;
 
-		if(/(Q|W|E|R)技能/.test(main)) {
-
-			if(info) {
-				result = `【${type}】${info}时`;
-			}
-			else {
-				result = `【${type}】`;
-			}
-		}
-		else if('P被动' == main) {
-			if(info) {
-				result = `【${type}】${info}时`;
-			}
-			else {
-				result = `【${type}】`;
-			}
-		}
-		else if('移动' == main) {
-			resultOverwrite = `${type}移动`;
-		}
-		else if('英雄' == type || '生物' == type || '建筑' == type || '道具' == type) {
-			if(info) {
-				result = `${type}【${info}】`;
-			}
-			else {
-				result = type;
-			}
-		}
-		else if('特效' == type) {
-			if(info) {
-				result = `：触发【${info}】时`;
-			}
-			else {
-				L('全皮肤？');
-			}
-		}
-		else if('皮肤' == type) {
-			if(info) {
-				result = `【${info}】`;
-			}
-			else {
-				L('全皮肤？', event);
-			}
-		}
-		else if('系列' == type) {
-			if(info) {
-				result = `【${info}】系列的英雄`;
-
-				if(main == '初次移动') {
-					result = '且' + result + '在场';
-				}
-			}
-			else {
-				L('全系列？', event);
-			}
-		}
-		else if('地区' == type) {
-			if(info) {
-				result = `【${info}】地区的英雄`;
-			}
-			else {
-				L('全世界？', event);
-			}
-		}
-		else if('种族' == type) {
-			if(info) {
-				result = `【${info}】种族的英雄`;
-			}
-			else {
-				L('全生物？', event);
-			}
-		}
-		else if('多杀' == type || '连杀' == type) {
-			if(info) {
-				result = `【${info}】`;
-			}
-			else {
-				L('杀三小？', event);
-			}
-		}
-		else if('阵营' == type) {
-			if(info) {
-				result = `【${info}】阵营`;
-			}
-			else {
-				L('八卦阵？', event);
-			}
-		}
-		else if('行为' == type) {
-			if(info) {
-				result = `对方【${info}】行为`;
-			}
-			else {
-				L('三头六臂？', event);
-			}
+		if(cond) {
+			result = `触发【${cond}】时`;
 		}
 		else {
-			L('哈啰？', event);
+			L('啥特效？');
 		}
+	}
+	// 条件前置
+	else if(['移动'].includes(type)) {
+		const [cond = ''] = arrParam;
 
-		return result;
-	}).join('');
+		result = `${cond}移动`;
+	}
+	// 原封不动
+	// else if([].includes(type)) {
+	// 	result = `${type}`;
+	// }
+	// 行为+目标
+	else if(['初遇', '攻击', '击杀', '普攻', '使用'].includes(type)) {
+		result = `${type}${parseCond(...arrParam)}`;
+	}
+	// 阵营+目标
+	else if(['友方', '敌方'].includes(type)) {
+		if(arrParam) {
+			result = `${type}使用${parseCond(...arrParam)}`;
+		}
+		else {
+			result = `${type}`;
+		}
+	}
 
-	return resultOverwrite || resultEvent;
+	// 大括号
+	else if(['英雄', '皮肤', '生物', '建筑', '道具', '女性', '男性', '多杀', '连杀'].includes(type)) {
+		if(arrParam[0]) {
+			result = `【${arrParam[0]}】`;
+		}
+		else {
+			result = `【${type}】`;
+		}
+	}
+	// 系列皮肤
+	else if('系列' == type) {
+		if(arrParam[0]) {
+			result = `【${arrParam[0]}】系列皮肤`;
+		}
+		else {
+			L('全系列？');
+		}
+	}
+	// 地区
+	else if('地区' == type) {
+		if(arrParam[0]) {
+			result = `【${arrParam[0]}】地区的英雄`;
+		}
+		else {
+			L('全大陆？');
+		}
+	}
+	// 种族
+	else if('种族' == type) {
+		if(arrParam[0]) {
+			result = `【${arrParam[0]}】英雄`;
+		}
+		else {
+			L('全生物？');
+		}
+	}
+
+	// 回应
+	else if('回应' == type) {
+		const [behavior, ...arrParamSub] = arrParam;
+
+		if(arrParamSub.length) {
+			result = `回应${parseCond(...arrParamSub)}的【${behavior}】`;
+		}
+		else {
+			result = `回应【${behavior}】`;
+		}
+	}
+	// 简单动作
+	else if(['阵亡', '重生', '静置', '回城', '玩笑', '嘲讽', '大笑'].includes(type)) {
+		result = type;
+
+		if(arrParam[0]) {
+			L('新花样？');
+		}
+	}
+	else {
+		L('哈啰？', type, ...arrParam);
+	}
+
+	return result;
+};
+
+const formatEvent = function(event) {
+	return event.replace(/(^\[|\]$)/g, '').split('][').map(cond => {
+		const [type, ...arrParam] = cond.split(':');
+
+		return parseCond(type, ...arrParam);
+	}).join(' 且 ');
 };
 
 const makeLineNormal = async function makeLineNormal() {
