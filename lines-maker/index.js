@@ -26,7 +26,7 @@ const parseCond = function(type, ...arrParam) {
 	if(/^([QWER]技能|P被动)$/.test(type)) {
 		const [nameSkill, timing] = arrParam;
 
-		result = `${type}【${nameSkill}】`;
+		result += `${type}【${nameSkill}】`;
 
 		if(timing) {
 			result += `且${timing}时`;
@@ -37,7 +37,7 @@ const parseCond = function(type, ...arrParam) {
 		const [cond] = arrParam;
 
 		if(cond) {
-			result = `触发【${cond}】时`;
+			result = `附带【${cond}】`;
 		}
 		else {
 			L('啥特效？');
@@ -50,12 +50,16 @@ const parseCond = function(type, ...arrParam) {
 		result = `${cond}移动`;
 	}
 	// 原封不动
-	// else if([].includes(type)) {
-	// 	result = `${type}`;
-	// }
+	else if(['选用', '禁用'].includes(type)) {
+		result = `${type}`;
+	}
 	// 行为+目标
-	else if(['初遇', '攻击', '击杀', '普攻', '使用'].includes(type)) {
+	else if(['初遇', '攻击', '击杀', '普攻', '暴击', '使用', '触发', '接近', '抵达', '嘲讽', '购买'].includes(type)) {
 		result = `${type}${parseCond(...arrParam)}`;
+	}
+	// 行为+是+目标
+	else if(['目标'].includes(type)) {
+		result = `${type}是${parseCond(...arrParam)}`;
 	}
 	// 阵营+目标
 	else if(['友方', '敌方'].includes(type)) {
@@ -115,8 +119,19 @@ const parseCond = function(type, ...arrParam) {
 			result = `回应【${behavior}】`;
 		}
 	}
+	// 控制
+	else if('控制' == type) {
+		const [stat, ...arrParamSub] = arrParam;
+
+		if(arrParamSub.length) {
+			result = `${stat}${parseCond(...arrParamSub)}`;
+		}
+		else {
+			result = stat;
+		}
+	}
 	// 简单动作
-	else if(['阵亡', '重生', '静置', '回城', '玩笑', '嘲讽', '大笑'].includes(type)) {
+	else if(['阵亡', '重生', '静置', '回城', '玩笑', '大笑'].includes(type)) {
 		result = type;
 
 		if(arrParam[0]) {
