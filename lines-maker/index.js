@@ -54,21 +54,12 @@ const parseCond = function(type, ...arrParam) {
 		result = `${type}`;
 	}
 	// 行为+目标
-	else if(['初遇', '攻击', '击杀', '普攻', '暴击', '使用', '触发', '接近', '抵达', '嘲讽', '购买'].includes(type)) {
+	else if(['初遇', '攻击', '击杀', '普攻', '暴击', '使用', '触发', '接近', '抵达', '嘲讽', '购买', '附近', '友方', '敌方'].includes(type)) {
 		result = `${type}${parseCond(...arrParam)}`;
 	}
 	// 行为+是+目标
 	else if(['目标'].includes(type)) {
 		result = `${type}是${parseCond(...arrParam)}`;
-	}
-	// 阵营+目标
-	else if(['友方', '敌方'].includes(type)) {
-		if(arrParam) {
-			result = `${type}使用${parseCond(...arrParam)}`;
-		}
-		else {
-			result = `${type}`;
-		}
 	}
 
 	// 大括号
