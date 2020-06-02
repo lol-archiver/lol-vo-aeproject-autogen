@@ -22,6 +22,10 @@ const parseConfig = function(str) {
 const parseCond = function(type, ...arrParam) {
 	let result = '';
 
+	if(!type || type == '') {
+		return result;
+	}
+
 	// 技能
 	if(/^([QWER]技能|P被动)$/.test(type)) {
 		const [nameSkill, timing] = arrParam;

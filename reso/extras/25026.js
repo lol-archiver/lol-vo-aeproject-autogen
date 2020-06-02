@@ -1,83 +1,83 @@
 module.exports = {
 	emote: 'o(*≧▽≦)ツ',
 	event: {
-		'初遇[英雄:安妮]': {
+		'[初遇:英雄:安妮]': {
 			target: '${C.path.project.autogen}reso/icons/Annie/0.png'
 		},
-		'初遇[皮肤:魔女 卡密尔]': {
+		'[初遇:皮肤:魔女 卡密尔]': {
 			target: '${C.path.project.autogen}reso/icons/Camille/2.png'
 		},
-		'击杀[皮肤:魔女 卡密尔]': {
+		'[击杀:皮肤:魔女 卡密尔]': {
 			target: '${C.path.project.autogen}reso/icons/Camille/2.png'
 		},
-		'初遇[英雄:黛安娜]': {
+		'[初遇:英雄:黛安娜]': {
 			target: '${C.path.project.autogen}reso/icons/Diana/0.png'
 		},
-		'击杀[英雄:黛安娜]': {
+		'[击杀:英雄:黛安娜]': {
 			target: '${C.path.project.autogen}reso/icons/Diana/0.png'
 		},
-		'初遇[皮肤:幽魂 费德提克]': {
+		'[初遇:皮肤:幽魂 费德提克]': {
 			target: '${C.path.project.autogen}reso/icons/Fiddlesticks/1.png'
 		},
-		'初遇[英雄:凯尔]': {
+		'[初遇:英雄:凯尔]': {
 			target: '${C.path.project.autogen}reso/icons/Kayle/0.png'
 		},
-		'击杀[英雄:凯尔]': {
+		'[击杀:英雄:凯尔]': {
 			target: '${C.path.project.autogen}reso/icons/Kayle/0.png'
 		},
-		'初遇[皮肤:魔女 乐芙兰]': {
+		'[初遇:皮肤:魔女 乐芙兰]': {
 			target: '${C.path.project.autogen}reso/icons/LeBlanc/20.png'
 		},
-		'击杀[皮肤:魔女 乐芙兰]': {
+		'[击杀:皮肤:魔女 乐芙兰]': {
 			target: '${C.path.project.autogen}reso/icons/LeBlanc/20.png'
 		},
-		'初遇[皮肤:日月之蚀 蕾欧娜]': {
+		'[初遇:皮肤:日月之蚀 蕾欧娜]': {
 			target: '${C.path.project.autogen}reso/icons/Leona/10_11.png'
 		},
-		'击杀[皮肤:日月之蚀 蕾欧娜]': {
+		'[击杀:皮肤:日月之蚀 蕾欧娜]': {
 			target: '${C.path.project.autogen}reso/icons/Leona/10_11.png'
 		},
-		'初遇[皮肤:魔女 丽桑卓]': {
+		'[初遇:皮肤:魔女 丽桑卓]': {
 			target: '${C.path.project.autogen}reso/icons/Lissandra/4.png'
 		},
-		'击杀[皮肤:魔女 丽桑卓]': {
+		'[击杀:皮肤:魔女 丽桑卓]': {
 			target: '${C.path.project.autogen}reso/icons/Lissandra/4.png'
 		},
-		'初遇[皮肤:永恒之森 魔腾]': {
+		'[初遇:皮肤:永恒之森 魔腾]': {
 			target: '${C.path.project.autogen}reso/icons/Nocturne/7.png'
 		},
-		'初遇[皮肤:绿水晶光辉 塔里克]': {
+		'[初遇:皮肤:绿水晶光辉 塔里克]': {
 			target: '${C.path.project.autogen}reso/icons/Taric/1.png'
 		},
-		'初遇[皮肤:魔女 婕拉]': {
+		'[初遇:皮肤:魔女 婕拉]': {
 			target: '${C.path.project.autogen}reso/icons/Zyra/5.png'
 		},
-		'击杀[皮肤:魔女 婕拉]': {
+		'[击杀:皮肤:魔女 婕拉]': {
 			target: '${C.path.project.autogen}reso/icons/Zyra/5.png'
 		},
-		'攻击[英雄:凯尔]': {
+		'[攻击:英雄:凯尔]': {
 			target: '${C.path.project.autogen}reso/icons/Kayle/0.png'
 		},
-		'攻击[皮肤:魔女 乐芙兰]': {
+		'[攻击:皮肤:魔女 乐芙兰]': {
 			target: '${C.path.project.autogen}reso/icons/LeBlanc/20.png'
 		},
-		'攻击[皮肤:日月之蚀 蕾欧娜]': {
+		'[攻击:皮肤:日月之蚀 蕾欧娜]': {
 			target: '${C.path.project.autogen}reso/icons/Leona/10_11.png'
 		},
-		'攻击[皮肤:魔女 婕拉]': {
+		'[攻击:皮肤:魔女 婕拉]': {
 			target: '${C.path.project.autogen}reso/icons/Zyra/5.png'
 		},
 
-		'Q技能[暗之禁锢]': {
+		'[使用:Q技能:暗之禁锢]': {
 			skill: '${C.path.project.autogen}reso/icons/Morgana/Q.png'
 		},
-		'Q技能[暗之禁锢:命中]': {
+		'[使用:Q技能:暗之禁锢:命中]': {
 			skill: '${C.path.project.autogen}reso/icons/Morgana/Q.png'
 		},
-		'E技能[黑暗之盾]': {
+		'[使用:E技能:黑暗之盾]': {
 			skill: '${C.path.project.autogen}reso/icons/Morgana/E.png'
 		},
-		'R技能[灵魂镣铐]': {
+		'[使用:R技能:灵魂镣铐]': {
 			skill: '${C.path.project.autogen}reso/icons/Morgana/R.png'
 		},
 	},

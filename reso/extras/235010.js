@@ -10,7 +10,7 @@ module.exports = {
 		'[击杀:皮肤:西部魔影 卢锡安]': {
 			target: '${C.path.project.autogen}reso/icons/Lucian/8.png'
 		},
-		'[移动:初次][友方:皮肤:西部魔影 卢锡安]': {
+		'[移动:初次][友方:使用:皮肤:西部魔影 卢锡安]': {
 			target: '${C.path.project.autogen}reso/icons/Lucian/8.png'
 		},
 		'[回应:玩笑:皮肤:西部魔影 卢锡安]': {
