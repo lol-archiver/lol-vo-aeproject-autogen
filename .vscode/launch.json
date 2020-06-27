@@ -9,6 +9,7 @@
 			"request": "launch",
 			"name": "Lines Maker",
 			"program": "${workspaceFolder}/lines-maker/index.js",
+			"runtimeExecutable": "node.exe",
 			"skipFiles": [
 				"<node_internals>/**"
 			]
@@ -17,7 +18,6 @@
 			"type": "extendscript-debug",
 			"request": "launch",
 			"name": "AE Project Generator",
-			// "program": "${file}",
 			"program": "${workspaceFolder}/index.js",
 			"stopOnEntry": false,
 			"targetSpecifier": "aftereffects-17.0",

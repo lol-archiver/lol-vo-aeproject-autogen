@@ -80,6 +80,10 @@ module.exports = {
 		'[使用:R技能:灵魂镣铐]': {
 			skill: '${C.path.project.autogen}reso/icons/Morgana/R.png'
 		},
+
+		'[使用:道具:监视图腾]': {
+			skill: '${C.path.project.autogen}reso/icons/Items/3350_greateryellowtrinket.png'
+		},
 	},
 	lines: {
 		'C308FE28': [

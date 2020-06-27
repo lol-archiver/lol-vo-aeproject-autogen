@@ -19,133 +19,146 @@ const parseConfig = function(str) {
 	});
 };
 
-const parseCond = function(type, ...arrParam) {
-	let result = '';
 
-	if(!type || type == '') {
-		return result;
-	}
+const parseCond = function(arrParam) {
+	let result = '';
+	let used = 0;
+
+	const use = value => 'string' == typeof value ? used++ : null;
+
+	const type = arrParam.shift();
+
+	if(!type || type == '') { return result; }
+
+	const [main] = arrParam;
 
 	// 技能
 	if(/^([QWER]技能|P被动)$/.test(type)) {
-		const [nameSkill, timing] = arrParam;
+		const [name, timing] = arrParam;
 
-		result += `${type}【${nameSkill}】`;
+		result += type;
 
-		if(timing) {
-			result += `且${timing}时`;
+		if(name) {
+			result += `【${name}】`;
+
+			if(timing) {
+				result += `且${timing}时`;
+			}
 		}
+
+		use(name);
+		use(timing);
 	}
 	// 攻击特效
 	else if('特效' == type) {
-		const [cond] = arrParam;
-
-		if(cond) {
-			result = `附带【${cond}】`;
+		if(main) {
+			result += `附带【${main}】`;
 		}
 		else {
-			L('啥特效？');
+			throw new Error('缺少特效内容');
 		}
+
+		use(main);
 	}
 	// 条件前置
 	else if(['移动'].includes(type)) {
-		const [cond = ''] = arrParam;
+		if(main) {
+			result += main;
+		}
 
-		result = `${cond}移动`;
-	}
-	// 原封不动
-	else if(['选用', '禁用'].includes(type)) {
-		result = `${type}`;
-	}
-	// 行为+目标
-	else if(['初遇', '攻击', '击杀', '普攻', '暴击', '使用', '触发', '接近', '抵达', '嘲讽', '购买', '附近', '友方', '敌方'].includes(type)) {
-		result = `${type}${parseCond(...arrParam)}`;
-	}
-	// 行为+是+目标
-	else if(['目标'].includes(type)) {
-		result = `${type}是${parseCond(...arrParam)}`;
-	}
+		use(main);
 
-	// 大括号
-	else if(['英雄', '皮肤', '生物', '建筑', '道具', '女性', '男性', '多杀', '连杀'].includes(type)) {
-		if(arrParam[0]) {
-			result = `【${arrParam[0]}】`;
-		}
-		else {
-			result = `【${type}】`;
-		}
+		result += type;
 	}
-	// 系列皮肤
-	else if('系列' == type) {
-		if(arrParam[0]) {
-			result = `【${arrParam[0]}】系列皮肤`;
-		}
-		else {
-			L('全系列？');
-		}
-	}
-	// 地区
-	else if('地区' == type) {
-		if(arrParam[0]) {
-			result = `【${arrParam[0]}】地区的英雄`;
-		}
-		else {
-			L('全大陆？');
-		}
-	}
-	// 种族
-	else if('种族' == type) {
-		if(arrParam[0]) {
-			result = `【${arrParam[0]}】英雄`;
-		}
-		else {
-			L('全生物？');
-		}
-	}
-
 	// 回应
 	else if('回应' == type) {
-		const [behavior, ...arrParamSub] = arrParam;
+		const [, ...arrParamSub] = arrParam;
 
 		if(arrParamSub.length) {
-			result = `回应${parseCond(...arrParamSub)}的【${behavior}】`;
+			result += `回应${parseCond(arrParamSub)}的【${main}】`;
+
+			used += arrParam.length;
 		}
 		else {
-			result = `回应【${behavior}】`;
-		}
-	}
-	// 控制
-	else if('控制' == type) {
-		const [stat, ...arrParamSub] = arrParam;
+			result += `回应【${main}】`;
 
-		if(arrParamSub.length) {
-			result = `${stat}${parseCond(...arrParamSub)}`;
+			used++;
+		}
+
+		use(main);
+	}
+	// 行为Only
+	else if([
+		'选用', '禁用',
+		'初遇', '攻击', '击杀', '阵亡', '重生',
+		'普攻', '暴击', '使用', '触发',
+		'接近', '抵达', '购买', '附近',
+		'玩笑', '嘲讽', '大笑', '静置', '回城',
+		'友方', '敌方',
+	].includes(type)) {
+		result += type;
+	}
+	// 行为+是
+	else if(['目标'].includes(type)) {
+		result += `${type}是`;
+	}
+	// 内容可选+大括号
+	else if(['英雄', '皮肤', '生物', '建筑', '武器', '道具', '女性', '男性', '多杀', '连杀', '控制'].includes(type)) {
+		if(main) {
+			result += `【${main}】`;
 		}
 		else {
-			result = stat;
+			result += `【${type}】`;
 		}
-	}
-	// 简单动作
-	else if(['阵亡', '重生', '静置', '回城', '玩笑', '大笑'].includes(type)) {
-		result = type;
 
-		if(arrParam[0]) {
-			L('新花样？');
+		use(main);
+	}
+	// 内容必要
+	else if(['系列', '地区', '种族', '特征', '动作', '血量', '注释'].includes(type)) {
+		if(!main) { throw new Error('缺少内容'); }
+
+		use(main);
+
+		// 系列皮肤
+		if(['系列'].includes(type)) {
+			result += `【${main}】系列皮肤`;
+		}
+		// 地区
+		else if(['地区'].includes(type)) {
+			result += `【${main}】地区英雄`;
+		}
+		// 种族
+		else if(['种族'].includes(type)) {
+			result += `【${main}】英雄`;
+		}
+		// 的
+		else if(['特征'].includes(type)) {
+			result += `【${main}】的英雄`;
+		}
+		// 时
+		else if(['动作'].includes(type)) {
+			result += `在${main}时`;
+		}
+		// 行为+内容+时
+		else if(['血量'].includes(type)) {
+			result += `${type}${main}时`;
+		}
+		// 内容+大括号
+		else if(['注释'].includes(type)) {
+			result += `（${main}）`;
 		}
 	}
 	else {
-		L('哈啰？', type, ...arrParam);
+		L('新类型', type, ...arrParam);
 	}
 
-	return result;
+	arrParam.splice(0, used);
+
+	return arrParam.length ? `${result}${parseCond(arrParam)}` : result;
 };
 
 const formatEvent = function(event) {
-	return event.replace(/(^\[|\]$)/g, '').split('][').map(cond => {
-		const [type, ...arrParam] = cond.split(':');
-
-		return parseCond(type, ...arrParam);
-	}).join(' 且 ');
+	return event.replace(/(^\[|\]$)/g, '').split('][').map(cond => parseCond(cond.split(':'))).join(' 且 ');
 };
 
 const makeLineNormal = async function makeLineNormal() {
@@ -159,14 +172,18 @@ const makeLineNormal = async function makeLineNormal() {
 	const mapLineAfter = {};
 	const mapLineExtra = {};
 
+	let allInfosExtra = {};
 	try {
-		const allInfosExtra = require(C.path.linesExtra);
+		allInfosExtra = require(C.path.linesExtra);
+	}
+	catch(error) { true; }
 
-		for(const [key, extraEvent] of Object.entries(allInfosExtra.event)) {
+	try {
+		for(const [key, extraEvent] of Object.entries(allInfosExtra.event || {})) {
 			mapEventExtra[key] = extraEvent;
 		}
 
-		for(const [key, extraLines] of Object.entries(allInfosExtra.lines)) {
+		for(const [key, extraLines] of Object.entries(allInfosExtra.lines || {})) {
 			for(const extraLine of extraLines) {
 				if(extraLine.oper == 'before') {
 					(mapLineBefore[key] || (mapLineBefore[key] = [])).push(extraLine);
@@ -223,8 +240,8 @@ const makeLineNormal = async function makeLineNormal() {
 			let duration = 0;
 			let audio = null;
 
-			if(eventNow == '选用' || eventNow == '禁用') {
-				const eventTrans = { 选用: 'pick', 禁用: 'ban' }[eventNow];
+			if(eventNow == '[选用]' || eventNow == '[禁用]') {
+				const eventTrans = { '[选用]': 'pick', '[禁用]': 'ban' }[eventNow];
 
 				const file = `${C.path.project.autogen}reso/voices/${C.champion.id}/${eventTrans}.wav`;
 
