@@ -4,9 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"dependencies": {
-		"music-metadata": "^6.0.1"
+		"music-metadata": "^6.4.0"
 	},
-	"devDependencies": {},
 	"scripts": {},
 	"author": "DanoR",
 	"license": "ISC"
