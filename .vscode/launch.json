@@ -12,7 +12,8 @@
 			"runtimeExecutable": "node.exe",
 			"skipFiles": [
 				"<node_internals>/**"
-			]
+			],
+			"sourceMaps": false
 		},
 		{
 			"type": "extendscript-debug",

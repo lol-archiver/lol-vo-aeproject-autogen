@@ -1,5 +1,5 @@
 dependencies:
-  music-metadata: 6.4.0
+  music-metadata: 7.0.0
 lockfileVersion: 5.1
 packages:
   /@tokenizer/token/0.1.1:
@@ -51,7 +51,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
-  /music-metadata/6.4.0:
+  /music-metadata/7.0.0:
     dependencies:
       content-type: 1.0.4
       debug: 4.1.1
@@ -63,7 +63,7 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-oNkXjiZAFPFDoN006+rEJL/plISMa7odQzFLXYdY7AeoqPLPCFBmNaB9L3llndPmA/eKU0BJoX3mpZoyRL7avg==
+      integrity: sha512-v/A4QVS0nTvV49ShgZo/2g2cbvE8UtUbxIXh4W7zG+k40gy83UK1FkLvF0q9nd++mIXn5a+MS6kcrPO1WJBAdQ==
   /peek-readable/3.1.0:
     dev: false
     engines:
@@ -101,4 +101,4 @@ packages:
     resolution:
       integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
 specifiers:
-  music-metadata: ^6.4.0
+  music-metadata: '7'

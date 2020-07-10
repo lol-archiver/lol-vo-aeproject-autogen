@@ -27,7 +27,7 @@ P.addCredit = function addCredit() {
 
 	layerThankyou.sourceText.setValue(textDocThankyou);
 
-	var layerInfo = T.compMain.layers.addText('解包/听写/整理/制作\n    by DanoR(Nuogz)\n\n' + C.emote + '\n\n如有错漏，敬请留言');
+	var layerInfo = T.compMain.layers.addText('解包/听写/整理/制作\n    by DanoR(Nuogz)\n感谢道哥的协力校对\n\n' + C.emote + '\n\n如有错漏，敬请留言');
 
 	layerInfo.startTime = D.linesEnd + 3.4;
 	layerInfo.duration = D.credit;

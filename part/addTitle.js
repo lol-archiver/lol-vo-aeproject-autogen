@@ -9,7 +9,7 @@ P.addTitle = function addTitle() {
 	effectBlurSplash.blurRadius.setValueAtTime(D.title - 1, 0);
 	effectBlurSplash.blurRadius.setValueAtTime(D.title, 7);
 
-	var layerTitle = T.compMain.layers.addText(C.champion.nameShow);
+	var layerTitle = T.compMain.layers.addText(C.champion.title);
 	layerTitle.outPoint = D.title + 0.4;
 	layerTitle.transform.position.setValue([40, 150]);
 	layerTitle.transform.opacity.setValueAtTime(0, 100);
