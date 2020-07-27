@@ -17,8 +17,8 @@ module.exports = {
 			{ target: '${C.path.project.autogen}reso/icons/Vayne/14.png' },
 		'[初遇:皮肤:灵魂莲华 亚索]':
 			{ target: '${C.path.project.autogen}reso/icons/Yasuo/36.png' },
-		// '[初遇:皮肤:灵魂莲华 永恩]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Yone/1.png' },
+		'[初遇:皮肤:灵魂莲华 永恩]':
+			{ target: '${C.path.project.autogen}reso/icons/Yone/1.png' },
 
 		'[初遇:英雄:卢锡安]':
 			{ target: '${C.path.project.autogen}reso/icons/Lucian/0.png' },
@@ -43,8 +43,8 @@ module.exports = {
 			{ target: '${C.path.project.autogen}reso/icons/Vayne/14.png' },
 		'[击杀:皮肤:灵魂莲华 亚索]':
 			{ target: '${C.path.project.autogen}reso/icons/Yasuo/36.png' },
-		// '[击杀:皮肤:灵魂莲华 永恩]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Yone/1.png' },
+		'[击杀:皮肤:灵魂莲华 永恩]':
+			{ target: '${C.path.project.autogen}reso/icons/Yone/1.png' },
 
 		'[击杀:英雄:卢锡安]':
 			{ target: '${C.path.project.autogen}reso/icons/Lucian/0.png' },

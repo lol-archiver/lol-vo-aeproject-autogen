@@ -51,7 +51,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/Teemo/25.png',
+				head: '${C.path.project.autogen}reso/icons/Teemo/27.png',
 				line: '(๑•ั็ω•็ั๑)',
 			},
 		]
