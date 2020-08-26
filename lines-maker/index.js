@@ -19,7 +19,6 @@ const parseConfig = function(str) {
 	});
 };
 
-
 const parseCond = function(arrParam) {
 	let result = '';
 	let used = 0;
@@ -167,32 +166,32 @@ const makeLineNormal = async function makeLineNormal() {
 	const arrAudioFile = _fs.readdirSync(pathAudios);
 	const arrLineText = _fs.readFileSync(C.path.dictation, 'UTF8').split('\n').filter(text => text.trim());
 
-	const mapEventExtra = {};
-	const mapLineBefore = {};
-	const mapLineAfter = {};
-	const mapLineExtra = {};
+	const extrasEvent = {};
+	const linesBefore = {};
+	const linesAfter = {};
+	const linesExtra = {};
 
-	let allInfosExtra = {};
+	let allExtras = {};
 	try {
-		allInfosExtra = require(C.path.linesExtra);
+		allExtras = require(C.path.linesExtra);
 	}
 	catch(error) { true; }
 
 	try {
-		for(const [key, extraEvent] of Object.entries(allInfosExtra.event || {})) {
-			mapEventExtra[key] = extraEvent;
+		for(const [key, extraEvent] of Object.entries(allExtras.event || {})) {
+			extrasEvent[key] = extraEvent;
 		}
 
-		for(const [key, extraLines] of Object.entries(allInfosExtra.lines || {})) {
+		for(const [key, extraLines] of Object.entries(allExtras.lines || {})) {
 			for(const extraLine of extraLines) {
 				if(extraLine.oper == 'before') {
-					(mapLineBefore[key] || (mapLineBefore[key] = [])).push(extraLine);
+					(linesBefore[key] || (linesBefore[key] = [])).push(extraLine);
 				}
 				else if(extraLine.oper == 'after') {
-					(mapLineAfter[key] || (mapLineAfter[key] = [])).push(extraLine);
+					(linesAfter[key] || (linesAfter[key] = [])).push(extraLine);
 				}
 				else if(extraLine.oper == 'extra') {
-					(mapLineExtra[key] || (mapLineExtra[key] = [])).push(extraLine);
+					(linesExtra[key] || (linesExtra[key] = [])).push(extraLine);
 				}
 
 				delete extraLine.oper;
@@ -228,8 +227,8 @@ const makeLineNormal = async function makeLineNormal() {
 				arrLine
 			};
 
-			for(const key in mapEventExtra[eventNow] || {}) {
-				eventInfo[key] = mapEventExtra[eventNow][key];
+			for(const key in extrasEvent[eventNow] || {}) {
+				eventInfo[key] = extrasEvent[eventNow][key];
 			}
 
 			arrEvent.push(eventInfo);
@@ -263,7 +262,7 @@ const makeLineNormal = async function makeLineNormal() {
 				}
 			}
 
-			for(const lineBefore of mapLineBefore[crc32] || []) {
+			for(const lineBefore of linesBefore[crc32] || []) {
 				lineBefore.side = lineBefore.side ? lineBefore.side : 'left';
 
 				arrLine.push(lineBefore);
@@ -278,7 +277,7 @@ const makeLineNormal = async function makeLineNormal() {
 				audio
 			};
 
-			for(const extraInfo of mapLineExtra[crc32] || []) {
+			for(const extraInfo of linesExtra[crc32] || []) {
 				for(const key in extraInfo) {
 					lineInfo[key] = extraInfo[key];
 				}
@@ -286,7 +285,7 @@ const makeLineNormal = async function makeLineNormal() {
 
 			arrLine.push(lineInfo);
 
-			for(const lineAfter of mapLineAfter[crc32] || []) {
+			for(const lineAfter of linesAfter[crc32] || []) {
 				lineAfter.side = lineAfter.side ? lineAfter.side : 'left';
 
 				arrLine.push(lineAfter);
@@ -298,34 +297,58 @@ const makeLineNormal = async function makeLineNormal() {
 };
 
 const makeLineSpecial = async function makeLineSpecial() {
-	const arrEvent = require(C.path.linesExtra).events;
+	let allExtras = {};
+	try {
+		allExtras = require(C.path.linesExtra);
+	}
+	catch(error) { true; }
 
-	for(const event of arrEvent) {
+	const extrasEvent = {};
+	for(const [key, extraEvent] of Object.entries(allExtras.event || {})) {
+		extrasEvent[key] = extraEvent;
+	}
+
+	for(const event of allExtras.events) {
+		const eventNow = event.event;
+		event.event = eventNow.split('、').map(event => formatEvent(event)).join('、');
+
+		for(const key in extrasEvent[eventNow] || {}) {
+			event[key] = extrasEvent[eventNow][key];
+		}
+
 		for(const line of event.arrLine) {
-			let audio;
+			let pathAudio = null;
 
 			if(line.audio) {
-				audio = parseConfig(line.audio);
+				pathAudio = parseConfig(line.audio);
 			}
 			else if(line.crc32 && line.audioFolder) {
-				const arrAudioFile = _fs.readdirSync(_pa.join(C.path.project.extract, '_final', line.audioFolder));
+				const audios = _fs.readdirSync(_pa.join(C.path.project.extract, '_final', line.audioFolder));
 
-				const audioFile = arrAudioFile.find(fileName => fileName.includes(`[${line.crc32}]`));
+				const nameAudio = audios.find(fileName => fileName.includes(`[${line.crc32}]`));
 
-				audio = audioFile ? _pa.join(C.path.project.extract, '_final', line.audioFolder, audioFile) : null;
+				pathAudio = nameAudio ? _pa.join(C.path.project.extract, '_final', line.audioFolder, nameAudio) : null;
 
-				line.audio = '${C.path.project.extract}/_final/' + line.audioFolder + '/' + audioFile;
+				line.audio = '${C.path.project.extract}/_final/' + line.audioFolder + '/' + nameAudio;
 			}
 
-			if(audio) {
-				const meta = await Meta.parseFile(audio);
+			if(pathAudio) {
+				try {
+					const meta = await Meta.parseFile(pathAudio);
 
-				line.duration = meta.format.duration;
+					line.duration = meta.format.duration;
+				}
+				catch(error) {
+					line.audio = null;
+				}
+			}
+			else {
+				line.audio = null;
 			}
 		}
 	}
 
-	_fs.writeFileSync(C.path.lines, JSON.stringify(arrEvent, null, '\t'));
+	_fs.writeFileSync(C.path.lines, JSON.stringify(allExtras.events, null, '\t'));
 };
 
 if(C.specialLines) {
