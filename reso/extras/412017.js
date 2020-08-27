@@ -28,7 +28,7 @@ module.exports = {
 			{ target: '${C.path.project.autogen}reso/icons/Thresh/0.png' },
 
 		'[击杀:皮肤:灵魂莲华 阿狸]':
-			{ target: '${C.path.project.autogen}reso/icons/Ahri/27png' },
+			{ target: '${C.path.project.autogen}reso/icons/Ahri/27.png' },
 		'[击杀:皮肤:灵魂莲华 卡西奥佩娅]':
 			{ target: '${C.path.project.autogen}reso/icons/Cassiopeia/9.png' },
 		'[击杀:皮肤:灵魂莲华 千珏]':
