@@ -1,5 +1,5 @@
 module.exports = {
-	emote: '',
+	emote: '{{{(>_<)}}}',
 	event: {
 		'[移动:初次][附近:友方:使用:英雄:卢锡安:注释:对话1-2]': {
 			target: '${C.path.project.autogen}reso/icons/Lucian/0.png'

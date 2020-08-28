@@ -35,6 +35,18 @@ module.exports = {
 			{ target: '${C.path.project.autogen}reso/icons/Vayne/14.png' },
 		'[击杀:皮肤:灵魂莲华 薇恩]':
 			{ target: '${C.path.project.autogen}reso/icons/Vayne/14.png' },
+		'[初遇:皮肤:灵魂莲华 亚索]':
+			{ target: '${C.path.project.autogen}reso/icons/Yasuo/36.png' },
+		'[初遇:皮肤:灵魂莲华 永恩]':
+			{ target: '${C.path.project.autogen}reso/icons/Yone/1.png' },
+		'[击杀:皮肤:灵魂莲华 亚索]':
+			{ target: '${C.path.project.autogen}reso/icons/Yasuo/36.png' },
+		'[击杀:皮肤:灵魂莲华 永恩]':
+			{ target: '${C.path.project.autogen}reso/icons/Yone/1.png' },
+		'[攻击:皮肤:灵魂莲华 亚索]':
+			{ target: '${C.path.project.autogen}reso/icons/Yasuo/36.png' },
+		'[攻击:皮肤:灵魂莲华 永恩]':
+			{ target: '${C.path.project.autogen}reso/icons/Yone/1.png' },
 
 		'[使用:Q技能:欺诈宝珠]':
 			{ skill: '${C.path.project.autogen}reso/icons/Ahri/Q.png' },
