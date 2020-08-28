@@ -89,7 +89,7 @@ const parseCond = function(arrParam) {
 	// 行为Only
 	else if([
 		'选用', '禁用',
-		'初遇', '攻击', '击杀', '阵亡', '重生',
+		'初遇', '攻击', '击杀', '治疗', '阵亡', '重生',
 		'普攻', '暴击', '使用', '触发',
 		'接近', '抵达', '购买', '附近', '变身',
 		'玩笑', '嘲讽', '跳舞', '大笑', '静置', '回城',
@@ -113,7 +113,7 @@ const parseCond = function(arrParam) {
 		use(main);
 	}
 	// 内容必要
-	else if(['系列', '地区', '种族', '特征', '动作', '血量', '注释'].includes(type)) {
+	else if(['系列', '地区', '种族', '特征', '动作', '被', '血量', '注释'].includes(type)) {
 		if(!main) { throw new Error('缺少内容'); }
 
 		use(main);
@@ -137,6 +137,10 @@ const parseCond = function(arrParam) {
 		// 时
 		else if(['动作'].includes(type)) {
 			result += `在${main}时`;
+		}
+		// 被
+		else if(['被'].includes(type)) {
+			result += `被${main}时`;
 		}
 		// 行为+内容+时
 		else if(['血量'].includes(type)) {
@@ -244,11 +248,12 @@ const makeLineNormal = async function makeLineNormal() {
 
 				const file = `${C.path.project.autogen}reso/voices/${C.champion.id}/${eventTrans}.wav`;
 
-				const meta = await Meta.parseFile(file);
+				if(_fs.existsSync(file)) {
+					const meta = await Meta.parseFile(file);
 
-				duration = meta.format.duration;
-
-				audio = '${C.path.project.autogen}reso/voices/${C.champion.id}/' + eventTrans + '.wav';
+					duration = meta.format.duration;
+					audio = '${C.path.project.autogen}reso/voices/${C.champion.id}/' + eventTrans + '.wav';
+				}
 			}
 			else {
 				const file = arrAudioFile.find(fileName => fileName.includes(`[${crc32}]`));
@@ -257,15 +262,31 @@ const makeLineNormal = async function makeLineNormal() {
 					const meta = await Meta.parseFile(_pa.join(pathAudios, file));
 
 					duration = meta.format.duration;
-
 					audio = '${C.path.audios}' + file;
 				}
 			}
 
-			for(const lineBefore of linesBefore[crc32] || []) {
-				lineBefore.side = lineBefore.side ? lineBefore.side : 'left';
+			for(const line of linesBefore[crc32] || []) {
+				line.side = line.side ? line.side : 'left';
+				
+				if(line.event) {
+					line.event = line.event.split('、').map(event => formatEvent(event)).join('、');
+				}
 
-				arrLine.push(lineBefore);
+				if(line.hash && line.folder) {
+					const audios = _fs.readdirSync(_pa.join(C.path.project.extract, '_final', line.folder));
+
+					const nameAudio = audios.find(fileName => fileName.includes(`[${line.hash}]`));
+
+					if(nameAudio) {
+						const meta = await Meta.parseFile(_pa.join(C.path.project.extract, '_final', line.folder, nameAudio));
+						
+						line.duration = meta.format.duration;
+						line.audio = '${C.path.project.extract}/_final/' + line.folder + '/' + nameAudio;
+					}
+				}
+
+				arrLine.push(line);
 			}
 
 			const lineInfo = {
@@ -285,10 +306,27 @@ const makeLineNormal = async function makeLineNormal() {
 
 			arrLine.push(lineInfo);
 
-			for(const lineAfter of linesAfter[crc32] || []) {
-				lineAfter.side = lineAfter.side ? lineAfter.side : 'left';
+			for(const line of linesAfter[crc32] || []) {
+				line.side = line.side ? line.side : 'left';
+				
+				if(line.event) {
+					line.event = line.event.split('、').map(event => formatEvent(event)).join('、');
+				}
 
-				arrLine.push(lineAfter);
+				if(line.hash && line.folder) {
+					const audios = _fs.readdirSync(_pa.join(C.path.project.extract, '_final', line.folder));
+
+					const nameAudio = audios.find(fileName => fileName.includes(`[${line.hash}]`));
+
+					if(nameAudio) {
+						const meta = await Meta.parseFile(_pa.join(C.path.project.extract, '_final', line.folder, nameAudio));
+						
+						line.duration = meta.format.duration;
+						line.audio = '${C.path.project.extract}/_final/' + line.folder + '/' + nameAudio;
+					}
+				}
+
+				arrLine.push(line);
 			}
 		}
 	}

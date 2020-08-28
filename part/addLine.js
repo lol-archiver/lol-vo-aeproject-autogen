@@ -34,7 +34,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	var layerPictureSkill = hasSkill ? compLine.layers.add(F(T.parseConfig(hasSkill), T.folderImages)) : null;
 	var layerSquareSkill = hasSkill ? compLine.layers.addShape() : null;
 
-	var layerEvent = hasEvent ? compLine.layers.addText(event.event) : null;
+	var layerEvent = hasEvent ? compLine.layers.addText(line.event || event.event) : null;
 	var layerLineBox = compLine.layers.addBoxText([1, 1], line.line);
 
 	layerBoxLine.name = 'BoxLine';
@@ -183,7 +183,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 		textDocEvent.applyStroke = true;
 		textDocEvent.strokeColor = T.rgb(73, 80, 81);
 		textDocEvent.strokeWidth = 2;
-		textDocEvent.text = event.event;
+		textDocEvent.text = line.event || event.event;
 		layerEvent.sourceText.setValue(textDocEvent);
 	}
 
