@@ -17,36 +17,36 @@ module.exports = {
 			{ target: '${C.path.project.autogen}reso/icons/Vi/20.png' },
 		'[击杀:皮肤:灵能特工 蔚]':
 			{ target: '${C.path.project.autogen}reso/icons/Vi/20.png' },
-		// '[初遇:皮肤:灵能特工 凯尔]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Kayle/15.png' },
-		// '[攻击:皮肤:灵能特工 凯尔]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Kayle/15.png' },
-		// '[击杀:皮肤:灵能特工 凯尔]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Kayle/15.png' },
-		// '[初遇:皮肤:灵能特工 派克]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Pyke/25.png' },
-		// '[攻击:皮肤:灵能特工 派克]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Pyke/25.png' },
-		// '[击杀:皮肤:灵能特工 派克]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Pyke/25.png' },
-		// '[初遇:皮肤:灵能特工 萨米拉]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Samira/1.png' },
-		// '[攻击:皮肤:灵能特工 萨米拉]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Samira/1.png' },
-		// '[击杀:皮肤:灵能特工 萨米拉]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Samira/1.png' },
-		// '[初遇:皮肤:灵能特工 维克托]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Viktor/5.png' },
-		// '[攻击:皮肤:灵能特工 维克托]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Viktor/5.png' },
-		// '[击杀:皮肤:灵能特工 维克托]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Viktor/5.png' },
-		// '[初遇:皮肤:灵能特工 劫]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Zed/15.png' },
-		// '[攻击:皮肤:灵能特工 劫]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Zed/15.png' },
-		// '[击杀:皮肤:灵能特工 劫]':
-		// 	{ target: '${C.path.project.autogen}reso/icons/Zed/15.png' },
+		'[初遇:皮肤:灵能特工 凯尔]':
+			{ target: '${C.path.project.autogen}reso/icons/Kayle/15_11.png' },
+		'[攻击:皮肤:灵能特工 凯尔]':
+			{ target: '${C.path.project.autogen}reso/icons/Kayle/15_11.png' },
+		'[击杀:皮肤:灵能特工 凯尔]':
+			{ target: '${C.path.project.autogen}reso/icons/Kayle/15_11.png' },
+		'[初遇:皮肤:灵能特工 派克]':
+			{ target: '${C.path.project.autogen}reso/icons/Pyke/25.png' },
+		'[攻击:皮肤:灵能特工 派克]':
+			{ target: '${C.path.project.autogen}reso/icons/Pyke/25.png' },
+		'[击杀:皮肤:灵能特工 派克]':
+			{ target: '${C.path.project.autogen}reso/icons/Pyke/25.png' },
+		'[初遇:皮肤:灵能特工 萨米拉]':
+			{ target: '${C.path.project.autogen}reso/icons/Samira/1.png' },
+		'[攻击:皮肤:灵能特工 萨米拉]':
+			{ target: '${C.path.project.autogen}reso/icons/Samira/1.png' },
+		'[击杀:皮肤:灵能特工 萨米拉]':
+			{ target: '${C.path.project.autogen}reso/icons/Samira/1.png' },
+		'[初遇:皮肤:灵能特工 维克托]':
+			{ target: '${C.path.project.autogen}reso/icons/Viktor/5.png' },
+		'[攻击:皮肤:灵能特工 维克托]':
+			{ target: '${C.path.project.autogen}reso/icons/Viktor/5.png' },
+		'[击杀:皮肤:灵能特工 维克托]':
+			{ target: '${C.path.project.autogen}reso/icons/Viktor/5.png' },
+		'[初遇:皮肤:灵能特工 劫]':
+			{ target: '${C.path.project.autogen}reso/icons/Zed/15.png' },
+		'[攻击:皮肤:灵能特工 劫]':
+			{ target: '${C.path.project.autogen}reso/icons/Zed/15.png' },
+		'[击杀:皮肤:灵能特工 劫]':
+			{ target: '${C.path.project.autogen}reso/icons/Zed/15.png' },
 		'[初遇:皮肤:北地风暴 沃利贝尔]':
 			{ target: '${C.path.project.autogen}reso/icons/Volibear/2.png' },
 		'[击杀:皮肤:北地风暴 沃利贝尔]':
