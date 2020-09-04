@@ -268,7 +268,7 @@ const makeLineNormal = async function makeLineNormal() {
 
 			for(const line of linesBefore[crc32] || []) {
 				line.side = line.side ? line.side : 'left';
-				
+
 				if(line.event) {
 					line.event = line.event.split('、').map(event => formatEvent(event)).join('、');
 				}
@@ -280,7 +280,7 @@ const makeLineNormal = async function makeLineNormal() {
 
 					if(nameAudio) {
 						const meta = await Meta.parseFile(_pa.join(C.path.project.extract, '_final', line.folder, nameAudio));
-						
+
 						line.duration = meta.format.duration;
 						line.audio = '${C.path.project.extract}/_final/' + line.folder + '/' + nameAudio;
 					}
@@ -308,7 +308,7 @@ const makeLineNormal = async function makeLineNormal() {
 
 			for(const line of linesAfter[crc32] || []) {
 				line.side = line.side ? line.side : 'left';
-				
+
 				if(line.event) {
 					line.event = line.event.split('、').map(event => formatEvent(event)).join('、');
 				}
@@ -320,9 +320,13 @@ const makeLineNormal = async function makeLineNormal() {
 
 					if(nameAudio) {
 						const meta = await Meta.parseFile(_pa.join(C.path.project.extract, '_final', line.folder, nameAudio));
-						
+
 						line.duration = meta.format.duration;
 						line.audio = '${C.path.project.extract}/_final/' + line.folder + '/' + nameAudio;
+					}
+					else {
+						line.duration = null;
+						line.audio = null;
 					}
 				}
 
