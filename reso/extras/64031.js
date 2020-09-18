@@ -42,7 +42,7 @@ module.exports = {
 			{ skill: '${C.path.project.autogen}reso/icons/LeeSin/R.png' },
 	},
 	lines: {
-		'6C52E26C': [
+		'B8DE8340': [
 			{
 				oper: 'after',
 				side: 'left',
