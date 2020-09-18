@@ -40,6 +40,9 @@ module.exports = {
 			{ skill: '${C.path.project.autogen}reso/icons/LeeSin/W.png' },
 		'[使用:R技能:猛龙摆尾]':
 			{ skill: '${C.path.project.autogen}reso/icons/LeeSin/R.png' },
+
+		'[使用:道具:监视图腾]':
+			{ skill: '${C.path.project.autogen}reso/icons/Items/3350_greateryellowtrinket.png' },
 	},
 	lines: {
 		'B8DE8340': [
@@ -47,7 +50,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/Amumu/0.png',
+				head: '${C.path.project.autogen}reso/icons/AurelionSol/0.png',
 				line: '(我就是敖兴（╯‵□′）╯︵┴─┴ )',
 			},
 		]
