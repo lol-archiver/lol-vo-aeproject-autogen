@@ -102,7 +102,7 @@ const parseCond = function(arrParam) {
 		result += `${type}是`;
 	}
 	// 内容可选+大括号
-	else if(['英雄', '皮肤', '生物', '建筑', '武器', '道具', '女性', '男性', '多杀', '连杀', '控制'].includes(type)) {
+	else if(['英雄', '皮肤', '生物', '建筑', '武器', '道具', '女性', '男性', '多杀', '首杀', '连杀', '控制'].includes(type)) {
 		if(main) {
 			result += `【${main}】`;
 		}
@@ -113,7 +113,7 @@ const parseCond = function(arrParam) {
 		use(main);
 	}
 	// 内容必要
-	else if(['系列', '地区', '种族', '特征', '动作', '被', '血量', '注释'].includes(type)) {
+	else if(['系列', '地区', '种族', '特征', '动作', '被', '血量', '注释', '信号'].includes(type)) {
 		if(!main) { throw new Error('缺少内容'); }
 
 		use(main);
@@ -129,6 +129,10 @@ const parseCond = function(arrParam) {
 		// 种族
 		else if(['种族'].includes(type)) {
 			result += `【${main}】英雄`;
+		}
+		// 信号
+		else if(['信号'].includes(type)) {
+			result += `发出【${main}】信号时`;
 		}
 		// 的
 		else if(['特征'].includes(type)) {
