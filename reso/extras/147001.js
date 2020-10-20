@@ -4,27 +4,27 @@ module.exports = {
 		'[击杀:英雄:萨勒芬妮]':
 			{ target: '${C.path.project.autogen}reso/icons/Seraphine/0.png' },
 		'[初遇:英雄:卡兹克]':
-			{ target: '${C.path.project.autogen}reso/icons/Khazix/0.png' },
+			{ target: '${C.path.project.autogen}reso/icons/KhaZix/0.png' },
 		'[初遇:皮肤:DJ 娑娜]':
-			{ target: '${C.path.project.autogen}reso/icons/Sona/0.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Sona/6.png' },
 		'[击杀:皮肤:DJ 娑娜]':
-			{ target: '${C.path.project.autogen}reso/icons/Sona/0.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Sona/6.png' },
 		'[初遇:皮肤:KDA ALL OUT 阿狸:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icons/Ahri/0.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Ahri/28.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
 		'[击杀:皮肤:KDA ALL OUT 阿狸:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icons/Ahri/0.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Ahri/28.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
 		'[初遇:皮肤:KDA ALL OUT 阿卡丽:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icons/Akali/0.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Akali/32.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
 		'[击杀:皮肤:KDA ALL OUT 阿卡丽:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icons/Akali/0.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Akali/32.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
 		'[初遇:皮肤:KDA ALL OUT 伊芙琳:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icons/Evelynn/0.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Evelynn/15.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
 		'[击杀:皮肤:KDA ALL OUT 伊芙琳:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icons/Evelynn/0.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Evelynn/15.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
 		'[初遇:皮肤:KDA ALL OUT 卡莎:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icons/Kaisa/0.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Kaisa/26.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
 		'[击杀:皮肤:KDA ALL OUT 卡莎:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icons/Kaisa/0.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Kaisa/26.png', head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
 
 		'[初遇:系列:KDA:注释:超级巨星形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
@@ -42,6 +42,8 @@ module.exports = {
 		'[初遇:系列:KDA:注释:独立音乐人形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/1.png' },
 		'[击杀:系列:KDA:注释:独立音乐人形态]':
+			{ head: '${C.path.project.autogen}reso/icons/Seraphine/1.png' },
+		'[击杀:系列:KDA ALL OUT:注释:独立音乐人形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/1.png' },
 		'[移动:初次:注释:独立音乐人形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/1.png' },
@@ -94,26 +96,32 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/Seraphine/3.png${C.path.project.autogen}reso/icons/Khazix/0.png',
+				head: '${C.path.project.autogen}reso/icons/KhaZix/0.png',
 				line: '(〃＞皿＜)',
 			},
 		],
 		'943CED0B': [
 			{
 				oper: 'extra',
-				mark: '注：这语音应是击杀K/DA ALL OUT系列皮肤时触发的，但部署到游戏中变成只在击杀旧版K/DA才会触发。论拳头垃圾般的语音管理'
+				mark: '注：这语音应是初遇K/DA ALL OUT系列皮肤时触发的，但游戏中变成只在初遇旧版K/DA时触发。'
 			}
 		],
 		'A60DA22A': [
 			{
 				oper: 'extra',
-				mark: '注：这语音应是击杀K/DA ALL OUT系列皮肤时触发的，但部署到游戏中变成只在击杀旧版K/DA才会触发。论拳头垃圾般的语音管理'
+				mark: '注：这语音应是击杀K/DA ALL OUT系列皮肤时触发的，但游戏中变成只在击杀旧版K/DA时触发。'
 			}
 		],
 		'380E2367': [
 			{
 				oper: 'extra',
-				mark: '注：这语音应是击杀K/DA ALL OUT系列皮肤时触发的，事件是内置对了，但是有笔误了，结果是无法触发￣△￣'
+				mark: '注：游戏中事件设置有笔误了，目测是无法触发的￣△￣'
+			}
+		],
+		'E91C665C': [
+			{
+				oper: 'extra',
+				mark: '注：Body Rolls是Popping舞蹈的一种动作'
 			}
 		],
 	}

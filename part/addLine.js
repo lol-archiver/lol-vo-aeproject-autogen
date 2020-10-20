@@ -30,7 +30,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	var layerBoxEvent = hasEvent ? compLine.layers.addShape() : null;
 
 	var layerCircleMain = compLine.layers.addShape();
-	var layerPictureMain = compLine.layers.add(F(T.parseConfig(line.head), T.folderImages));
+	var layerPictureMain = compLine.layers.add(F(T.parseConfig(event.head || line.head), T.folderImages));
 
 	var layerCircleTarget = hasTarget ? compLine.layers.addShape() : null;
 	var layerPictureTarget = hasTarget ? compLine.layers.add(F(T.parseConfig(hasTarget), T.folderImages)) : null;

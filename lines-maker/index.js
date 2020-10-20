@@ -298,7 +298,7 @@ const makeLineNormal = async function makeLineNormal() {
 				crc32,
 				duration,
 				side: 'right',
-				head: '${C.path.project.autogen}reso/icons/${C.champion.name}/${C.skin.id}.png',
+				head: C.path.head || '${C.path.project.autogen}reso/icons/${C.champion.name}/${C.skin.id}.png',
 				audio,
 			};
 
