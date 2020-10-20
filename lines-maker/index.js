@@ -299,12 +299,17 @@ const makeLineNormal = async function makeLineNormal() {
 				duration,
 				side: 'right',
 				head: '${C.path.project.autogen}reso/icons/${C.champion.name}/${C.skin.id}.png',
-				audio
+				audio,
 			};
 
 			for(const extraInfo of linesExtra[crc32] || []) {
 				for(const key in extraInfo) {
-					lineInfo[key] = extraInfo[key];
+					if(key == 'mark') {
+						lineInfo[key] = extraInfo[key].replace(/\\n/g, '\n');
+					}
+					else {
+						lineInfo[key] = extraInfo[key];
+					}
 				}
 			}
 

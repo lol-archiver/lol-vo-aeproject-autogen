@@ -11,6 +11,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	var hasTarget = isMain ? line.target || event.target : false;
 	var hasSkill = isMain ? line.skill || event.skill : false;
 	var hasEvent = line.showEvent || !!line.event || isMain;
+	var hasMark = !!line.mark;
 
 	var compLine = folderLines.items.addComp(indexText + line.line, 1920, 1080, 1, duration, 60);
 	compLine.bgColor = T.rgb(14, 14, 14);
@@ -18,6 +19,9 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	if(line.audio) {
 		compLine.layers.add(F(T.parseConfig(line.audio), T.folderVoices));
 	}
+
+	var layerBoxMark = hasMark ? compLine.layers.addShape() : null;
+	var layerMarkBox = hasMark ? compLine.layers.addBoxText([1, 1], line.mark) : null;
 
 	var layerBoxLine = compLine.layers.addShape();
 
@@ -36,6 +40,8 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 	var layerEvent = hasEvent ? compLine.layers.addText(line.event || event.event) : null;
 	var layerLineBox = compLine.layers.addBoxText([1, 1], line.line);
+
+
 
 	layerBoxLine.name = 'BoxLine';
 	if(hasEvent) { layerBoxEvent.name = 'BoxEvent'; }
@@ -177,7 +183,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 		var textDocEvent = layerEvent.sourceText.value;
 		textDocEvent.resetCharStyle();
-		textDocEvent.fontSize = 50;
+		textDocEvent.fontSize = C.size.fontLine;
 		textDocEvent.fillColor = T.rgb(73, 80, 81);
 		textDocEvent.font = 'Source Han Mono';
 		textDocEvent.applyStroke = true;
@@ -189,13 +195,14 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 	// -------Line-------
 	layerLineBox.transform.position.setValue([0, 1000]);
-	layerLineBox.transform.position.expression = E(side + '/' + 'limitPositionLine');
+	layerLineBox.transform.position.expression = E(side + '/' + 'limitPositionLine')
+		.replace(/\$bottomMark/g, (line.boxHeightMark + 20) || 0);
 
-	var colorLine = line.line == '(语气)' ? T.rgb(214, 214, 214) : T.rgb(255, 250, 250);
+	var colorLine = T.rgb(255, 250, 250);
 
 	var textDocLine = layerLineBox.sourceText.value;
 	textDocLine.resetCharStyle();
-	textDocLine.fontSize = 50;
+	textDocLine.fontSize = C.size.fontLine;
 	textDocLine.fillColor = colorLine;
 	textDocLine.font = 'Source Han Mono';
 	textDocLine.applyStroke = true;
@@ -205,6 +212,46 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	textDocLine.leading = 60;
 	textDocLine.text = line.line;
 	layerLineBox.sourceText.setValue(textDocLine);
+
+
+	// -------Mark-------
+	if(hasMark) {
+		layerBoxMark.name = 'BoxMark';
+		layerMarkBox.name = 'Mark';
+
+		// -------Mark Box-------
+		var groupBoxMark = layerBoxMark.content.addProperty('ADBE Vector Group');
+
+		var borderBoxMark = groupBoxMark.content.addProperty('ADBE Vector Shape - Rect');
+		borderBoxMark.size.expression = E('mark/followSizeBoxMark');
+		borderBoxMark.roundness.setValue(14);
+		borderBoxMark.position.setValue([0, 0]);
+
+		var fillBoxMark = groupBoxMark.content.addProperty('ADBE Vector Graphic - Fill');
+		fillBoxMark.color.setValue(T.rgb(79, 80, 81));
+
+		layerBoxMark.transform.position.expression = E('mark/followPositionBoxMark');
+		layerBoxMark.transform.opacity.setValueAtTime(0, 66);
+
+		// -------Mark-------
+		layerMarkBox.transform.position.setValue([0, 1000]);
+		layerMarkBox.transform.position.expression = E('mark/limitPositionMark');
+
+		var colorMark = T.rgb(255, 250, 250);
+
+		var textDocMark = layerMarkBox.sourceText.value;
+		textDocMark.resetCharStyle();
+		textDocMark.fontSize = C.size.fontMark;
+		textDocMark.fillColor = colorMark;
+		textDocMark.font = 'Source Han Mono';
+		textDocMark.applyStroke = true;
+		textDocMark.strokeColor = colorMark;
+		textDocMark.strokeWidth = 1;
+		textDocMark.boxTextSize = line.boxTextSizeMark;
+		textDocMark.leading = C.size.fontMark + C.size.heightLeading;
+		textDocMark.text = line.mark;
+		layerMarkBox.sourceText.setValue(textDocMark);
+	}
 
 	return compLine;
 };

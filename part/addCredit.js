@@ -64,8 +64,8 @@ P.addCredit = function addCredit() {
 	var textDocInfo2 = layerInfo2.sourceText.value;
 	textDocInfo1.resetCharStyle();
 	textDocInfo2.resetCharStyle();
-	textDocInfo1.fontSize = 50;
-	textDocInfo2.fontSize = 50;
+	textDocInfo1.fontSize = C.size.fontLine;
+	textDocInfo2.fontSize = C.size.fontLine;
 	textDocInfo1.font = 'Source Han Mono';
 	textDocInfo2.font = 'Source Han Mono';
 	textDocInfo1.applyStroke = true;

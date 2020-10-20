@@ -1,6 +1,10 @@
 P.calcDuration = function calcDuration() {
 	var arrEvent = JSON.parse(T.readFile(C.path.lines, 'UTF8'));
 
+	if(C.range) {
+		arrEvent = arrEvent.slice(C.range[0], C.range[1]);
+	}
+
 	var arrDuration = [];
 	var linesDuration = 0;
 
@@ -10,11 +14,20 @@ P.calcDuration = function calcDuration() {
 	});
 
 	T.enumLine(arrEvent, function(line, event, lid, eid, index) {
-		var result = T.getBoxSize(line.line);
+		var sizeLine = T.getBoxSize(line.line);
 
-		line.boxLine = result[2];
-		line.boxTextSize = result.slice(0, 2);
-		line.boxHeight = 30 + (40 * 2 + 70) + ((50 + 10) * line.boxLine - 10) + 100 + 70;
+		line.boxLine = sizeLine[2];
+		line.boxTextSize = sizeLine.slice(0, 2);
+		line.boxHeight = 30 + (C.size.paddingLine * 2 + 70) +
+			sizeLine[1] + 100 + 70;
+
+		if(line.mark) {
+			var sizeMark = T.getBoxSizeMark(line.mark);
+
+			line.boxTextSizeMark = sizeMark.slice(0, 2);
+			line.boxHeightMark = sizeMark[1] + C.size.paddingMark;
+			line.boxHeight += 20 + line.boxHeightMark;
+		}
 
 		arrDuration.push([line.duration, line.boxHeight]);
 

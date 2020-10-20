@@ -79,8 +79,8 @@ this.T = {
 		return folderItem || parent.items.addFolder(name);
 	},
 	getBoxSize: function getBoxSize(text) {
-		var fontSize = 50;
-		var heightLeading = 10;
+		var fontSize = C.size.fontLine;
+		var heightLeading = C.size.heightLeading;
 		var widthMax = 1080;
 		var heightMax = 1080;
 
@@ -94,29 +94,45 @@ this.T = {
 		textDocLine.strokeWidth = 2;
 		textDocLine.text = text;
 		textDocLine.name = 'Test';
+		textDocLine.leading = fontSize + heightLeading;
 		layerLine.sourceText.setValue(textDocLine);
 
 		var rect = layerLine.sourceRectAtTime(0, false);
 
-		var widthBox = Math.ceil(rect.width) + 50;
-		var lineBox = Math.round((rect.height - 50) / 60) + 1;
+		var widthBox = Math.ceil(rect.width) + fontSize;
+		var lineBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
 
-		return [widthBox, lineBox * (fontSize + heightLeading) - heightLeading, lineBox, widthBox];
+		layerLine.remove();
 
-		// var widthOneLine = layerLine.sourceRectAtTime(0, false).width + 50;
+		return [widthBox, lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
+	},
+	getBoxSizeMark: function getBoxSize(text) {
+		var fontSize = C.size.fontMark;
+		var heightLeading = C.size.heightLeading;
+		var widthMax = 1080;
+		var heightMax = 1080;
 
-		// var lineBox = Math.ceil(widthOneLine / widthMax) + 1;
-		// var lineBoxTest = Math.ceil(widthOneLine / (widthMax + 100));
+		var layerLine = T.compMain.layers.addBoxText([widthMax, heightMax], text);
 
-		// if(lineBoxTest < lineBox) {
-		// 	lineBox = lineBoxTest;
+		var textDocLine = layerLine.sourceText.value;
+		textDocLine.resetCharStyle();
+		textDocLine.fontSize = fontSize;
+		textDocLine.font = 'Source Han Mono';
+		textDocLine.applyStroke = true;
+		textDocLine.strokeWidth = 1;
+		textDocLine.text = text;
+		textDocLine.name = 'TestMark';
+		textDocLine.leading = fontSize + heightLeading;
+		layerLine.sourceText.setValue(textDocLine);
 
-		// 	widthMax += 100;
-		// }
+		var rect = layerLine.sourceRectAtTime(0, false);
 
-		// layerLine.remove();
+		var widthBox = Math.ceil(rect.width) + fontSize;
+		var lineBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
 
-		// return [widthOneLine > widthMax ? widthMax : widthOneLine, lineBox * (fontSize + heightLeading) - heightLeading, lineBox, widthOneLine];
+		layerLine.remove();
+
+		return [widthBox, lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
 	},
 	parseConfig: function parseConfig(str) {
 		return str.replace(/\$\{.+?\}/g, function(text) {
