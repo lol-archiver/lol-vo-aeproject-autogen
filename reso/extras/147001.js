@@ -1,7 +1,7 @@
 module.exports = {
 	emote: '（╯‵□′）╯︵┴─┴',
 	event: {
-		'[击杀:英雄:萨勒芬妮]':
+		'[击杀:英雄::萨勒芬妮]':
 			{ target: '${C.path.project.autogen}reso/icons/Seraphine/0.png' },
 		'[初遇:英雄:卡兹克]':
 			{ target: '${C.path.project.autogen}reso/icons/KhaZix/0.png' },
@@ -32,7 +32,7 @@ module.exports = {
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
 		'[移动:初次:注释:超级巨星形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
-		'[移动:注释:超级巨星形态]':
+		'[移动::注释:超级巨星形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
 		'[移动:长途:注释:超级巨星形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/3.png' },
@@ -47,7 +47,7 @@ module.exports = {
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/1.png' },
 		'[移动:初次:注释:独立音乐人形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/1.png' },
-		'[移动:注释:独立音乐人形态]':
+		'[移动::注释:独立音乐人形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/1.png' },
 		'[移动:长途:注释:独立音乐人形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/1.png' },
@@ -55,7 +55,7 @@ module.exports = {
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/1.png' },
 		'[攻击:注释:独立音乐人形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/1.png' },
-		'[击杀:英雄:注释:独立音乐人形态]':
+		'[击杀:英雄::注释:独立音乐人形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/1.png' },
 
 		'[初遇:系列:KDA:注释:明日新星形态]':
@@ -64,7 +64,7 @@ module.exports = {
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/2.png' },
 		'[移动:初次:注释:明日新星形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/2.png' },
-		'[移动:注释:明日新星形态]':
+		'[移动::注释:明日新星形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/2.png' },
 		'[移动:长途:注释:明日新星形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/2.png' },
@@ -72,7 +72,7 @@ module.exports = {
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/2.png' },
 		'[攻击:注释:明日新星形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/2.png' },
-		'[击杀:英雄:注释:明日新星形态]':
+		'[击杀:英雄::注释:明日新星形态]':
 			{ head: '${C.path.project.autogen}reso/icons/Seraphine/2.png' },
 
 		'[使用:Q技能:清籁穿云]':
