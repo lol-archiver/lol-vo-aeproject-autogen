@@ -1,5 +1,5 @@
 module.exports = {
-	emote: '┗|*｀0′*|┛ ',
+	emote: '┗|*｀0′*|┛',
 	event: {
 		'初遇[英雄:艾尼维亚]': {
 			target: '${C.path.project.autogen}reso/icons/Anivia/0.png'
