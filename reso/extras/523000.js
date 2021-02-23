@@ -16,10 +16,10 @@ module.exports = {
 		'[初遇:英雄:悠米]': {
 			target: '${C.path.project.autogen}reso/icons/Yuumi/0.png'
 		},
-		'[初遇:特征:烈阳教派:注释:仅蕾欧娜可触发]': {
+		'[初遇:特征:烈阳教派]': {
 			target: '${C.path.project.autogen}reso/icons/Leona/0.png'
 		},
-		'[击杀:特征:烈阳教派:注释:仅蕾欧娜可触发]': {
+		'[击杀:特征:烈阳教派]': {
 			target: '${C.path.project.autogen}reso/icons/Leona/0.png'
 		},
 
@@ -87,6 +87,54 @@ module.exports = {
 				head: '${C.path.project.autogen}reso/icons/Yuumi/0.png',
 				line: 'ヾ(=ﾟvﾟ=)ﾉ喵♪',
 			},
+		],
+		'82F96318': [
+			{
+				oper: 'extra',
+				mark: '仅 塔里克/潘森 可触发'
+			}
+		],
+		'02EB3C16': [
+			{
+				oper: 'extra',
+				mark: '仅 蕾欧娜 可触发'
+			}
+		],
+		'2415C829': [
+			{
+				oper: 'extra',
+				mark: '仅 蕾欧娜 可触发'
+			}
+		],
+		'C8928721': [
+			{
+				oper: 'extra',
+				mark: '仅 艾希/约里克/俄洛伊/塔莉娅/玛尔扎哈/维克托 可触发'
+			}
+		],
+		'38565E34': [
+			{
+				oper: 'extra',
+				mark: '仅 卢锡安/赛娜/厄运小姐/凯特琳娜/格雷福斯/普朗克/烬/金克斯/崔丝塔娜/厄加特 可触发'
+			}
+		],
+		'00ACAB75': [
+			{
+				oper: 'extra',
+				mark: '“月石的裁断”原文“A reckoning in stone”'
+			}
+		],
+		'5C589970': [
+			{
+				oper: 'extra',
+				mark: '原文没有黑夜一词，台词中的“恐惧”应是名词'
+			}
+		],
+		'D6DE543F': [
+			{
+				oper: 'extra',
+				mark: '由于厄斐琉斯语气句过多，故调整了顺序，普攻语音至最后均是语气句，到这可以直接结束观看（● ▽ ●）'
+			}
 		],
 	}
 };

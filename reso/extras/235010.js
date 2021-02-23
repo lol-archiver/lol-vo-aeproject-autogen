@@ -109,5 +109,42 @@ module.exports = {
 				line: 'o(*￣▽￣*)o'
 			},
 		],
+
+		'1E13785F': [
+			{
+				oper: 'extra',
+				mark: '“枪火神驹”原文“Gun Horse”，不是音近的“神狙”'
+			}
+		],
+		'6C8A550C': [
+			{
+				oper: 'extra',
+				mark: '“枪套”原文“holster”'
+			}
+		],
+		'9F10DE2D': [
+			{
+				oper: 'extra',
+				mark: '“砰”原文“bang”，拟声词'
+			}
+		],
+		'4BB1136B': [
+			{
+				oper: 'extra',
+				mark: '“枪火神驹”原文“Gun Horse”，不是音近的“神狙”'
+			}
+		],
+		'1F79B123': [
+			{
+				oper: 'extra',
+				mark: '牛仔们用于表达兴奋和热情的口号'
+			}
+		],
+		'D4BB6042': [
+			{
+				oper: 'extra',
+				mark: '从过去牛仔们用于叫唤牲畜的呼喊演变而来的口号，现表兴奋、惊讶'
+			}
+		],
 	}
 };

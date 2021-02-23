@@ -73,5 +73,17 @@ module.exports = {
 				line: '该刷牙了→_→'
 			}
 		],
+		'AEFD3136': [
+			{
+				oper: 'extra',
+				mark: '宇宙文章翻译为“瓦尔海尔”'
+			}
+		],
+		'ADBF3506': [
+			{
+				oper: 'extra',
+				mark: '宇宙文章翻译为“沃尔瑞加德”'
+			}
+		],
 	}
 };

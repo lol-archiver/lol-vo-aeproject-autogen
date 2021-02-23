@@ -73,6 +73,18 @@ module.exports = {
 				head: '${C.path.project.autogen}reso/icons/Vi/20.png',
 				line: '(σ｀д′)σ',
 			},
-		]
+		],
+		'3D85473A': [
+			{
+				oper: 'extra',
+				mark: '“神经”原文“synapse”，生物学中的突触'
+			}
+		],
+		'F949336C': [
+			{
+				oper: 'extra',
+				mark: '“搁浅于死地”原文“stranded in death”，致敬了游戏《死亡搁浅》'
+			}
+		],
 	}
 };

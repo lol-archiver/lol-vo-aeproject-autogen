@@ -70,18 +70,6 @@ module.exports = {
 		},
 	},
 	lines: {
-		'81CF0935': [
-			{
-				oper: 'extra',
-				mark: '注：引用了2008年电影《复仇者联盟：无限战争》中灭霸的名台词：\n“I am inevitable! 我就是天命！”'
-			}
-		],
-		'0AFC162B': [
-			{
-				oper: 'extra',
-				mark: '注：引用了1982年电影《最后的独角兽》中国王哈格德（Haggard）对阿玛尔忒亚小姐（Lady Amalthea）话：\n“What is the matter with your eyes?\nWhy can I not see myself, in your eyes?”'
-			}
-		],
 		'5D06FA23': [
 			{
 				oper: 'after',
@@ -91,5 +79,18 @@ module.exports = {
 				line: 'o(一︿一+)o'
 			}
 		],
+		'81CF0935': [
+			{
+				oper: 'extra',
+				mark: '致敬了2018年电影《复仇者联盟：无限战争》中灭霸的名台词：\n“I am inevitable!（我就是天命！）”'
+			}
+		],
+		'0AFC162B': [
+			{
+				oper: 'extra',
+				mark: '致敬了1982年电影《最后的独角兽》中国王哈格德（Haggard）对阿玛尔忒亚小姐（Lady Amalthea）话：\n“What is the matter with your eyes?\nWhy can I not see myself, in your eyes?”'
+			}
+		],
+
 	}
 };

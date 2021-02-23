@@ -53,6 +53,24 @@ module.exports = {
 				head: '${C.path.project.autogen}reso/icons/AurelionSol/0.png',
 				line: '(我就是敖兴（╯‵□′）╯︵┴─┴ )',
 			},
-		]
+		],
+		'CE32C75C': [
+			{
+				oper: 'extra',
+				mark: '“雷霆铁拳”原文“Thunder! Thunder! Thunder strike!”\n致敬了经典动画《霹雳猫》（Thundercats）片头曲的经典歌词'
+			}
+		],
+		'A6A7BE5A': [
+			{
+				oper: 'extra',
+				mark: '“龙卷”原文“cyclone”，不是音近的“龙拳”'
+			}
+		],
+		'1A471665': [
+			{
+				oper: 'extra',
+				mark: '“龙卷”原文“cyclone”，不是音近的“龙拳”'
+			}
+		],
 	}
 };

@@ -121,7 +121,7 @@ module.exports = {
 		'E91C665C': [
 			{
 				oper: 'extra',
-				mark: '注：Body Rolls是Popping舞蹈的一种动作'
+				mark: '注：Body Rolls，Popping舞蹈的一种动作'
 			}
 		],
 	}

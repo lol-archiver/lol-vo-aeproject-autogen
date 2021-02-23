@@ -80,6 +80,43 @@ module.exports = {
 				head: '${C.path.project.autogen}reso/icons/Amumu/0.png',
 				line: '(╥﹏╥)',
 			},
-		]
+		],
+
+		'86EBEB1F': [
+			{
+				oper: 'extra',
+				mark: '引申自国外一则关于性别歧视的舆论：不爱笑的女性容易受到男性的批评\n仅 烬/德莱厄斯/洛/崔斯特/杰斯/古拉加斯/格雷福斯/塞拉斯 可触发'
+			}
+		],
+		'89020769': [
+			{
+				oper: 'extra',
+				mark: '“女王”引申自莎弥拉的开发代号“Queen”'
+			}
+		],
+		'9FEA7D3D': [
+			{
+				oper: 'extra',
+				mark: '原文“I’m the rose that survived the desert.”\n除了引申自莎弥拉的英雄称号“沙漠玫瑰”外\n还致敬了已故歌手2PAC的诗词\n《盛开在钢筋水泥中的玫瑰（The Rose That Grew from Concrete）》'
+			}
+		],
+		'7D8B2520': [
+			{
+				oper: 'extra',
+				mark: '原文意思是“排名根据心烦程度分先后”，估计是太顺口念错了'
+			}
+		],
+		'C7D2A920': [
+			{
+				oper: 'extra',
+				mark: '原文“Like Tereshni all over again”\n致敬了漫威电影宇宙中黑寡妇对鹰眼的台词\n“This is just like Budapest all over again”'
+			}
+		],
+		'0C658311': [
+			{
+				oper: 'extra',
+				mark: '“中了！”原文“Jackpot!”，致敬了游戏《鬼泣1》中但丁击杀魔帝时的台词'
+			}
+		],
 	}
 };

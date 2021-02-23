@@ -50,6 +50,13 @@ module.exports = {
 				head: '${C.path.project.autogen}reso/icons/Lillia/0.png',
 				line: 'ヾ|≧_≦|〃',
 			},
-		]
+		],
+
+		'6FC76C32': [
+			{
+				oper: 'extra',
+				mark: '仅 安妮/阿木木/努努与威朗普/悠米 可触发'
+			}
+		],
 	}
 };

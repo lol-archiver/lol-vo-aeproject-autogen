@@ -63,6 +63,18 @@ module.exports = {
 				head: '${C.path.project.autogen}reso/icons/Irelia/0.png',
 				line: 'φ(゜▽゜*)♪',
 			},
-		]
+		],
+		'19EBF42A': [
+			{
+				oper: 'extra',
+				mark: '“心览”原文“feel”'
+			}
+		],
+		'6804D067': [
+			{
+				oper: 'extra',
+				mark: '“应赞美生”原文“should celebrate living”'
+			}
+		],
 	}
 };
