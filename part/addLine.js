@@ -185,7 +185,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 		textDocEvent.resetCharStyle();
 		textDocEvent.fontSize = C.size.fontLine;
 		textDocEvent.fillColor = T.rgb(73, 80, 81);
-		textDocEvent.font = 'Source Han Mono';
+		textDocEvent.font = 'Source Han Mono SC';
 		textDocEvent.applyStroke = true;
 		textDocEvent.strokeColor = T.rgb(73, 80, 81);
 		textDocEvent.strokeWidth = 2;
@@ -204,7 +204,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	textDocLine.resetCharStyle();
 	textDocLine.fontSize = C.size.fontLine;
 	textDocLine.fillColor = colorLine;
-	textDocLine.font = 'Source Han Mono';
+	textDocLine.font = 'Source Han Mono SC';
 	textDocLine.applyStroke = true;
 	textDocLine.strokeColor = colorLine;
 	textDocLine.strokeWidth = 2;
@@ -243,7 +243,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 		textDocMark.resetCharStyle();
 		textDocMark.fontSize = C.size.fontMark;
 		textDocMark.fillColor = colorMark;
-		textDocMark.font = 'Source Han Mono';
+		textDocMark.font = 'Source Han Mono SC';
 		textDocMark.applyStroke = true;
 		textDocMark.strokeColor = colorMark;
 		textDocMark.strokeWidth = 1;

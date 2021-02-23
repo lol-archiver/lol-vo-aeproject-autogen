@@ -31,8 +31,8 @@ P.addCredit = function addCredit() {
 	textDocThankyou2.resetCharStyle();
 	textDocThankyou1.fontSize = 100;
 	textDocThankyou2.fontSize = 100;
-	textDocThankyou1.font = 'Source Han Mono';
-	textDocThankyou2.font = 'Source Han Mono';
+	textDocThankyou1.font = 'Source Han Mono SC';
+	textDocThankyou2.font = 'Source Han Mono SC';
 	textDocThankyou1.applyStroke = true;
 	textDocThankyou2.applyStroke = true;
 	textDocThankyou1.fillColor = T.rgb(4, 4, 4);
@@ -66,8 +66,8 @@ P.addCredit = function addCredit() {
 	textDocInfo2.resetCharStyle();
 	textDocInfo1.fontSize = C.size.fontLine;
 	textDocInfo2.fontSize = C.size.fontLine;
-	textDocInfo1.font = 'Source Han Mono';
-	textDocInfo2.font = 'Source Han Mono';
+	textDocInfo1.font = 'Source Han Mono SC';
+	textDocInfo2.font = 'Source Han Mono SC';
 	textDocInfo1.applyStroke = true;
 	textDocInfo2.applyStroke = true;
 	textDocInfo1.fillColor = T.rgb(4, 4, 4);

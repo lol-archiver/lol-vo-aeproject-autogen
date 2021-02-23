@@ -6,7 +6,7 @@ P.addCounter = function addCounter() {
 	textDocCounter.resetCharStyle();
 	textDocCounter.fontSize = 24;
 	textDocCounter.fillColor = T.rgb(224, 224, 224);
-	textDocCounter.font = 'Source Han Mono';
+	textDocCounter.font = 'Source Han Mono SC';
 	textDocCounter.applyStroke = true;
 	textDocCounter.strokeColor = T.rgb(224, 224, 224);
 	textDocCounter.strokeWidth = 2;

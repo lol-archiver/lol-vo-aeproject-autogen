@@ -89,7 +89,7 @@ this.T = {
 		var textDocLine = layerLine.sourceText.value;
 		textDocLine.resetCharStyle();
 		textDocLine.fontSize = fontSize;
-		textDocLine.font = 'Source Han Mono';
+		textDocLine.font = 'Source Han Mono SC';
 		textDocLine.applyStroke = true;
 		textDocLine.strokeWidth = 2;
 		textDocLine.text = text;
@@ -117,7 +117,7 @@ this.T = {
 		var textDocLine = layerLine.sourceText.value;
 		textDocLine.resetCharStyle();
 		textDocLine.fontSize = fontSize;
-		textDocLine.font = 'Source Han Mono';
+		textDocLine.font = 'Source Han Mono SC';
 		textDocLine.applyStroke = true;
 		textDocLine.strokeWidth = 1;
 		textDocLine.text = text;
