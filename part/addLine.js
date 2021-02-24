@@ -8,15 +8,17 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 	var colorLineBox = !isMain ? (line.colorLineBox ? T.rgb.apply(this, line.colorLineBox) : T.rgb(144, 34, 34)) : T.rgb(31, 170, 241);
 
+	var eventText = line.eventDirect ||line.event || event.event;
+
 	var hasTarget = isMain ? line.target || event.target : false;
 	var hasSkill = isMain ? line.skill || event.skill : false;
-	var hasEvent = line.showEvent || !!line.event || isMain;
+	var hasEvent = line.hideEvent ? false : !!eventText;
 	var hasMark = !!line.mark;
 
 	var compLine = folderLines.items.addComp(indexText + line.line, 1920, 1080, 1, duration, 60);
 	compLine.bgColor = T.rgb(14, 14, 14);
 
-	if(line.audio) {
+	if(line.audio && !C.mute) {
 		compLine.layers.add(F(T.parseConfig(line.audio), T.folderVoices));
 	}
 
@@ -38,7 +40,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	var layerPictureSkill = hasSkill ? compLine.layers.add(F(T.parseConfig(hasSkill), T.folderImages)) : null;
 	var layerSquareSkill = hasSkill ? compLine.layers.addShape() : null;
 
-	var layerEvent = hasEvent ? compLine.layers.addText(line.event || event.event) : null;
+	var layerEvent = hasEvent ? compLine.layers.addText(eventText) : null;
 	var layerLineBox = compLine.layers.addBoxText([1, 1], line.line);
 
 
@@ -189,7 +191,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 		textDocEvent.applyStroke = true;
 		textDocEvent.strokeColor = T.rgb(73, 80, 81);
 		textDocEvent.strokeWidth = 2;
-		textDocEvent.text = line.event || event.event;
+		textDocEvent.text = eventText;
 		layerEvent.sourceText.setValue(textDocEvent);
 	}
 
@@ -235,7 +237,8 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 		// -------Mark-------
 		layerMarkBox.transform.position.setValue([0, 1000]);
-		layerMarkBox.transform.position.expression = E('mark/limitPositionMark');
+		layerMarkBox.transform.position.expression = E('mark/limitPositionMark')
+			.replace(/\$side/g, '\'' + line.side + '\'');
 
 		var colorMark = T.rgb(255, 250, 250);
 

@@ -307,6 +307,9 @@ const makeLineNormal = async function makeLineNormal() {
 					if(key == 'mark') {
 						lineInfo[key] = extraInfo[key].replace(/\\n/g, '\n');
 					}
+					else if(key == 'event') {
+						lineInfo[key] = formatEvent(extraInfo[key]);
+					}
 					else {
 						lineInfo[key] = extraInfo[key];
 					}

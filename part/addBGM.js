@@ -1,4 +1,6 @@
 P.addBGM = function addBGM() {
+	if(C.mute) { return; }
+
 	var footage = F(C.path.bgm);
 
 	var countLoop = Math.ceil((D.full / footage.duration));

@@ -1,8 +1,8 @@
 P.calcDuration = function calcDuration() {
 	var arrEvent = JSON.parse(T.readFile(C.path.lines, 'UTF8'));
 
-	if(C.range) {
-		arrEvent = arrEvent.slice(C.range[0], C.range[1]);
+	if(C.rangeEvent) {
+		arrEvent = arrEvent.slice(C.rangeEvent[0], C.rangeEvent[1]);
 	}
 
 	var arrDuration = [];
