@@ -114,6 +114,7 @@ module.exports = {
 					side: 'left',
 					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
 					line: '噩梦一场，暗无天日，饭吃得还行',
+					mark: '原文“Food was great through”。是“饭”，不是“但”',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: 'F1CEFE45',
 					hideEvent: true
@@ -214,6 +215,7 @@ module.exports = {
 			]
 		},
 		'359BA905': {
+			mark: '原文“Cause I tried to... Ohhh”。是“试”，不是“是”',
 			hideEvent: true,
 		},
 
@@ -277,11 +279,11 @@ module.exports = {
 
 		'45E97412': {
 			event: '[英雄:赛娜:治疗:自己]',
-			mark: '对话9',
 			befores: [
 				{
 					side: 'left',
 					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					mark: '对话9',
 					line: '生命来自死亡',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: 'D2A3566B',
@@ -380,7 +382,20 @@ module.exports = {
 			]
 		},
 
+		'4684582B': {
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '(σ｀д′)σ',
+					hideEvent: true
+				},
+			]
+		},
 
+		'341B9A3E': {
+			mark: '原文“Two in the head.”。是“头”，不是“偷”'
+		},
 
 
 		'C0FD2C10': {
