@@ -93,7 +93,7 @@ const parseCond = function(arrParam) {
 		'普攻', '暴击', '使用', '触发',
 		'接近', '抵达', '购买', '附近', '变身',
 		'玩笑', '嘲讽', '跳舞', '大笑', '静置', '回城',
-		'友方', '敌方',
+		'自己', '友方', '敌方',
 	].includes(type)) {
 		result += type;
 	}
@@ -190,20 +190,31 @@ const makeLineNormal = async function makeLineNormal() {
 			extrasEvent[key] = extraEvent;
 		}
 
-		for(const [key, extraLines] of Object.entries(allExtras.lines || {})) {
-			for(const extraLine of extraLines) {
-				if(extraLine.oper == 'before') {
-					(linesBefore[key] || (linesBefore[key] = [])).push(extraLine);
-				}
-				else if(extraLine.oper == 'after') {
-					(linesAfter[key] || (linesAfter[key] = [])).push(extraLine);
-				}
-				else if(extraLine.oper == 'extra') {
-					(linesExtra[key] || (linesExtra[key] = [])).push(extraLine);
-				}
-
-				delete extraLine.oper;
+		for(const [key, extra] of Object.entries(allExtras.lines || {})) {
+			if(extra.befores instanceof Array) {
+				extra.befores.forEach(before => (linesBefore[key] || (linesBefore[key] = [])).push(before));
+				delete extra.befores;
 			}
+			if(extra.afters instanceof Array) {
+				extra.afters.forEach(after => (linesAfter[key] || (linesAfter[key] = [])).push(after));
+				delete extra.afters;
+			}
+
+			(linesExtra[key] || (linesExtra[key] = [])).push(extra);
+
+			// for(const extraLine of extraLines) {
+			// 	if(extraLine.oper == 'before') {
+			// 		(linesBefore[key] || (linesBefore[key] = [])).push(extraLine);
+			// 	}
+			// 	else if(extraLine.oper == 'after') {
+			// 		(linesAfter[key] || (linesAfter[key] = [])).push(extraLine);
+			// 	}
+			// 	else if(extraLine.oper == 'extra') {
+			// 		(linesExtra[key] || (linesExtra[key] = [])).push(extraLine);
+			// 	}
+
+			// 	delete extraLine.oper;
+			// }
 		}
 	}
 	catch(error) { L(error); }
@@ -242,7 +253,7 @@ const makeLineNormal = async function makeLineNormal() {
 			arrEvent.push(eventInfo);
 		}
 		else {
-			const [crc32, line] = lineText.replace(/^- `/, '').split('` ');
+			const [idLine, line] = lineText.replace(/^- `/, '').split('` ');
 
 			let duration = 0;
 			let audio = null;
@@ -260,7 +271,7 @@ const makeLineNormal = async function makeLineNormal() {
 				}
 			}
 			else {
-				const file = arrAudioFile.find(fileName => fileName.includes(`[${crc32}]`));
+				const file = arrAudioFile.find(fileName => fileName.includes(`[${idLine}]`));
 
 				if(file) {
 					const meta = await Meta.parseFile(_pa.join(pathAudios, file));
@@ -270,7 +281,7 @@ const makeLineNormal = async function makeLineNormal() {
 				}
 			}
 
-			for(const line of linesBefore[crc32] || []) {
+			for(const line of linesBefore[idLine] || []) {
 				line.side = line.side ? line.side : 'left';
 
 				if(line.event) {
@@ -295,14 +306,14 @@ const makeLineNormal = async function makeLineNormal() {
 
 			const lineInfo = {
 				line: line.replace(/\\n/g, '\n'),
-				crc32,
+				crc32: idLine,
 				duration,
 				side: 'right',
 				head: C.path.head || '${C.path.project.autogen}reso/icons/${C.champion.name}/${C.skin.id}.png',
 				audio,
 			};
 
-			for(const extraInfo of linesExtra[crc32] || []) {
+			for(const extraInfo of linesExtra[idLine] || []) {
 				for(const key in extraInfo) {
 					if(key == 'mark') {
 						lineInfo[key] = extraInfo[key].replace(/\\n/g, '\n');
@@ -318,7 +329,7 @@ const makeLineNormal = async function makeLineNormal() {
 
 			arrLine.push(lineInfo);
 
-			for(const line of linesAfter[crc32] || []) {
+			for(const line of linesAfter[idLine] || []) {
 				line.side = line.side ? line.side : 'left';
 
 				if(line.event) {

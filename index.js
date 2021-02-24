@@ -11,8 +11,10 @@
 	T.compMain.duration = D.full;
 	T.compMain.openInViewer();
 
-	P.addBGM();
-	P.addTitle();
+	if(!C.simple) {
+		P.addBGM();
+		P.addTitle();
+	}
 
 	var accumDuration = D.title;
 	T.enumLine(arrEvent, function(line, event, lid, eid, index) {
@@ -46,9 +48,11 @@
 		accumDuration += line.duration + D.interval;
 	});
 
-	P.addCounter();
-	P.addCredit();
-	P.addWaterMark();
+	if(!C.simple) {
+		P.addCounter();
+		P.addCredit();
+		P.addWaterMark();
+	}
 
 	L.end();
 })();

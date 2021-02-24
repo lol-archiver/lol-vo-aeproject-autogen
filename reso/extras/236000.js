@@ -39,19 +39,15 @@ module.exports = {
 		},
 		'[被:治疗:英雄:赛娜:注释:对话9-2]': {
 			target: '${C.path.project.autogen}reso/icons/Senna/0.png',
-			skill: '${C.path.project.autogen}reso/icons/Senna/Q.png',
 		},
 		'[被:治疗:英雄:赛娜:注释:对话10-1]': {
 			target: '${C.path.project.autogen}reso/icons/Senna/0.png',
-			skill: '${C.path.project.autogen}reso/icons/Senna/Q.png',
 		},
 		'[被:治疗:英雄:赛娜:注释:对话11-2]': {
 			target: '${C.path.project.autogen}reso/icons/Senna/0.png',
-			skill: '${C.path.project.autogen}reso/icons/Senna/Q.png',
 		},
 		'[击杀:英雄][附近:友方:使用:英雄:赛娜:注释:对话12-1]': {
 			target: '${C.path.project.autogen}reso/icons/Senna/0.png',
-			skill: '${C.path.project.autogen}reso/icons/Senna/Q.png',
 		},
 		'[击杀:英雄][附近:友方:使用:英雄:赛娜:注释:对话13-1]': {
 			target: '${C.path.project.autogen}reso/icons/Senna/0.png'
@@ -60,7 +56,7 @@ module.exports = {
 			target: '${C.path.project.autogen}reso/icons/Senna/0.png'
 		},
 		'[初遇:英雄:锤石][附近:友方:使用:英雄:赛娜:注释:对话15-2]': {
-			target: '${C.path.project.autogen}reso/icons/Senna/0.png'
+			target: '${C.path.project.autogen}reso/icons/Thresh/0.png'
 		},
 
 		'[初遇:英雄:赛娜]': {
@@ -90,10 +86,10 @@ module.exports = {
 
 
 		'[初遇:地区:德玛西亚]': {
-			target: '${C.path.project.autogen}reso/regions/demacia/0.png'
+			target: '${C.path.project.autogen}reso/regions/demacia.png'
 		},
 		'[初遇:地区:暗影岛]': {
-			target: '${C.path.project.autogen}reso/regions/shadow_isles/0.png'
+			target: '${C.path.project.autogen}reso/regions/shadow_isles.png'
 		},
 
 		'[使用:W技能:热诚烈弹]': {
@@ -107,76 +103,294 @@ module.exports = {
 		},
 	},
 	lines: {
-		'EDB35506': [
-			{
-				oper: 'extra',
-				mark: '对话1-1',
-				event: '[移动:初次][附近:友方:使用:英雄:赛娜]'
-			}
-		],
-		'80BD0409': [
-			{
-				oper: 'before',
-				side: 'left',
-				head: '${C.path.project.autogen}reso/icons/Senna/0.png',
-				line: '噩梦一场，暗无天日，饭吃得还行',
-				folder: 'Senna@zh_cn@PBE1',
-				hash: 'F1CEFE45',
-				mark: '对话1-2',
-				hideEvent: true
-			},
-			{
-				oper: 'extra',
-				mark: '对话1-3',
-				hideEvent: true
-			},
-			{
-				oper: 'after',
-				side: 'left',
-				head: '${C.path.project.autogen}reso/icons/Senna/0.png',
-				line: '假的',
-				folder: 'Senna@zh_cn@PBE1',
-				hash: '71150077',
-				mark: '对话1-4',
-				hideEvent: true
-			},
-		],
-		'F1CEFE45': [
-			{
-				oper: 'extra',
-				mark: '对话1-2'
-			}
-		],
+		'EDB35506': {
+			event: '[移动:初次][附近:友方:使用:英雄:赛娜]',
+			mark: '对话1',
+		},
+		'80BD0409': {
+			hideEvent: true,
+			befores: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '噩梦一场，暗无天日，饭吃得还行',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: 'F1CEFE45',
+					hideEvent: true
+				},
+			],
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '假的',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: '71150077',
+					hideEvent: true
+				},
+			],
+		},
 
-		'038B6E3B': [
-			{
-				oper: 'before',
-				side: 'left',
-				head: '${C.path.project.autogen}reso/icons/Senna/0.png',
-				line: '锤石，我来会你',
-				event: '[注释:15-1]',
-				folder: 'Senna@zh_cn@PBE1',
-				hash: '73F1DF2F',
-			},
-		],
+		'472BBE76': {
+			event: '[移动:初次][附近:友方:使用:英雄:赛娜]',
+			befores: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '你怎么不说话？',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: 'E0670144',
+					mark: '对话2',
+					hideEvent: true,
+				},
+			],
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '再说这种话我就咒死你',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: '1E93BA33',
+					hideEvent: true
+				},
+			],
+		},
 
-		'C0FD2C10': [
-			{
-				oper: 'extra',
-				mark: '仅 凯特琳/格雷福斯/烬/金克斯/卡莎/卢锡安/厄运小姐/崔丝塔娜/厄加特 可触发'
-			}
-		],
-		'F975D93C': [
-			{
-				oper: 'extra',
-				mark: '仅 凯特琳/格雷福斯/烬/金克斯/卡莎/卢锡安/厄运小姐/崔丝塔娜/厄加特 可触发'
-			}
-		],
-		'FACF412A': [
-			{
-				oper: 'extra',
-				mark: '仅 凯特琳/格雷福斯/烬/金克斯/卡莎/卢锡安/厄运小姐/崔丝塔娜/厄加特 可触发'
-			}
-		],
+		'F69D3355': {
+			event: '[移动:初次][附近:友方:使用:英雄:赛娜]',
+			befores: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '要怎么做？',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: 'EE7E102C',
+					hideEvent: true,
+					mark: '对话3',
+				},
+			],
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '目前看来很管用',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: '21316636',
+					hideEvent: true,
+				},
+			],
+		},
+
+		'F6BE0B05': {
+			event: '[移动:初次][附近:友方:使用:英雄:赛娜]',
+			mark: '对话4',
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '啊，是啊，我在那边遇到了别人\n他是个尸鬼，我们相爱，还生下了尸鬼娃娃',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: 'AF52701E',
+					hideEvent: true
+				},
+			]
+		},
+		'CADFB73F': {
+			hideEvent: true,
+		},
+
+		'847B7B6F': {
+			event: '[移动:初次][附近:友方:使用:英雄:赛娜]',
+			mark: '对话5',
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '会用，就不觉得沉',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: 'FEC86A61',
+					hideEvent: true
+				},
+			]
+		},
+		'359BA905': {
+			hideEvent: true,
+		},
+
+		'DEAB5312': {
+			event: '[移动:初次][附近:友方:使用:英雄:赛娜]',
+			befores: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '准备好了吗？',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: 'E001386F',
+					hideEvent: true,
+					mark: '对话6',
+				},
+			],
+		},
+
+		'B6E41D6F': {
+			event: '[移动:初次][附近:友方:使用:英雄:赛娜]',
+			befores: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '别拖后腿',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: '1435996C',
+					hideEvent: true,
+					mark: '对话7',
+				},
+			],
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '你想听我尖叫吗？',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: '1C204C24',
+					hideEvent: true,
+				},
+			],
+		},
+		'71F2E946': {
+			hideEvent: true,
+		},
+
+		'3674E411': {
+			event: '[移动:初次][附近:友方:使用:英雄:赛娜]',
+			mark: '对话8',
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '一起清算',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: '193E6E6A',
+					hideEvent: true
+				},
+			]
+		},
+
+		'45E97412': {
+			event: '[英雄:赛娜:治疗:自己]',
+			mark: '对话9',
+			befores: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '生命来自死亡',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: 'D2A3566B',
+					hideEvent: true
+				},
+			]
+		},
+
+		'61DE1357': {
+			event: '[英雄:赛娜:治疗:自己]',
+			mark: '对话10',
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '我是在瞄准他们',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: 'AF59D07C',
+					hideEvent: true
+				},
+			]
+		},
+
+		'4F076C03': {
+			event: '[英雄:赛娜:治疗:自己]',
+			mark: '对话11',
+			befores: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '你给我活着，才能吻我',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: '67037B68',
+					hideEvent: true
+				},
+			]
+		},
+
+		'5AA51077': {
+			event: '[击杀:英雄][附近:友方:使用:英雄:赛娜]',
+			mark: '对话12',
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '就像那些旧的回忆一样',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: 'AEE95762',
+					hideEvent: true
+				},
+			]
+		},
+
+		'DC062B59': {
+			event: '[击杀:英雄][附近:友方:使用:英雄:赛娜]',
+			mark: '对话13',
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '以及所有迷失在黑暗中的人',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: 'DC958402',
+					hideEvent: true
+				},
+			]
+		},
+
+		'8E7E8478': {
+			event: '[击杀:英雄][附近:友方:使用:英雄:赛娜]',
+			mark: '对话14',
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '你真贴心',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: 'CF258357',
+					hideEvent: true
+				},
+			]
+		},
+
+		'73F1DF2F': {
+			event: '[初遇:英雄:锤石][附近:友方:使用:英雄:赛娜]',
+			mark: '对话15',
+			afters: [
+				{
+					side: 'left',
+					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					line: '不，我们一起来',
+					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
+					hash: '038B6E3B',
+					hideEvent: true
+				},
+			]
+		},
+
+
+
+
+		'C0FD2C10': {
+			mark: '仅 凯特琳/格雷福斯/烬/金克斯/卡莎/卢锡安/厄运小姐/崔丝塔娜/厄加特 可触发'
+		},
+		'F975D93C': {
+			mark: '仅 凯特琳/格雷福斯/烬/金克斯/卡莎/卢锡安/厄运小姐/崔丝塔娜/厄加特 可触发'
+		},
+		'FACF412A': {
+			mark: '仅 凯特琳/格雷福斯/烬/金克斯/卡莎/卢锡安/厄运小姐/崔丝塔娜/厄加特 可触发'
+		},
 	}
 };

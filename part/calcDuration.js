@@ -19,7 +19,7 @@ P.calcDuration = function calcDuration() {
 		line.boxLine = sizeLine[2];
 		line.boxTextSize = sizeLine.slice(0, 2);
 		line.boxHeight = 30 + (C.size.paddingLine * 2 + 70) +
-			sizeLine[1] + 100 + 70;
+			sizeLine[1] + 140;
 
 		if(line.mark) {
 			var sizeMark = T.getBoxSizeMark(line.mark);
