@@ -309,11 +309,11 @@ module.exports = {
 
 		'4F076C03': {
 			event: '[英雄:赛娜:治疗:自己]',
-			mark: '对话11',
 			befores: [
 				{
 					side: 'left',
 					head: '${C.path.project.autogen}reso/icons/Senna/0.png',
+					mark: '对话11',
 					line: '你给我活着，才能吻我',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: '67037B68',
@@ -394,7 +394,7 @@ module.exports = {
 		},
 
 		'341B9A3E': {
-			mark: '原文“Two in the head.”。是“头”，不是“偷”'
+			mark: '原文“Two in the head”。是“头”，不是“偷”'
 		},
 
 
