@@ -69,7 +69,7 @@ module.exports = {
 			eventRaw: 'Move2DLong',
 			arrLine: [
 				{
-					line: '我本以为亚扎卡纳不过是孩童的故事而已，真是大错特错',
+					line: '我本以为亚扎卡纳不过是孩童的故事而已\n真是大错特错',
 					crc32: '0506260B', side: 'right', audioFolder: '[157000]疾风剑豪 亚索[Yasuo@PBE1@zh_cn]', head: '${C.path.project.autogen}reso/icons/Yasuo/0.png',
 				},
 			],
@@ -90,7 +90,7 @@ module.exports = {
 			eventRaw: 'FirstEncounter3DYone',
 			arrLine: [
 				{
-					line: '逃避不会解决问题，但是能然我好过一些',
+					line: '逃避不会解决问题，但是能让我好过一些',
 					crc32: 'ED266267', side: 'right', audioFolder: '[876000]含羞蓓蕾 莉莉娅[Lillia@PBE1@zh_cn]', head: '${C.path.project.autogen}reso/icons/Lillia/0.png',
 				},
 			],
@@ -100,7 +100,7 @@ module.exports = {
 			eventRaw: 'FirstEncounter3DYone',
 			arrLine: [
 				{
-					line: '梦要是被恐惧所囚禁，就会变成噩梦。我们在对抗同样的敌人',
+					line: '梦要是被恐惧所囚禁，就会变成噩梦\n我们在对抗同样的敌人',
 					crc32: '68D83E65', side: 'right', audioFolder: '[876000]含羞蓓蕾 莉莉娅[Lillia@PBE1@zh_cn]', head: '${C.path.project.autogen}reso/icons/Lillia/0.png',
 				},
 			],
@@ -120,7 +120,7 @@ module.exports = {
 			eventRaw: 'FirstEncounter3DYone',
 			arrLine: [
 				{
-					line: '永恩，你为什么想要摘掉面具呢？不是很方便你藏起来吗？',
+					line: '永恩，你为什么想要摘掉面具呢？\n不是很方便你藏起来吗？',
 					crc32: 'CB5E1E0B', side: 'right', audioFolder: '[876000]含羞蓓蕾 莉莉娅[Lillia@PBE1@zh_cn]', head: '${C.path.project.autogen}reso/icons/Lillia/0.png',
 				},
 			],
