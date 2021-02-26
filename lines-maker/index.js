@@ -3,7 +3,7 @@ require('../config');
 const _fs = require('fs');
 const _pa = require('path').posix;
 
-const Meta = require('music-metadata');
+const MusicMeta = require('music-metadata');
 
 const L = (console || {}).log;
 
@@ -89,7 +89,7 @@ const parseCond = function(arrParam) {
 	// 行为Only
 	else if([
 		'选用', '禁用',
-		'初遇', '攻击', '击杀', '治疗', '阵亡', '重生', '助攻', '占据',
+		'初遇', '遇见', '攻击', '击杀', '治疗', '阵亡', '重生', '助攻', '占据',
 		'普攻', '暴击', '使用', '触发',
 		'接近', '抵达', '购买', '附近', '变身',
 		'玩笑', '嘲讽', '跳舞', '大笑', '静置', '回城',
@@ -102,7 +102,7 @@ const parseCond = function(arrParam) {
 		result += `${type}是`;
 	}
 	// 内容可选+大括号
-	else if(['英雄', '皮肤', '生物', '建筑', '武器', '道具', '女性', '男性', '多杀', '首杀', '连杀', '控制'].includes(type)) {
+	else if(['英雄', '皮肤', '生物', '野怪', '建筑', '武器', '道具', '女性', '男性', '多杀', '首杀', '连杀', '控制'].includes(type)) {
 		if(main) {
 			result += `【${main}】`;
 		}
@@ -113,7 +113,7 @@ const parseCond = function(arrParam) {
 		use(main);
 	}
 	// 内容必要
-	else if(['系列', '地区', '种族', '特征', '动作', '被', '血量', '注释', '信号'].includes(type)) {
+	else if(['系列', '地区', '种族', '野怪营地', '特征', '动作', '被', '血量', '注释', '信号'].includes(type)) {
 		if(!main) { throw new Error('缺少内容'); }
 
 		use(main);
@@ -141,6 +141,10 @@ const parseCond = function(arrParam) {
 		// 时
 		else if(['动作'].includes(type)) {
 			result += `在${main}时`;
+		}
+		// 时2
+		else if(['野怪营地'].includes(type)) {
+			result += `【野怪营地】${main}`;
 		}
 		// 被
 		else if(['被'].includes(type)) {
@@ -264,7 +268,7 @@ const makeLineNormal = async function makeLineNormal() {
 				const file = `${C.path.project.autogen}reso/voices/${C.champion.id}/${eventTrans}.wav`;
 
 				if(_fs.existsSync(file)) {
-					const meta = await Meta.parseFile(file);
+					const meta = await MusicMeta.parseFile(file);
 
 					duration = meta.format.duration;
 					audio = '${C.path.project.autogen}reso/voices/${C.champion.id}/' + eventTrans + '.wav';
@@ -274,7 +278,7 @@ const makeLineNormal = async function makeLineNormal() {
 				const file = arrAudioFile.find(fileName => fileName.includes(`[${idLine}]`));
 
 				if(file) {
-					const meta = await Meta.parseFile(_pa.join(pathAudios, file));
+					const meta = await MusicMeta.parseFile(_pa.join(pathAudios, file));
 
 					duration = meta.format.duration;
 					audio = '${C.path.audios}' + file;
@@ -294,7 +298,7 @@ const makeLineNormal = async function makeLineNormal() {
 					const nameAudio = audios.find(fileName => fileName.includes(`[${line.hash}]`));
 
 					if(nameAudio) {
-						const meta = await Meta.parseFile(_pa.join(C.path.project.extract, '_final', line.folder, nameAudio));
+						const meta = await MusicMeta.parseFile(_pa.join(C.path.project.extract, '_final', line.folder, nameAudio));
 
 						line.duration = meta.format.duration;
 						line.audio = '${C.path.project.extract}/_final/' + line.folder + '/' + nameAudio;
@@ -342,7 +346,7 @@ const makeLineNormal = async function makeLineNormal() {
 					const nameAudio = audios.find(fileName => fileName.includes(`[${line.hash}]`));
 
 					if(nameAudio) {
-						const meta = await Meta.parseFile(_pa.join(C.path.project.extract, '_final', line.folder, nameAudio));
+						const meta = await MusicMeta.parseFile(_pa.join(C.path.project.extract, '_final', line.folder, nameAudio));
 
 						line.duration = meta.format.duration;
 						line.audio = '${C.path.project.extract}/_final/' + line.folder + '/' + nameAudio;
@@ -399,7 +403,7 @@ const makeLineSpecial = async function makeLineSpecial() {
 
 			if(pathAudio) {
 				try {
-					const meta = await Meta.parseFile(pathAudio);
+					const meta = await MusicMeta.parseFile(pathAudio);
 
 					line.duration = meta.format.duration;
 				}
