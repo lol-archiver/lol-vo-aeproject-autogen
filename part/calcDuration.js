@@ -15,14 +15,15 @@ P.calcDuration = function calcDuration() {
 
 	T.enumLine(arrEvent, function(line, event, lid, eid, index) {
 		var sizeLine = T.getBoxSize(line.line);
+		var markFinal = line.mark || event.mark;
 
 		line.boxLine = sizeLine[2];
 		line.boxTextSize = sizeLine.slice(0, 2);
 		line.boxHeight = 30 + (C.size.paddingLine * 2 + 70) +
 			sizeLine[1] + 140;
 
-		if(line.mark) {
-			var sizeMark = T.getBoxSizeMark(line.mark);
+		if(markFinal) {
+			var sizeMark = T.getBoxSizeMark(markFinal);
 
 			line.boxTextSizeMark = sizeMark.slice(0, 2);
 			line.boxHeightMark = sizeMark[1] + C.size.paddingMark;

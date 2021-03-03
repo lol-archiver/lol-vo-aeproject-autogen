@@ -8,12 +8,13 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 	var colorLineBox = !isMain ? (line.colorLineBox ? T.rgb.apply(this, line.colorLineBox) : T.rgb(144, 34, 34)) : T.rgb(31, 170, 241);
 
-	var eventText = line.eventDirect ||line.event || event.event;
+	var eventText = line.eventDirect || line.event || event.event;
+	var markFinal = line.mark || event.mark;
 
 	var hasTarget = isMain ? line.target || event.target : false;
 	var hasSkill = isMain ? line.skill || event.skill : false;
 	var hasEvent = line.hideEvent ? false : !!eventText;
-	var hasMark = !!line.mark;
+	var hasMark = !!markFinal;
 
 	var compLine = folderLines.items.addComp(indexText + line.line, 1920, 1080, 1, duration, 60);
 	compLine.bgColor = T.rgb(14, 14, 14);
@@ -23,7 +24,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	}
 
 	var layerBoxMark = hasMark ? compLine.layers.addShape() : null;
-	var layerMarkBox = hasMark ? compLine.layers.addBoxText([1, 1], line.mark) : null;
+	var layerMarkBox = hasMark ? compLine.layers.addBoxText([1, 1], markFinal) : null;
 
 	var layerBoxLine = compLine.layers.addShape();
 
@@ -252,7 +253,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 		textDocMark.strokeWidth = 1;
 		textDocMark.boxTextSize = line.boxTextSizeMark;
 		textDocMark.leading = C.size.fontMark + C.size.heightLeading;
-		textDocMark.text = line.mark;
+		textDocMark.text = markFinal;
 		layerMarkBox.sourceText.setValue(textDocMark);
 	}
 

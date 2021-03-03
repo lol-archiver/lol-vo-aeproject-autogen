@@ -50,6 +50,13 @@ module.exports = {
 		'[使用:R技能:时空断裂]': {
 			skill: '${C.path.project.autogen}reso/icons/Ekko/R.png'
 		},
+
+		'[静置]': {
+			mark: '本应是模型做出静置动作时触发的语音\n但皮肤文件没有内置相应事件，所以只有声音，无法触发'
+		},
+		'[玩笑]': {
+			mark: '后半部分是前半部分的倒放'
+		},
 	},
 	lines: {
 		'0C444C42': {

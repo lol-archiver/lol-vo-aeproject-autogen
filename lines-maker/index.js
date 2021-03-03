@@ -287,6 +287,7 @@ const makeLineNormal = async function makeLineNormal() {
 
 			for(const line of linesBefore[idLine] || []) {
 				line.side = line.side ? line.side : 'left';
+				line.duration = line.duration || 0.4;
 
 				if(line.event) {
 					line.event = line.event.split('、').map(event => formatEvent(event)).join('、');
@@ -335,6 +336,7 @@ const makeLineNormal = async function makeLineNormal() {
 
 			for(const line of linesAfter[idLine] || []) {
 				line.side = line.side ? line.side : 'left';
+				line.duration = line.duration || 0.4;
 
 				if(line.event) {
 					line.event = line.event.split('、').map(event => formatEvent(event)).join('、');
