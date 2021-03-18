@@ -310,7 +310,7 @@ const makeLineNormal = async function makeLineNormal() {
 			}
 
 			const lineInfo = {
-				line: line.replace(/\\n/g, '\n'),
+				line: line.replace(/\\n/g, '\n').replace(/^\+/g, ''),
 				crc32: idLine,
 				duration,
 				side: 'right',
