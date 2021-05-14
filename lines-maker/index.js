@@ -102,7 +102,7 @@ const parseCond = function(arrParam) {
 		result += `${type}是`;
 	}
 	// 内容可选+大括号
-	else if(['英雄', '小兵', '皮肤', '生物', '野怪', '建筑', '武器', '道具', '女性', '男性', '多杀', '首杀', '连杀', '控制'].includes(type)) {
+	else if(['英雄', '非英雄', '皮肤', '生物', '野怪', '建筑', '武器', '道具', '女性', '男性', '多杀', '首杀', '连杀', '控制'].includes(type)) {
 		if(main) {
 			result += `【${main}】`;
 		}

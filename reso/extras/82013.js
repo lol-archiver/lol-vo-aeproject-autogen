@@ -17,27 +17,27 @@ module.exports = {
 			{ target: '${C.path.project.autogen}reso/icons/Pyke/16.png' },
 		'[击杀:皮肤:源计划：毁灭 派克]':
 			{ target: '${C.path.project.autogen}reso/icons/Pyke/16.png' },
-		'[初遇:皮肤:源计划 雷克顿]':
+		'[初遇:皮肤:源计划：泯灭 雷克顿]':
 			{ target: '${C.path.project.autogen}reso/icons/Renekton/26.png' },
-		'[击杀:皮肤:源计划 雷克顿]':
+		'[击杀:皮肤:源计划：泯灭 雷克顿]':
 			{ target: '${C.path.project.autogen}reso/icons/Renekton/26.png' },
 		'[嘲讽:友方:英雄:瑟庄妮]':
 			{ target: '${C.path.project.autogen}reso/icons/Sejuani/16.png' },
-		'[初遇:皮肤:源计划 瑟庄妮]':
+		'[初遇:皮肤:源计划：统帅 瑟庄妮]':
 			{ target: '${C.path.project.autogen}reso/icons/Sejuani/16.png' },
-		'[击杀:皮肤:源计划 瑟庄妮]':
+		'[击杀:皮肤:源计划：统帅 瑟庄妮]':
 			{ target: '${C.path.project.autogen}reso/icons/Sejuani/16.png' },
-		'[初遇:皮肤:源计划 赛娜]':
+		'[初遇:皮肤:源计划：魅灵 赛娜]':
 			{ target: '${C.path.project.autogen}reso/others/icons/PROJ_Senna.png' },
-		'[击杀:皮肤:源计划 赛娜]':
+		'[击杀:皮肤:源计划：魅灵 赛娜]':
 			{ target: '${C.path.project.autogen}reso/others/icons/PROJ_Senna.png' },
-		'[初遇:皮肤:源计划 塞拉斯]':
+		'[初遇:皮肤:源计划：逆流 塞拉斯]':
 			{ target: '${C.path.project.autogen}reso/others/icons/PROJ_Sylas.png' },
-		'[击杀:皮肤:源计划 塞拉斯]':
+		'[击杀:皮肤:源计划：逆流 塞拉斯]':
 			{ target: '${C.path.project.autogen}reso/others/icons/PROJ_Sylas.png' },
-		'[初遇:皮肤:源计划 维鲁斯]':
+		'[初遇:皮肤:源计划：天眼 维鲁斯]':
 			{ target: '${C.path.project.autogen}reso/icons/Varus/16.png' },
-		'[击杀:皮肤:源计划 维鲁斯]':
+		'[击杀:皮肤:源计划：天眼 维鲁斯]':
 			{ target: '${C.path.project.autogen}reso/icons/Varus/16.png' },
 		'[初遇:皮肤:源计划：净化 薇恩]':
 			{ target: '${C.path.project.autogen}reso/icons/Vayne/11.png' },
@@ -55,13 +55,13 @@ module.exports = {
 	},
 	lines: {
 		'D92FBF3B': {
-			mark: '机器人学第一定律：“机器人不得伤害人类个体，或者目睹人类个体将遭受危险而袖手不管”',
+			mark: '机器人学第一定律：\n“机器人不得伤害人类个体，或者目睹人类个体将遭受危险而袖手不管”',
 		},
 		'AC27BB4A': {
-			mark: '机器人学第二定律：“机器人必须服从人给予它的命令，当该命令与第一定律冲突时例外”',
+			mark: '机器人学第二定律：\n“机器人必须服从人给予它的命令，当该命令与第一定律冲突时例外”',
 		},
 		'30306955': {
-			mark: '机器人学第三定律：“机器人在不违反第一、第二定律的情况下要尽可能保护自己的生存”',
+			mark: '机器人学第三定律：\n“机器人在不违反第一、第二定律的情况下要尽可能保护自己的生存”',
 		},
 
 
