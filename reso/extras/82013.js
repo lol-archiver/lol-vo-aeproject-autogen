@@ -28,13 +28,13 @@ module.exports = {
 		'[击杀:皮肤:源计划：统帅 瑟庄妮]':
 			{ target: '${C.path.project.autogen}reso/icons/Sejuani/16.png' },
 		'[初遇:皮肤:源计划：魅灵 赛娜]':
-			{ target: '${C.path.project.autogen}reso/others/icons/PROJ_Senna.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Senna/16.png' },
 		'[击杀:皮肤:源计划：魅灵 赛娜]':
-			{ target: '${C.path.project.autogen}reso/others/icons/PROJ_Senna.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Senna/16.png' },
 		'[初遇:皮肤:源计划：逆流 塞拉斯]':
-			{ target: '${C.path.project.autogen}reso/others/icons/PROJ_Sylas.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Sylas/13.png' },
 		'[击杀:皮肤:源计划：逆流 塞拉斯]':
-			{ target: '${C.path.project.autogen}reso/others/icons/PROJ_Sylas.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Sylas/13.png' },
 		'[初遇:皮肤:源计划：天眼 维鲁斯]':
 			{ target: '${C.path.project.autogen}reso/icons/Varus/16.png' },
 		'[击杀:皮肤:源计划：天眼 维鲁斯]':
