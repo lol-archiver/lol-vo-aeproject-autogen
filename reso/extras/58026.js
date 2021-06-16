@@ -61,8 +61,8 @@ module.exports = {
 			{ skill: '${C.path.project.autogen}reso/icons/Renekton/R.png' },
 	},
 	lines: {
-		'00E24904': {
-			mark: '此处应该还有一句语音，但中文对应的语音文件是空的',
+		'9CE34127': {
+			mark: 'R技能的英文语音有三句。中文语音在正式服上线后依旧只有两句，基本上是确定少一句了',
 		},
 
 
