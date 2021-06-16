@@ -1,4 +1,7 @@
-require('../config');
+const C = require('../config');
+const CC = require(`../reso/conf/${C.slot}.js`);
+C.init(CC);
+
 
 const _fs = require('fs');
 const _pa = require('path').posix;
@@ -9,8 +12,9 @@ const L = (console || {}).log;
 
 const parseConfig = function(str) {
 	return str.replace(/\$\{.+?\}/g, function(text) {
-		C;
 		try {
+			C;
+			CC;
 			return eval(text.replace(/(^\$\{)|(\}$)/g, ''));
 		}
 		catch(error) {
@@ -187,7 +191,7 @@ const makeLineNormal = async function makeLineNormal() {
 	try {
 		allExtras = require(C.path.linesExtra);
 	}
-	catch(error) { true; }
+	catch(error) { void 0; }
 
 	try {
 		for(const [key, extraEvent] of Object.entries(allExtras.event || {})) {
@@ -205,20 +209,6 @@ const makeLineNormal = async function makeLineNormal() {
 			}
 
 			(linesExtra[key] || (linesExtra[key] = [])).push(extra);
-
-			// for(const extraLine of extraLines) {
-			// 	if(extraLine.oper == 'before') {
-			// 		(linesBefore[key] || (linesBefore[key] = [])).push(extraLine);
-			// 	}
-			// 	else if(extraLine.oper == 'after') {
-			// 		(linesAfter[key] || (linesAfter[key] = [])).push(extraLine);
-			// 	}
-			// 	else if(extraLine.oper == 'extra') {
-			// 		(linesExtra[key] || (linesExtra[key] = [])).push(extraLine);
-			// 	}
-
-			// 	delete extraLine.oper;
-			// }
 		}
 	}
 	catch(error) { L(error); }
@@ -226,7 +216,7 @@ const makeLineNormal = async function makeLineNormal() {
 
 	let isLineStart = false;
 
-	let arrEvent = [];
+	let events = [];
 	let arrLine;
 
 	let eventNow;
@@ -254,7 +244,7 @@ const makeLineNormal = async function makeLineNormal() {
 				eventInfo[key] = extrasEvent[eventNow][key];
 			}
 
-			arrEvent.push(eventInfo);
+			events.push(eventInfo);
 		}
 		else {
 			const [idLine, line] = lineText.replace(/^- `/, '').split('` ');
@@ -314,7 +304,7 @@ const makeLineNormal = async function makeLineNormal() {
 				crc32: idLine,
 				duration,
 				side: 'right',
-				head: C.path.head || '${C.path.project.autogen}reso/icons/${C.champion.name}/${C.skin.id}.png',
+				head: C.path.file.head,
 				audio,
 			};
 
@@ -364,7 +354,15 @@ const makeLineNormal = async function makeLineNormal() {
 		}
 	}
 
-	_fs.writeFileSync(C.path.lines, JSON.stringify(arrEvent, null, '\t'));
+	_fs.writeFileSync(C.path.info, JSON.stringify({
+		title: CC.title,
+		champion: CC.champion,
+		skin: CC.skin,
+		emote: CC.emote,
+		head: CC.head,
+		splash: CC.splash,
+		events,
+	}, null, '\t'));
 };
 
 const makeLineSpecial = async function makeLineSpecial() {
@@ -372,7 +370,7 @@ const makeLineSpecial = async function makeLineSpecial() {
 	try {
 		allExtras = require(C.path.linesExtra);
 	}
-	catch(error) { true; }
+	catch(error) { void 0; }
 
 	const extrasEvent = {};
 	for(const [key, extraEvent] of Object.entries(allExtras.event || {})) {
@@ -419,12 +417,12 @@ const makeLineSpecial = async function makeLineSpecial() {
 		}
 	}
 
-	_fs.writeFileSync(C.path.lines, JSON.stringify(allExtras.events, null, '\t'));
+	_fs.writeFileSync(C.path.info, JSON.stringify(allExtras.events, null, '\t'));
 };
 
 if(C.specialLines) {
 	makeLineSpecial().then(() => L(`Finished: ${C.specialLines}`));
 }
 else {
-	makeLineNormal().then(() => L(`Finished: [${C.idFull}] ${C.skin.name} ${C.champion.name}`));
+	makeLineNormal().then(() => L(`Finished: [${C.slot}] ${CC.skin.name} ${CC.champion.name}`));
 }

@@ -1,32 +1,32 @@
 P.calcDuration = function calcDuration() {
-	var arrEvent = JSON.parse(T.readFile(C.path.lines, 'UTF8'));
+	var events = I.events;
 
-	if(C.rangeEvent) {
-		arrEvent = arrEvent.slice(C.rangeEvent[0], C.rangeEvent[1]);
+	if(C.video.rangeEvent) {
+		events = events.slice(C.video.rangeEvent[0], C.video.rangeEvent[1]);
 	}
 
 	var arrDuration = [];
 	var linesDuration = 0;
 
 	D.length = 0;
-	T.enumLine(arrEvent, function() {
+	T.enumLine(events, function() {
 		D.length++;
 	});
 
-	T.enumLine(arrEvent, function(line, event, lid, eid, index) {
+	T.enumLine(events, function(line, event, lid, eid, index) {
 		var sizeLine = T.getBoxSize(line.line);
 		var markFinal = line.mark || event.mark;
 
 		line.boxLine = sizeLine[2];
 		line.boxTextSize = sizeLine.slice(0, 2);
-		line.boxHeight = 30 + (C.size.paddingLine * 2 + 70) +
+		line.boxHeight = 30 + (C.video.size.paddingLine * 2 + 70) +
 			sizeLine[1] + 140;
 
 		if(markFinal) {
 			var sizeMark = T.getBoxSizeMark(markFinal);
 
 			line.boxTextSizeMark = sizeMark.slice(0, 2);
-			line.boxHeightMark = sizeMark[1] + C.size.paddingMark;
+			line.boxHeightMark = sizeMark[1] + C.video.size.paddingMark;
 			line.boxHeight += 20 + line.boxHeightMark;
 		}
 
@@ -51,7 +51,7 @@ P.calcDuration = function calcDuration() {
 	L(D.lines - 120);
 	L(D.linesEnd - 120);
 
-	L(C.champion.name, D.full.toFixed(2), D.lines.toFixed(2));
+	L(I.champion.name, D.full.toFixed(2), D.lines.toFixed(2));
 
-	return arrEvent;
+	return events;
 };

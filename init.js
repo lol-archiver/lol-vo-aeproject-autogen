@@ -1,9 +1,9 @@
 this.T = {
-	enumLine: function(arrEvent, callback) {
+	enumLine: function(events, callback) {
 		var index = 0;
 
-		for(var eid = 0; eid <= (arrEvent.length - 1); eid++) {
-			var event = arrEvent[eid];
+		for(var eid = 0; eid <= (events.length - 1); eid++) {
+			var event = events[eid];
 
 			for(var lid = 0; lid < event.arrLine.length; lid++) {
 				var line = event.arrLine[lid];
@@ -14,7 +14,7 @@ this.T = {
 			}
 		}
 	},
-	each: function each(parent, callback) {
+	each: function(parent, callback) {
 		if(!(parent instanceof Project) && !(parent instanceof FolderItem)) { throw 'parent cannot forEach'; }
 		if(!(callback instanceof Function)) { throw 'callback not Function'; }
 
@@ -32,7 +32,7 @@ this.T = {
 			callback(item, i);
 		}
 	},
-	find: function find(name, parent) {
+	find: function(name, parent) {
 		var result;
 
 		if(!parent) {
@@ -47,10 +47,10 @@ this.T = {
 
 		return result;
 	},
-	rgb: function rgb(r, g, b) {
+	rgb: function(r, g, b) {
 		return [(r / 255).toFixed(4), (g / 255).toFixed(4), (b / 255).toFixed(4)];
 	},
-	readFile: function readFile(path, encoding) {
+	readFile: function(path, encoding) {
 		var file = new File(path);
 
 		if(encoding) {
@@ -78,9 +78,9 @@ this.T = {
 
 		return folderItem || parent.items.addFolder(name);
 	},
-	getBoxSize: function getBoxSize(text) {
-		var fontSize = C.size.fontLine;
-		var heightLeading = C.size.heightLeading;
+	getBoxSize: function(text) {
+		var fontSize = C.video.size.fontLine;
+		var heightLeading = C.video.size.heightLeading;
 		var widthMax = 1080;
 		var heightMax = 1080;
 
@@ -106,9 +106,9 @@ this.T = {
 
 		return [widthBox, lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
 	},
-	getBoxSizeMark: function getBoxSize(text) {
-		var fontSize = C.size.fontMark;
-		var heightLeading = C.size.heightLeading;
+	getBoxSizeMark: function(text) {
+		var fontSize = C.video.size.fontMark;
+		var heightLeading = C.video.size.heightLeading;
 		var widthMax = 1080;
 		var heightMax = 1080;
 
@@ -134,7 +134,7 @@ this.T = {
 
 		return [widthBox, lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
 	},
-	parseConfig: function parseConfig(str) {
+	parseConfig: function(str) {
 		return str.replace(/\$\{.+?\}/g, function(text) {
 			C;
 			try {
@@ -147,11 +147,11 @@ this.T = {
 	}
 };
 
-var file = new File(C.path.logFile);
+var file = new File(C.path.file.log);
 file.encoding = 'UTF8';
 file.open('a');
 
-this.L = function log() {
+this.L = function() {
 	var text = [];
 
 	for(var key in arguments) {
@@ -167,10 +167,13 @@ this.L.end = function() {
 };
 
 this.D = {
-	interval: C.duration.interval,
-	title: C.duration.title,
-	credit: C.duration.credit
+	interval: C.video.duration.interval,
+	title: C.video.duration.title,
+	credit: C.video.duration.credit
 };
+
+this.I = JSON.parse(T.readFile(C.path.info, 'UTF8'));
+C.init(I);
 
 this.P = {};
 // @include 'part/calcDuration.js';

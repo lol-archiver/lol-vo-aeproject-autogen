@@ -19,7 +19,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	var compLine = folderLines.items.addComp(indexText + line.line, 1920, 1080, 1, duration, 60);
 	compLine.bgColor = T.rgb(14, 14, 14);
 
-	if(line.audio && !C.mute) {
+	if(line.audio && !C.video.mute) {
 		compLine.layers.add(F(T.parseConfig(line.audio), T.folderVoices));
 	}
 
@@ -186,7 +186,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 		var textDocEvent = layerEvent.sourceText.value;
 		textDocEvent.resetCharStyle();
-		textDocEvent.fontSize = C.size.fontLine;
+		textDocEvent.fontSize = C.video.size.fontLine;
 		textDocEvent.fillColor = T.rgb(73, 80, 81);
 		textDocEvent.font = 'Source Han Mono SC';
 		textDocEvent.applyStroke = true;
@@ -205,7 +205,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 	var textDocLine = layerLineBox.sourceText.value;
 	textDocLine.resetCharStyle();
-	textDocLine.fontSize = C.size.fontLine;
+	textDocLine.fontSize = C.video.size.fontLine;
 	textDocLine.fillColor = colorLine;
 	textDocLine.font = 'Source Han Mono SC';
 	textDocLine.applyStroke = true;
@@ -245,14 +245,14 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 
 		var textDocMark = layerMarkBox.sourceText.value;
 		textDocMark.resetCharStyle();
-		textDocMark.fontSize = C.size.fontMark;
+		textDocMark.fontSize = C.video.size.fontMark;
 		textDocMark.fillColor = colorMark;
 		textDocMark.font = 'Source Han Mono SC';
 		textDocMark.applyStroke = true;
 		textDocMark.strokeColor = colorMark;
 		textDocMark.strokeWidth = 1;
 		textDocMark.boxTextSize = line.boxTextSizeMark;
-		textDocMark.leading = C.size.fontMark + C.size.heightLeading;
+		textDocMark.leading = C.video.size.fontMark + C.video.size.heightLeading;
 		textDocMark.text = markFinal;
 		layerMarkBox.sourceText.setValue(textDocMark);
 	}

@@ -6,18 +6,18 @@
 // @include 'footage.js';
 
 (function() {
-	var arrEvent = P.calcDuration();
+	var events = P.calcDuration();
 
 	T.compMain.duration = D.full;
 	T.compMain.openInViewer();
 
-	if(!C.simple) {
+	if(!C.video.simple) {
 		P.addBGM();
 		P.addTitle();
 	}
 
 	var accumDuration = D.title;
-	T.enumLine(arrEvent, function(line, event, lid, eid, index) {
+	T.enumLine(events, function(line, event, lid, eid, index) {
 		var yCenter = 540;
 
 		var yLine = yCenter + line.boxHeight;
@@ -48,7 +48,7 @@
 		accumDuration += line.duration + D.interval;
 	});
 
-	if(!C.simple) {
+	if(!C.video.simple) {
 		P.addCounter();
 		P.addCredit();
 		P.addWaterMark();

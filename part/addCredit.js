@@ -1,8 +1,8 @@
 P.addCredit = function addCredit() {
 	var textThankyou = '感谢观看！\n';
-	var textInfo = '解包/听写/整理/制作\n    by DanoR(Nuogz)\n\n' + C.emote + '\n\n如有错漏，敬请留言';
+	var textInfo = '解包/听写/整理/制作\n    by DanoR(Nuogz)\n\n' + I.emote + '\n\n如有错漏，敬请留言';
 
-	var splashEnd = F(C.path.splash);
+	var splashEnd = F(C.path.file.splash);
 	var layerSplashEnd = T.compMain.layers.add(splashEnd, D.full);
 	layerSplashEnd.startTime = D.linesEnd + 2;
 
@@ -64,8 +64,8 @@ P.addCredit = function addCredit() {
 	var textDocInfo2 = layerInfo2.sourceText.value;
 	textDocInfo1.resetCharStyle();
 	textDocInfo2.resetCharStyle();
-	textDocInfo1.fontSize = C.size.fontLine;
-	textDocInfo2.fontSize = C.size.fontLine;
+	textDocInfo1.fontSize = C.video.size.fontLine;
+	textDocInfo2.fontSize = C.video.size.fontLine;
 	textDocInfo1.font = 'Source Han Mono SC';
 	textDocInfo2.font = 'Source Han Mono SC';
 	textDocInfo1.applyStroke = true;

@@ -1,6 +1,6 @@
 P.addTitle = function addTitle() {
-	var layerSplashStart1 = T.compMain.layers.add(F(C.path.splash), D.full);
-	var layerSplashStart2 = T.compMain.layers.add(F(C.path.splash), D.full);
+	var layerSplashStart1 = T.compMain.layers.add(F(C.path.file.splash), D.full);
+	var layerSplashStart2 = T.compMain.layers.add(F(C.path.file.splash), D.full);
 	layerSplashStart1.transform.scale.setValueAtTime(0, [200, 200]);
 	layerSplashStart2.transform.scale.setValueAtTime(0, [200, 200]);
 	layerSplashStart1.transform.scale.setValueAtTime(D.title - 5, [160, 160]);
@@ -17,8 +17,8 @@ P.addTitle = function addTitle() {
 	effectBlurSplash1.blurRadius.setValueAtTime(D.title, 7);
 	effectBlurSplash2.blurRadius.setValueAtTime(D.title, 7);
 
-	var layerTitle1 = T.compMain.layers.addText(C.champion.title);
-	var layerTitle2 = T.compMain.layers.addText(C.champion.title);
+	var layerTitle1 = T.compMain.layers.addText(I.champion.title);
+	var layerTitle2 = T.compMain.layers.addText(I.champion.title);
 	layerTitle1.outPoint = D.title + 0.4;
 	layerTitle2.outPoint = D.title + 0.4;
 	layerTitle1.transform.position.setValue([40 + 2, 150 + 2]);
