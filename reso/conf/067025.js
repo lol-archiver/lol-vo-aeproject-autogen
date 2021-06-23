@@ -13,19 +13,22 @@ module.exports = {
 		'[助攻:英雄:格雷福斯]':
 			{ target: '${C.path.project.autogen}reso/icons/Graves/0.png' },
 		'[移动:初次:皮肤:光明哨兵 格雷福斯]':
-			{ target: '${C.path.project.autogen}reso/icons/Graves/35.png' },
+			{ target: '${C.path.project.autogen}reso/others/icons/STN_Graves.png' },
+			// { target: '${C.path.project.autogen}reso/icons/Graves/35.png' },
 		'[初遇:英雄:格雷福斯]':
 			{ target: '${C.path.project.autogen}reso/icons/Graves/0.png' },
 		'[击杀:英雄:格雷福斯]':
 			{ target: '${C.path.project.autogen}reso/icons/Graves/0.png' },
 		'[初遇:皮肤:光明哨兵 格雷福斯]':
-			{ target: '${C.path.project.autogen}reso/icons/Graves/35.png' },
+			{ target: '${C.path.project.autogen}reso/others/icons/STN_Graves.png' },
 		'[击杀:皮肤:光明哨兵 格雷福斯]':
-			{ target: '${C.path.project.autogen}reso/icons/Graves/35.png' },
+			{ target: '${C.path.project.autogen}reso/others/icons/STN_Graves.png' },
 		'[初遇:皮肤:光明哨兵 血港鬼影]':
-			{ target: '${C.path.project.autogen}reso/icons/Pyke/34.png' },
+			{ target: '${C.path.project.autogen}reso/others/icons/-1.png' },
+			// { target: '${C.path.project.autogen}reso/icons/Pyke/34.png' },
 		'[初遇:皮肤:破败军团 厄运小姐]':
-			{ target: '${C.path.project.autogen}reso/icons/MissFortune/21.png' },
+			{ target: '${C.path.project.autogen}reso/others/icons/-1.png' },
+			// { target: '${C.path.project.autogen}reso/icons/MissFortune/21.png' },
 		'[初遇:皮肤:光明哨兵 皎月女神]':
 			{ target: '${C.path.project.autogen}reso/icons/Diana/28.png' },
 		'[初遇:皮肤:光明哨兵 艾瑞莉娅]':
@@ -35,7 +38,7 @@ module.exports = {
 		'[初遇:皮肤:光明哨兵 锐雯]':
 			{ target: '${C.path.project.autogen}reso/icons/Riven/34.png' },
 		'[初遇:皮肤:破败军团 潘森]':
-			{ target: '${C.path.project.autogen}reso/icons/Pantheon/25.png' },
+			{ target: '${C.path.project.autogen}reso/others/icons/STN_Pantheon.png' },
 		'[初遇:皮肤:破败军团 德莱文]':
 			{ target: '${C.path.project.autogen}reso/icons/Draven/20.png' },
 		'[初遇:皮肤:破败军团 卡尔玛]':
