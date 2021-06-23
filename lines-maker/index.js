@@ -187,18 +187,12 @@ const makeLineNormal = async function makeLineNormal() {
 	const linesAfter = {};
 	const linesExtra = {};
 
-	let allExtras = {};
 	try {
-		allExtras = require(C.path.linesExtra);
-	}
-	catch(error) { void 0; }
-
-	try {
-		for(const [key, extraEvent] of Object.entries(allExtras.event || {})) {
+		for(const [key, extraEvent] of Object.entries(CC.events || {})) {
 			extrasEvent[key] = extraEvent;
 		}
 
-		for(const [key, extra] of Object.entries(allExtras.lines || {})) {
+		for(const [key, extra] of Object.entries(CC.lines || {})) {
 			if(extra.befores instanceof Array) {
 				extra.befores.forEach(before => (linesBefore[key] || (linesBefore[key] = [])).push(before));
 				delete extra.befores;
@@ -373,7 +367,7 @@ const makeLineSpecial = async function makeLineSpecial() {
 	catch(error) { void 0; }
 
 	const extrasEvent = {};
-	for(const [key, extraEvent] of Object.entries(allExtras.event || {})) {
+	for(const [key, extraEvent] of Object.entries(allExtras.events || {})) {
 		extrasEvent[key] = extraEvent;
 	}
 

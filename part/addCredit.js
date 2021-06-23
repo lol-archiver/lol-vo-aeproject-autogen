@@ -1,6 +1,6 @@
 P.addCredit = function addCredit() {
 	var textThankyou = '感谢观看！\n';
-	var textInfo = '解包/听写/整理/制作\n    by DanoR(Nuogz)\n\n' + I.emote + '\n\n如有错漏，敬请留言';
+	var textInfo = '解包/听写/整理/制作\n    by DanoR(Nuogz)\n\n' + I.emote + '\n\n如有错漏，敬请留言\n\n所有素材依赖于最新测试服进度\n视频内容可能多次变动，请勿见怪';
 
 	var splashEnd = F(C.path.file.splash);
 	var layerSplashEnd = T.compMain.layers.add(splashEnd, D.full);

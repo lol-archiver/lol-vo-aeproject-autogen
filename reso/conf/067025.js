@@ -12,23 +12,23 @@ module.exports = {
 	events: {
 		'[助攻:英雄:格雷福斯]':
 			{ target: '${C.path.project.autogen}reso/icons/Graves/0.png' },
-		'[移动:初次:皮肤:光明哨兵 格雷福斯]':
-			{ target: '${C.path.project.autogen}reso/others/icons/STN_Graves.png' },
-			// { target: '${C.path.project.autogen}reso/icons/Graves/35.png' },
 		'[初遇:英雄:格雷福斯]':
 			{ target: '${C.path.project.autogen}reso/icons/Graves/0.png' },
 		'[击杀:英雄:格雷福斯]':
 			{ target: '${C.path.project.autogen}reso/icons/Graves/0.png' },
+		'[移动:初次][友方:使用:皮肤:光明哨兵 格雷福斯]':
+			{ target: '${C.path.project.autogen}reso/others/icons/STN_Graves.png' },
+		// { target: '${C.path.project.autogen}reso/icons/Graves/35.png' },
 		'[初遇:皮肤:光明哨兵 格雷福斯]':
 			{ target: '${C.path.project.autogen}reso/others/icons/STN_Graves.png' },
 		'[击杀:皮肤:光明哨兵 格雷福斯]':
 			{ target: '${C.path.project.autogen}reso/others/icons/STN_Graves.png' },
 		'[初遇:皮肤:光明哨兵 血港鬼影]':
 			{ target: '${C.path.project.autogen}reso/others/icons/-1.png' },
-			// { target: '${C.path.project.autogen}reso/icons/Pyke/34.png' },
+		// { target: '${C.path.project.autogen}reso/icons/Pyke/34.png' },
 		'[初遇:皮肤:破败军团 厄运小姐]':
 			{ target: '${C.path.project.autogen}reso/others/icons/-1.png' },
-			// { target: '${C.path.project.autogen}reso/icons/MissFortune/21.png' },
+		// { target: '${C.path.project.autogen}reso/icons/MissFortune/21.png' },
 		'[初遇:皮肤:光明哨兵 皎月女神]':
 			{ target: '${C.path.project.autogen}reso/icons/Diana/28.png' },
 		'[初遇:皮肤:光明哨兵 艾瑞莉娅]':
@@ -44,9 +44,9 @@ module.exports = {
 		'[初遇:皮肤:破败军团 卡尔玛]':
 			{ target: '${C.path.project.autogen}reso/icons/Karma/27.png' },
 		'[初遇:皮肤:破败军团 希瓦娜]':
-			{ target: '${C.path.project.autogen}reso/icons/Shyvanna/8.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Shyvana/8.png' },
 		'[击杀:皮肤:破败军团 希瓦娜]':
-			{ target: '${C.path.project.autogen}reso/icons/Shyvanna/8.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Shyvana/8.png' },
 		'[初遇:英雄:佛耶戈]':
 			{ target: '${C.path.project.autogen}reso/icons/Viego/0.png' },
 		'[击杀:英雄:佛耶戈]':
@@ -82,11 +82,23 @@ module.exports = {
 			{ skill: '${C.path.project.autogen}reso/icons/Vayne/R.png' },
 	},
 	lines: {
+		'3F56BE51': {
+			mark: '提前内置的语音，皮肤将在下一版本11.15推出',
+		},
+		'4F13E639': {
+			mark: '提前内置的语音，皮肤将在下一版本11.15推出',
+		},
+		'046F4E6C': {
+			mark: '提前内置的语音，皮肤将在下一版本11.15推出',
+		},
+		'9CB4A103': {
+			mark: '提前内置的语音，皮肤将在下一版本11.15推出',
+		},
 		'FC198474': {
-			mark: '该语音是提前预置的语音，皮肤将在下一版本11.15退出',
+			mark: '提前内置的语音，皮肤将在下一版本11.15推出',
 		},
 		'778D9E37': {
-			mark: '该语音是提前预置的语音，皮肤将在下一版本11.15退出',
+			mark: '提前内置的语音，皮肤将在下一版本11.15推出',
 		},
 
 

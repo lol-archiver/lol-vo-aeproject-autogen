@@ -147,6 +147,9 @@ this.T = {
 	}
 };
 
+this.I = JSON.parse(T.readFile(C.path.info, 'UTF8'));
+C.init(I);
+
 var file = new File(C.path.file.log);
 file.encoding = 'UTF8';
 file.open('a');
@@ -171,9 +174,6 @@ this.D = {
 	title: C.video.duration.title,
 	credit: C.video.duration.credit
 };
-
-this.I = JSON.parse(T.readFile(C.path.info, 'UTF8'));
-C.init(I);
 
 this.P = {};
 // @include 'part/calcDuration.js';
