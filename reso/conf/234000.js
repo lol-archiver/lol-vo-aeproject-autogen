@@ -2,71 +2,71 @@ module.exports = {
 	emote: 'ヽ(ｏ`皿′ｏ)ﾉ',
 	event: {
 		'[初遇:英雄:费德提克]': {
-			target: '${C.path.project.autogen}reso/icons/Fiddlesticks/0.png'
+			target: '${C.path.project.autogen}reso/icon/Fiddlesticks/0.png'
 		},
 		'[初遇:英雄:赫卡里姆]': {
-			target: '${C.path.project.autogen}reso/icons/Hecarim/0.png'
+			target: '${C.path.project.autogen}reso/icon/Hecarim/0.png'
 		},
 		'[击杀:英雄:赫卡里姆]': {
-			target: '${C.path.project.autogen}reso/icons/Hecarim/0.png'
+			target: '${C.path.project.autogen}reso/icon/Hecarim/0.png'
 		},
 		'[初遇:英雄:俄洛伊]': {
-			target: '${C.path.project.autogen}reso/icons/Illaoi/0.png'
+			target: '${C.path.project.autogen}reso/icon/Illaoi/0.png'
 		},
 		'[初遇:英雄:卡莉丝塔]': {
-			target: '${C.path.project.autogen}reso/icons/Kalista/0.png'
+			target: '${C.path.project.autogen}reso/icon/Kalista/0.png'
 		},
 		'[击杀:英雄:卡莉丝塔]': {
-			target: '${C.path.project.autogen}reso/icons/Kalista/0.png'
+			target: '${C.path.project.autogen}reso/icon/Kalista/0.png'
 		},
 		'[初遇:英雄:卡尔萨斯]': {
-			target: '${C.path.project.autogen}reso/icons/Karthus/0.png'
+			target: '${C.path.project.autogen}reso/icon/Karthus/0.png'
 		},
 		'[初遇:英雄:千珏]': {
-			target: '${C.path.project.autogen}reso/icons/Kindred/0.png'
+			target: '${C.path.project.autogen}reso/icon/Kindred/0.png'
 		},
 		'[击杀:英雄:千珏]': {
-			target: '${C.path.project.autogen}reso/icons/Kindred/0.png'
+			target: '${C.path.project.autogen}reso/icon/Kindred/0.png'
 		},
 		'[初遇:英雄:茂凯]': {
-			target: '${C.path.project.autogen}reso/icons/Maokai/0.png'
+			target: '${C.path.project.autogen}reso/icon/Maokai/0.png'
 		},
 		'[初遇:英雄:赛娜]': {
-			target: '${C.path.project.autogen}reso/icons/Senna/0.png'
+			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
 		},
 		'[击杀:英雄:赛娜]': {
-			target: '${C.path.project.autogen}reso/icons/Senna/0.png'
+			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
 		},
 		'[初遇:英雄:锤石]': {
-			target: '${C.path.project.autogen}reso/icons/Thresh/0.png'
+			target: '${C.path.project.autogen}reso/icon/Thresh/0.png'
 		},
 		'[击杀:英雄:锤石]': {
-			target: '${C.path.project.autogen}reso/icons/Thresh/0.png'
+			target: '${C.path.project.autogen}reso/icon/Thresh/0.png'
 		},
 		'[初遇:英雄:弗拉基米尔]': {
-			target: '${C.path.project.autogen}reso/icons/Vladimir/0.png'
+			target: '${C.path.project.autogen}reso/icon/Vladimir/0.png'
 		},
 		'[击杀:英雄:弗拉基米尔]': {
-			target: '${C.path.project.autogen}reso/icons/Vladimir/0.png'
+			target: '${C.path.project.autogen}reso/icon/Vladimir/0.png'
 		},
 		'[初遇:英雄:约里克]': {
-			target: '${C.path.project.autogen}reso/icons/Yorick/0.png'
+			target: '${C.path.project.autogen}reso/icon/Yorick/0.png'
 		},
 		'[击杀:英雄:约里克]': {
-			target: '${C.path.project.autogen}reso/icons/Yorick/0.png'
+			target: '${C.path.project.autogen}reso/icon/Yorick/0.png'
 		},
 
 		'[使用:Q技能:破败王剑]': {
-			skill: '${C.path.project.autogen}reso/icons/Viego/Q.png'
+			skill: '${C.path.project.autogen}reso/icon/Viego/Q.png'
 		},
 		'[使用:W技能:千载幽咽]': {
-			skill: '${C.path.project.autogen}reso/icons/Viego/W.png'
+			skill: '${C.path.project.autogen}reso/icon/Viego/W.png'
 		},
 		'[使用:E技能:茫茫焦土]': {
-			skill: '${C.path.project.autogen}reso/icons/Viego/E.png'
+			skill: '${C.path.project.autogen}reso/icon/Viego/E.png'
 		},
 		'[使用:R技能:痛贯天灵]': {
-			skill: '${C.path.project.autogen}reso/icons/Viego/R.png'
+			skill: '${C.path.project.autogen}reso/icon/Viego/R.png'
 		},
 	},
 	lines: {
@@ -75,7 +75,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/Thresh/0.png',
+				head: '${C.path.project.autogen}reso/icon/Thresh/0.png',
 				line: 'o(一︿一+)o'
 			}
 		],

@@ -1,106 +1,106 @@
 module.exports = {
 	event: {
 		KillChampionJax: {
-			target: '${C.path.project.autogen}reso/icons/Jax/0.png'
+			target: '${C.path.project.autogen}reso/icon/Jax/0.png'
 		},
 		KillChampionAzirSkin4: {
-			target: '${C.path.project.autogen}reso/icons/Azir/4.png'
+			target: '${C.path.project.autogen}reso/icon/Azir/4.png'
 		},
 		KillChampionDravenSkin13: {
-			target: '${C.path.project.autogen}reso/icons/Draven/13.png'
+			target: '${C.path.project.autogen}reso/icon/Draven/13.png'
 		},
 		KillChampionGarenSkin11: {
-			target: '${C.path.project.autogen}reso/icons/Garen/11.png'
+			target: '${C.path.project.autogen}reso/icon/Garen/11.png'
 		},
 		KillChampionGarenSkin22: {
-			target: '${C.path.project.autogen}reso/icons/Garen/22.png'
+			target: '${C.path.project.autogen}reso/icon/Garen/22.png'
 		},
 		KillChampionJarvanIVSkin5: {
-			target: '${C.path.project.autogen}reso/icons/JarvanIV/5.png'
+			target: '${C.path.project.autogen}reso/icon/JarvanIV/5.png'
 		},
 		KillChampionKatarinaSkin8: {
-			target: '${C.path.project.autogen}reso/icons/Katarina/8.png'
+			target: '${C.path.project.autogen}reso/icon/Katarina/8.png'
 		},
 		KillChampionLeonaSkin12: {
-			target: '${C.path.project.autogen}reso/icons/Leona/12.png'
+			target: '${C.path.project.autogen}reso/icon/Leona/12.png'
 		},
 		KillChampionNidaleeSkin7: {
-			target: '${C.path.project.autogen}reso/icons/Nidalee/7.png'
+			target: '${C.path.project.autogen}reso/icon/Nidalee/7.png'
 		},
 		KillChampionRivenSkin17: {
-			target: '${C.path.project.autogen}reso/icons/Riven/5.png'
+			target: '${C.path.project.autogen}reso/icon/Riven/5.png'
 		},
 		KillChampionSettSkin1: {
-			target: '${C.path.project.autogen}reso/icons/Sett/1.png'
+			target: '${C.path.project.autogen}reso/icon/Sett/1.png'
 		},
 		KillChampionTalonSkin6: {
-			target: '${C.path.project.autogen}reso/icons/Talon/3.png'
+			target: '${C.path.project.autogen}reso/icon/Talon/3.png'
 		},
 		KillChampionTryndamereSkin6: {
-			target: '${C.path.project.autogen}reso/icons/Tryndamere/6.png'
+			target: '${C.path.project.autogen}reso/icon/Tryndamere/6.png'
 		},
 		KillChampionViSkin5: {
-			target: '${C.path.project.autogen}reso/icons/Vi/5.png'
+			target: '${C.path.project.autogen}reso/icon/Vi/5.png'
 		},
 		KillChampionXinZhaoSkin5: {
-			target: '${C.path.project.autogen}reso/icons/XinZhao/5.png'
+			target: '${C.path.project.autogen}reso/icon/XinZhao/5.png'
 		},
 		FirstEncounterJax: {
-			target: '${C.path.project.autogen}reso/icons/Jax/0.png'
+			target: '${C.path.project.autogen}reso/icon/Jax/0.png'
 		},
 		FirstEncounterAzirSkin4: {
-			target: '${C.path.project.autogen}reso/icons/Azir/4.png'
+			target: '${C.path.project.autogen}reso/icon/Azir/4.png'
 		},
 		FirstEncounterDravenSkin13: {
-			target: '${C.path.project.autogen}reso/icons/Draven/13.png'
+			target: '${C.path.project.autogen}reso/icon/Draven/13.png'
 		},
 		FirstEncounterGarenSkin11: {
-			target: '${C.path.project.autogen}reso/icons/Garen/11.png'
+			target: '${C.path.project.autogen}reso/icon/Garen/11.png'
 		},
 		FirstEncounterGarenSkin22: {
-			target: '${C.path.project.autogen}reso/icons/Garen/22.png'
+			target: '${C.path.project.autogen}reso/icon/Garen/22.png'
 		},
 		FirstEncounterJaxSkin5: {
-			target: '${C.path.project.autogen}reso/icons/Jax/5.png'
+			target: '${C.path.project.autogen}reso/icon/Jax/5.png'
 		},
 		FirstEncounterJarvanIVSkin5: {
-			target: '${C.path.project.autogen}reso/icons/JarvanIV/5.png'
+			target: '${C.path.project.autogen}reso/icon/JarvanIV/5.png'
 		},
 		FirstEncounterKatarinaSkin8: {
-			target: '${C.path.project.autogen}reso/icons/Katarina/8.png'
+			target: '${C.path.project.autogen}reso/icon/Katarina/8.png'
 		},
 		FirstEncounterLeonaSkin12: {
-			target: '${C.path.project.autogen}reso/icons/Leona/12.png'
+			target: '${C.path.project.autogen}reso/icon/Leona/12.png'
 		},
 		FirstEncounterNidaleeSkin7: {
-			target: '${C.path.project.autogen}reso/icons/Nidalee/7.png'
+			target: '${C.path.project.autogen}reso/icon/Nidalee/7.png'
 		},
 		FirstEncounterRivenSkin17: {
-			target: '${C.path.project.autogen}reso/icons/Riven/5.png'
+			target: '${C.path.project.autogen}reso/icon/Riven/5.png'
 		},
 		FirstEncounterSettSkin1: {
-			target: '${C.path.project.autogen}reso/icons/Sett/1.png'
+			target: '${C.path.project.autogen}reso/icon/Sett/1.png'
 		},
 		FirstEncounterTalonSkin6: {
-			target: '${C.path.project.autogen}reso/icons/Talon/3.png'
+			target: '${C.path.project.autogen}reso/icon/Talon/3.png'
 		},
 		FirstEncounterTryndamereSkin6: {
-			target: '${C.path.project.autogen}reso/icons/Tryndamere/6.png'
+			target: '${C.path.project.autogen}reso/icon/Tryndamere/6.png'
 		},
 		FirstEncounterViSkin5: {
-			target: '${C.path.project.autogen}reso/icons/Vi/5.png'
+			target: '${C.path.project.autogen}reso/icon/Vi/5.png'
 		},
 		FirstEncounterXinZhaoSkin5: {
-			target: '${C.path.project.autogen}reso/icons/XinZhao/5.png'
+			target: '${C.path.project.autogen}reso/icon/XinZhao/5.png'
 		},
 		JaxLeapStrike: {
-			skill: '${C.path.project.autogen}reso/icons/Jax/Q.png'
+			skill: '${C.path.project.autogen}reso/icon/Jax/Q.png'
 		},
 		JaxCounterStrike_OnBuffDeactivate: {
-			skill: '${C.path.project.autogen}reso/icons/Jax/E.png'
+			skill: '${C.path.project.autogen}reso/icon/Jax/E.png'
 		},
 		JaxRelentlessAssault: {
-			skill: '${C.path.project.autogen}reso/icons/Jax/R.png'
+			skill: '${C.path.project.autogen}reso/icon/Jax/R.png'
 		},
 	},
 	lines: {
@@ -109,7 +109,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/Jax/0.png',
+				head: '${C.path.project.autogen}reso/icon/Jax/0.png',
 				line: '─=≡Σ((( つ•̀ω•́)つつつ'
 			}
 		],
@@ -118,7 +118,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/Azir/4.png',
+				head: '${C.path.project.autogen}reso/icon/Azir/4.png',
 				line: '(╯°Д°）╯︵ /(.□ . \\)'
 			}
 		],
@@ -127,7 +127,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/Draven/13.png',
+				head: '${C.path.project.autogen}reso/icon/Draven/13.png',
 				line: '( ￣ー￣)'
 			}
 		],
@@ -136,7 +136,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/JarvanIV/5.png',
+				head: '${C.path.project.autogen}reso/icon/JarvanIV/5.png',
 				line: '(￣△￣；)'
 			}
 		],
@@ -145,7 +145,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/Jax/5.png',
+				head: '${C.path.project.autogen}reso/icon/Jax/5.png',
 				line: 'ヽ(✿ﾟ▽ﾟ)ノ'
 			}
 		],
@@ -154,7 +154,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/Katarina/8.png',
+				head: '${C.path.project.autogen}reso/icon/Katarina/8.png',
 				line: 'ヽ(ｏ`皿′ｏ)ﾉ'
 			}
 		],
@@ -163,7 +163,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/Leona/12.png',
+				head: '${C.path.project.autogen}reso/icon/Leona/12.png',
 				line: '( ´_ゝ｀)'
 			}
 		],
@@ -172,7 +172,7 @@ module.exports = {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icons/Sett/1.png',
+				head: '${C.path.project.autogen}reso/icon/Sett/1.png',
 				line: '(#｀皿´)'
 			}
 		]

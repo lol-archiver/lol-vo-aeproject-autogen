@@ -2,35 +2,35 @@ module.exports = {
 	emote: '{{{(>_<)}}}',
 	event: {
 		'[初遇:皮肤:惊悚派对 阿木木]': {
-			target: '${C.path.project.autogen}reso/icons/Amumu/8.png',
+			target: '${C.path.project.autogen}reso/icon/Amumu/8.png',
 		},
 		'[初遇:皮肤:合金巨兽 努努和威朗普]': {
-			target: '${C.path.project.autogen}reso/icons/Nunu/4.png',
+			target: '${C.path.project.autogen}reso/icon/Nunu/4.png',
 		},
 		'[初遇:英雄:佐伊]': {
-			target: '${C.path.project.autogen}reso/icons/Zoe/0.png',
+			target: '${C.path.project.autogen}reso/icon/Zoe/0.png',
 		},
 		'[击杀:英雄:佐伊]': {
-			target: '${C.path.project.autogen}reso/icons/Zoe/0.png',
+			target: '${C.path.project.autogen}reso/icon/Zoe/0.png',
 		},
 		'[初遇:英雄:古拉加斯]': {
-			target: '${C.path.project.autogen}reso/icons/Gragas/0.png',
+			target: '${C.path.project.autogen}reso/icon/Gragas/0.png',
 		},
 
 		'[触发:P被动:惊骸草人:草间人激活]': {
-			skill: '${C.path.project.autogen}reso/icons/Fiddlesticks/P.png'
+			skill: '${C.path.project.autogen}reso/icon/Fiddlesticks/P.png'
 		},
 		'[使用:Q技能:恐惧]': {
-			skill: '${C.path.project.autogen}reso/icons/Fiddlesticks/Q.png'
+			skill: '${C.path.project.autogen}reso/icon/Fiddlesticks/Q.png'
 		},
 		'[使用:W技能:五骨丰登]': {
-			skill: '${C.path.project.autogen}reso/icons/Fiddlesticks/W.png'
+			skill: '${C.path.project.autogen}reso/icon/Fiddlesticks/W.png'
 		},
 		'[使用:E技能:夜割]': {
-			skill: '${C.path.project.autogen}reso/icons/Fiddlesticks/E.png'
+			skill: '${C.path.project.autogen}reso/icon/Fiddlesticks/E.png'
 		},
 		'[使用:R技能:群鸦风暴]': {
-			skill: '${C.path.project.autogen}reso/icons/Fiddlesticks/R.png'
+			skill: '${C.path.project.autogen}reso/icon/Fiddlesticks/R.png'
 		},
 	},
 	lines: {
@@ -48,7 +48,7 @@ module.exports = {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icons/Zoe/0.png',
+					head: '${C.path.project.autogen}reso/icon/Zoe/0.png',
 					line: 'ο(=•ω＜=)ρ⌒☆',
 					hideEvent: true,
 				},
