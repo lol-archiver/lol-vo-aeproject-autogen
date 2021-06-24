@@ -38,7 +38,7 @@ module.exports = {
 		'[初遇:皮肤:光明哨兵 锐雯]':
 			{ target: '${C.path.project.autogen}reso/icons/Riven/34.png' },
 		'[初遇:皮肤:破败军团 潘森]':
-			{ target: '${C.path.project.autogen}reso/others/icons/STN_Pantheon.png' },
+			{ target: '${C.path.project.autogen}reso/icons/Pantheon/25.png' },
 		'[初遇:皮肤:破败军团 德莱文]':
 			{ target: '${C.path.project.autogen}reso/icons/Draven/20.png' },
 		'[初遇:皮肤:破败军团 卡尔玛]':
