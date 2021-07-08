@@ -16,7 +16,7 @@ module.exports = {
 			{ target: '${C.path.project.autogen}reso/icon/Viego/0.png' },
 		'[初遇:英雄:卢锡安]':
 			{ target: '${C.path.project.autogen}reso/icon/Lucian/0.png' },
-		'[初遇:英雄:伊泽瑞尔':
+		'[初遇:英雄:伊泽瑞尔]':
 			{ target: '${C.path.project.autogen}reso/icon/Ezreal/0.png' },
 		'[初遇:英雄:卡蜜尔]':
 			{ target: '${C.path.project.autogen}reso/icon/Camille/0.png' },

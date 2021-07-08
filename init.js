@@ -137,6 +137,7 @@ this.T = {
 	parseConfig: function(str) {
 		return str.replace(/\$\{.+?\}/g, function(text) {
 			C;
+			var CC = I;
 			try {
 				return eval(text.replace(/(^\$\{)|(\}$)/g, ''));
 			}
