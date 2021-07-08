@@ -249,13 +249,13 @@ const makeLineNormal = async function makeLineNormal() {
 			if(eventNow == '[选用]' || eventNow == '[禁用]') {
 				const eventTrans = { '[选用]': 'pick', '[禁用]': 'ban' }[eventNow];
 
-				const file = `${C.path.project.autogen}reso/voice/${C.champion.id}/${eventTrans}.wav`;
+				const file = `${C.path.project.autogen}reso/voice/${CC.champion.id}/${eventTrans}.wav`;
 
 				if(_fs.existsSync(file)) {
 					const meta = await MusicMeta.parseFile(file);
 
 					duration = meta.format.duration;
-					audio = '${C.path.project.autogen}reso/voice/${C.champion.id}/' + eventTrans + '.wav';
+					audio = '${C.path.project.autogen}reso/voice/${CC.champion.id}/' + eventTrans + '.wav';
 				}
 			}
 			else {
