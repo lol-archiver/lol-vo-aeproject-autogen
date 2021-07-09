@@ -259,7 +259,7 @@ const makeLineNormal = async function makeLineNormal() {
 				}
 			}
 			else {
-				const file = arrAudioFile.find(fileName => fileName.includes(`[${idLine}]`));
+				const file = arrAudioFile.find(fileName => fileName.includes(idLine));
 
 				if(file) {
 					const meta = await MusicMeta.parseFile(_pa.join(pathAudios, file));
@@ -355,6 +355,7 @@ const makeLineNormal = async function makeLineNormal() {
 		emote: CC.emote,
 		head: CC.head,
 		splash: CC.splash,
+		audios: CC.audios,
 		events,
 	}, null, '\t'));
 };
