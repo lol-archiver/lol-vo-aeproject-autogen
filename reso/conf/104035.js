@@ -87,12 +87,6 @@ module.exports = {
 		'FirstEncounter3DRengarSkin30_01': {
 			mark: '“雷哥儿”对应英文语音中的“Rango”\n是格雷福斯对雷恩加尔（Rengar）的昵称',
 		},
-		'FirstEncounter3DRengarSkin30_01': {
-			mark: '“雷哥儿”对应英文语音中的“Rango”\n是格雷福斯对雷恩加尔（Rengar）的昵称',
-		},
-		'FirstEncounter3DDravenSkin20_01': {
-			mark: '引申自2014年的CG影片《新的曙光》。\n影片中格雷福斯阻止德莱文攻击后，雷恩加尔击杀了德莱文',
-		},
 		'Spell3DWCast01': {
 			mark: '原文“Pocket smoke”\n引申自动画《巴佬希尔一家的幸福生活》（King of the Hill）第6季第2集中，\n戴尔从口袋掏出沙子洒向对方眼睛的招数“Pocket Sand”',
 		},
@@ -105,8 +99,8 @@ module.exports = {
 		'Spell3DWCast03': {
 			mark: '原文“Blinded by the light”。致敬了多首同名歌曲，是国外略常见的歌名',
 		},
-
 		'FirstEncounter3DDravenSkin20_01': {
+			mark: '引申自2014年的CG影片《新的曙光》。\n影片中格雷福斯阻止德莱文攻击后，雷恩加尔击杀了德莱文',
 			afters: [
 				{
 					side: 'left',
