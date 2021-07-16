@@ -1,6 +1,15 @@
 module.exports = {
+	title: '真实伤害 艾克',
+	champion: {
+		id: 245,
+		name: 'Ekko',
+	},
+	skin: {
+		id: 19,
+		name: 'True Damage'
+	},
 	emote: 'w(ﾟДﾟ)w',
-	event: {
+	events: {
 		'[初遇:英雄:艾克]': {
 			target: '${C.path.project.autogen}reso/icon/ekko/0.png',
 		},
@@ -71,6 +80,5 @@ module.exports = {
 		},
 		'44481039': { mark: '不！是！Uncle！' },
 		'DCCD212C': { mark: '不！是！Uncle！' },
-
 	}
 };
