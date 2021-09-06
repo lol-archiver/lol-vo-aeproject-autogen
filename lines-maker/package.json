@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"dependencies": {
-		"music-metadata": "7"
+		"music-metadata": "^7.11.4"
 	},
 	"scripts": {},
 	"author": "DanoR",
