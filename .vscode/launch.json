@@ -1,19 +1,16 @@
 {
-	// 使用 IntelliSense 了解相关属性。
-	// 悬停以查看现有属性的描述。
-	// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"type": "node",
+			"type": "pwa-node",
 			"request": "launch",
-			"name": "更新台词配置",
-			"program": "${workspaceFolder}/lines-maker/index.js",
-			"runtimeExecutable": "node.exe",
+			"name": "更新台词",
 			"skipFiles": [
 				"<node_internals>/**"
 			],
-			"sourceMaps": false
+			"program": "${workspaceFolder}/lines-maker/index.js",
+			"runtimeExecutable": "node.exe",
+			"console": "integratedTerminal"
 		},
 		{
 			"type": "extendscript-debug",
