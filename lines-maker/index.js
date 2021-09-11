@@ -246,8 +246,8 @@ const makeLineNormal = async function makeLineNormal() {
 			let duration = 0;
 			let audio = null;
 
-			if(eventNow == '[选用]' || eventNow == '[禁用]') {
-				const eventTrans = { '[选用]': 'pick', '[禁用]': 'ban' }[eventNow];
+			if(eventNow == '[选用]' || eventNow == '[禁用]' || eventNow == '[选用]、[禁用]') {
+				const eventTrans = { '[选用]': 'pick', '[禁用]': 'ban' }[eventNow] || 'pick';
 
 				const file = `${C.path.project.autogen}reso/voice/${CC.champion.id}/${eventTrans}.wav`;
 

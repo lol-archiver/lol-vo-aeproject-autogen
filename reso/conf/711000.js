@@ -13,7 +13,7 @@ module.exports = {
 		'[初遇:皮肤:破败解封 锤石]':
 			{ target: '${C.path.project.autogen}reso/icon/Thresh/27.png' },
 		'[初遇:英雄:佛耶戈]':
-			{ target: '${C.path.project.autogen}reso/icon/Vigeo/0.png' },
+			{ target: '${C.path.project.autogen}reso/icon/Viego/0.png' },
 		'[初遇:英雄:阿木木]':
 			{ target: '${C.path.project.autogen}reso/icon/Amumu/0.png' },
 		'[初遇:英雄:蒙多医生]':
@@ -32,19 +32,19 @@ module.exports = {
 			{ target: '${C.path.project.autogen}reso/icon/Yuumi/0.png' },
 
 		'[触发:P被动:终焉暮气:添加“暮气”标记]':
-			{ skill: '${C.path.project.autogen}reso/icon/Ashe/P.png' },
+			{ skill: '${C.path.project.autogen}reso/icon/Vex/P.png' },
 		'[触发:P被动:终焉暮气:引爆标记]':
-			{ skill: '${C.path.project.autogen}reso/icon/Ashe/P.png' },
+			{ skill: '${C.path.project.autogen}reso/icon/Vex/P.png' },
 		'[使用:Q技能:寒心波云]':
-			{ skill: '${C.path.project.autogen}reso/icon/Ashe/Q.png' },
+			{ skill: '${C.path.project.autogen}reso/icon/Vex/Q.png' },
 		'[使用:W技能:生人勿近]':
-			{ skill: '${C.path.project.autogen}reso/icon/Ashe/W.png' },
+			{ skill: '${C.path.project.autogen}reso/icon/Vex/W.png' },
 		'[使用:E技能:溟濛渐染]':
-			{ skill: '${C.path.project.autogen}reso/icon/Ashe/E.png' },
+			{ skill: '${C.path.project.autogen}reso/icon/Vex/E.png' },
 		'[使用:R技能:愁煞:第一次施放]':
-			{ skill: '${C.path.project.autogen}reso/icon/Ashe/R.png' },
+			{ skill: '${C.path.project.autogen}reso/icon/Vex/R.png' },
 		'[使用:R技能:愁煞:第二次施放]':
-			{ skill: '${C.path.project.autogen}reso/icon/Ashe/R_2.png' },
+			{ skill: '${C.path.project.autogen}reso/icon/Vex/R_2.png' },
 	},
 	lines: {
 		'5D0CF06A': {
@@ -58,5 +58,6 @@ module.exports = {
 			]
 		},
 		'001ECE22': { mark: '“POW”用于表达很重或者很响亮的声音', },
+		'F5D82758': { mark: '上下这两句台词会连着一起播放', },
 	}
 };
