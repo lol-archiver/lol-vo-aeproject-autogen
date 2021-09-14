@@ -180,7 +180,7 @@ const makeLineNormal = async function makeLineNormal() {
 	const pathAudios = C.path.audios;
 
 	const arrAudioFile = _fs.readdirSync(pathAudios);
-	const arrLineText = _fs.readFileSync(C.path.dictation, 'UTF8').split('\n').filter(text => text.trim());
+	const arrLineText = _fs.readFileSync(C.path.dictation, 'UTF8').split('\n').filter(text => text.trim() && !text.trim().startsWith('<!--'));
 
 	const extrasEvent = {};
 	const linesBefore = {};
@@ -241,7 +241,10 @@ const makeLineNormal = async function makeLineNormal() {
 			events.push(eventInfo);
 		}
 		else {
-			const [idLine, line] = lineText.replace(/^- `/, '').split('` ');
+			const [idLineRaw, line] = lineText.replace(/^- `/, '').split('` ');
+			const [idLine] = idLineRaw.split('|');
+
+			if(line.startsWith('-')) { continue; }
 
 			let duration = 0;
 			let audio = null;
@@ -294,7 +297,7 @@ const makeLineNormal = async function makeLineNormal() {
 			}
 
 			const lineInfo = {
-				line: line.replace(/\\n/g, '\n').replace(/^\+/g, ''),
+				line: line.replace(/\\n|\\，|\\。/g, '\n').replace(/^\+/g, ''),
 				crc32: idLine,
 				duration,
 				side: 'right',

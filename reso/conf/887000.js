@@ -1,14 +1,23 @@
 module.exports = {
+	title: '灵罗娃娃 格温',
+	champion: {
+		id: 887,
+		name: 'Gwen',
+	},
+	skin: {
+		id: 0,
+		name: '_Base'
+	},
 	emote: '（＃￣～￣＃）',
 	event: {
-		'[初遇:地区:暗影岛]':
-			{ target: '${C.path.project.autogen}reso/region/shadow_isles.png' },
-		'[击杀:地区:暗影岛]':
-			{ target: '${C.path.project.autogen}reso/region/shadow_isles.png' },
-		'[初遇:地区:恕瑞玛]':
-			{ target: '${C.path.project.autogen}reso/region/shurima.png' },
-		'[击杀:地区:恕瑞玛]':
-			{ target: '${C.path.project.autogen}reso/region/shurima.png' },
+		'[初遇:英雄:阿克尚]':
+			{ target: '${C.path.project.autogen}reso/icon/Akshan/0.png' },
+		'[击杀:英雄:阿克尚]':
+			{ target: '${C.path.project.autogen}reso/icon/Akshan/0.png' },
+		'[初遇:英雄:薇古丝]':
+			{ target: '${C.path.project.autogen}reso/icon/Vex/0.png' },
+		'[击杀:英雄:薇古丝]':
+			{ target: '${C.path.project.autogen}reso/icon/Vex/0.png' },
 		'[初遇:英雄:艾瑞莉娅]':
 			{ target: '${C.path.project.autogen}reso/icon/Irelia/0.png' },
 		'[击杀:英雄:艾瑞莉娅]':
