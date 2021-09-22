@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"module": "none",
+		"moduleResolution": "node",
+		"target": "es3",
+		"strict": true,
+	},
+	"exclude": [
+		"node_modules",
+	],
+}

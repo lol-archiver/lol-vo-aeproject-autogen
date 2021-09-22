@@ -2,9 +2,9 @@ const C = require('../config');
 const CC = require(`../reso/conf/${C.slot}.js`);
 C.init(CC);
 
-
 const _fs = require('fs');
 const _pa = require('path').posix;
+
 
 const MusicMeta = require('music-metadata');
 
