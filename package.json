@@ -1,12 +1,21 @@
 {
-	"name": "lines-maker",
-	"version": "1.0.0",
+	"name": "lol-vo-aeproject-autogen",
+	"version": "2.0.0",
 	"description": "",
+	"author": "Nuogz",
+	"license": "LGPL-3.0-or-later",
 	"main": "index.js",
+	"type": "module",
+	"engines": {
+		"node": ">=14"
+	},
+	"scripts": {},
 	"dependencies": {
 		"music-metadata": "^7.11.4"
 	},
-	"scripts": {},
-	"author": "DanoR",
-	"license": "ISC"
+	"devDependencies": {
+		"@babel/core": "^7.15.5",
+		"@babel/eslint-parser": "^7.15.7",
+		"eslint": "^7.32.0"
+	}
 }
