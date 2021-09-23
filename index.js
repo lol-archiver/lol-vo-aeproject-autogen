@@ -1,14 +1,13 @@
-const C = require('../config');
-const CC = require(`../reso/conf/${C.slot}.js`);
-C.init(CC);
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'fs';
+import { resolve } from 'path';
 
-const _fs = require('fs');
-const _pa = require('path').posix;
+import { C, CC } from './lib/config.js';
+// const CC = await init();
 
+import { parseFile } from 'music-metadata';
 
-const MusicMeta = require('music-metadata');
+const L = (console ?? {}).log;
 
-const L = (console || {}).log;
 
 const parseConfig = function(str) {
 	return str.replace(/\$\{.+?\}/g, function(text) {
@@ -179,8 +178,8 @@ const formatEvent = function(event) {
 const makeLineNormal = async function makeLineNormal() {
 	const pathAudios = C.path.audios;
 
-	const arrAudioFile = _fs.readdirSync(pathAudios);
-	const arrLineText = _fs.readFileSync(C.path.dictation, 'UTF8').split('\n').filter(text => text.trim() && !text.trim().startsWith('<!--'));
+	const arrAudioFile = readdirSync(pathAudios);
+	const arrLineText = readFileSync(C.path.dictation, 'UTF8').split('\n').filter(text => text.trim() && !text.trim().startsWith('<!--'));
 
 	const extrasEvent = {};
 	const linesBefore = {};
@@ -254,8 +253,8 @@ const makeLineNormal = async function makeLineNormal() {
 
 				const file = `${C.path.project.autogen}reso/voice/${CC.champion.id}/${eventTrans}.wav`;
 
-				if(_fs.existsSync(file)) {
-					const meta = await MusicMeta.parseFile(file);
+				if(existsSync(file)) {
+					const meta = await parseFile(file);
 
 					duration = meta.format.duration;
 					audio = '${C.path.project.autogen}reso/voice/${CC.champion.id}/' + eventTrans + '.wav';
@@ -265,7 +264,7 @@ const makeLineNormal = async function makeLineNormal() {
 				const file = arrAudioFile.find(fileName => fileName.includes(idLine));
 
 				if(file) {
-					const meta = await MusicMeta.parseFile(_pa.join(pathAudios, file));
+					const meta = await parseFile(resolve(pathAudios, file));
 
 					duration = meta.format.duration;
 					audio = '${C.path.audios}' + file;
@@ -281,12 +280,12 @@ const makeLineNormal = async function makeLineNormal() {
 				}
 
 				if(line.hash && line.folder) {
-					const audios = _fs.readdirSync(_pa.join(C.path.project.extract, '_final', line.folder));
+					const audios = readdirSync(resolve(C.path.project.extract, '_final', line.folder));
 
 					const nameAudio = audios.find(fileName => fileName.includes(`[${line.hash}]`));
 
 					if(nameAudio) {
-						const meta = await MusicMeta.parseFile(_pa.join(C.path.project.extract, '_final', line.folder, nameAudio));
+						const meta = await parseFile(resolve(C.path.project.extract, '_final', line.folder, nameAudio));
 
 						line.duration = meta.format.duration;
 						line.audio = '${C.path.project.extract}/_final/' + line.folder + '/' + nameAudio;
@@ -330,12 +329,12 @@ const makeLineNormal = async function makeLineNormal() {
 				}
 
 				if(line.hash && line.folder) {
-					const audios = _fs.readdirSync(_pa.join(C.path.project.extract, '_final', line.folder));
+					const audios = readdirSync(resolve(C.path.project.extract, '_final', line.folder));
 
 					const nameAudio = audios.find(fileName => fileName.includes(`[${line.hash}]`));
 
 					if(nameAudio) {
-						const meta = await MusicMeta.parseFile(_pa.join(C.path.project.extract, '_final', line.folder, nameAudio));
+						const meta = await parseFile(resolve(C.path.project.extract, '_final', line.folder, nameAudio));
 
 						line.duration = meta.format.duration;
 						line.audio = '${C.path.project.extract}/_final/' + line.folder + '/' + nameAudio;
@@ -351,7 +350,7 @@ const makeLineNormal = async function makeLineNormal() {
 		}
 	}
 
-	_fs.writeFileSync(C.path.info, JSON.stringify({
+	writeFileSync(C.path.info, JSON.stringify({
 		title: CC.title,
 		champion: CC.champion,
 		skin: CC.skin,
@@ -390,18 +389,18 @@ const makeLineSpecial = async function makeLineSpecial() {
 				pathAudio = parseConfig(line.audio);
 			}
 			else if(line.crc32 && line.audioFolder) {
-				const audios = _fs.readdirSync(_pa.join(C.path.project.extract, '_final', line.audioFolder));
+				const audios = readdirSync(resolve(C.path.project.extract, '_final', line.audioFolder));
 
 				const nameAudio = audios.find(fileName => fileName.includes(`[${line.crc32}]`));
 
-				pathAudio = nameAudio ? _pa.join(C.path.project.extract, '_final', line.audioFolder, nameAudio) : null;
+				pathAudio = nameAudio ? resolve(C.path.project.extract, '_final', line.audioFolder, nameAudio) : null;
 
 				line.audio = '${C.path.project.extract}/_final/' + line.audioFolder + '/' + nameAudio;
 			}
 
 			if(pathAudio) {
 				try {
-					const meta = await MusicMeta.parseFile(pathAudio);
+					const meta = await parseFile(pathAudio);
 
 					line.duration = meta.format.duration;
 				}
@@ -415,7 +414,7 @@ const makeLineSpecial = async function makeLineSpecial() {
 		}
 	}
 
-	_fs.writeFileSync(C.path.info, JSON.stringify(allExtras.events, null, '\t'));
+	writeFileSync(C.path.info, JSON.stringify(allExtras.events, null, '\t'));
 };
 
 if(C.specialLines) {

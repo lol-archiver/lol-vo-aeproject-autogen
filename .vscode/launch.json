@@ -8,7 +8,7 @@
 			"skipFiles": [
 				"<node_internals>/**"
 			],
-			"program": "${workspaceFolder}/lines-maker/index.js",
+			"program": "${workspaceFolder}/index.js",
 			"runtimeExecutable": "node.exe",
 			"console": "integratedTerminal"
 		},

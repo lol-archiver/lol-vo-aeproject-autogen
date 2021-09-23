@@ -1,4 +1,4 @@
-var rc = {
+const rc = {
 	env: {
 		browser: true
 	},
@@ -15,7 +15,9 @@ var rc = {
 		quotes: [2, 'single'],
 		semi: [2, 'always'],
 		noUnusedVars: [2, { vars: 'all', args: 'after-used' }],
-		noConsole: [2]
+		noConsole: [2],
+		noVar: [0],
+		quoteProps: [0],
 	},
 	globals: {
 		app: true,
@@ -40,13 +42,12 @@ var rc = {
 	}
 };
 
-for(var key in rc.rules) {
-	var keyCamel = key.split(/(?=[A-Z])/).join('-').toLowerCase();
+for(const key in rc.rules) {
+	const keyCamel = key.split(/(?=[A-Z])/).join('-').toLowerCase();
 	if(keyCamel != key) {
 		rc.rules[keyCamel] = rc.rules[key];
 		delete rc.rules[key];
 	}
 }
 
-/* global module */
 module.exports = rc;

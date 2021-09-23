@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	title: '黎明使者 永恩',
 	champion: {
 		id: 777,

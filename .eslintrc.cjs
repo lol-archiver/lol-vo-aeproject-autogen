@@ -16,12 +16,12 @@ const rc = {
 		linebreakStyle: [2, 'unix'],
 		quotes: [2, 'single', { allowTemplateLiterals: true }],
 		semi: [2, 'always'],
-		noUnusedVars: [2, { vars: 'all', args: 'after-used' }],
+		noUnusedVars: [2, { vars: 'all', args: 'none' }],
 		noConsole: [2],
 		noVar: [2],
-		requireAtomicUpdates: [0],
-		quoteProps: [2, 'as-needed'],
+		quoteProps: [0],
 		arrowParens: [2, 'as-needed'],
+		requireAtomicUpdates: [0],
 	},
 };
 
