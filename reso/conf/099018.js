@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	event: {
 		'初遇[皮肤:御星魔矢 艾希]': {
 			target: '${C.path.project.autogen}reso/icon/Ashe/11.png'

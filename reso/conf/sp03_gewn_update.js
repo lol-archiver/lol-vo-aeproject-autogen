@@ -1,5 +1,15 @@
 export default {
-	emote: '└（★ｏ★）┐',
+	title: '灵罗娃娃 格温',
+	champion: {
+		id: 887,
+		name: 'Gwen',
+	},
+	skin: {
+		id: 0,
+		name: '_Base'
+	},
+	emote: '（＃￣～￣＃）',
+	isSpecical: true,
 	event: {
 		'[初遇:英雄:亚索]':
 			{ target: '${C.path.project.autogen}reso/icon/Yasuo/0.png' },

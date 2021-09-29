@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: '{{{(>_<)}}}',
 	event: {
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话1-1]': {

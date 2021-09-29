@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: '（╯‵□′）╯︵┴─┴',
 	event: {
 		'[击杀:英雄::萨勒芬妮]':

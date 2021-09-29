@@ -55,6 +55,7 @@ const rcExpression = {
 };
 
 const rcNode = {
+	root: true,
 	env: {
 		es2021: true,
 		node: true,

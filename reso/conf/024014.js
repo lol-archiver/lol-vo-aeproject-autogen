@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	event: {
 		KillChampionJax: {
 			target: '${C.path.project.autogen}reso/icon/Jax/0.png'

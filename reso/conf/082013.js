@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: '(ФωФ)',
 	event: {
 		'[初遇:皮肤:源计划：联合 艾希]':

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: '(ФωФ)',
 	event: {
 		'[初遇:英雄:内瑟斯]':

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: 'b(￣▽￣)d',
 	event: {
 		'[初遇:英雄:卡西奥佩娅]':

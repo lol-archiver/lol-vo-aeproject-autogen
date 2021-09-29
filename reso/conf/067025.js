@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	title: '光明哨兵 薇恩',
 	champion: {
 		id: 67,

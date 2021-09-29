@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: '_(눈_ 눈」∠)_',
 	event: {
 		'[初遇:英雄:希瓦娜]':

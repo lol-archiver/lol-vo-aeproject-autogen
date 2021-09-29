@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	title: '西部天使 艾希',
 	champion: {
 		id: 22,

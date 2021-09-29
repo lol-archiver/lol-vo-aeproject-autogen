@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: '{{{(>_<)}}}',
 	event: {
 		'[初遇:皮肤:惊悚派对 阿木木]': {

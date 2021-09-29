@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: '{{{(>_<)}}}',
 	event: {
 		'[使用:Q技能:黑暗洞灭]':

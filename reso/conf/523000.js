@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: '● ▽ ●',
 	event: {
 		'[初遇:英雄:黛安娜]': {

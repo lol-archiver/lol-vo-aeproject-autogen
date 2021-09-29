@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	title: '光明哨兵 格雷福斯',
 	champion: {
 		id: 104,

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	title: '影哨 阿克尚',
 	champion: {
 		id: 166,

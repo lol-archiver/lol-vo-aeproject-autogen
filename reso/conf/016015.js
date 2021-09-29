@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	event: {
 		FirstEncounterApheliosSkin01: {
 			target: '${C.path.project.autogen}reso/icon/Aphelios/1.png'

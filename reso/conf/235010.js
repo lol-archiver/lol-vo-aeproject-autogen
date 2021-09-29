@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: 'd(=^･ω･^=)b',
 	event: {
 		'[初遇:皮肤:西部魔影 卢锡安]': {

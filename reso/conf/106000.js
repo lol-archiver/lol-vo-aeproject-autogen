@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: '┗|*｀0′*|┛',
 	event: {
 		'初遇[英雄:艾尼维亚]': {

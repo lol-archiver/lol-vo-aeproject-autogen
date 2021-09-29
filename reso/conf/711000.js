@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	title: '愁云使者 薇古丝',
 	champion: {
 		id: 711,

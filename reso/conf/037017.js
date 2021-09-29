@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: '…(⊙＿⊙；)…',
 	event: {
 		'[初遇:皮肤:灵能特工 伊泽瑞尔]':

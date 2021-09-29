@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	title: '真实伤害 艾克',
 	champion: {
 		id: 245,

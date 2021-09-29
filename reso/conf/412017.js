@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	emote: '└（★ｏ★）┐',
 	event: {
 		'[初遇:皮肤:灵魂莲华 阿狸]':

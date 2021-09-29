@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	title: '灵罗娃娃 格温',
 	champion: {
 		id: 887,

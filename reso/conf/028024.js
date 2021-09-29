@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	title: '魔女 伊芙琳',
 	champion: {
 		id: 28,

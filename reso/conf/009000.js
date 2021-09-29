@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	event: {
 		'初遇[英雄:安妮]': {
 			target: '${C.path.project.autogen}reso/icon/Annie/0.png'

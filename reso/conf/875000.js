@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	event: {
 		FirstEncounterBilgewater: {
 			target: '${C.path.project.autogen}reso/region/bilgewater.png'
