@@ -12,76 +12,76 @@ export default {
 	audios: 'D:/Desk/2021.07.02 OMCNR20210628068 0701_LOL_格雷福斯/',
 	events: {
 		'[助攻:英雄:薇恩]':
-			{ target: '${C.path.project.autogen}reso/icon/Vayne/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Vayne/0.png' },
 		'[初遇:英雄:薇恩]':
-			{ target: '${C.path.project.autogen}reso/icon/Vayne/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Vayne/0.png' },
 		'[击杀:英雄:薇恩]':
-			{ target: '${C.path.project.autogen}reso/icon/Vayne/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Vayne/0.png' },
 		'[移动:初次][友方:使用:皮肤:光明哨兵 薇恩]':
-			{ target: '${C.path.project.autogen}reso/icon/Vayne/25.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Vayne/25.png' },
 		'[初遇:皮肤:光明哨兵 薇恩]':
-			{ target: '${C.path.project.autogen}reso/icon/Vayne/25.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Vayne/25.png' },
 		'[击杀:皮肤:光明哨兵 薇恩]':
-			{ target: '${C.path.project.autogen}reso/icon/Vayne/25.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Vayne/25.png' },
 		'[初遇:英雄:崔斯特]':
-			{ target: '${C.path.project.autogen}reso/icon/TwistedFate/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/TwistedFate/0.png' },
 		'[击杀:英雄:崔斯特]':
-			{ target: '${C.path.project.autogen}reso/icon/TwistedFate/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/TwistedFate/0.png' },
 		'[初遇:皮肤:光明哨兵 黛安娜]':
-			{ target: '${C.path.project.autogen}reso/icon/Diana/28.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Diana/28.png' },
 		'[初遇:皮肤:光明哨兵 艾瑞莉娅]':
-			{ target: '${C.path.project.autogen}reso/icon/Irelia/26.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Irelia/26.png' },
 		'[初遇:皮肤:光明哨兵 奥拉夫]':
-			{ target: '${C.path.project.autogen}reso/icon/Olaf/25.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Olaf/25.png' },
 		'[初遇:皮肤:光明哨兵 派克]':
-			{ target: '${C.path.project.autogen}reso/icon/Pyke/34.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Pyke/34.png' },
 		'[击杀:皮肤:光明哨兵 派克]':
-			{ target: '${C.path.project.autogen}reso/icon/Pyke/34.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Pyke/34.png' },
 		'[初遇:皮肤:光明哨兵 雷恩加尔]':
-			{ target: '${C.path.project.autogen}reso/icon/Rengar/30.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Rengar/30.png' },
 		'[初遇:皮肤:光明哨兵 锐雯]':
-			{ target: '${C.path.project.autogen}reso/icon/Riven/34.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Riven/34.png' },
 		'[初遇:皮肤:破败军团 德莱文]':
-			{ target: '${C.path.project.autogen}reso/icon/Draven/20.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Draven/20.png' },
 		'[初遇:皮肤:破败军团 卡尔玛]':
-			{ target: '${C.path.project.autogen}reso/icon/Karma/27.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Karma/27.png' },
 		'[初遇:皮肤:破败军团 厄运小姐]':
-			{ target: '${C.path.project.autogen}reso/icon/MissFortune/21.png' },
+			{ target: '${C.dirAutogen}/reso/icon/MissFortune/21.png' },
 		'[击杀:皮肤:破败军团 厄运小姐]':
-			{ target: '${C.path.project.autogen}reso/icon/MissFortune/21.png' },
+			{ target: '${C.dirAutogen}/reso/icon/MissFortune/21.png' },
 		'[初遇:皮肤:破败军团 潘森]':
-			{ target: '${C.path.project.autogen}reso/icon/Pantheon/25.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Pantheon/25.png' },
 		'[初遇:皮肤:破败军团 希瓦娜]':
-			{ target: '${C.path.project.autogen}reso/icon/Shyvana/8.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Shyvana/8.png' },
 		'[初遇:英雄:佛耶戈]':
-			{ target: '${C.path.project.autogen}reso/icon/Viego/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Viego/0.png' },
 		'[击杀:英雄:佛耶戈]':
-			{ target: '${C.path.project.autogen}reso/icon/Viego/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Viego/0.png' },
 		'[初遇:英雄:格温]':
-			{ target: '${C.path.project.autogen}reso/icon/Gwen/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Gwen/0.png' },
 		'[击杀:英雄:格温]':
-			{ target: '${C.path.project.autogen}reso/icon/Gwen/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Gwen/0.png' },
 		'[初遇:英雄:卢锡安]':
-			{ target: '${C.path.project.autogen}reso/icon/Lucian/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Lucian/0.png' },
 		'[击杀:英雄:卢锡安]':
-			{ target: '${C.path.project.autogen}reso/icon/Lucian/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Lucian/0.png' },
 		'[初遇:英雄:赛娜]':
-			{ target: '${C.path.project.autogen}reso/icon/Senna/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Senna/0.png' },
 		'[击杀:英雄:赛娜]':
-			{ target: '${C.path.project.autogen}reso/icon/Senna/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Senna/0.png' },
 		'[初遇:英雄:约里克]':
-			{ target: '${C.path.project.autogen}reso/icon/Yorick/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Yorick/0.png' },
 		'[初遇:英雄:俄洛伊]':
-			{ target: '${C.path.project.autogen}reso/icon/Illaoi/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Illaoi/0.png' },
 
 		'[使用:Q技能:穷途末路]':
-			{ skill: '${C.path.project.autogen}reso/icon/Graves/Q.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Graves/Q.png' },
 		'[使用:W技能:烟幕弹]':
-			{ skill: '${C.path.project.autogen}reso/icon/Graves/W.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Graves/W.png' },
 		'[使用:E技能:快速拔枪]':
-			{ skill: '${C.path.project.autogen}reso/icon/Graves/E.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Graves/E.png' },
 		'[使用:R技能:终极爆弹]':
-			{ skill: '${C.path.project.autogen}reso/icon/Graves/R.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Graves/R.png' },
 	},
 	lines: {
 		'FirstEncounter3DRengarSkin30_01': {
@@ -104,7 +104,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Draven/20.png',
+					head: '${C.dirAutogen}/reso/icon/Draven/20.png',
 					line: '( ｀д′)',
 					hideEvent: true,
 				},

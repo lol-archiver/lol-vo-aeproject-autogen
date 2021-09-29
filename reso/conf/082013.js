@@ -2,56 +2,56 @@ export default {
 	emote: '(ФωФ)',
 	event: {
 		'[初遇:皮肤:源计划：联合 艾希]':
-			{ target: '${C.path.project.autogen}reso/icon/Ashe/8.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Ashe/8.png' },
 		'[击杀:皮肤:源计划：联合 艾希]':
-			{ target: '${C.path.project.autogen}reso/icon/Ashe/8.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Ashe/8.png' },
 		'[初遇:皮肤:源代码 丽桑卓]':
-			{ target: '${C.path.project.autogen}reso/icon/Lissandra/3.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Lissandra/3.png' },
 		'[击杀:皮肤:源代码 丽桑卓]':
-			{ target: '${C.path.project.autogen}reso/icon/Lissandra/3.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Lissandra/3.png' },
 		'[初遇:皮肤:源计划：林 易]':
-			{ target: '${C.path.project.autogen}reso/icon/MasterYi/9.png' },
+			{ target: '${C.dirAutogen}/reso/icon/MasterYi/9.png' },
 		'[击杀:皮肤:源计划：林 易]':
-			{ target: '${C.path.project.autogen}reso/icon/MasterYi/9.png' },
+			{ target: '${C.dirAutogen}/reso/icon/MasterYi/9.png' },
 		'[初遇:皮肤:源计划：毁灭 派克]':
-			{ target: '${C.path.project.autogen}reso/icon/Pyke/16.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Pyke/16.png' },
 		'[击杀:皮肤:源计划：毁灭 派克]':
-			{ target: '${C.path.project.autogen}reso/icon/Pyke/16.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Pyke/16.png' },
 		'[初遇:皮肤:源计划：泯灭 雷克顿]':
-			{ target: '${C.path.project.autogen}reso/icon/Renekton/26.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Renekton/26.png' },
 		'[击杀:皮肤:源计划：泯灭 雷克顿]':
-			{ target: '${C.path.project.autogen}reso/icon/Renekton/26.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Renekton/26.png' },
 		'[嘲讽:友方:英雄:瑟庄妮]':
-			{ target: '${C.path.project.autogen}reso/icon/Sejuani/16.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Sejuani/16.png' },
 		'[初遇:皮肤:源计划：统帅 瑟庄妮]':
-			{ target: '${C.path.project.autogen}reso/icon/Sejuani/16.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Sejuani/16.png' },
 		'[击杀:皮肤:源计划：统帅 瑟庄妮]':
-			{ target: '${C.path.project.autogen}reso/icon/Sejuani/16.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Sejuani/16.png' },
 		'[初遇:皮肤:源计划：魅灵 赛娜]':
-			{ target: '${C.path.project.autogen}reso/icon/Senna/16.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Senna/16.png' },
 		'[击杀:皮肤:源计划：魅灵 赛娜]':
-			{ target: '${C.path.project.autogen}reso/icon/Senna/16.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Senna/16.png' },
 		'[初遇:皮肤:源计划：逆流 塞拉斯]':
-			{ target: '${C.path.project.autogen}reso/icon/Sylas/13.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Sylas/13.png' },
 		'[击杀:皮肤:源计划：逆流 塞拉斯]':
-			{ target: '${C.path.project.autogen}reso/icon/Sylas/13.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Sylas/13.png' },
 		'[初遇:皮肤:源计划：天眼 维鲁斯]':
-			{ target: '${C.path.project.autogen}reso/icon/Varus/16.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Varus/16.png' },
 		'[击杀:皮肤:源计划：天眼 维鲁斯]':
-			{ target: '${C.path.project.autogen}reso/icon/Varus/16.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Varus/16.png' },
 		'[初遇:皮肤:源计划：净化 薇恩]':
-			{ target: '${C.path.project.autogen}reso/icon/Vayne/11.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Vayne/11.png' },
 		'[击杀:皮肤:源计划：净化 薇恩]':
-			{ target: '${C.path.project.autogen}reso/icon/Vayne/11.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Vayne/11.png' },
 
 		'[使用:Q技能:破灭之锤]':
-			{ skill: '${C.path.project.autogen}reso/icon/Mordekaiser/Q.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Mordekaiser/Q.png' },
 		'[使用:W技能:不坏之身]':
-			{ skill: '${C.path.project.autogen}reso/icon/Mordekaiser/W.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Mordekaiser/W.png' },
 		'[使用:E技能:断魂一扼]':
-			{ skill: '${C.path.project.autogen}reso/icon/Mordekaiser/E.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Mordekaiser/E.png' },
 		'[使用:R技能:轮回绝境]':
-			{ skill: '${C.path.project.autogen}reso/icon/Mordekaiser/R.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Mordekaiser/R.png' },
 	},
 	lines: {
 		'D92FBF3B': {
@@ -69,7 +69,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Varus/16.png',
+					head: '${C.dirAutogen}/reso/icon/Varus/16.png',
 					line: '01001100011001010110000101101011\n0110111101100110\n01001100011010010110111101110100',
 					hideEvent: true,
 				},

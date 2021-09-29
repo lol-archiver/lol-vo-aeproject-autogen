@@ -2,93 +2,93 @@ export default {
 	emote: '（╯‵□′）╯︵┴─┴',
 	event: {
 		'[击杀:英雄::萨勒芬妮]':
-			{ target: '${C.path.project.autogen}reso/icon/Seraphine/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Seraphine/0.png' },
 		'[初遇:英雄:卡兹克]':
-			{ target: '${C.path.project.autogen}reso/icon/KhaZix/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/KhaZix/0.png' },
 		'[初遇:皮肤:DJ 娑娜]':
-			{ target: '${C.path.project.autogen}reso/icon/Sona/6.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Sona/6.png' },
 		'[击杀:皮肤:DJ 娑娜]':
-			{ target: '${C.path.project.autogen}reso/icon/Sona/6.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Sona/6.png' },
 		'[初遇:皮肤:KDA ALL OUT 阿狸:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icon/Ahri/28.png', head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Ahri/28.png', head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[击杀:皮肤:KDA ALL OUT 阿狸:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icon/Ahri/28.png', head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Ahri/28.png', head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[初遇:皮肤:KDA ALL OUT 阿卡丽:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icon/Akali/32.png', head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Akali/32.png', head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[击杀:皮肤:KDA ALL OUT 阿卡丽:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icon/Akali/32.png', head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Akali/32.png', head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[初遇:皮肤:KDA ALL OUT 伊芙琳:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icon/Evelynn/15.png', head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Evelynn/15.png', head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[击杀:皮肤:KDA ALL OUT 伊芙琳:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icon/Evelynn/15.png', head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Evelynn/15.png', head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[初遇:皮肤:KDA ALL OUT 卡莎:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icon/Kaisa/26.png', head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Kaisa/26.png', head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[击杀:皮肤:KDA ALL OUT 卡莎:注释:超级巨星形态]':
-			{ target: '${C.path.project.autogen}reso/icon/Kaisa/26.png', head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Kaisa/26.png', head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 
 		'[初遇:系列:KDA:注释:超级巨星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[击杀:系列:KDA:注释:超级巨星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[移动:初次:注释:超级巨星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[移动::注释:超级巨星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[移动:长途:注释:超级巨星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 		'[回城:注释:超级巨星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/3.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/3.png' },
 
 		'[初遇:系列:KDA:注释:独立音乐人形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/1.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/1.png' },
 		'[击杀:系列:KDA:注释:独立音乐人形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/1.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/1.png' },
 		'[击杀:系列:KDA ALL OUT:注释:独立音乐人形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/1.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/1.png' },
 		'[移动:初次:注释:独立音乐人形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/1.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/1.png' },
 		'[移动::注释:独立音乐人形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/1.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/1.png' },
 		'[移动:长途:注释:独立音乐人形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/1.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/1.png' },
 		'[回城:注释:独立音乐人形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/1.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/1.png' },
 		'[攻击:注释:独立音乐人形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/1.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/1.png' },
 		'[击杀:英雄::注释:独立音乐人形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/1.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/1.png' },
 
 		'[初遇:系列:KDA:注释:明日新星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/2.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/2.png' },
 		'[击杀:系列:KDA:注释:明日新星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/2.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/2.png' },
 		'[移动:初次:注释:明日新星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/2.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/2.png' },
 		'[移动::注释:明日新星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/2.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/2.png' },
 		'[移动:长途:注释:明日新星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/2.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/2.png' },
 		'[回城:注释:明日新星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/2.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/2.png' },
 		'[攻击:注释:明日新星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/2.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/2.png' },
 		'[击杀:英雄::注释:明日新星形态]':
-			{ head: '${C.path.project.autogen}reso/icon/Seraphine/2.png' },
+			{ head: '${C.dirAutogen}/reso/icon/Seraphine/2.png' },
 
 		'[使用:Q技能:清籁穿云]':
-			{ skill: '${C.path.project.autogen}reso/icon/Seraphine/Q.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Seraphine/Q.png' },
 		'[使用:Q技能:清籁穿云:回响]':
-			{ skill: '${C.path.project.autogen}reso/icon/Seraphine/Q_3.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Seraphine/Q_3.png' },
 		'[使用:W技能:聚合心声]':
-			{ skill: '${C.path.project.autogen}reso/icon/Seraphine/W.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Seraphine/W.png' },
 		'[使用:W技能:聚合心声:回响]':
-			{ skill: '${C.path.project.autogen}reso/icon/Seraphine/W_3.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Seraphine/W_3.png' },
 		'[使用:E技能:增幅节拍]':
-			{ skill: '${C.path.project.autogen}reso/icon/Seraphine/E.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Seraphine/E.png' },
 		'[使用:E技能:增幅节拍:回响]':
-			{ skill: '${C.path.project.autogen}reso/icon/Seraphine/E_3.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Seraphine/E_3.png' },
 		'[使用:R技能:炫音返场]':
-			{ skill: '${C.path.project.autogen}reso/icon/Seraphine/R.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Seraphine/R.png' },
 	},
 	lines: {
 		'B7BC600A': [
@@ -96,7 +96,7 @@ export default {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icon/KhaZix/0.png',
+				head: '${C.dirAutogen}/reso/icon/KhaZix/0.png',
 				line: '(〃＞皿＜)',
 			},
 		],

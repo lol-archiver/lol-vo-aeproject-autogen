@@ -2,104 +2,104 @@ export default {
 	emote: '{{{(>_<)}}}',
 	event: {
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话1-1]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话1-3]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话2-2]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话3-2]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话4-1]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话4-3]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话5-1]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话5-3]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话6-2]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话7-2]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话7-4]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[移动:初次][附近:友方:使用:英雄:赛娜:注释:对话8-1]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[被:治疗:英雄:赛娜:注释:对话9-2]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png',
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png',
 		},
 		'[被:治疗:英雄:赛娜:注释:对话10-1]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png',
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png',
 		},
 		'[被:治疗:英雄:赛娜:注释:对话11-2]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png',
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png',
 		},
 		'[击杀:英雄][附近:友方:使用:英雄:赛娜:注释:对话12-1]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png',
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png',
 		},
 		'[击杀:英雄][附近:友方:使用:英雄:赛娜:注释:对话13-1]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[击杀:英雄][附近:友方:使用:英雄:赛娜:注释:对话14-1]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[初遇:英雄:锤石][附近:友方:使用:英雄:赛娜:注释:对话15-2]': {
-			target: '${C.path.project.autogen}reso/icon/Thresh/0.png'
+			target: '${C.dirAutogen}/reso/icon/Thresh/0.png'
 		},
 
 		'[初遇:英雄:赛娜]': {
-			target: '${C.path.project.autogen}reso/icon/Senna/0.png'
+			target: '${C.dirAutogen}/reso/icon/Senna/0.png'
 		},
 		'[初遇:英雄:锤石]': {
-			target: '${C.path.project.autogen}reso/icon/Thresh/0.png'
+			target: '${C.dirAutogen}/reso/icon/Thresh/0.png'
 		},
 		'[初遇:英雄:约里克]': {
-			target: '${C.path.project.autogen}reso/icon/Yorick/0.png'
+			target: '${C.dirAutogen}/reso/icon/Yorick/0.png'
 		},
 		'[初遇:英雄:赫卡里姆]': {
-			target: '${C.path.project.autogen}reso/icon/Hecarim/0.png'
+			target: '${C.dirAutogen}/reso/icon/Hecarim/0.png'
 		},
 		'[初遇:英雄:薇恩]': {
-			target: '${C.path.project.autogen}reso/icon/Vayne/0.png'
+			target: '${C.dirAutogen}/reso/icon/Vayne/0.png'
 		},
 		'[初遇:英雄:古拉加斯]': {
-			target: '${C.path.project.autogen}reso/icon/Gragas/0.png'
+			target: '${C.dirAutogen}/reso/icon/Gragas/0.png'
 		},
 		'[初遇:英雄:厄运小姐]': {
-			target: '${C.path.project.autogen}reso/icon/MissFortune/0.png'
+			target: '${C.dirAutogen}/reso/icon/MissFortune/0.png'
 		},
 		'[初遇:英雄:莫德凯撒]': {
-			target: '${C.path.project.autogen}reso/icon/Mordekaiser/0.png'
+			target: '${C.dirAutogen}/reso/icon/Mordekaiser/0.png'
 		},
 
 
 		'[初遇:地区:德玛西亚]': {
-			target: '${C.path.project.autogen}reso/region/demacia.png'
+			target: '${C.dirAutogen}/reso/region/demacia.png'
 		},
 		'[初遇:地区:暗影岛]': {
-			target: '${C.path.project.autogen}reso/region/shadow_isles.png'
+			target: '${C.dirAutogen}/reso/region/shadow_isles.png'
 		},
 
 		'[使用:W技能:热诚烈弹]': {
-			skill: '${C.path.project.autogen}reso/icon/Lucian/W.png'
+			skill: '${C.dirAutogen}/reso/icon/Lucian/W.png'
 		},
 		'[使用:E技能:冷酷追击]': {
-			skill: '${C.path.project.autogen}reso/icon/Lucian/E.png'
+			skill: '${C.dirAutogen}/reso/icon/Lucian/E.png'
 		},
 		'[使用:R技能:圣枪洗礼]': {
-			skill: '${C.path.project.autogen}reso/icon/Lucian/R.png'
+			skill: '${C.dirAutogen}/reso/icon/Lucian/R.png'
 		},
 	},
 	lines: {
@@ -112,7 +112,7 @@ export default {
 			befores: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '噩梦一场，暗无天日，饭吃得还行',
 					mark: '原文“Food was great through”。是“饭”，不是“但”',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
@@ -123,7 +123,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '假的',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: '71150077',
@@ -137,7 +137,7 @@ export default {
 			befores: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '你怎么不说话？',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: 'E0670144',
@@ -148,7 +148,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '再说这种话我就咒死你',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: '1E93BA33',
@@ -162,7 +162,7 @@ export default {
 			befores: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '要怎么做？',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: 'EE7E102C',
@@ -173,7 +173,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '目前看来很管用',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: '21316636',
@@ -188,7 +188,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '啊，是啊，我在那边遇到了别人\n他是个尸鬼，我们相爱，还生下了尸鬼娃娃',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: 'AF52701E',
@@ -206,7 +206,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '会用，就不觉得沉',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: 'FEC86A61',
@@ -224,7 +224,7 @@ export default {
 			befores: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '准备好了吗？',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: 'E001386F',
@@ -239,7 +239,7 @@ export default {
 			befores: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '别拖后腿',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: '1435996C',
@@ -250,7 +250,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '你想听我尖叫吗？',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: '1C204C24',
@@ -268,7 +268,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '一起清算',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: '193E6E6A',
@@ -282,7 +282,7 @@ export default {
 			befores: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					mark: '对话9',
 					line: '生命来自死亡',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
@@ -298,7 +298,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '我是在瞄准他们',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: 'AF59D07C',
@@ -312,7 +312,7 @@ export default {
 			befores: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					mark: '对话11',
 					line: '你给我活着，才能吻我',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
@@ -328,7 +328,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '就像那些旧的回忆一样',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: 'AEE95762',
@@ -343,7 +343,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '以及所有迷失在黑暗中的人',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: 'DC958402',
@@ -358,7 +358,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '你真贴心',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: 'CF258357',
@@ -373,7 +373,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '不，我们一起来',
 					folder: '[235000]涤魂圣枪 赛娜[Senna@PBE1@zh_cn]',
 					hash: '038B6E3B',
@@ -386,7 +386,7 @@ export default {
 			afters: [
 				{
 					side: 'left',
-					head: '${C.path.project.autogen}reso/icon/Senna/0.png',
+					head: '${C.dirAutogen}/reso/icon/Senna/0.png',
 					line: '(σ｀д′)σ',
 					hideEvent: true
 				},

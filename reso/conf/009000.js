@@ -1,114 +1,114 @@
 export default {
 	event: {
 		'初遇[英雄:安妮]': {
-			target: '${C.path.project.autogen}reso/icon/Annie/0.png'
+			target: '${C.dirAutogen}/reso/icon/Annie/0.png'
 		},
 		'初遇[英雄:伊芙琳]': {
-			target: '${C.path.project.autogen}reso/icon/Evelynn/0.png'
+			target: '${C.dirAutogen}/reso/icon/Evelynn/0.png'
 		},
 		'初遇[英雄:盖伦]': {
-			target: '${C.path.project.autogen}reso/icon/Garen/0.png'
+			target: '${C.dirAutogen}/reso/icon/Garen/0.png'
 		},
 		'初遇[英雄:金克斯]': {
-			target: '${C.path.project.autogen}reso/icon/Jinx/0.png'
+			target: '${C.dirAutogen}/reso/icon/Jinx/0.png'
 		},
 		'初遇[英雄:千珏]': {
-			target: '${C.path.project.autogen}reso/icon/Kindred/0.png'
+			target: '${C.dirAutogen}/reso/icon/Kindred/0.png'
 		},
 		'初遇[英雄:拉克丝]': {
-			target: '${C.path.project.autogen}reso/icon/Lux/0.png'
+			target: '${C.dirAutogen}/reso/icon/Lux/0.png'
 		},
 		'初遇[英雄:厄运小姐]': {
-			target: '${C.path.project.autogen}reso/icon/MissFortune/0.png'
+			target: '${C.dirAutogen}/reso/icon/MissFortune/0.png'
 		},
 		'初遇[英雄:魔腾]': {
-			target: '${C.path.project.autogen}reso/icon/Nocturne/0.png'
+			target: '${C.dirAutogen}/reso/icon/Nocturne/0.png'
 		},
 		'初遇[英雄:努努与威朗普]': {
-			target: '${C.path.project.autogen}reso/icon/Nunu/0.png'
+			target: '${C.dirAutogen}/reso/icon/Nunu/0.png'
 		},
 		'初遇[英雄:锐雯]': {
-			target: '${C.path.project.autogen}reso/icon/Riven/0.png'
+			target: '${C.dirAutogen}/reso/icon/Riven/0.png'
 		},
 		'初遇[英雄:索拉卡]': {
-			target: '${C.path.project.autogen}reso/icon/Soraka/0.png'
+			target: '${C.dirAutogen}/reso/icon/Soraka/0.png'
 		},
 		'初遇[英雄:斯维因]': {
-			target: '${C.path.project.autogen}reso/icon/Swain/0.png'
+			target: '${C.dirAutogen}/reso/icon/Swain/0.png'
 		},
 		'初遇[英雄:塞拉斯]': {
-			target: '${C.path.project.autogen}reso/icon/Sylas/0.png'
+			target: '${C.dirAutogen}/reso/icon/Sylas/0.png'
 		},
 		'初遇[英雄:塔姆·肯奇]': {
-			target: '${C.path.project.autogen}reso/icon/TahmKench/0.png'
+			target: '${C.dirAutogen}/reso/icon/TahmKench/0.png'
 		},
 		'初遇[英雄:薇恩]': {
-			target: '${C.path.project.autogen}reso/icon/Vayne/0.png'
+			target: '${C.dirAutogen}/reso/icon/Vayne/0.png'
 		},
 		'初遇[英雄:亚索]': {
-			target: '${C.path.project.autogen}reso/icon/Yasuo/0.png'
+			target: '${C.dirAutogen}/reso/icon/Yasuo/0.png'
 		},
 		'初遇[地区:德玛西亚]': {
-			target: '${C.path.project.autogen}reso/region/demacia.png'
+			target: '${C.dirAutogen}/reso/region/demacia.png'
 		},
 
 		'击杀[英雄:安妮]': {
-			target: '${C.path.project.autogen}reso/icon/Annie/0.png'
+			target: '${C.dirAutogen}/reso/icon/Annie/0.png'
 		},
 		'击杀[英雄:伊芙琳]': {
-			target: '${C.path.project.autogen}reso/icon/Evelynn/0.png'
+			target: '${C.dirAutogen}/reso/icon/Evelynn/0.png'
 		},
 		'击杀[英雄:盖伦]': {
-			target: '${C.path.project.autogen}reso/icon/Garen/0.png'
+			target: '${C.dirAutogen}/reso/icon/Garen/0.png'
 		},
 		'击杀[英雄:金克斯]': {
-			target: '${C.path.project.autogen}reso/icon/Jinx/0.png'
+			target: '${C.dirAutogen}/reso/icon/Jinx/0.png'
 		},
 		'击杀[英雄:千珏]': {
-			target: '${C.path.project.autogen}reso/icon/Kindred/0.png'
+			target: '${C.dirAutogen}/reso/icon/Kindred/0.png'
 		},
 		'击杀[英雄:拉克丝]': {
-			target: '${C.path.project.autogen}reso/icon/Lux/0.png'
+			target: '${C.dirAutogen}/reso/icon/Lux/0.png'
 		},
 		'击杀[英雄:厄运小姐]': {
-			target: '${C.path.project.autogen}reso/icon/MissFortune/0.png'
+			target: '${C.dirAutogen}/reso/icon/MissFortune/0.png'
 		},
 		'击杀[英雄:魔腾]': {
-			target: '${C.path.project.autogen}reso/icon/Nocturne/0.png'
+			target: '${C.dirAutogen}/reso/icon/Nocturne/0.png'
 		},
 		'击杀[英雄:努努与威朗普]': {
-			target: '${C.path.project.autogen}reso/icon/Nunu/0.png'
+			target: '${C.dirAutogen}/reso/icon/Nunu/0.png'
 		},
 		'击杀[英雄:锐雯]': {
-			target: '${C.path.project.autogen}reso/icon/Riven/0.png'
+			target: '${C.dirAutogen}/reso/icon/Riven/0.png'
 		},
 		'击杀[英雄:索拉卡]': {
-			target: '${C.path.project.autogen}reso/icon/Soraka/0.png'
+			target: '${C.dirAutogen}/reso/icon/Soraka/0.png'
 		},
 		'击杀[英雄:斯维因]': {
-			target: '${C.path.project.autogen}reso/icon/Swain/0.png'
+			target: '${C.dirAutogen}/reso/icon/Swain/0.png'
 		},
 		'击杀[英雄:塞拉斯]': {
-			target: '${C.path.project.autogen}reso/icon/Sylas/0.png'
+			target: '${C.dirAutogen}/reso/icon/Sylas/0.png'
 		},
 		'击杀[英雄:塔姆·肯奇]': {
-			target: '${C.path.project.autogen}reso/icon/TahmKench/0.png'
+			target: '${C.dirAutogen}/reso/icon/TahmKench/0.png'
 		},
 		'击杀[英雄:薇恩]': {
-			target: '${C.path.project.autogen}reso/icon/Vayne/0.png'
+			target: '${C.dirAutogen}/reso/icon/Vayne/0.png'
 		},
 		'击杀[英雄:亚索]': {
-			target: '${C.path.project.autogen}reso/icon/Yasuo/0.png'
+			target: '${C.dirAutogen}/reso/icon/Yasuo/0.png'
 		},
 
 		'P被动[惊骸草人:草间人激活]': {
-			skill: '${C.path.project.autogen}reso/icon/Fiddlesticks/P.png'
+			skill: '${C.dirAutogen}/reso/icon/Fiddlesticks/P.png'
 		},
 		'E技能[夜割]': {
-			skill: '${C.path.project.autogen}reso/icon/Fiddlesticks/E.png'
+			skill: '${C.dirAutogen}/reso/icon/Fiddlesticks/E.png'
 		},
 		'R技能[群鸦风暴]': {
-			skill: '${C.path.project.autogen}reso/icon/Fiddlesticks/R.png'
+			skill: '${C.dirAutogen}/reso/icon/Fiddlesticks/R.png'
 		},
 	},
 	lines: {
@@ -117,7 +117,7 @@ export default {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icon/Riven/0.png',
+				head: '${C.dirAutogen}/reso/icon/Riven/0.png',
 				line: 's(・｀ヘ´・;)ゞ'
 			}
 		],

@@ -1,19 +1,19 @@
 export default {
 	event: {
 		FirstEncounterBilgewater: {
-			target: '${C.path.project.autogen}reso/region/bilgewater.png'
+			target: '${C.dirAutogen}/reso/region/bilgewater.png'
 		},
 		FirstEncounterNoxians: {
-			target: '${C.path.project.autogen}reso/region/noxus.png'
+			target: '${C.dirAutogen}/reso/region/noxus.png'
 		},
 		SettW: {
-			skill: '${C.path.project.autogen}reso/icon/Sett/W.png'
+			skill: '${C.dirAutogen}/reso/icon/Sett/W.png'
 		},
 		SettE: {
-			skill: '${C.path.project.autogen}reso/icon/Sett/E.png'
+			skill: '${C.dirAutogen}/reso/icon/Sett/E.png'
 		},
 		SettR: {
-			skill: '${C.path.project.autogen}reso/icon/Sett/R.png'
+			skill: '${C.dirAutogen}/reso/icon/Sett/R.png'
 		}
 	},
 	lines: {
@@ -22,14 +22,14 @@ export default {
 				oper: 'after',
 				side: 'left',
 				duration: 0.24,
-				head: '${C.path.project.autogen}reso/icon/Pyke/0.png',
+				head: '${C.dirAutogen}/reso/icon/Pyke/0.png',
 				line: 'ヽ(ｏ`皿′ｏ)ﾉ',
 			},
 			{
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icon/TahmKench/0.png',
+				head: '${C.dirAutogen}/reso/icon/TahmKench/0.png',
 				line: '(╰_╯)#',
 			},
 		],
@@ -38,7 +38,7 @@ export default {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icon/Draven/0.png',
+				head: '${C.dirAutogen}/reso/icon/Draven/0.png',
 				line: '<(－︿－)>',
 			}
 		],
@@ -47,7 +47,7 @@ export default {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icon/Darius/0.png',
+				head: '${C.dirAutogen}/reso/icon/Darius/0.png',
 				line: 'o(ﾟДﾟ)っ',
 			}
 		],
@@ -56,7 +56,7 @@ export default {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/icon/Xayah/0.png',
+				head: '${C.dirAutogen}/reso/icon/Xayah/0.png',
 				line: 'ミ(ﾉ゜д゜)ﾉ',
 			}
 		],
@@ -65,7 +65,7 @@ export default {
 				oper: 'after',
 				side: 'left',
 				duration: 0.4,
-				head: '${C.path.project.autogen}reso/other/sett-mom.png',
+				head: '${C.dirAutogen}/reso/other/sett-mom.png',
 				line: 'ヾ(*‘▽‘*)ﾉ',
 			}
 		]
