@@ -26,7 +26,7 @@ const parseCond = function(arrParam) {
 	let result = '';
 	let used = 0;
 
-	const use = value => 'string' == typeof value ? used++ : null;
+	const use = (value) => 'string' == typeof value ? used++ : null;
 
 	const type = arrParam.shift();
 
@@ -172,14 +172,14 @@ const parseCond = function(arrParam) {
 };
 
 const formatEvent = function(event) {
-	return event.replace(/(^\[|\]$)/g, '').split('][').map(cond => parseCond(cond.split(':'))).join(' 且 ');
+	return event.replace(/(^\[|\]$)/g, '').split('][').map((cond) => parseCond(cond.split(':'))).join(' 且 ');
 };
 
 const makeLineNormal = async function makeLineNormal() {
 	const pathAudios = C.path.audios;
 
 	const arrAudioFile = readdirSync(pathAudios);
-	const arrLineText = readFileSync(C.path.dictation, 'UTF8').split('\n').filter(text => text.trim() && !text.trim().startsWith('<!--'));
+	const arrLineText = readFileSync(C.path.dictation, 'UTF8').split('\n').filter((text) => text.trim() && !text.trim().startsWith('<!--'));
 
 	const extrasEvent = {};
 	const linesBefore = {};
@@ -193,11 +193,11 @@ const makeLineNormal = async function makeLineNormal() {
 
 		for(const [key, extra] of Object.entries(CC.lines || {})) {
 			if(extra.befores instanceof Array) {
-				extra.befores.forEach(before => (linesBefore[key] || (linesBefore[key] = [])).push(before));
+				extra.befores.forEach((before) => (linesBefore[key] || (linesBefore[key] = [])).push(before));
 				delete extra.befores;
 			}
 			if(extra.afters instanceof Array) {
-				extra.afters.forEach(after => (linesAfter[key] || (linesAfter[key] = [])).push(after));
+				extra.afters.forEach((after) => (linesAfter[key] || (linesAfter[key] = [])).push(after));
 				delete extra.afters;
 			}
 
@@ -229,7 +229,7 @@ const makeLineNormal = async function makeLineNormal() {
 			arrLine = [];
 
 			const eventInfo = {
-				event: eventNow.split('、').map(event => formatEvent(event)).join('、'),
+				event: eventNow.split('、').map((event) => formatEvent(event)).join('、'),
 				arrLine
 			};
 
@@ -261,7 +261,7 @@ const makeLineNormal = async function makeLineNormal() {
 				}
 			}
 			else {
-				const file = arrAudioFile.find(fileName => fileName.includes(idLine));
+				const file = arrAudioFile.find((fileName) => fileName.includes(idLine));
 
 				if(file) {
 					const meta = await parseFile(resolve(pathAudios, file));
@@ -276,13 +276,13 @@ const makeLineNormal = async function makeLineNormal() {
 				line.duration = line.duration || 0.4;
 
 				if(line.event) {
-					line.event = line.event.split('、').map(event => formatEvent(event)).join('、');
+					line.event = line.event.split('、').map((event) => formatEvent(event)).join('、');
 				}
 
 				if(line.hash && line.folder) {
 					const audios = readdirSync(resolve(C.path.project.extract, '_final', line.folder));
 
-					const nameAudio = audios.find(fileName => fileName.includes(`[${line.hash}]`));
+					const nameAudio = audios.find((fileName) => fileName.includes(`[${line.hash}]`));
 
 					if(nameAudio) {
 						const meta = await parseFile(resolve(C.path.project.extract, '_final', line.folder, nameAudio));
@@ -325,13 +325,13 @@ const makeLineNormal = async function makeLineNormal() {
 				line.duration = line.duration || 0.4;
 
 				if(line.event) {
-					line.event = line.event.split('、').map(event => formatEvent(event)).join('、');
+					line.event = line.event.split('、').map((event) => formatEvent(event)).join('、');
 				}
 
 				if(line.hash && line.folder) {
 					const audios = readdirSync(resolve(C.path.project.extract, '_final', line.folder));
 
-					const nameAudio = audios.find(fileName => fileName.includes(`[${line.hash}]`));
+					const nameAudio = audios.find((fileName) => fileName.includes(`[${line.hash}]`));
 
 					if(nameAudio) {
 						const meta = await parseFile(resolve(C.path.project.extract, '_final', line.folder, nameAudio));
@@ -376,7 +376,7 @@ const makeLineSpecial = async function makeLineSpecial() {
 
 	for(const event of allExtras.events) {
 		const eventNow = event.event;
-		event.event = eventNow.split('、').map(event => formatEvent(event)).join('、');
+		event.event = eventNow.split('、').map((event) => formatEvent(event)).join('、');
 
 		for(const key in extrasEvent[eventNow] || {}) {
 			event[key] = extrasEvent[eventNow][key];
@@ -391,7 +391,7 @@ const makeLineSpecial = async function makeLineSpecial() {
 			else if(line.crc32 && line.audioFolder) {
 				const audios = readdirSync(resolve(C.path.project.extract, '_final', line.audioFolder));
 
-				const nameAudio = audios.find(fileName => fileName.includes(`[${line.crc32}]`));
+				const nameAudio = audios.find((fileName) => fileName.includes(`[${line.crc32}]`));
 
 				pathAudio = nameAudio ? resolve(C.path.project.extract, '_final', line.audioFolder, nameAudio) : null;
 

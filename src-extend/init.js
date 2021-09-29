@@ -137,6 +137,7 @@ this.T = {
 	parseConfig: function(str) {
 		return str.replace(/\$\{.+?\}/g, function(text) {
 			C;
+			// eslint-disable-next-line no-unused-vars
 			var CC = I;
 			try {
 				return eval(text.replace(/(^\$\{)|(\}$)/g, ''));

@@ -1,4 +1,60 @@
-const rc = {
+const rcExtend = {
+	files: ['./src-extend/**'],
+	env: {
+		es2021: false,
+		node: false,
+	},
+	parser: 'espree',
+	parserOptions: {
+		sourceType: 'script',
+		ecmaVersion: 3,
+	},
+	rules: {
+		noVar: [0],
+	},
+	globals: {
+		app: 'readonly',
+
+		Project: 'readonly',
+		CompItem: 'readonly',
+		FolderItem: 'readonly',
+
+		TextDocument: 'readonly',
+		ImportOptions: 'readonly',
+
+		File: 'readonly',
+
+		I: 'readonly',
+		D: 'readonly',
+		P: 'readonly',
+		F: 'readonly',
+		C: 'readonly',
+		E: 'readonly',
+		L: 'readonly',
+		T: 'readonly',
+	},
+};
+
+const rcExpression = {
+	files: ['./src-expression/**'],
+	env: {
+		es6: true,
+		es2021: false,
+		node: false,
+	},
+	parser: 'espree',
+	parserOptions: {
+		sourceType: 'script',
+	},
+	globals: {
+		time: 'readonly',
+
+		thisLayer: 'readonly',
+		thisComp: 'readonly',
+	},
+};
+
+const rcNode = {
 	env: {
 		es2021: true,
 		node: true,
@@ -20,17 +76,28 @@ const rc = {
 		noConsole: [2],
 		noVar: [2],
 		quoteProps: [0],
-		arrowParens: [2, 'as-needed'],
 		requireAtomicUpdates: [0],
+		arrowParens: [2],
 	},
+	overrides: [rcExtend, rcExpression]
 };
 
-for(const key in rc.rules) {
+
+for(const key in rcNode.rules) {
 	const keyCamel = key.split(/(?=[A-Z])/).join('-').toLowerCase();
 	if(keyCamel != key) {
-		rc.rules[keyCamel] = rc.rules[key];
-		delete rc.rules[key];
+		rcNode.rules[keyCamel] = rcNode.rules[key];
+		delete rcNode.rules[key];
 	}
 }
 
-module.exports = rc;
+for(const key in rcExtend.rules) {
+	const keyCamel = key.split(/(?=[A-Z])/).join('-').toLowerCase();
+	if(keyCamel != key) {
+		rcExtend.rules[keyCamel] = rcExtend.rules[key];
+		delete rcExtend.rules[key];
+	}
+}
+
+
+module.exports = rcNode;
