@@ -137,8 +137,7 @@ this.T = {
 	parseConfig: function(str) {
 		return str.replace(/\$\{.+?\}/g, function(text) {
 			C;
-			// eslint-disable-next-line no-unused-vars
-			var CC = I;
+			I;
 			try {
 				return eval(text.replace(/(^\$\{)|(\}$)/g, ''));
 			}
@@ -149,13 +148,14 @@ this.T = {
 	}
 };
 
-this.I = JSON.parse(T.readFile(C.path.info, 'UTF8'));
-C.init(I);
+// @include 'config.js';
+this.C = JSON.parse(T.readFile(pathConfig, 'UTF8'));
+this.I = JSON.parse(T.readFile(pathInfo, 'UTF8'));
 
-var file = new File(C.path.file.log);
-file.encoding = 'UTF8';
-file.open('a');
 
+var fileLog = new File(C.fileLog);
+fileLog.encoding = 'UTF8';
+fileLog.open('a');
 this.L = function() {
 	var text = [];
 
@@ -165,17 +165,17 @@ this.L = function() {
 		}
 	}
 
-	file.writeln.apply(file, [text.join(' ')]);
+	fileLog.writeln.apply(fileLog, [text.join(' ')]);
 };
-this.L.end = function() {
-	file.close();
-};
+this.L.end = function() { fileLog.close(); };
+
 
 this.D = {
 	interval: C.video.duration.interval,
 	title: C.video.duration.title,
 	credit: C.video.duration.credit
 };
+
 
 this.P = {};
 // @include 'part/calcDuration.js';
@@ -186,5 +186,32 @@ this.P = {};
 // @include 'part/addBgm.js';
 // @include 'part/addWaterMark.js';
 // @include 'part/addCounter.js';
+
+
+this.E = function Expression(name) { return T.readFile(C.dirExpression + '/' + name + '.js', 'UTF8'); };
+
+
+var mapFootage = {};
+this.F = function Footage(path, parent) {
+	var footage = mapFootage[path];
+
+	if(!footage) {
+		// eslint-disable-next-line no-useless-catch
+		try {
+			footage = app.project.importFile(new ImportOptions(new File(path)));
+		}
+		catch(error) {
+			throw error;
+		}
+
+		if(parent) {
+			footage.parentFolder = parent;
+		}
+
+		mapFootage[path] = footage;
+	}
+
+	return footage;
+};
 
 L('-------date-------'.replace('date', new Date()));

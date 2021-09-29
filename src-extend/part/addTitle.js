@@ -1,6 +1,6 @@
 P.addTitle = function addTitle() {
-	var layerSplashStart1 = T.compMain.layers.add(F(C.path.file.splash), D.full);
-	var layerSplashStart2 = T.compMain.layers.add(F(C.path.file.splash), D.full);
+	var layerSplashStart1 = T.compMain.layers.add(F(C.fileSplash), D.full);
+	var layerSplashStart2 = T.compMain.layers.add(F(C.fileSplash), D.full);
 	layerSplashStart1.transform.scale.setValueAtTime(0, [200, 200]);
 	layerSplashStart2.transform.scale.setValueAtTime(0, [200, 200]);
 	layerSplashStart1.transform.scale.setValueAtTime(D.title - 5, [160, 160]);

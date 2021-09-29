@@ -1,7 +1,8 @@
 /node_modules
 
-/lib/config.js
-/src-extend/config.js
-/ext.log
-
+/log
 /reso/info
+
+/config.js
+/src-extend/config.json
+/src-extend/config.js

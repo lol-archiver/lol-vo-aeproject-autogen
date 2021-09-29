@@ -1,19 +1,28 @@
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'fs';
-import { resolve } from 'path';
-
-import { C, CC } from './lib/config.js';
-// const CC = await init();
+import { resolve, } from 'path';
 
 import { parseFile } from 'music-metadata';
 
+import { C, CR as CR } from './config.js';
+
+import { dirReso, dirSrcExtend } from './lib/global.js';
+
+
 const L = (console ?? {}).log;
+
+const fileInfo = resolve(dirReso, 'info', `${C.slot}.json`);
+
+writeFileSync(resolve(dirSrcExtend, 'config.json'), JSON.stringify(C, null, '\t'));
+writeFileSync(resolve(dirSrcExtend, 'config.js'),
+	`var pathConfig = '${resolve(dirSrcExtend, 'config.json').replace(/\\/g, '\\\\')}';` +
+	`var pathInfo = '${fileInfo.replace(/\\/g, '\\\\')}';`
+);
 
 
 const parseConfig = function(str) {
 	return str.replace(/\$\{.+?\}/g, function(text) {
 		try {
 			C;
-			CC;
 			return eval(text.replace(/(^\$\{)|(\}$)/g, ''));
 		}
 		catch(error) {
@@ -22,21 +31,21 @@ const parseConfig = function(str) {
 	});
 };
 
-const parseCond = function(arrParam) {
+const parseCond = function(params) {
 	let result = '';
 	let used = 0;
 
 	const use = (value) => 'string' == typeof value ? used++ : null;
 
-	const type = arrParam.shift();
+	const type = params.shift();
 
 	if(!type || type == '') { return result; }
 
-	const [main] = arrParam;
+	const [main] = params;
 
 	// 技能
 	if(/^([QWER]技能|P被动)$/.test(type)) {
-		const [name, timing] = arrParam;
+		const [name, timing] = params;
 
 		result += type;
 
@@ -74,12 +83,12 @@ const parseCond = function(arrParam) {
 	}
 	// 回应
 	else if('回应' == type) {
-		const [, ...arrParamSub] = arrParam;
+		const [, ...arrParamSub] = params;
 
 		if(arrParamSub.length) {
 			result += `回应${parseCond(arrParamSub)}的【${main}】`;
 
-			used += arrParam.length;
+			used += params.length;
 		}
 		else {
 			result += `回应【${main}】`;
@@ -163,12 +172,12 @@ const parseCond = function(arrParam) {
 		}
 	}
 	else {
-		L('新类型', type, ...arrParam);
+		L('新类型', type, ...params);
 	}
 
-	arrParam.splice(0, used);
+	params.splice(0, used);
 
-	return arrParam.length ? `${result}${parseCond(arrParam)}` : result;
+	return params.length ? `${result}${parseCond(params)}` : result;
 };
 
 const formatEvent = function(event) {
@@ -176,10 +185,10 @@ const formatEvent = function(event) {
 };
 
 const makeLineNormal = async function makeLineNormal() {
-	const pathAudios = C.path.audios;
+	const dirAudio = C.dirAudio;
 
-	const arrAudioFile = readdirSync(pathAudios);
-	const arrLineText = readFileSync(C.path.dictation, 'UTF8').split('\n').filter((text) => text.trim() && !text.trim().startsWith('<!--'));
+	const namesAudio = readdirSync(dirAudio);
+	const textsLine = readFileSync(C.fileDictation, 'UTF8').split('\n').filter((text) => text.trim() && !text.trim().startsWith('<!--'));
 
 	const extrasEvent = {};
 	const linesBefore = {};
@@ -187,11 +196,11 @@ const makeLineNormal = async function makeLineNormal() {
 	const linesExtra = {};
 
 	try {
-		for(const [key, extraEvent] of Object.entries(CC.events || {})) {
-			extrasEvent[key] = extraEvent;
+		for(const [key, eventExtra] of Object.entries(CR.events || {})) {
+			extrasEvent[key] = eventExtra;
 		}
 
-		for(const [key, extra] of Object.entries(CC.lines || {})) {
+		for(const [key, extra] of Object.entries(CR.lines || {})) {
 			if(extra.befores instanceof Array) {
 				extra.befores.forEach((before) => (linesBefore[key] || (linesBefore[key] = [])).push(before));
 				delete extra.befores;
@@ -210,11 +219,11 @@ const makeLineNormal = async function makeLineNormal() {
 	let isLineStart = false;
 
 	let events = [];
-	let arrLine;
+	let lines;
 
 	let eventNow;
 
-	for(const lineText of arrLineText) {
+	for(const lineText of textsLine) {
 		if(!isLineStart) {
 			if(lineText == '## Lines:台词') {
 				isLineStart = true;
@@ -226,11 +235,11 @@ const makeLineNormal = async function makeLineNormal() {
 		if(lineText.startsWith('### ')) {
 			eventNow = lineText.replace('### **', '').replace('**', '').replace(/^\d+ /, '');
 
-			arrLine = [];
+			lines = [];
 
 			const eventInfo = {
 				event: eventNow.split('、').map((event) => formatEvent(event)).join('、'),
-				arrLine
+				lines
 			};
 
 			for(const key in extrasEvent[eventNow] || {}) {
@@ -251,23 +260,24 @@ const makeLineNormal = async function makeLineNormal() {
 			if(eventNow == '[选用]' || eventNow == '[禁用]' || eventNow == '[选用]、[禁用]') {
 				const eventTrans = { '[选用]': 'pick', '[禁用]': 'ban' }[eventNow] || 'pick';
 
-				const file = `${C.path.project.autogen}reso/voice/${CC.champion.id}/${eventTrans}.wav`;
+				const fileAudio = resolve(dirReso, 'voice', String(CR.champion.id), `${eventTrans}.wav`);
 
-				if(existsSync(file)) {
-					const meta = await parseFile(file);
+				if(existsSync(fileAudio)) {
+					const meta = await parseFile(fileAudio);
 
 					duration = meta.format.duration;
-					audio = '${C.path.project.autogen}reso/voice/${CC.champion.id}/' + eventTrans + '.wav';
+					audio = fileAudio;
 				}
 			}
 			else {
-				const file = arrAudioFile.find((fileName) => fileName.includes(idLine));
+				const nameAudio = namesAudio.find((fileName) => fileName.includes(idLine));
 
-				if(file) {
-					const meta = await parseFile(resolve(pathAudios, file));
+				if(nameAudio) {
+					const fileAudio = resolve(dirAudio, nameAudio);
+					const meta = await parseFile(fileAudio);
 
 					duration = meta.format.duration;
-					audio = '${C.path.audios}' + file;
+					audio = fileAudio;
 				}
 			}
 
@@ -280,19 +290,20 @@ const makeLineNormal = async function makeLineNormal() {
 				}
 
 				if(line.hash && line.folder) {
-					const audios = readdirSync(resolve(C.path.project.extract, '_final', line.folder));
+					const audios = readdirSync(resolve(C.dirExtract, '_final', line.folder));
 
 					const nameAudio = audios.find((fileName) => fileName.includes(`[${line.hash}]`));
 
 					if(nameAudio) {
-						const meta = await parseFile(resolve(C.path.project.extract, '_final', line.folder, nameAudio));
+						const fileAudio = resolve(C.dirExtract, '_final', line.folder, nameAudio);
+						const meta = await parseFile(fileAudio);
 
 						line.duration = meta.format.duration;
-						line.audio = '${C.path.project.extract}/_final/' + line.folder + '/' + nameAudio;
+						line.audio = fileAudio;
 					}
 				}
 
-				arrLine.push(line);
+				lines.push(line);
 			}
 
 			const lineInfo = {
@@ -300,7 +311,7 @@ const makeLineNormal = async function makeLineNormal() {
 				crc32: idLine,
 				duration,
 				side: 'right',
-				head: C.path.file.head,
+				head: C.fileHead,
 				audio,
 			};
 
@@ -318,7 +329,7 @@ const makeLineNormal = async function makeLineNormal() {
 				}
 			}
 
-			arrLine.push(lineInfo);
+			lines.push(lineInfo);
 
 			for(const line of linesAfter[idLine] || []) {
 				line.side = line.side ? line.side : 'left';
@@ -329,15 +340,16 @@ const makeLineNormal = async function makeLineNormal() {
 				}
 
 				if(line.hash && line.folder) {
-					const audios = readdirSync(resolve(C.path.project.extract, '_final', line.folder));
+					const audios = readdirSync(resolve(C.dirExtract, '_final', line.folder));
 
 					const nameAudio = audios.find((fileName) => fileName.includes(`[${line.hash}]`));
 
 					if(nameAudio) {
-						const meta = await parseFile(resolve(C.path.project.extract, '_final', line.folder, nameAudio));
+						const fileAudio = resolve(C.dirExtract, '_final', line.folder, nameAudio);
+						const meta = await parseFile(resolve(C.dirExtract, '_final', line.folder, nameAudio));
 
 						line.duration = meta.format.duration;
-						line.audio = '${C.path.project.extract}/_final/' + line.folder + '/' + nameAudio;
+						line.audio = fileAudio;
 					}
 					else {
 						line.duration = null;
@@ -345,81 +357,21 @@ const makeLineNormal = async function makeLineNormal() {
 					}
 				}
 
-				arrLine.push(line);
+				lines.push(line);
 			}
 		}
 	}
 
-	writeFileSync(C.path.info, JSON.stringify({
-		title: CC.title,
-		champion: CC.champion,
-		skin: CC.skin,
-		emote: CC.emote,
-		head: CC.head,
-		splash: CC.splash,
-		audios: CC.audios,
+	writeFileSync(fileInfo, JSON.stringify({
+		title: CR.title,
+		champion: CR.champion,
+		skin: CR.skin,
+		emote: CR.emote,
+		head: CR.head,
+		splash: CR.splash,
+		audios: CR.audios,
 		events,
 	}, null, '\t'));
 };
 
-const makeLineSpecial = async function makeLineSpecial() {
-	let allExtras = {};
-	try {
-		allExtras = require(C.path.linesExtra);
-	}
-	catch(error) { void 0; }
-
-	const extrasEvent = {};
-	for(const [key, extraEvent] of Object.entries(allExtras.events || {})) {
-		extrasEvent[key] = extraEvent;
-	}
-
-	for(const event of allExtras.events) {
-		const eventNow = event.event;
-		event.event = eventNow.split('、').map((event) => formatEvent(event)).join('、');
-
-		for(const key in extrasEvent[eventNow] || {}) {
-			event[key] = extrasEvent[eventNow][key];
-		}
-
-		for(const line of event.arrLine) {
-			let pathAudio = null;
-
-			if(line.audio) {
-				pathAudio = parseConfig(line.audio);
-			}
-			else if(line.crc32 && line.audioFolder) {
-				const audios = readdirSync(resolve(C.path.project.extract, '_final', line.audioFolder));
-
-				const nameAudio = audios.find((fileName) => fileName.includes(`[${line.crc32}]`));
-
-				pathAudio = nameAudio ? resolve(C.path.project.extract, '_final', line.audioFolder, nameAudio) : null;
-
-				line.audio = '${C.path.project.extract}/_final/' + line.audioFolder + '/' + nameAudio;
-			}
-
-			if(pathAudio) {
-				try {
-					const meta = await parseFile(pathAudio);
-
-					line.duration = meta.format.duration;
-				}
-				catch(error) {
-					line.audio = null;
-				}
-			}
-			else {
-				line.audio = null;
-			}
-		}
-	}
-
-	writeFileSync(C.path.info, JSON.stringify(allExtras.events, null, '\t'));
-};
-
-if(C.specialLines) {
-	makeLineSpecial().then(() => L(`Finished: ${C.specialLines}`));
-}
-else {
-	makeLineNormal().then(() => L(`Finished: [${C.slot}] ${CC.skin.name} ${CC.champion.name}`));
-}
+makeLineNormal().then(() => L(`Finished: [${C.slot}] ${CR.skin.name} ${CR.champion.name}`));

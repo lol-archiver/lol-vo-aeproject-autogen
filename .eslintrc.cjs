@@ -13,6 +13,9 @@ const rcExtend = {
 		noVar: [0],
 	},
 	globals: {
+		pathConfig: 'readonly',
+		pathInfo: 'readonly',
+
 		app: 'readonly',
 
 		Project: 'readonly',

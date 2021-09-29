@@ -16,7 +16,7 @@
 			"type": "extendscript-debug",
 			"request": "launch",
 			"name": "生成工程",
-			"program": "${workspaceFolder}/src/index.js",
+			"program": "${workspaceFolder}/src-extend/index.js",
 			"stopOnEntry": false,
 			"targetSpecifier": "aftereffects-17.0",
 		}

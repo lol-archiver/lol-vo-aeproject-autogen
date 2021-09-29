@@ -1,5 +1,5 @@
 P.addWaterMark = function addWaterMark() {
-	var layerWaterMark = T.compMain.layers.add(F(C.path.file.waterMark));
+	var layerWaterMark = T.compMain.layers.add(F(C.fileWaterMark));
 
 	layerWaterMark.transform.scale.setValue([14, 14]);
 	layerWaterMark.transform.position.setValue([40, 1040]);
