@@ -9,26 +9,12 @@ export default {
 		name: '_Base'
 	},
 	emote: '（＃￣～￣＃）',
-	isSpecical: true,
+	includes: [
+
+	],
 	event: {
 		'[初遇:英雄:亚索]':
 			{ target: '${C.dirAutogen}/reso/icon/Yasuo/0.png' },
-		'[初遇:英雄:永恩]':
-			{ target: '${C.dirAutogen}/reso/icon/Yone/0.png' },
-		'[击杀:英雄:永恩]':
-			{ target: '${C.dirAutogen}/reso/icon/Yone/0.png' },
-		'[初遇:皮肤:灵魂莲华 亚索]':
-			{ target: '${C.dirAutogen}/reso/icon/Yasuo/36.png' },
-		'[初遇:皮肤:灵魂莲华 永恩]':
-			{ target: '${C.dirAutogen}/reso/icon/Yone/1.png' },
-		'[击杀:皮肤:灵魂莲华 亚索]':
-			{ target: '${C.dirAutogen}/reso/icon/Yasuo/36.png' },
-		'[击杀:皮肤:灵魂莲华 永恩]':
-			{ target: '${C.dirAutogen}/reso/icon/Yone/1.png' },
-		'[攻击:皮肤:灵魂莲华 亚索]':
-			{ target: '${C.dirAutogen}/reso/icon/Yasuo/36.png' },
-		'[攻击:皮肤:灵魂莲华 永恩]':
-			{ target: '${C.dirAutogen}/reso/icon/Yone/1.png' },
 	},
 	events: [
 		{
