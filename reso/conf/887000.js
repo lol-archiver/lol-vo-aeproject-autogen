@@ -9,7 +9,7 @@ export default {
 		name: '_Base'
 	},
 	emote: '（＃￣～￣＃）',
-	event: {
+	events: {
 		'[初遇:英雄:阿克尚]':
 			{ target: '${C.dirAutogen}/reso/icon/Akshan/0.png' },
 		'[击杀:英雄:阿克尚]':

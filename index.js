@@ -1,10 +1,9 @@
 import { readdirSync, readFileSync, writeFileSync } from 'fs';
 import { resolve, } from 'path';
 
-import { C, CR as CR } from './config.js';
+import { C, CR } from './config.js';
 
 import { dirReso, dirSrcExtend } from './lib/global.js';
-import formatEvent from './lib/formatEvent.js';
 import parseLine from './lib/parseLine.js';
 
 
@@ -33,29 +32,9 @@ const textsLine = readFileSync(C.fileDictation, 'UTF8').split('\n').filter((text
 
 const eventsExtra = CR.events ?? {};
 
-const linesBefore = {};
-const linesAfter = {};
-const linesExtra = {};
-
-for(const [key, extra] of Object.entries(CR.lines || {})) {
-	if(extra.befores instanceof Array) {
-		extra.befores.forEach((before) => (linesBefore[key] || (linesBefore[key] = [])).push(before));
-		delete extra.befores;
-	}
-	if(extra.afters instanceof Array) {
-		extra.afters.forEach((after) => (linesAfter[key] || (linesAfter[key] = [])).push(after));
-		delete extra.afters;
-	}
-
-	(linesExtra[key] || (linesExtra[key] = [])).push(extra);
-}
-
-
-
-const eventsAll = CR.events instanceof Array ? CR.events : [];
+const eventsRaw = [];
 
 let isLineStart = false;
-let eventNow;
 let linesNow;
 for(const textLine of textsLine) {
 	if(!isLineStart) {
@@ -66,14 +45,13 @@ for(const textLine of textsLine) {
 
 	if(textLine.startsWith('### ')) {
 		const event = {
-			event: textLine.replace('### **', '').replace('**', '').replace(/^\d+ /, '')
-				.split('、').map((eventRaw) => formatEvent(eventRaw)).join('、'),
+			event: textLine.replace('### **', '').replace('**', '').replace(/^\d+ /, ''),
 			lines: [],
 		};
 
 		linesNow = event.lines;
 
-		eventsAll.push(Object.assign(event, eventsExtra[eventNow] ?? {}));
+		eventsRaw.push(Object.assign(event, eventsExtra[event.event] ?? {}));
 	}
 	else {
 		if(textLine.startsWith('<!-- ')) { continue; }
@@ -88,10 +66,10 @@ for(const textLine of textsLine) {
 
 const includes = CR.includes instanceof Array && CR.includes.length ? CR.includes : null;
 const excludes = CR.excludes instanceof Array && CR.excludes.length ? CR.excludes : null;
-const events = includes ? [] : eventsAll;
+const events = includes ? [] : eventsRaw;
 
 const findLine = (id) => {
-	for(const event of eventsAll) {
+	for(const event of eventsRaw) {
 		for(const line of event.lines) {
 			if(line.id === id) {
 				return [event, line];
@@ -119,22 +97,31 @@ const hideLine = (id) => {
 excludes?.forEach((id) => hideLine(id));
 includes?.forEach((id) => matchLine(id));
 
+
+const linesFinal = [];
+
 const namesAudio = readdirSync(C.dirAudio);
 for(const event of events) {
-	await Promise.all(event.lines.map((line, index) => parseLine(line, event, index, namesAudio)));
+	for(const line of event.lines) {
+		const eventSlice = Object.assign({}, event);
+		delete eventSlice.lines;
+
+		linesFinal.push(...(await parseLine(line, eventSlice, namesAudio, (CR.lines ?? {})[line.id])));
+	}
 }
 
 
 writeFileSync(fileInfo, JSON.stringify({
 	title: CR.title,
+	titleForce: CR.titleForce,
 	champion: CR.champion,
 	skin: CR.skin,
 	emote: CR.emote,
 	head: CR.head,
 	splash: CR.splash,
 	audios: CR.audios,
-	events,
+	lines: linesFinal,
 }, null, '\t'));
 
 
-(console ?? {}).log(`已经生成 [${C.slot}] ${CR.skin.name} ${CR.champion.name}`);
+(console ?? {}).log(`已生成 [${C.slot}] ${CR.skin.name} ${CR.champion.name}`);

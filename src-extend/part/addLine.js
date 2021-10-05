@@ -1,18 +1,18 @@
-P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
+P.addLine = function addLine(line, lid, folderLines, duration) {
 	if(!line.duration) { return; }
 
-	var indexText = '(' + (eid + 1) + '/' + (lid + 1) + ')';
+	var indexText = lid + 1;
 
 	var side = line.side;
 	var isMain = side == 'right';
 
 	var colorLineBox = !isMain ? (line.colorLineBox ? T.rgb.apply(this, line.colorLineBox) : T.rgb(144, 34, 34)) : T.rgb(31, 170, 241);
 
-	var eventText = line.eventDirect || line.event || event.event;
-	var markFinal = line.mark || event.mark;
+	var eventText = line.eventDirect || line.event;
+	var markFinal = line.mark;
 
-	var hasTarget = isMain ? line.target || event.target : false;
-	var hasSkill = isMain ? line.skill || event.skill : false;
+	var hasTarget = isMain ? line.target : false;
+	var hasSkill = isMain ? line.skill : false;
 	var hasEvent = line.hideEvent ? false : !!eventText;
 	var hasMark = !!markFinal;
 
@@ -33,7 +33,7 @@ P.addLine = function addLine(line, event, lid, eid, folderLines, duration) {
 	var layerBoxEvent = hasEvent ? compLine.layers.addShape() : null;
 
 	var layerCircleMain = compLine.layers.addShape();
-	var layerPictureMain = compLine.layers.add(F(T.parseConfig(event.head || line.head), T.folderImages));
+	var layerPictureMain = compLine.layers.add(F(T.parseConfig(line.head), T.folderImages));
 
 	var layerCircleTarget = hasTarget ? compLine.layers.addShape() : null;
 	var layerPictureTarget = hasTarget ? compLine.layers.add(F(T.parseConfig(hasTarget), T.folderImages)) : null;

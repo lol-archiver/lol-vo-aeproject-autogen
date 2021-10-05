@@ -14,7 +14,7 @@
 	}
 
 	var accumDuration = D.title;
-	T.enumLine(events, function(line, event, lid, eid, index) {
+	T.enumLine(events, function(line, lid, index) {
 		var yCenter = 540;
 
 		var yLine = yCenter + line.boxHeight;
@@ -38,7 +38,7 @@
 			}
 		}
 
-		var compLine = P.addLine(line, event, lid, eid, T.folderLines, durationLine);
+		var compLine = P.addLine(line, lid, T.folderLines, durationLine);
 
 		P.addLineScroll(line, compLine, index, accumDuration, durationLine);
 

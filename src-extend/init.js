@@ -1,16 +1,12 @@
 this.T = {
-	enumLine: function(events, callback) {
+	enumLine: function(lines, callback) {
 		var index = 0;
 
-		for(var eid = 0; eid <= (events.length - 1); eid++) {
-			var event = events[eid];
+		for(var lid = 0; lid < lines.length; lid++) {
+			var line = lines[lid];
 
-			for(var lid = 0; lid < event.arrLine.length; lid++) {
-				var line = event.arrLine[lid];
-
-				if(line.duration) {
-					callback(line, event, lid, eid, index++);
-				}
+			if(line.duration) {
+				callback(line, lid, index++);
 			}
 		}
 	},
