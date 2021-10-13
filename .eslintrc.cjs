@@ -1,14 +1,7 @@
 const rcExtend = {
 	files: ['./src-extend/**'],
-	env: {
-		es2021: false,
-		node: false,
-	},
-	parser: 'espree',
-	parserOptions: {
-		sourceType: 'script',
-		ecmaVersion: 3,
-	},
+	env: { es2021: false, node: false },
+	parserOptions: { sourceType: 'script', ecmaVersion: 3 },
 	rules: {
 		noVar: [0],
 	},
@@ -40,15 +33,8 @@ const rcExtend = {
 
 const rcExpression = {
 	files: ['./src-expression/**'],
-	env: {
-		es6: true,
-		es2021: false,
-		node: false,
-	},
-	parser: 'espree',
-	parserOptions: {
-		sourceType: 'script',
-	},
+	env: { es2021: false, node: false, es6: true },
+	parserOptions: { sourceType: 'script', },
 	globals: {
 		time: 'readonly',
 
@@ -59,17 +45,9 @@ const rcExpression = {
 
 const rcNode = {
 	root: true,
-	env: {
-		es2021: true,
-		node: true,
-	},
-	extends: [
-		'eslint:recommended',
-	],
-	parserOptions: {
-		ecmaVersion: 13,
-		sourceType: 'module',
-	},
+	env: { es2021: true, node: true, },
+	extends: ['eslint:recommended'],
+	parserOptions: { sourceType: 'module', ecmaVersion: 13 },
 	rules: {
 		indent: [2, 'tab', { ignoreComments: true, SwitchCase: 1 }],
 		linebreakStyle: [2, 'unix'],
@@ -86,21 +64,9 @@ const rcNode = {
 };
 
 
-for(const key in rcNode.rules) {
-	const keyCamel = key.split(/(?=[A-Z])/).join('-').toLowerCase();
-	if(keyCamel != key) {
-		rcNode.rules[keyCamel] = rcNode.rules[key];
-		delete rcNode.rules[key];
-	}
-}
-
-for(const key in rcExtend.rules) {
-	const keyCamel = key.split(/(?=[A-Z])/).join('-').toLowerCase();
-	if(keyCamel != key) {
-		rcExtend.rules[keyCamel] = rcExtend.rules[key];
-		delete rcExtend.rules[key];
-	}
-}
+const parseKey = (raw, target) => { const key = raw.split(/(?=[A-Z])/).join('-').toLowerCase(); if(key != raw) { target[key] = target[raw]; delete target[raw]; } };
+Object.keys(rcNode.rules).forEach((key) => parseKey(key, rcNode.rules));
+Object.keys(rcExtend.rules).forEach((key) => parseKey(key, rcExtend.rules));
 
 
 module.exports = rcNode;
