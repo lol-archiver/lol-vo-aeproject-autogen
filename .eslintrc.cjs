@@ -66,10 +66,9 @@ const rcNode = {
 	extends: [
 		'eslint:recommended',
 	],
-	parser: '@babel/eslint-parser',
 	parserOptions: {
+		ecmaVersion: 13,
 		sourceType: 'module',
-		requireConfigFile: false,
 	},
 	rules: {
 		indent: [2, 'tab', { ignoreComments: true, SwitchCase: 1 }],

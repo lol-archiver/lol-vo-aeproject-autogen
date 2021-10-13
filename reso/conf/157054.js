@@ -27,9 +27,9 @@ export default {
 		'[击杀:皮肤:神龙尊者 玉境灵龙 卡莎]':
 			{ target: '${C.dirAutogen}/reso/icon/Kaisa/29.png' },
 		'[初遇:皮肤:神龙尊者 宁静之龙 卡尔玛]':
-			{ target: '${C.dirAutogen}/reso/icon/Karma/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Karma/44.png' },
 		'[击杀:皮肤:神龙尊者 宁静之龙 卡尔玛]':
-			{ target: '${C.dirAutogen}/reso/icon/Karma/0.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Karma/44.png' },
 		'[初遇:皮肤:神龙尊者 均衡之龙 沃利贝尔]':
 			{ target: '${C.dirAutogen}/reso/icon/Volibear/7.png' },
 		'[击杀:皮肤:神龙尊者 均衡之龙 沃利贝尔]':

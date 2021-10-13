@@ -11,8 +11,11 @@ const fileInfo = resolve(dirReso, 'info', `${C.slot}.json`);
 
 writeFileSync(resolve(dirSrcExtend, 'config.json'), JSON.stringify(C, null, '\t'));
 writeFileSync(resolve(dirSrcExtend, 'config.js'),
-	`var pathConfig = '${resolve(dirSrcExtend, 'config.json').replace(/\\/g, '\\\\')}';` +
-	`var pathInfo = '${fileInfo.replace(/\\/g, '\\\\')}';`
+	[
+		`/* eslint-disable */`,
+		`var pathConfig = '${resolve(dirSrcExtend, 'config.json').replace(/\\/g, '\\\\')}';`,
+		`var pathInfo = '${fileInfo.replace(/\\/g, '\\\\')}';`,
+	].join('\n')
 );
 
 

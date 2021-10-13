@@ -1,8 +1,8 @@
 export default {
 	events: [
 		{
-			event: "攻击英雄",
-			eventRaw: "AttackChampion",
+			event: '攻击英雄',
+			eventRaw: 'AttackChampion',
 			arrLine: [
 				{ line: '白昼来临。', crc32: '1D63B112', side: 'right', audioFolder: 'soraka@zh_cn', head: '${C.dirAutogen}/reso/icon/Soraka/15.png' },
 				{ line: '臣服黑暗。', crc32: 'B46B9057', side: 'left', audioFolder: 'soraka@zh_cn', head: '${C.dirAutogen}/reso/icon/Soraka/16.png', showEvent: true, flipHor: true },
@@ -17,8 +17,8 @@ export default {
 			],
 		},
 		{
-			event: "首次移动",
-			eventRaw: "FirstMove",
+			event: '首次移动',
+			eventRaw: 'FirstMove',
 			arrLine: [
 				{ line: '觉醒吧！希望与秩序。', crc32: '69F79A4D', side: 'right', audioFolder: 'soraka@zh_cn', head: '${C.dirAutogen}/reso/icon/Soraka/15.png' },
 				{ line: '黑夜中，潜藏着无数可能。', crc32: 'C2D6C160', side: 'left', audioFolder: 'soraka@zh_cn', head: '${C.dirAutogen}/reso/icon/Soraka/16.png', showEvent: true, flipHor: true },
@@ -29,8 +29,8 @@ export default {
 			],
 		},
 		{
-			event: "回城",
-			eventRaw: "Recall",
+			event: '回城',
+			eventRaw: 'Recall',
 			arrLine: [
 				{ line: '睡吧，陨落的人。你已逃离了混沌的魔爪。', crc32: '17AB3576', side: 'right', audioFolder: 'soraka@zh_cn', head: '${C.dirAutogen}/reso/icon/Soraka/15.png' },
 				{ line: '从秩序的枷锁中解放。', crc32: 'A860A20E', side: 'left', audioFolder: 'soraka@zh_cn', head: '${C.dirAutogen}/reso/icon/Soraka/16.png', showEvent: true, flipHor: true },
@@ -41,8 +41,8 @@ export default {
 			],
 		},
 		{
-			event: "R技能",
-			eventRaw: "SorakaR",
+			event: 'R技能',
+			eventRaw: 'SorakaR',
 			arrLine: [
 				{ line: '闪耀吧！', crc32: '1C59DA06', side: 'right', audioFolder: 'soraka@zh_cn', head: '${C.dirAutogen}/reso/icon/Soraka/15.png' },
 				{ line: '永不消散。', crc32: 'F7DF2538', side: 'left', audioFolder: 'soraka@zh_cn', head: '${C.dirAutogen}/reso/icon/Soraka/16.png', showEvent: true, flipHor: true },
