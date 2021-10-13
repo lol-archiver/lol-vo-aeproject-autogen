@@ -45,20 +45,17 @@ const rcExpression = {
 
 const rcNode = {
 	root: true,
-	env: { es2021: true, node: true, },
+	env: { es2021: true, node: true },
 	extends: ['eslint:recommended'],
 	parserOptions: { sourceType: 'module', ecmaVersion: 13 },
 	rules: {
 		indent: [2, 'tab', { ignoreComments: true, SwitchCase: 1 }],
-		linebreakStyle: [2, 'unix'],
+		linebreakStyle: [2],
 		quotes: [2, 'single', { allowTemplateLiterals: true }],
-		semi: [2, 'always'],
+		semi: [2],
 		noUnusedVars: [2, { vars: 'all', args: 'none' }],
-		noConsole: [2],
 		noVar: [2],
-		quoteProps: [0],
-		requireAtomicUpdates: [0],
-		arrowParens: [2],
+		noConsole: [2],
 	},
 	overrides: [rcExtend, rcExpression]
 };
