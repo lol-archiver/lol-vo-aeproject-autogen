@@ -1,15 +1,14 @@
 {
 	"name": "lol-vo-aeproject-autogen",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "",
 	"author": "Nuogz",
 	"license": "LGPL-3.0-or-later",
 	"main": "index.js",
 	"type": "module",
 	"engines": {
-		"node": ">=14"
+		"node": ">=14.18.0"
 	},
-	"scripts": {},
 	"dependencies": {
 		"fs-extra": "^10.0.0",
 		"music-metadata": "^7.11.4"
