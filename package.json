@@ -1,18 +1,18 @@
 {
 	"name": "lol-vo-aeproject-autogen",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "",
 	"author": "Nuogz",
 	"license": "LGPL-3.0-or-later",
 	"main": "index.js",
 	"type": "module",
 	"engines": {
-		"node": ">=14.18.0"
+		"node": ">=14.18.1"
 	},
 	"dependencies": {
 		"music-metadata": "^7.11.4"
 	},
 	"devDependencies": {
-		"eslint": "^8.0.0"
+		"eslint": "^8.2.0"
 	}
 }
