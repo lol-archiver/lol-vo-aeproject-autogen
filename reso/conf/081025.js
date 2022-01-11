@@ -9,21 +9,19 @@ export default {
 		name: 'Porcelain Protector'
 	},
 	emote: 'ヽ(=^･ω･^=)丿',
-	head: 'D:/Project/@nuogz-app/lol-vo-aeproject-autogen/reso/other/icon/POR_Ezreal.png',
-	splash: 'D:/Desk/ezcut.jpg',
 	events: {
 		'[初遇:皮肤:青花瓷 拉克丝]':
-			{ target: '${C.dirAutogen}/reso/icon/Lux/30.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Lux/29.png' },
 		'[击杀:皮肤:青花瓷 拉克丝]':
-			{ target: '${C.dirAutogen}/reso/icon/Lux/30.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Lux/29.png' },
 		'[初遇:皮肤:青花瓷 丽桑卓]':
 			{ target: '${C.dirAutogen}/reso/icon/Lissandra/23.png' },
 		'[击杀:皮肤:青花瓷 丽桑卓]':
 			{ target: '${C.dirAutogen}/reso/icon/Lissandra/23.png' },
 		'[初遇:皮肤:青花瓷 阿木木]':
-			{ target: '${C.dirAutogen}/reso/other/icon/POR_Amumu.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Amumu/34.png' },
 		'[击杀:皮肤:青花瓷 阿木木]':
-			{ target: '${C.dirAutogen}/reso/other/icon/POR_Amumu.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Amumu/34.png' },
 		'[初遇:皮肤:青花瓷 千珏]':
 			{ target: '${C.dirAutogen}/reso/icon/Kindred/12.png' },
 		'[击杀:皮肤:青花瓷 千珏]':
