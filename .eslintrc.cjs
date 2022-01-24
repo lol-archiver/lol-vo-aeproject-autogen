@@ -20,6 +20,9 @@ const rcExtend = {
 
 		File: 'readonly',
 
+		KeyframeInterpolationType: 'readonly',
+		KeyframeEase: 'readonly',
+
 		I: 'readonly',
 		D: 'readonly',
 		P: 'readonly',
