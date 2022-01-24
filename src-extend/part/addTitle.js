@@ -8,14 +8,14 @@ P.addTitle = function addTitle() {
 
 	var effectBlurSplash1 = layerSplashStart1.effect.addProperty('ADBE Box Blur2');
 	var effectBlurSplash2 = layerSplashStart2.effect.addProperty('ADBE Box Blur2');
-	effectBlurSplash1.iterations.setValue(D.title);
-	effectBlurSplash2.iterations.setValue(D.title);
-	effectBlurSplash1.blurRadius.setValueAtTime(0, 0);
-	effectBlurSplash2.blurRadius.setValueAtTime(0, 0);
-	effectBlurSplash1.blurRadius.setValueAtTime(D.title - 1, 0);
-	effectBlurSplash2.blurRadius.setValueAtTime(D.title - 1, 0);
-	effectBlurSplash1.blurRadius.setValueAtTime(D.title, 7);
-	effectBlurSplash2.blurRadius.setValueAtTime(D.title, 7);
+	effectBlurSplash1['\u8fed\u4ee3'].setValue(D.title);
+	effectBlurSplash2['\u8fed\u4ee3'].setValue(D.title);
+	effectBlurSplash1['\u6a21\u7cca\u534a\u5f84'].setValueAtTime(0, 0);
+	effectBlurSplash2['\u6a21\u7cca\u534a\u5f84'].setValueAtTime(0, 0);
+	effectBlurSplash1['\u6a21\u7cca\u534a\u5f84'].setValueAtTime(D.title - 1, 0);
+	effectBlurSplash2['\u6a21\u7cca\u534a\u5f84'].setValueAtTime(D.title - 1, 0);
+	effectBlurSplash1['\u6a21\u7cca\u534a\u5f84'].setValueAtTime(D.title, 7);
+	effectBlurSplash2['\u6a21\u7cca\u534a\u5f84'].setValueAtTime(D.title, 7);
 
 	var layerTitle1 = T.compMain.layers.addText(I.titleForce || I.title);
 	var layerTitle2 = T.compMain.layers.addText(I.titleForce || I.title);
