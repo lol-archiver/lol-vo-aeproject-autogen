@@ -1,14 +1,14 @@
-var ensureMainComp = function(name, width, height, pixelAspect, duration, frameRate) {
+T.ensureComp = function(name, duration, parent, widthVideo, heightVideo) {
 	var compMain;
 
-	T.each(app.project, function(item) {
-		if(item instanceof CompItem && item.name == 'Main') {
+	T.each(parent, function(item) {
+		if(item instanceof CompItem && item.name == name) {
 			compMain = item;
 		}
 	});
 
 	if(!compMain) {
-		compMain = app.project.items.addComp(name, width, height, pixelAspect, duration, frameRate);
+		compMain = parent.items.addComp(name, widthVideo || C.widthVideo, heightVideo || C.heightVideo, C.pixelAspect, duration, C.frameRate);
 		compMain.bgColor = T.rgb(45, 45, 45);
 	}
 
@@ -22,7 +22,8 @@ T.each(app.project, function(item) {
 	catch(error) { true; }
 });
 
-T.folderLines = T.ensureFolder('01Lines', app.project);
-T.folderVoices = T.ensureFolder('02Voices', app.project);
-T.folderImages = T.ensureFolder('03Images', app.project);
-T.compMain = ensureMainComp('Main', 1920, 1080, 1, 10, 60);
+T.dirLine = T.ensureDir('01Line', app.project);
+T.dirVoice = T.ensureDir('02Voice', app.project);
+T.dirImage = T.ensureDir('03Image', app.project);
+T.dirComp = T.ensureDir('04Comp', app.project);
+T.compMain = T.ensureComp('Main', 1, app.project);

@@ -1,6 +1,6 @@
 var dirSplash = 'D:/Desktop/splash/';
 
-var splashesOld = [
+var splashesOpener = [
 	'',
 	dirSplash + '81025.jpg',
 	dirSplash + '238031.jpg',
@@ -23,39 +23,44 @@ var splashesOld = [
 ];
 
 P.addOpener = function addOpener() {
-	var widthMain = 1920;
-	var heightMain = 1080;
-	var widthMainGrid = widthMain / 4;
-	var heightMainGrid = heightMain / 4;
+	var compOpener = T.ensureComp('Opener', 10, app.project);
+	var layerOpener = compOpener.layers;
+	var avLayerOpenerMain = T.compMain.layers.add(compOpener, 10);
+	avLayerOpenerMain.startTime = 1;
+	avLayerOpenerMain.stretch = 50;
+
+
+	var widthMainGrid = C.widthVideo / 4;
+	var heightMainGrid = C.heightVideo / 4;
 	var wGrid = function(grid, offset) { return widthMainGrid * (grid - 1 + (offset || 0)); };
 	var hGrid = function(grid, offset) { return heightMainGrid * (grid - 1 + (offset || 0)); };
 
 
 	var widthSplash = 1215;
 	var heightSplash = 717;
-	var wScaleGrid = widthMain / 4 / widthSplash * 100;
-	var hScaleGrid = heightMain / 4 / heightSplash * 100;
+	var wScaleGrid = widthMainGrid / widthSplash * 100;
+	var hScaleGrid = heightMainGrid / heightSplash * 100;
 
 
-	var splashOld7 = T.compMain.layers.add(F(splashesOld[7]), D.full); splashOld7.name = 'splash-old-7';
-	var splashOld8 = T.compMain.layers.add(F(splashesOld[8]), D.full); splashOld8.name = 'splash-old-8';
-	var splashOld9 = T.compMain.layers.add(F(splashesOld[9]), D.full); splashOld9.name = 'splash-old-9';
-	var splashOld10 = T.compMain.layers.add(F(splashesOld[10]), D.full); splashOld10.name = 'splash-old-10';
-	var splashOld11 = T.compMain.layers.add(F(splashesOld[11]), D.full); splashOld11.name = 'splash-old-11';
-	var splashOld12 = T.compMain.layers.add(F(splashesOld[12]), D.full); splashOld12.name = 'splash-old-12';
-	var splashOld13 = T.compMain.layers.add(F(splashesOld[13]), D.full); splashOld13.name = 'splash-old-13';
-	var splashOld14 = T.compMain.layers.add(F(splashesOld[14]), D.full); splashOld14.name = 'splash-old-14';
-	var splashOld15 = T.compMain.layers.add(F(splashesOld[15]), D.full); splashOld15.name = 'splash-old-15';
-	var splashOld16 = T.compMain.layers.add(F(splashesOld[16]), D.full); splashOld16.name = 'splash-old-16';
+	var splashOpener07 = layerOpener.add(F(splashesOpener[7], T.dirImage), D.full); splashOpener07.name = 'splash-opener-7';
+	var splashOpener08 = layerOpener.add(F(splashesOpener[8], T.dirImage), D.full); splashOpener08.name = 'splash-opener-8';
+	var splashOpener09 = layerOpener.add(F(splashesOpener[9], T.dirImage), D.full); splashOpener09.name = 'splash-opener-9';
+	var splashOpener10 = layerOpener.add(F(splashesOpener[10], T.dirImage), D.full); splashOpener10.name = 'splash-opener-10';
+	var splashOpener11 = layerOpener.add(F(splashesOpener[11], T.dirImage), D.full); splashOpener11.name = 'splash-opener-11';
+	var splashOpener12 = layerOpener.add(F(splashesOpener[12], T.dirImage), D.full); splashOpener12.name = 'splash-opener-12';
+	var splashOpener13 = layerOpener.add(F(splashesOpener[13], T.dirImage), D.full); splashOpener13.name = 'splash-opener-13';
+	var splashOpener14 = layerOpener.add(F(splashesOpener[14], T.dirImage), D.full); splashOpener14.name = 'splash-opener-14';
+	var splashOpener15 = layerOpener.add(F(splashesOpener[15], T.dirImage), D.full); splashOpener15.name = 'splash-opener-15';
+	var splashOpener16 = layerOpener.add(F(splashesOpener[16], T.dirImage), D.full); splashOpener16.name = 'splash-opener-16';
 
-	var splashOld6 = T.compMain.layers.add(F(splashesOld[6]), D.full); splashOld6.name = 'splash-old-6';
-	var splashOld5 = T.compMain.layers.add(F(splashesOld[5]), D.full); splashOld5.name = 'splash-old-5';
+	var splashOpener06 = layerOpener.add(F(splashesOpener[6], T.dirImage), D.full); splashOpener06.name = 'splash-opener-6';
+	var splashOpener05 = layerOpener.add(F(splashesOpener[5], T.dirImage), D.full); splashOpener05.name = 'splash-opener-5';
 
-	var splashOld3 = T.compMain.layers.add(F(splashesOld[3]), D.full); splashOld3.name = 'splash-old-3';
-	var splashOld4 = T.compMain.layers.add(F(splashesOld[4]), D.full); splashOld4.name = 'splash-old-4';
+	var splashOpener03 = layerOpener.add(F(splashesOpener[3], T.dirImage), D.full); splashOpener03.name = 'splash-opener-3';
+	var splashOpener04 = layerOpener.add(F(splashesOpener[4], T.dirImage), D.full); splashOpener04.name = 'splash-opener-4';
 
-	var splashOld1 = T.compMain.layers.add(F(splashesOld[1]), D.full); splashOld1.name = 'splash-old-1';
-	var splashOld2 = T.compMain.layers.add(F(splashesOld[2]), D.full); splashOld2.name = 'splash-old-2';
+	var splashOpener01 = layerOpener.add(F(splashesOpener[1], T.dirImage), D.full); splashOpener01.name = 'splash-opener-1';
+	var splashOpener02 = layerOpener.add(F(splashesOpener[2], T.dirImage), D.full); splashOpener02.name = 'splash-opener-2';
 
 
 	var ease1 = new KeyframeEase(0, 75);
@@ -69,186 +74,244 @@ P.addOpener = function addOpener() {
 	};
 
 
-	// splashOld1
-	splashOld1.anchorPoint.setValue([0, heightSplash]);
+	// splashOpener1
+	splashOpener01.anchorPoint.setValue([0, heightSplash]);
 
-	splashOld1.scale.setValueAtTime(0, [0, 0]);
-	splashOld1.scale.setValueAtTime(1, [wScaleGrid, hScaleGrid]);
-	setEase(splashOld1.scale, 1, 2, ease1);
+	splashOpener01.scale.setValueAtTime(0, [0, 0]);
+	splashOpener01.scale.setValueAtTime(1, [wScaleGrid, hScaleGrid]);
+	setEase(splashOpener01.scale, 1, 2, ease1);
 
-	splashOld1.position.setValueAtTime(1, [wGrid(3), hGrid(2, 1)]);
-	splashOld1.position.setValueAtTime(2, [wGrid(2), hGrid(2, 1)]);
-	setEase(splashOld1.position, 1, 2, ease1);
-
-
-	// splashOld2
-	splashOld2.anchorPoint.setValue([widthSplash, 0]);
-
-	splashOld2.scale.setValueAtTime(0, [0, 0]);
-	splashOld2.scale.setValueAtTime(1, [wScaleGrid, hScaleGrid]);
-	setEase(splashOld2.scale, 1, 2, ease1);
-
-	splashOld2.position.setValueAtTime(1, [wGrid(2, 1), hGrid(3)]);
-	splashOld2.position.setValueAtTime(2, [wGrid(3, 1), hGrid(3)]);
-	setEase(splashOld2.position, 1, 2, ease1);
+	splashOpener01.position.setValueAtTime(1, [wGrid(3), hGrid(2, 1)]);
+	splashOpener01.position.setValueAtTime(2, [wGrid(2), hGrid(2, 1)]);
+	setEase(splashOpener01.position, 1, 2, ease1);
 
 
-	// splashOld3
-	splashOld3.startTime = 1;
-	splashOld3.anchorPoint.setValue([0, 0]);
+	// splashOpener2
+	splashOpener02.anchorPoint.setValue([widthSplash, 0]);
 
-	splashOld3.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld3.position.setValue([wGrid(3), hGrid(2)]);
+	splashOpener02.scale.setValueAtTime(0, [0, 0]);
+	splashOpener02.scale.setValueAtTime(1, [wScaleGrid, hScaleGrid]);
+	setEase(splashOpener02.scale, 1, 2, ease1);
 
-
-	// splashOld4
-	splashOld4.startTime = 1;
-	splashOld4.anchorPoint.setValue([0, 0]);
-
-	splashOld4.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld4.position.setValue([wGrid(2), hGrid(3)]);
+	splashOpener02.position.setValueAtTime(1, [wGrid(2, 1), hGrid(3)]);
+	splashOpener02.position.setValueAtTime(2, [wGrid(3, 1), hGrid(3)]);
+	setEase(splashOpener02.position, 1, 2, ease1);
 
 
-	// splashOld5
-	splashOld5.startTime = 1;
-	splashOld5.anchorPoint.setValue([widthSplash, 0]);
+	// splashOpener3
+	splashOpener03.startTime = 1;
+	splashOpener03.anchorPoint.setValue([0, 0]);
 
-	splashOld5.scale.setValue([wScaleGrid, hScaleGrid]);
-
-	splashOld5.position.setValueAtTime(1, [wGrid(2, 1), hGrid(1)]);
-	splashOld5.position.setValueAtTime(2, [wGrid(1, 1), hGrid(1)]);
-	setEase(splashOld5.position, 1, 2, ease1);
-	splashOld5.position.setValueAtTime(2 + 0.1, [wGrid(1, 1), hGrid(1)]);
-	splashOld5.position.setValueAtTime(3, [wGrid(4, 1), hGrid(1)]);
-	setEase(splashOld5.position, 3, 4, ease2);
-	splashOld5.position.setValueAtTime(3 + 0.1, [wGrid(4, 1), hGrid(1)]);
-	splashOld5.position.setValueAtTime(4, [wGrid(4, 1), hGrid(4)]);
-	setEase(splashOld5.position, 5, 6, ease2);
-
-	splashOld5.opacity.setValueAtTime(1, 0);
-	splashOld5.opacity.setValueAtTime(2, 100);
-	setEase(splashOld5.opacity, 1, 2, ease2);
+	splashOpener03.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener03.position.setValue([wGrid(3), hGrid(2)]);
 
 
-	// splashOld6
-	splashOld6.startTime = 1;
-	splashOld6.anchorPoint.setValue([0, 0]);
+	// splashOpener4
+	splashOpener04.startTime = 1;
+	splashOpener04.anchorPoint.setValue([0, 0]);
 
-	splashOld6.scale.setValue([wScaleGrid, hScaleGrid]);
-
-	splashOld6.position.setValueAtTime(1, [wGrid(3), hGrid(4)]);
-	splashOld6.position.setValueAtTime(2, [wGrid(4), hGrid(4)]);
-	setEase(splashOld6.position, 1, 2, ease1);
-	splashOld6.position.setValueAtTime(2 + 0.1, [wGrid(4), hGrid(4)]);
-	splashOld6.position.setValueAtTime(3, [wGrid(1), hGrid(4)]);
-	setEase(splashOld6.position, 3, 4, ease2);
-	splashOld6.position.setValueAtTime(3 + 0.1, [wGrid(1), hGrid(4)]);
-	splashOld6.position.setValueAtTime(4, [wGrid(1), hGrid(1)]);
-	setEase(splashOld6.position, 5, 6, ease2);
+	splashOpener04.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener04.position.setValue([wGrid(2), hGrid(3)]);
 
 
-	splashOld6.opacity.setValueAtTime(1, 0);
-	splashOld6.opacity.setValueAtTime(2, 100);
-	setEase(splashOld6.opacity, 1, 2, ease2);
+	// splashOpener5
+	splashOpener05.startTime = 1;
+	splashOpener05.anchorPoint.setValue([widthSplash, 0]);
+
+	splashOpener05.scale.setValue([wScaleGrid, hScaleGrid]);
+
+	splashOpener05.position.setValueAtTime(1, [wGrid(2, 1), hGrid(1)]);
+	splashOpener05.position.setValueAtTime(2, [wGrid(1, 1), hGrid(1)]);
+	setEase(splashOpener05.position, 1, 2, ease1);
+	splashOpener05.position.setValueAtTime(2 + 0.1, [wGrid(1, 1), hGrid(1)]);
+	splashOpener05.position.setValueAtTime(3, [wGrid(4, 1), hGrid(1)]);
+	setEase(splashOpener05.position, 3, 4, ease2);
+	splashOpener05.position.setValueAtTime(3 + 0.1, [wGrid(4, 1), hGrid(1)]);
+	splashOpener05.position.setValueAtTime(4, [wGrid(4, 1), hGrid(4)]);
+	setEase(splashOpener05.position, 5, 6, ease2);
+
+	splashOpener05.opacity.setValueAtTime(1, 0);
+	splashOpener05.opacity.setValueAtTime(2, 100);
+	setEase(splashOpener05.opacity, 1, 2, ease2);
+
+
+	// splashOpener6
+	splashOpener06.startTime = 1;
+	splashOpener06.anchorPoint.setValue([0, 0]);
+
+	splashOpener06.scale.setValue([wScaleGrid, hScaleGrid]);
+
+	splashOpener06.position.setValueAtTime(1, [wGrid(3), hGrid(4)]);
+	splashOpener06.position.setValueAtTime(2, [wGrid(4), hGrid(4)]);
+	setEase(splashOpener06.position, 1, 2, ease1);
+	splashOpener06.position.setValueAtTime(2 + 0.1, [wGrid(4), hGrid(4)]);
+	splashOpener06.position.setValueAtTime(3, [wGrid(1), hGrid(4)]);
+	setEase(splashOpener06.position, 3, 4, ease2);
+	splashOpener06.position.setValueAtTime(3 + 0.1, [wGrid(1), hGrid(4)]);
+	splashOpener06.position.setValueAtTime(4, [wGrid(1), hGrid(1)]);
+	setEase(splashOpener06.position, 5, 6, ease2);
+
+
+	splashOpener06.opacity.setValueAtTime(1, 0);
+	splashOpener06.opacity.setValueAtTime(2, 100);
+	setEase(splashOpener06.opacity, 1, 2, ease2);
 
 
 	//
-	splashOld7.startTime = 2.4;
-	splashOld7.anchorPoint.setValue([0, 0]);
-	splashOld7.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld7.position.setValue([wGrid(2), hGrid(1)]);
+	splashOpener07.startTime = 2.4;
+	splashOpener07.anchorPoint.setValue([0, 0]);
+	splashOpener07.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener07.position.setValue([wGrid(2), hGrid(1)]);
 
-	splashOld7.opacity.setValueAtTime(2.4, 0);
-	splashOld7.opacity.setValueAtTime(3.1, 100);
-	setEase(splashOld7.opacity, 1, 2, ease1);
-
-
-	splashOld8.startTime = 2.7;
-	splashOld8.anchorPoint.setValue([0, 0]);
-	splashOld8.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld8.position.setValue([wGrid(3), hGrid(1)]);
-
-	splashOld8.opacity.setValueAtTime(2.7, 0);
-	splashOld8.opacity.setValueAtTime(3.1, 100);
-	setEase(splashOld8.opacity, 1, 2, ease1);
+	splashOpener07.opacity.setValueAtTime(2.4, 0);
+	splashOpener07.opacity.setValueAtTime(3.1, 100);
+	setEase(splashOpener07.opacity, 1, 2, ease1);
 
 
-	splashOld9.startTime = 3.3;
-	splashOld9.anchorPoint.setValue([0, 0]);
-	splashOld9.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld9.position.setValue([wGrid(4), hGrid(1)]);
+	splashOpener08.startTime = 2.7;
+	splashOpener08.anchorPoint.setValue([0, 0]);
+	splashOpener08.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener08.position.setValue([wGrid(3), hGrid(1)]);
 
-	splashOld9.opacity.setValueAtTime(3.3, 0);
-	splashOld9.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOld9.opacity, 1, 2, ease1);
-
-
-	splashOld10.startTime = 3.4;
-	splashOld10.anchorPoint.setValue([0, 0]);
-	splashOld10.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld10.position.setValue([wGrid(4), hGrid(2)]);
-
-	splashOld10.opacity.setValueAtTime(3.4, 0);
-	splashOld10.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOld10.opacity, 1, 2, ease1);
+	splashOpener08.opacity.setValueAtTime(2.7, 0);
+	splashOpener08.opacity.setValueAtTime(3.1, 100);
+	setEase(splashOpener08.opacity, 1, 2, ease1);
 
 
-	splashOld11.startTime = 3.6;
-	splashOld11.anchorPoint.setValue([0, 0]);
-	splashOld11.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld11.position.setValue([wGrid(4), hGrid(3)]);
+	splashOpener09.startTime = 3.3;
+	splashOpener09.anchorPoint.setValue([0, 0]);
+	splashOpener09.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener09.position.setValue([wGrid(4), hGrid(1)]);
 
-	splashOld11.opacity.setValueAtTime(3.6, 0);
-	splashOld11.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOld11.opacity, 1, 2, ease1);
-
-
-	splashOld12.startTime = 2.4;
-	splashOld12.anchorPoint.setValue([0, 0]);
-	splashOld12.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld12.position.setValue([wGrid(3), hGrid(4)]);
-
-	splashOld12.opacity.setValueAtTime(2.4, 0);
-	splashOld12.opacity.setValueAtTime(3.1, 100);
-	setEase(splashOld12.opacity, 1, 2, ease1);
+	splashOpener09.opacity.setValueAtTime(3.3, 0);
+	splashOpener09.opacity.setValueAtTime(4.1, 100);
+	setEase(splashOpener09.opacity, 1, 2, ease1);
 
 
-	splashOld13.startTime = 2.7;
-	splashOld13.anchorPoint.setValue([0, 0]);
-	splashOld13.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld13.position.setValue([wGrid(2), hGrid(4)]);
+	splashOpener10.startTime = 3.4;
+	splashOpener10.anchorPoint.setValue([0, 0]);
+	splashOpener10.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener10.position.setValue([wGrid(4), hGrid(2)]);
 
-	splashOld13.opacity.setValueAtTime(2.7, 0);
-	splashOld13.opacity.setValueAtTime(3.1, 100);
-	setEase(splashOld13.opacity, 1, 2, ease1);
-
-
-	splashOld14.startTime = 3.3;
-	splashOld14.anchorPoint.setValue([0, 0]);
-	splashOld14.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld14.position.setValue([wGrid(1), hGrid(4)]);
-
-	splashOld14.opacity.setValueAtTime(3.3, 0);
-	splashOld14.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOld14.opacity, 1, 2, ease1);
+	splashOpener10.opacity.setValueAtTime(3.4, 0);
+	splashOpener10.opacity.setValueAtTime(4.1, 100);
+	setEase(splashOpener10.opacity, 1, 2, ease1);
 
 
-	splashOld15.startTime = 3.4;
-	splashOld15.anchorPoint.setValue([0, 0]);
-	splashOld15.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld15.position.setValue([wGrid(1), hGrid(3)]);
+	splashOpener11.startTime = 3.6;
+	splashOpener11.anchorPoint.setValue([0, 0]);
+	splashOpener11.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener11.position.setValue([wGrid(4), hGrid(3)]);
 
-	splashOld15.opacity.setValueAtTime(3.4, 0);
-	splashOld15.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOld15.opacity, 1, 2, ease1);
+	splashOpener11.opacity.setValueAtTime(3.6, 0);
+	splashOpener11.opacity.setValueAtTime(4.1, 100);
+	setEase(splashOpener11.opacity, 1, 2, ease1);
 
 
-	splashOld16.startTime = 3.6;
-	splashOld16.anchorPoint.setValue([0, 0]);
-	splashOld16.scale.setValue([wScaleGrid, hScaleGrid]);
-	splashOld16.position.setValue([wGrid(1), hGrid(2)]);
+	splashOpener12.startTime = 2.4;
+	splashOpener12.anchorPoint.setValue([0, 0]);
+	splashOpener12.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener12.position.setValue([wGrid(3), hGrid(4)]);
 
-	splashOld16.opacity.setValueAtTime(3.6, 0);
-	splashOld16.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOld16.opacity, 1, 2, ease1);
+	splashOpener12.opacity.setValueAtTime(2.4, 0);
+	splashOpener12.opacity.setValueAtTime(3.1, 100);
+	setEase(splashOpener12.opacity, 1, 2, ease1);
+
+
+	splashOpener13.startTime = 2.7;
+	splashOpener13.anchorPoint.setValue([0, 0]);
+	splashOpener13.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener13.position.setValue([wGrid(2), hGrid(4)]);
+
+	splashOpener13.opacity.setValueAtTime(2.7, 0);
+	splashOpener13.opacity.setValueAtTime(3.1, 100);
+	setEase(splashOpener13.opacity, 1, 2, ease1);
+
+
+	splashOpener14.startTime = 3.3;
+	splashOpener14.anchorPoint.setValue([0, 0]);
+	splashOpener14.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener14.position.setValue([wGrid(1), hGrid(4)]);
+
+	splashOpener14.opacity.setValueAtTime(3.3, 0);
+	splashOpener14.opacity.setValueAtTime(4.1, 100);
+	setEase(splashOpener14.opacity, 1, 2, ease1);
+
+
+	splashOpener15.startTime = 3.4;
+	splashOpener15.anchorPoint.setValue([0, 0]);
+	splashOpener15.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener15.position.setValue([wGrid(1), hGrid(3)]);
+
+	splashOpener15.opacity.setValueAtTime(3.4, 0);
+	splashOpener15.opacity.setValueAtTime(4.1, 100);
+	setEase(splashOpener15.opacity, 1, 2, ease1);
+
+
+	splashOpener16.startTime = 3.6;
+	splashOpener16.anchorPoint.setValue([0, 0]);
+	splashOpener16.scale.setValue([wScaleGrid, hScaleGrid]);
+	splashOpener16.position.setValue([wGrid(1), hGrid(2)]);
+
+	splashOpener16.opacity.setValueAtTime(3.6, 0);
+	splashOpener16.opacity.setValueAtTime(4.1, 100);
+	setEase(splashOpener16.opacity, 1, 2, ease1);
+
+
+	// Logo Mask
+	var shapeLogoMask = layerOpener.addShape(); shapeLogoMask.name = 'logo-mask';
+	shapeLogoMask.startTime = 3.8;
+	shapeLogoMask.adjustmentLayer = true;
+	shapeLogoMask.adjustmentLayer = true;
+
+	shapeLogoMask.opacity.setValueAtTime(3.8, 0);
+	shapeLogoMask.opacity.setValueAtTime(4.5, 100);
+	setEase(shapeLogoMask.opacity, 1, 2, ease1);
+
+	var groupLogoMask = shapeLogoMask.content.addProperty('ADBE Vector Group');
+	var rectLogoMask = groupLogoMask.content.addProperty('ADBE Vector Shape - Rect');
+	rectLogoMask.size.setValue([C.widthVideo, C.heightVideo]);
+	var fillLogoMask = groupLogoMask.content.addProperty('ADBE Vector Graphic - Fill');
+	fillLogoMask.color.setValue(T.rgb(31, 170, 241));
+	var blurLogoMask = shapeLogoMask.effect.addProperty('ADBE Box Blur2');
+	blurLogoMask.blurRadius.setValue(14);
+
+
+	// Logo
+	var logo = layerOpener.add(F(dirSplash + 'logo.png', T.dirImage), 6); logo.name = 'logo';
+	logo.startTime = 4;
+	logo.scale.setValue([50, 50]);
+
+	logo.opacity.setValueAtTime(4, 0);
+	logo.opacity.setValueAtTime(5, 100);
+	setEase(logo.opacity, 1, 2, ease2);
+
+
+	// Me
+	var meStatic = layerOpener.add(F(dirSplash + '4n.png', T.dirImage), 6); meStatic.name = 'me-static';
+	meStatic.startTime = 4;
+	meStatic.scale.setValue([40, 40]);
+	meStatic.position.setValue([720, 540]);
+
+	meStatic.opacity.setValueAtTime(4, 0);
+	meStatic.opacity.setValueAtTime(5, 100);
+	meStatic.opacity.setValueAtTime(5 + 0.0001, 0);
+	meStatic.opacity.setValueAtTime(6.5 - 0.0001, 0);
+	meStatic.opacity.setValueAtTime(6.5, 100);
+	setEase(meStatic.opacity, 1, 2, ease2);
+
+
+	var meJugong = layerOpener.add(F(dirSplash + 'jugong480.gif', T.dirImage), 6); meJugong.name = 'me-jugong';
+	meJugong.startTime = 5;
+	meJugong.scale.setValue([40, 40]);
+	meJugong.position.setValue([720, 540]);
+
+
+
+
+
+	compOpener.openInViewer();
+
+
+	return compOpener;
 };

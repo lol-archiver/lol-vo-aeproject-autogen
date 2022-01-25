@@ -39,7 +39,7 @@
 			}
 		}
 
-		var compLine = P.addLine(line, lid, T.folderLines, durationLine);
+		var compLine = P.addLine(line, lid, T.dirLine, durationLine);
 
 		P.addLineScroll(line, compLine, index, accumDuration, durationLine);
 

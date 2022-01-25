@@ -1,4 +1,4 @@
-P.addLine = function addLine(line, lid, folderLines, duration) {
+P.addLine = function addLine(line, lid, dirLine, duration) {
 	if(!line.duration) { return; }
 
 	var indexText = lid + 1;
@@ -16,11 +16,11 @@ P.addLine = function addLine(line, lid, folderLines, duration) {
 	var hasEvent = line.hideEvent ? false : !!eventText;
 	var hasMark = !!markFinal;
 
-	var compLine = folderLines.items.addComp(indexText + line.line, 1920, 1080, 1, duration, 60);
+	var compLine = T.ensureComp(indexText + line.line, duration, dirLine.items);
 	compLine.bgColor = T.rgb(14, 14, 14);
 
 	if(line.audio && !C.video.mute) {
-		compLine.layers.add(F(T.parseConfig(line.audio), T.folderVoices));
+		compLine.layers.add(F(T.parseConfig(line.audio), T.dirVoice));
 	}
 
 	var layerBoxMark = hasMark ? compLine.layers.addShape() : null;
@@ -33,12 +33,12 @@ P.addLine = function addLine(line, lid, folderLines, duration) {
 	var layerBoxEvent = hasEvent ? compLine.layers.addShape() : null;
 
 	var layerCircleMain = compLine.layers.addShape();
-	var layerPictureMain = compLine.layers.add(F(T.parseConfig(line.head), T.folderImages));
+	var layerPictureMain = compLine.layers.add(F(T.parseConfig(line.head), T.dirImage));
 
 	var layerCircleTarget = hasTarget ? compLine.layers.addShape() : null;
-	var layerPictureTarget = hasTarget ? compLine.layers.add(F(T.parseConfig(hasTarget), T.folderImages)) : null;
+	var layerPictureTarget = hasTarget ? compLine.layers.add(F(T.parseConfig(hasTarget), T.dirImage)) : null;
 
-	var layerPictureSkill = hasSkill ? compLine.layers.add(F(T.parseConfig(hasSkill), T.folderImages)) : null;
+	var layerPictureSkill = hasSkill ? compLine.layers.add(F(T.parseConfig(hasSkill), T.dirImage)) : null;
 	var layerSquareSkill = hasSkill ? compLine.layers.addShape() : null;
 
 	var layerEvent = hasEvent ? compLine.layers.addText(eventText) : null;

@@ -61,18 +61,18 @@ this.T = {
 
 		return text;
 	},
-	ensureFolder: function(name, parent) {
-		var folderItem;
+	ensureDir: function(name, parent) {
+		var dir;
 
 		T.each(parent, function(item) {
 			if(item instanceof FolderItem) {
 				if(name == item.name) {
-					folderItem = item;
+					dir = item;
 				}
 			}
 		});
 
-		return folderItem || parent.items.addFolder(name);
+		return dir || parent.items.addFolder(name);
 	},
 	getBoxSize: function(text) {
 		var fontSize = C.video.size.fontLine;
@@ -148,6 +148,10 @@ this.T = {
 this.C = JSON.parse(T.readFile(pathConfig, 'UTF8'));
 this.I = JSON.parse(T.readFile(pathInfo, 'UTF8'));
 
+C.widthVideo = C.video.width;
+C.heightVideo = C.video.height;
+C.pixelAspect = 1;
+C.frameRate = 60;
 
 var fileLog = new File(C.fileLog);
 fileLog.encoding = 'UTF8';

@@ -3,13 +3,13 @@
 // @include 'ensure.js';
 
 
-// @include 'part/addOpener.js';
+// @include 'part/addOpener2.js';
 
 D.full = 60;
 T.compMain.duration = D.full;
-T.compMain.openInViewer();
+// T.compMain.openInViewer();
 
-P.addOpener();
+P.addOpener2();
 
 // var img1 = compMain.layers[1];
 // var img2 = compMain.layers[2];

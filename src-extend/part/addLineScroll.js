@@ -1,8 +1,8 @@
-P.addLineScroll = function addLineScroll(line, compLine, index, accumDuration, durationLien) {
+P.addLineScroll = function addLineScroll(line, compLine, index, accumDuration, durationLine) {
 	var xCenter = 960;
 	var yCenter = 540;
 
-	var layerLine = T.compMain.layers.add(compLine, durationLien);
+	var layerLine = T.compMain.layers.add(compLine, durationLine);
 
 	layerLine.startTime = accumDuration;
 	layerLine.transform.position.setValue([xCenter, yCenter + line.boxHeight]);
