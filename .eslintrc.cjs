@@ -31,6 +31,7 @@ const rcExtend = {
 		E: 'readonly',
 		L: 'readonly',
 		T: 'readonly',
+		LL: 'readonly',
 	},
 };
 

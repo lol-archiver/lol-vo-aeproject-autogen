@@ -1,6 +1,7 @@
 // @include 'json2.js';
 // @include 'init.js';
 // @include 'ensure.js';
+// @include 'lang.js';
 
 (function() {
 	var events = P.calcDuration();

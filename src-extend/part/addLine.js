@@ -90,11 +90,11 @@ P.addLine = function addLine(line, lid, folderLines, duration) {
 		layerBoxEvent.transform.position.expression = E(side + '/' + 'followPositionBoxEvent');
 
 		var effectDropShadowBoxEvent = layerBoxEvent.effect.addProperty('ADBE Drop Shadow');
-		effectDropShadowBoxEvent['\u9634\u5f71\u989c\u8272'].setValue(T.rgb(73, 80, 81));
-		effectDropShadowBoxEvent['\u65b9\u5411'].setValue(135);
-		effectDropShadowBoxEvent['\u4e0d\u900f\u660e\u5ea6'].setValue((70 / 100) * 255);
-		effectDropShadowBoxEvent['\u8ddd\u79bb'].setValue(14);
-		effectDropShadowBoxEvent['\u67d4\u548c\u5ea6'].setValue(7);
+		effectDropShadowBoxEvent[LL.shadowColor].setValue(T.rgb(73, 80, 81));
+		effectDropShadowBoxEvent[LL.direction].setValue(135);
+		effectDropShadowBoxEvent[LL.opacity].setValue((70 / 100) * 255);
+		effectDropShadowBoxEvent[LL.distance].setValue(14);
+		effectDropShadowBoxEvent[LL.softness].setValue(7);
 	}
 
 	// -------Main Circle-------
@@ -126,12 +126,12 @@ P.addLine = function addLine(line, lid, folderLines, duration) {
 	layerCircleMainShadow.transform.position.expression = E(side + '/' + 'followPositionCircleMain');
 
 	var effectDropShadowCircleMain = layerCircleMainShadow.effect.addProperty('ADBE Drop Shadow');
-	effectDropShadowCircleMain['\u9634\u5f71\u989c\u8272'].setValue(T.rgb(73, 80, 81));
-	effectDropShadowCircleMain['\u65b9\u5411'].setValue(isMain ? 225 : 135);
-	effectDropShadowCircleMain['\u4e0d\u900f\u660e\u5ea6'].setValue((70 / 100) * 255);
-	effectDropShadowCircleMain['\u8ddd\u79bb'].setValue(11);
-	effectDropShadowCircleMain['\u67d4\u548c\u5ea6'].setValue(7);
-	effectDropShadowCircleMain['\u4ec5\u9634\u5f71'].setValue(1);
+	effectDropShadowCircleMain[LL.shadowColor].setValue(T.rgb(73, 80, 81));
+	effectDropShadowCircleMain[LL.direction].setValue(isMain ? 225 : 135);
+	effectDropShadowCircleMain[LL.opacity].setValue((70 / 100) * 255);
+	effectDropShadowCircleMain[LL.distance].setValue(11);
+	effectDropShadowCircleMain[LL.softness].setValue(7);
+	effectDropShadowCircleMain[LL.shadowOnly].setValue(1);
 
 	// -------Main Picture-------
 	layerPictureMain.transform.scale.setValue([150 * (line.flipHor ? -1 : 1), 150]);

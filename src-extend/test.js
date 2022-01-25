@@ -4,11 +4,13 @@
 
 
 // @include 'part/addOpener.js';
+
 D.full = 60;
 T.compMain.duration = D.full;
 T.compMain.openInViewer();
 
 P.addOpener();
+
 // var img1 = compMain.layers[1];
 // var img2 = compMain.layers[2];
 // var s1 = img1.scale;
