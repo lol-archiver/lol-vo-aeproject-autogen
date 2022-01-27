@@ -7,9 +7,10 @@
 
 D.full = 60;
 T.compMain.duration = D.full;
-// T.compMain.openInViewer();
 
 P.addOpener2();
+
+T.compMain.openInViewer();
 
 // var img1 = compMain.layers[1];
 // var img2 = compMain.layers[2];
