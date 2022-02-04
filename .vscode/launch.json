@@ -4,7 +4,7 @@
 		{
 			"type": "pwa-node",
 			"request": "launch",
-			"name": "生成配置",
+			"name": "1: 生成配置",
 			"skipFiles": [
 				"<node_internals>/**"
 			],
@@ -15,7 +15,7 @@
 		{
 			"type": "extendscript-debug",
 			"request": "launch",
-			"name": "生成工程",
+			"name": "2: 生成工程",
 			"program": "${workspaceFolder}/src-extend/index.js",
 			"stopOnEntry": false,
 			"targetSpecifier": "aftereffects-22.0",
