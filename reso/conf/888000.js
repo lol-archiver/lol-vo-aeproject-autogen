@@ -35,21 +35,21 @@ export default {
 
 
 		'[使用:Q技能:铁腕竞合]':
-			{ target: '${C.dirAutogen}/reso/icon/Renata/Q.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Renata/Q.png' },
 		'[使用:Q技能:铁腕竞合:再次施放]':
-			{ target: '${C.dirAutogen}/reso/icon/Renata/Q.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Renata/Q.png' },
 		'[使用:W技能:及时救难]':
-			{ target: '${C.dirAutogen}/reso/icon/Renata/W.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Renata/W.png' },
 		'[使用:W技能:及时救难:救活队友]':
-			{ target: '${C.dirAutogen}/reso/icon/Renata/W.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Renata/W.png' },
 		'[使用:E技能:忠诚激励]':
-			{ target: '${C.dirAutogen}/reso/icon/Renata/E.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Renata/E.png' },
 		'[升级:R技能:恶意收购:初次]':
-			{ target: '${C.dirAutogen}/reso/icon/Renata/R.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Renata/R.png' },
 		'[使用:R技能:恶意收购]':
-			{ target: '${C.dirAutogen}/reso/icon/Renata/R.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Renata/R.png' },
 		'[使用:R技能:恶意收购:击杀敌方]':
-			{ target: '${C.dirAutogen}/reso/icon/Renata/R.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/Renata/R.png' },
 
 		'[使用:道具:监视图腾]':
 			{ skill: '${C.dirAutogen}/reso/icon/Item/3350_greateryellowtrinket.png' },
@@ -58,7 +58,7 @@ export default {
 			{ target: '${C.dirAutogen}/reso/region/zaun.png' },
 		'[初遇:地区:皮尔特沃夫]':
 			{ target: '${C.dirAutogen}/reso/region/piltover.png' },
-		'[击杀:地区:皮尔吉沃特]':
+		'[击杀:地区:皮尔特沃夫]':
 			{ target: '${C.dirAutogen}/reso/region/piltover.png' },
 	},
 	lines: {
