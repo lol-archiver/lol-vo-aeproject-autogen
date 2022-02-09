@@ -22,6 +22,7 @@ const rcExtend = {
 
 		KeyframeInterpolationType: 'readonly',
 		KeyframeEase: 'readonly',
+		TrackMatteType: 'readonly',
 
 		I: 'readonly',
 		D: 'readonly',

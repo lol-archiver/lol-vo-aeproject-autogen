@@ -4,13 +4,15 @@
 
 
 // @include 'part/addOpener2.js';
+// @include 'part/addTitle2.js';
 
 D.full = 60;
 T.compMain.duration = D.full;
 
-P.addOpener2();
+// P.addOpener2();
+P.addTitle2();
 
-T.compMain.openInViewer();
+// T.compMain.openInViewer();
 
 // var img1 = compMain.layers[1];
 // var img2 = compMain.layers[2];

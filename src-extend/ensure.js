@@ -17,6 +17,11 @@ T.ensureComp = function(name, duration, parent, widthVideo, heightVideo) {
 
 T.each(app.project, function(item) {
 	try {
+		if(item.name == 'Title 05') { return; }
+	}
+	catch(error) { true; }
+
+	try {
 		item.remove();
 	}
 	catch(error) { true; }

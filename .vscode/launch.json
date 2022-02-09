@@ -4,7 +4,7 @@
 		{
 			"type": "pwa-node",
 			"request": "launch",
-			"name": "1-生成配置",
+			"name": "1: 生成配置",
 			"skipFiles": [
 				"<node_internals>/**"
 			],
@@ -15,7 +15,7 @@
 		{
 			"type": "extendscript-debug",
 			"request": "launch",
-			"name": "2-生成工程",
+			"name": "2: 运行工程",
 			"program": "${workspaceFolder}/src-extend/index.js",
 			"stopOnEntry": false,
 			"targetSpecifier": "aftereffects-22.0",
@@ -23,10 +23,18 @@
 		{
 			"type": "extendscript-debug",
 			"request": "launch",
-			"name": "3-测试工程",
+			"name": "3: 测试工程",
+			"program": "${workspaceFolder}/src-extend/test.js",
+			"stopOnEntry": false,
+			"targetSpecifier": "aftereffects-22.0",
+		},
+		{
+			"type": "extendscript-debug",
+			"request": "launch",
+			"name": "4: 测试工程（2020）",
 			"program": "${workspaceFolder}/src-extend/test.js",
 			"stopOnEntry": false,
 			"targetSpecifier": "aftereffects-17.0",
-		}
+		},
 	]
 }
