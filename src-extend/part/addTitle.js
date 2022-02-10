@@ -17,8 +17,8 @@ P.addTitle = function addTitle() {
 	effectBlurSplash1['\u6a21\u7cca\u534a\u5f84'].setValueAtTime(D.title, 7);
 	effectBlurSplash2['\u6a21\u7cca\u534a\u5f84'].setValueAtTime(D.title, 7);
 
-	var layerTitle1 = T.compMain.layers.addText(I.titleForce || I.title);
-	var layerTitle2 = T.compMain.layers.addText(I.titleForce || I.title);
+	var layerTitle1 = T.compMain.layers.addText(I.title);
+	var layerTitle2 = T.compMain.layers.addText(I.title);
 	layerTitle1.outPoint = D.title + 0.4;
 	layerTitle2.outPoint = D.title + 0.4;
 	layerTitle1.transform.position.setValue([40 + 2, 150 + 2]);

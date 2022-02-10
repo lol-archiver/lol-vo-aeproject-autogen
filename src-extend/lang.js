@@ -21,4 +21,4 @@ var languages = {
 	}
 };
 
-this.LL = languages[app.isoLanguage];
+this.LL = languages[app.isoLanguage.toLowerCase()];

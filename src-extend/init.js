@@ -144,12 +144,53 @@ this.T = {
 	}
 };
 
+this.Ease1 = new KeyframeEase(0, 75);
+this.Ease2 = new KeyframeEase(0, 100);
+this.SetEase = function(propertySpec, key1, key2, ease) {
+	var length = propertySpec.keyInTemporalEase(key1).length;
+	var eases = length == 2 ? [ease, ease] : (length == 3 ? [ease, ease, ease] : [ease]);
+
+	propertySpec.setTemporalEaseAtKey(key1, propertySpec.keyInTemporalEase(key1), eases);
+	propertySpec.setTemporalEaseAtKey(key2, eases, propertySpec.keyOutTemporalEase(key2));
+};
+
+this.AddProperty = function(group, name, nameProp) {
+	var property = group.addProperty(name);
+
+	if(typeof nameProp == 'string') {
+		property.name = nameProp;
+	}
+
+	return property;
+};
+this.AddShape = function(group, nameShape) {
+	var shape = group.addShape();
+
+	if(typeof nameShape == 'string') {
+		shape.name = nameShape;
+	}
+
+	return shape;
+};
+this.AddText = function(group, string, nameText) {
+	var text = group.addText(string);
+
+	if(typeof nameText == 'string') {
+		text.name = nameText;
+	}
+
+	return text;
+};
+
+
 // @include 'config.js';
 this.C = JSON.parse(T.readFile(pathConfig, 'UTF8'));
 this.I = JSON.parse(T.readFile(pathInfo, 'UTF8'));
 
 C.widthVideo = C.video.width;
 C.heightVideo = C.video.height;
+// C.widthVideo = C.video.height; C.heightVideo = C.video.width;
+C.isLandscape = C.widthVideo > C.heightVideo;
 C.pixelAspect = 1;
 C.frameRate = 60;
 

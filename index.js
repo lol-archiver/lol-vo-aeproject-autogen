@@ -116,7 +116,8 @@ for(const event of events) {
 
 writeFileSync(fileInfo, JSON.stringify({
 	title: CR.title,
-	titleForce: CR.titleForce,
+	title1: CR.title1,
+	title2: CR.title2,
 	champion: CR.champion,
 	skin: CR.skin,
 	emote: CR.emote,

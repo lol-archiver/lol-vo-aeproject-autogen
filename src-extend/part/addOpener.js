@@ -63,9 +63,9 @@ P.addOpener = function addOpener() {
 	var splashOpener02 = layerOpener.add(F(splashesOpener[2], T.dirImage), D.full); splashOpener02.name = 'splash-opener-2';
 
 
-	var ease1 = new KeyframeEase(0, 75);
-	var ease2 = new KeyframeEase(0, 100);
-	var setEase = function(propertySpec, key1, key2, ease) {
+	var Ease1 = new KeyframeEase(0, 75);
+	var Ease2 = new KeyframeEase(0, 100);
+	var SetEase = function(propertySpec, key1, key2, ease) {
 		var length = propertySpec.keyInTemporalEase(key1).length;
 		var eases = length == 2 ? [ease, ease] : (length == 3 ? [ease, ease, ease] : [ease]);
 
@@ -79,11 +79,11 @@ P.addOpener = function addOpener() {
 
 	splashOpener01.scale.setValueAtTime(0, [0, 0]);
 	splashOpener01.scale.setValueAtTime(1, [wScaleGrid, hScaleGrid]);
-	setEase(splashOpener01.scale, 1, 2, ease1);
+	SetEase(splashOpener01.scale, 1, 2, Ease1);
 
 	splashOpener01.position.setValueAtTime(1, [wGrid(3), hGrid(2, 1)]);
 	splashOpener01.position.setValueAtTime(2, [wGrid(2), hGrid(2, 1)]);
-	setEase(splashOpener01.position, 1, 2, ease1);
+	SetEase(splashOpener01.position, 1, 2, Ease1);
 
 
 	// splashOpener2
@@ -91,11 +91,11 @@ P.addOpener = function addOpener() {
 
 	splashOpener02.scale.setValueAtTime(0, [0, 0]);
 	splashOpener02.scale.setValueAtTime(1, [wScaleGrid, hScaleGrid]);
-	setEase(splashOpener02.scale, 1, 2, ease1);
+	SetEase(splashOpener02.scale, 1, 2, Ease1);
 
 	splashOpener02.position.setValueAtTime(1, [wGrid(2, 1), hGrid(3)]);
 	splashOpener02.position.setValueAtTime(2, [wGrid(3, 1), hGrid(3)]);
-	setEase(splashOpener02.position, 1, 2, ease1);
+	SetEase(splashOpener02.position, 1, 2, Ease1);
 
 
 	// splashOpener3
@@ -122,17 +122,17 @@ P.addOpener = function addOpener() {
 
 	splashOpener05.position.setValueAtTime(1, [wGrid(2, 1), hGrid(1)]);
 	splashOpener05.position.setValueAtTime(2, [wGrid(1, 1), hGrid(1)]);
-	setEase(splashOpener05.position, 1, 2, ease1);
+	SetEase(splashOpener05.position, 1, 2, Ease1);
 	splashOpener05.position.setValueAtTime(2 + 0.1, [wGrid(1, 1), hGrid(1)]);
 	splashOpener05.position.setValueAtTime(3, [wGrid(4, 1), hGrid(1)]);
-	setEase(splashOpener05.position, 3, 4, ease2);
+	SetEase(splashOpener05.position, 3, 4, Ease2);
 	splashOpener05.position.setValueAtTime(3 + 0.1, [wGrid(4, 1), hGrid(1)]);
 	splashOpener05.position.setValueAtTime(4, [wGrid(4, 1), hGrid(4)]);
-	setEase(splashOpener05.position, 5, 6, ease2);
+	SetEase(splashOpener05.position, 5, 6, Ease2);
 
 	splashOpener05.opacity.setValueAtTime(1, 0);
 	splashOpener05.opacity.setValueAtTime(2, 100);
-	setEase(splashOpener05.opacity, 1, 2, ease2);
+	SetEase(splashOpener05.opacity, 1, 2, Ease2);
 
 
 	// splashOpener6
@@ -143,18 +143,18 @@ P.addOpener = function addOpener() {
 
 	splashOpener06.position.setValueAtTime(1, [wGrid(3), hGrid(4)]);
 	splashOpener06.position.setValueAtTime(2, [wGrid(4), hGrid(4)]);
-	setEase(splashOpener06.position, 1, 2, ease1);
+	SetEase(splashOpener06.position, 1, 2, Ease1);
 	splashOpener06.position.setValueAtTime(2 + 0.1, [wGrid(4), hGrid(4)]);
 	splashOpener06.position.setValueAtTime(3, [wGrid(1), hGrid(4)]);
-	setEase(splashOpener06.position, 3, 4, ease2);
+	SetEase(splashOpener06.position, 3, 4, Ease2);
 	splashOpener06.position.setValueAtTime(3 + 0.1, [wGrid(1), hGrid(4)]);
 	splashOpener06.position.setValueAtTime(4, [wGrid(1), hGrid(1)]);
-	setEase(splashOpener06.position, 5, 6, ease2);
+	SetEase(splashOpener06.position, 5, 6, Ease2);
 
 
 	splashOpener06.opacity.setValueAtTime(1, 0);
 	splashOpener06.opacity.setValueAtTime(2, 100);
-	setEase(splashOpener06.opacity, 1, 2, ease2);
+	SetEase(splashOpener06.opacity, 1, 2, Ease2);
 
 
 	//
@@ -165,7 +165,7 @@ P.addOpener = function addOpener() {
 
 	splashOpener07.opacity.setValueAtTime(2.4, 0);
 	splashOpener07.opacity.setValueAtTime(3.1, 100);
-	setEase(splashOpener07.opacity, 1, 2, ease1);
+	SetEase(splashOpener07.opacity, 1, 2, Ease1);
 
 
 	splashOpener08.startTime = 2.7;
@@ -175,7 +175,7 @@ P.addOpener = function addOpener() {
 
 	splashOpener08.opacity.setValueAtTime(2.7, 0);
 	splashOpener08.opacity.setValueAtTime(3.1, 100);
-	setEase(splashOpener08.opacity, 1, 2, ease1);
+	SetEase(splashOpener08.opacity, 1, 2, Ease1);
 
 
 	splashOpener09.startTime = 3.3;
@@ -185,7 +185,7 @@ P.addOpener = function addOpener() {
 
 	splashOpener09.opacity.setValueAtTime(3.3, 0);
 	splashOpener09.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOpener09.opacity, 1, 2, ease1);
+	SetEase(splashOpener09.opacity, 1, 2, Ease1);
 
 
 	splashOpener10.startTime = 3.4;
@@ -195,7 +195,7 @@ P.addOpener = function addOpener() {
 
 	splashOpener10.opacity.setValueAtTime(3.4, 0);
 	splashOpener10.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOpener10.opacity, 1, 2, ease1);
+	SetEase(splashOpener10.opacity, 1, 2, Ease1);
 
 
 	splashOpener11.startTime = 3.6;
@@ -205,7 +205,7 @@ P.addOpener = function addOpener() {
 
 	splashOpener11.opacity.setValueAtTime(3.6, 0);
 	splashOpener11.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOpener11.opacity, 1, 2, ease1);
+	SetEase(splashOpener11.opacity, 1, 2, Ease1);
 
 
 	splashOpener12.startTime = 2.4;
@@ -215,7 +215,7 @@ P.addOpener = function addOpener() {
 
 	splashOpener12.opacity.setValueAtTime(2.4, 0);
 	splashOpener12.opacity.setValueAtTime(3.1, 100);
-	setEase(splashOpener12.opacity, 1, 2, ease1);
+	SetEase(splashOpener12.opacity, 1, 2, Ease1);
 
 
 	splashOpener13.startTime = 2.7;
@@ -225,7 +225,7 @@ P.addOpener = function addOpener() {
 
 	splashOpener13.opacity.setValueAtTime(2.7, 0);
 	splashOpener13.opacity.setValueAtTime(3.1, 100);
-	setEase(splashOpener13.opacity, 1, 2, ease1);
+	SetEase(splashOpener13.opacity, 1, 2, Ease1);
 
 
 	splashOpener14.startTime = 3.3;
@@ -235,7 +235,7 @@ P.addOpener = function addOpener() {
 
 	splashOpener14.opacity.setValueAtTime(3.3, 0);
 	splashOpener14.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOpener14.opacity, 1, 2, ease1);
+	SetEase(splashOpener14.opacity, 1, 2, Ease1);
 
 
 	splashOpener15.startTime = 3.4;
@@ -245,7 +245,7 @@ P.addOpener = function addOpener() {
 
 	splashOpener15.opacity.setValueAtTime(3.4, 0);
 	splashOpener15.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOpener15.opacity, 1, 2, ease1);
+	SetEase(splashOpener15.opacity, 1, 2, Ease1);
 
 
 	splashOpener16.startTime = 3.6;
@@ -255,7 +255,7 @@ P.addOpener = function addOpener() {
 
 	splashOpener16.opacity.setValueAtTime(3.6, 0);
 	splashOpener16.opacity.setValueAtTime(4.1, 100);
-	setEase(splashOpener16.opacity, 1, 2, ease1);
+	SetEase(splashOpener16.opacity, 1, 2, Ease1);
 
 
 	// Logo Mask
@@ -266,7 +266,7 @@ P.addOpener = function addOpener() {
 
 	shapeLogoMask.opacity.setValueAtTime(3.8, 0);
 	shapeLogoMask.opacity.setValueAtTime(4.5, 100);
-	setEase(shapeLogoMask.opacity, 1, 2, ease1);
+	SetEase(shapeLogoMask.opacity, 1, 2, Ease1);
 
 	var groupLogoMask = shapeLogoMask.content.addProperty('ADBE Vector Group');
 	var rectLogoMask = groupLogoMask.content.addProperty('ADBE Vector Shape - Rect');
@@ -284,7 +284,7 @@ P.addOpener = function addOpener() {
 
 	logo.opacity.setValueAtTime(4, 0);
 	logo.opacity.setValueAtTime(5, 100);
-	setEase(logo.opacity, 1, 2, ease2);
+	SetEase(logo.opacity, 1, 2, Ease2);
 
 
 	// Me
@@ -298,7 +298,7 @@ P.addOpener = function addOpener() {
 	meStatic.opacity.setValueAtTime(5 + 0.0001, 0);
 	meStatic.opacity.setValueAtTime(6.5 - 0.0001, 0);
 	meStatic.opacity.setValueAtTime(6.5, 100);
-	setEase(meStatic.opacity, 1, 2, ease2);
+	SetEase(meStatic.opacity, 1, 2, Ease2);
 
 
 	var meJugong = layerOpener.add(F(dirSplash + 'jugong480.gif', T.dirImage), 6); meJugong.name = 'me-jugong';

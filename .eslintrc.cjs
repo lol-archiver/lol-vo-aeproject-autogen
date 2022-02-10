@@ -24,6 +24,7 @@ const rcExtend = {
 		KeyframeEase: 'readonly',
 		TrackMatteType: 'readonly',
 
+
 		I: 'readonly',
 		D: 'readonly',
 		P: 'readonly',
@@ -33,6 +34,13 @@ const rcExtend = {
 		L: 'readonly',
 		T: 'readonly',
 		LL: 'readonly',
+
+		AddProperty: 'readonly',
+		AddShape: 'readonly',
+		AddText: 'readonly',
+		Ease1: 'readonly',
+		Ease2: 'readonly',
+		SetEase: 'readonly',
 	},
 };
 
