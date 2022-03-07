@@ -194,6 +194,7 @@ C.isLandscape = C.widthVideo > C.heightVideo;
 C.pixelAspect = 1;
 C.frameRate = 60;
 
+
 var fileLog = new File(C.fileLog);
 fileLog.encoding = 'UTF8';
 fileLog.open('a');
@@ -233,15 +234,16 @@ this.E = function Expression(name) { return T.readFile(C.dirExpression + '/' + n
 
 
 var mapFootage = {};
-this.F = function Footage(path, parent) {
+this.Footage = function Footage(path, parent) {
 	var footage = mapFootage[path];
 
 	if(!footage) {
-		// eslint-disable-next-line no-useless-catch
 		try {
 			footage = app.project.importFile(new ImportOptions(new File(path)));
 		}
 		catch(error) {
+			L(error.message || error);
+
 			throw error;
 		}
 

@@ -42,25 +42,25 @@ P.addOpener = function addOpener() {
 	var hScaleGrid = heightMainGrid / heightSplash * 100;
 
 
-	var splashOpener07 = layerOpener.add(F(splashesOpener[7], T.dirImage), D.full); splashOpener07.name = 'splash-opener-7';
-	var splashOpener08 = layerOpener.add(F(splashesOpener[8], T.dirImage), D.full); splashOpener08.name = 'splash-opener-8';
-	var splashOpener09 = layerOpener.add(F(splashesOpener[9], T.dirImage), D.full); splashOpener09.name = 'splash-opener-9';
-	var splashOpener10 = layerOpener.add(F(splashesOpener[10], T.dirImage), D.full); splashOpener10.name = 'splash-opener-10';
-	var splashOpener11 = layerOpener.add(F(splashesOpener[11], T.dirImage), D.full); splashOpener11.name = 'splash-opener-11';
-	var splashOpener12 = layerOpener.add(F(splashesOpener[12], T.dirImage), D.full); splashOpener12.name = 'splash-opener-12';
-	var splashOpener13 = layerOpener.add(F(splashesOpener[13], T.dirImage), D.full); splashOpener13.name = 'splash-opener-13';
-	var splashOpener14 = layerOpener.add(F(splashesOpener[14], T.dirImage), D.full); splashOpener14.name = 'splash-opener-14';
-	var splashOpener15 = layerOpener.add(F(splashesOpener[15], T.dirImage), D.full); splashOpener15.name = 'splash-opener-15';
-	var splashOpener16 = layerOpener.add(F(splashesOpener[16], T.dirImage), D.full); splashOpener16.name = 'splash-opener-16';
+	var splashOpener07 = layerOpener.add(F(splashesOpener[7], T.dirFootage), D.full); splashOpener07.name = 'splash-opener-7';
+	var splashOpener08 = layerOpener.add(F(splashesOpener[8], T.dirFootage), D.full); splashOpener08.name = 'splash-opener-8';
+	var splashOpener09 = layerOpener.add(F(splashesOpener[9], T.dirFootage), D.full); splashOpener09.name = 'splash-opener-9';
+	var splashOpener10 = layerOpener.add(F(splashesOpener[10], T.dirFootage), D.full); splashOpener10.name = 'splash-opener-10';
+	var splashOpener11 = layerOpener.add(F(splashesOpener[11], T.dirFootage), D.full); splashOpener11.name = 'splash-opener-11';
+	var splashOpener12 = layerOpener.add(F(splashesOpener[12], T.dirFootage), D.full); splashOpener12.name = 'splash-opener-12';
+	var splashOpener13 = layerOpener.add(F(splashesOpener[13], T.dirFootage), D.full); splashOpener13.name = 'splash-opener-13';
+	var splashOpener14 = layerOpener.add(F(splashesOpener[14], T.dirFootage), D.full); splashOpener14.name = 'splash-opener-14';
+	var splashOpener15 = layerOpener.add(F(splashesOpener[15], T.dirFootage), D.full); splashOpener15.name = 'splash-opener-15';
+	var splashOpener16 = layerOpener.add(F(splashesOpener[16], T.dirFootage), D.full); splashOpener16.name = 'splash-opener-16';
 
-	var splashOpener06 = layerOpener.add(F(splashesOpener[6], T.dirImage), D.full); splashOpener06.name = 'splash-opener-6';
-	var splashOpener05 = layerOpener.add(F(splashesOpener[5], T.dirImage), D.full); splashOpener05.name = 'splash-opener-5';
+	var splashOpener06 = layerOpener.add(F(splashesOpener[6], T.dirFootage), D.full); splashOpener06.name = 'splash-opener-6';
+	var splashOpener05 = layerOpener.add(F(splashesOpener[5], T.dirFootage), D.full); splashOpener05.name = 'splash-opener-5';
 
-	var splashOpener03 = layerOpener.add(F(splashesOpener[3], T.dirImage), D.full); splashOpener03.name = 'splash-opener-3';
-	var splashOpener04 = layerOpener.add(F(splashesOpener[4], T.dirImage), D.full); splashOpener04.name = 'splash-opener-4';
+	var splashOpener03 = layerOpener.add(F(splashesOpener[3], T.dirFootage), D.full); splashOpener03.name = 'splash-opener-3';
+	var splashOpener04 = layerOpener.add(F(splashesOpener[4], T.dirFootage), D.full); splashOpener04.name = 'splash-opener-4';
 
-	var splashOpener01 = layerOpener.add(F(splashesOpener[1], T.dirImage), D.full); splashOpener01.name = 'splash-opener-1';
-	var splashOpener02 = layerOpener.add(F(splashesOpener[2], T.dirImage), D.full); splashOpener02.name = 'splash-opener-2';
+	var splashOpener01 = layerOpener.add(F(splashesOpener[1], T.dirFootage), D.full); splashOpener01.name = 'splash-opener-1';
+	var splashOpener02 = layerOpener.add(F(splashesOpener[2], T.dirFootage), D.full); splashOpener02.name = 'splash-opener-2';
 
 
 	var Ease1 = new KeyframeEase(0, 75);
@@ -278,7 +278,7 @@ P.addOpener = function addOpener() {
 
 
 	// Logo
-	var logo = layerOpener.add(F(dirSplash + 'logo.png', T.dirImage), 6); logo.name = 'logo';
+	var logo = layerOpener.add(F(dirSplash + 'logo.png', T.dirFootage), 6); logo.name = 'logo';
 	logo.startTime = 4;
 	logo.scale.setValue([50, 50]);
 
@@ -288,7 +288,7 @@ P.addOpener = function addOpener() {
 
 
 	// Me
-	var meStatic = layerOpener.add(F(dirSplash + '4n.png', T.dirImage), 6); meStatic.name = 'me-static';
+	var meStatic = layerOpener.add(F(dirSplash + '4n.png', T.dirFootage), 6); meStatic.name = 'me-static';
 	meStatic.startTime = 4;
 	meStatic.scale.setValue([40, 40]);
 	meStatic.position.setValue([720, 540]);
@@ -301,7 +301,7 @@ P.addOpener = function addOpener() {
 	SetEase(meStatic.opacity, 1, 2, Ease2);
 
 
-	var meJugong = layerOpener.add(F(dirSplash + 'jugong480.gif', T.dirImage), 6); meJugong.name = 'me-jugong';
+	var meJugong = layerOpener.add(F(dirSplash + 'jugong480.gif', T.dirFootage), 6); meJugong.name = 'me-jugong';
 	meJugong.startTime = 5;
 	meJugong.scale.setValue([40, 40]);
 	meJugong.position.setValue([720, 540]);

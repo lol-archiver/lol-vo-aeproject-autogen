@@ -27,8 +27,10 @@ T.each(app.project, function(item) {
 	catch(error) { true; }
 });
 
-T.dirLine = T.ensureDir('01Line', app.project);
-T.dirVoice = T.ensureDir('02Voice', app.project);
-T.dirImage = T.ensureDir('03Image', app.project);
-T.dirComp = T.ensureDir('04Comp', app.project);
+
+T.dirLine = T.ensureDir('01-Line', app.project);
+T.dirVoice = T.ensureDir('02-Voice', app.project);
+T.dirFootage = T.ensureDir('03-Footage', app.project);
+T.dirComp = T.ensureDir('04-Comp', app.project);
+
 T.compMain = T.ensureComp('Main', 1, app.project);

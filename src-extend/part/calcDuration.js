@@ -1,15 +1,16 @@
 P.calcDuration = function calcDuration() {
+	/** @type {Array} */
 	var lines = I.lines;
 
-	if(C.video.range) {
-		lines = lines.slice(C.video.range[0], C.video.range[1]);
-	}
+	if(C.video.range) { lines = lines.slice(C.video.range[0], C.video.range[1]); }
 
-	var arrDuration = [];
-	var linesDuration = 0;
 
-	D.length = 0;
-	T.enumLine(lines, function() { D.length++; });
+	var durations = [];
+	var durationLines = 0;
+
+
+	D.lengthLine = 0;
+	T.enumLine(lines, function() { D.lengthLine++; });
 
 	T.enumLine(lines, function(line, lid, index) {
 		var sizeLine = T.getBoxSize(line.line);
@@ -27,18 +28,18 @@ P.calcDuration = function calcDuration() {
 			line.boxHeight += 20 + line.boxHeightMark;
 		}
 
-		arrDuration.push([line.duration, line.boxHeight]);
+		durations.push([line.duration, line.boxHeight]);
 
 		var durationLine = line.duration + D.interval;
 
-		linesDuration += durationLine;
+		durationLines += durationLine;
 
-		line.durationLine = durationLine + 0.4 + (index >= D.length - 3 ? 4 : 0);
+		line.durationLine = durationLine + 0.4 + (index >= D.lengthLine - 3 ? 4 : 0);
 	});
 
-	D.list = arrDuration;
+	D.list = durations;
 
-	D.lines = linesDuration;
+	D.lines = durationLines;
 
 	D.credit += 4.5;
 

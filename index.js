@@ -9,12 +9,11 @@ import parseLine from './lib/parseLine.js';
 
 const fileInfo = resolve(dirReso, 'info', `${C.slot}.json`);
 
-writeFileSync(resolve(dirSrcExtend, 'config.json'), JSON.stringify(C, null, '\t'));
-writeFileSync(resolve(dirSrcExtend, 'config.js'),
+writeFileSync(resolve(dirSrcExtend, 'lib', 'config.json'), JSON.stringify(C, null, '\t'));
+writeFileSync(resolve(dirSrcExtend, 'lib', 'config.path.js'),
 	[
-		`/* eslint-disable */`,
-		`var pathConfig = '${resolve(dirSrcExtend, 'config.json').replace(/\\/g, '\\\\')}';`,
-		`var pathInfo = '${fileInfo.replace(/\\/g, '\\\\')}';`,
+		`this.PATH_CONFIG = '${resolve(dirSrcExtend, 'lib', 'config.json').replace(/\\/g, '\\\\')}';`,
+		`this.PATH_INFO = '${fileInfo.replace(/\\/g, '\\\\')}';`,
 	].join('\n')
 );
 

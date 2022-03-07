@@ -7,6 +7,8 @@
 // @include 'part/addTitle2.js';
 
 
+// var events = P.calcDuration();
+
 D.full = 60;
 
 var compMain = T.compMain;
@@ -33,7 +35,7 @@ compOpener.openInViewer();
 // Splash Background
 var scaleSplashBackground = C.isLandscape ? 158 : 268;
 
-var splashBackground = compMain.layers.add(F(C.fileSplash, T.dirImage), D.full);
+var splashBackground = compMain.layers.add(Footage(C.fileSplash, T.dirFootage), D.full);
 splashBackground.startTime = 4;
 splashBackground.scale.setValue([scaleSplashBackground, scaleSplashBackground]);
 var positionSplashBackground = splashBackground.position.value; positionSplashBackground[0] += offsetSplashBackground * (scaleOpenerFinal / 100);

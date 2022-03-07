@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"module": "none",
+		"noLib": true,
+		"strict": true,
+		"target": "es3",
+		"allowJs": true,
+		"outFile": "./dist.js",
+	},
+	"files": [
+		"./lib/tool.js",
+		"./lib/config.js",
+		"./lib/footage.js",
+		"./lib/lang.js",
+		"./lib/ensure.js",
+
+		"./part/addOpener.js",
+
+		"./index.js",
+	]
+}

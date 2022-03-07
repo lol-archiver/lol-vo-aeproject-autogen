@@ -36,5 +36,24 @@
 			"stopOnEntry": false,
 			"targetSpecifier": "aftereffects-17.0",
 		},
+		{
+			"type": "extendscript-debug",
+			"request": "launch",
+			"name": "5: 测试2022工程（2020）",
+			"program": "${workspaceFolder}/src-extend-2022/dist.js",
+			"stopOnEntry": false,
+			"targetSpecifier": "aftereffects-17.0",
+			"preLaunchTask": "npm: 构建",
+			"internalConsoleOptions": "neverOpen"
+		},
+		{
+			"type": "extendscript-debug",
+			"request": "launch",
+			"name": "6: 测试2022工程（2020，不编译）",
+			"program": "${workspaceFolder}/src-extend-2022/dist.js",
+			"stopOnEntry": false,
+			"targetSpecifier": "aftereffects-17.0",
+			"internalConsoleOptions": "neverOpen"
+		},
 	]
 }
