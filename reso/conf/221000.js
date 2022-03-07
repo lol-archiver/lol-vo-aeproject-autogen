@@ -1,5 +1,6 @@
 export default {
-	title: '祖安花火 泽丽',
+	title1: '祖安花火',
+	title2: '泽丽',
 	champion: {
 		id: 221,
 		name: 'Zeri',

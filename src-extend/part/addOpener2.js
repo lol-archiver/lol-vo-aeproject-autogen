@@ -162,7 +162,7 @@ P.addOpener2 = function addOpener2() {
 	SetEase(maskMC.opacity, 3, 4, Ease1);
 
 	var blurLogoMask = maskMC.effect.addProperty('ADBE Box Blur2');
-	blurLogoMask.blurRadius.setValue(14);
+	blurLogoMask[LL.blurRadius].setValue(14);
 
 
 	// logo-font
@@ -194,8 +194,8 @@ P.addOpener2 = function addOpener2() {
 	SetEase(logoImage.opacity, 3, 4, Ease1);
 
 	var colorKeyLogoImage = logoImage.effect.addProperty('ADBE Color Key');
-	colorKeyLogoImage.keyColor.setValue(T.rgb(255, 255, 255));
-	colorKeyLogoImage.colorTolerance.setValue(64);
+	colorKeyLogoImage[LL.keyColor].setValue(T.rgb(255, 255, 255));
+	colorKeyLogoImage[LL.colorTolerance].setValue(64);
 
 
 	return [compOpener, (C.isLandscape ? 0 : infoMC[1])];
