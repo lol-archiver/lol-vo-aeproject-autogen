@@ -20,6 +20,8 @@
 		"./part/calcDuration.js",
 		"./part/addLine.js",
 		"./part/addLineScroll.js",
+		"./part/addBGM.js",
+		"./part/addEnding.js",
 
 		"./index.js",
 	]

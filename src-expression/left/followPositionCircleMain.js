@@ -1,4 +1,4 @@
-const thatLayer = thisComp.layer(1);
+const thatLayer = thisComp.layer('Line');
 
 const thisRect = thisLayer.sourceRectAtTime(time);
 const thatRect = thatLayer.sourceRectAtTime(time);

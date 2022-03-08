@@ -54,6 +54,11 @@ const rcExtend2022 = {
 		CalcDuration: 'readonly',
 		AddLine: 'readonly',
 		AddLineScroll: 'readonly',
+		AddBGM: 'readonly',
+		AddEnding: 'readonly',
+
+
+		SplashesOpener: 'readonly',
 
 
 

@@ -9,7 +9,9 @@ const languages = {
 		iterations: 'iterations',
 		blurRadius: 'blurRadius',
 		keyColor: 'keyColor',
-		colorTolerance: 'colorTolerance'
+		colorTolerance: 'colorTolerance',
+		Brightness: 'Brightness',
+		Contrast: 'Contrast',
 	},
 	zh_cn: {
 		shadowColor: '\u9634\u5f71\u989c\u8272',
@@ -21,7 +23,9 @@ const languages = {
 		iterations: '\u8fed\u4ee3',
 		blurRadius: '\u6a21\u7cca\u534a\u5f84',
 		keyColor: '\u4e3b\u8272',
-		colorTolerance: '\u989c\u8272\u5bb9\u5dee'
+		colorTolerance: '\u989c\u8272\u5bb9\u5dee',
+		Brightness: '亮度',
+		Contrast: '对比度',
 	}
 };
 

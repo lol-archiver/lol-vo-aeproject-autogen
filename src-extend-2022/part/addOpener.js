@@ -1,11 +1,11 @@
-const splashesOpener = [];
+this.SplashesOpener = [];
 for(const slot of C.slots) {
-	splashesOpener.push([
+	SplashesOpener.push([
 		`${C.dirSplashes}/${Number(slot.slice(0, 3))}/${Number(slot)}.jpg`,
 		I.offsetsSplash[slot] || 0
 	]);
 }
-splashesOpener.shift();
+SplashesOpener.shift();
 
 /**
  * 添加片头
@@ -35,7 +35,7 @@ this.AddOpener = () => {
 	const compTL = EnsureComp('subcomp-splash-opener-tl', D.opener, DirComp, widthGrid, heightGrid2);
 	layerOpener.add(compTL, D.opener).position.setValue([wGrid(1, 0.5), hGrid2(1, 0.5)]);
 
-	const splashTL = compTL.layers.add(GetFootage(splashesOpener[1][0], DirFootage), D.opener); splashTL.name = 'splash-opener-tl';
+	const splashTL = compTL.layers.add(GetFootage(SplashesOpener[1][0], DirFootage), D.opener); splashTL.name = 'splash-opener-tl';
 	splashTL.scale.setValue([scaleSplash2, scaleSplash2]);
 
 	splashTL.position.setValueAtTime(0, [wGrid(1, 0.5), hGrid2(2, 0.5)]);
@@ -49,7 +49,7 @@ this.AddOpener = () => {
 	const compBL = EnsureComp('subcomp-splash-opener-bl', D.opener, DirComp, widthGrid, heightGrid2);
 	layerOpener.add(compBL, D.opener).position.setValue([wGrid(1, 0.5), hGrid2(2, 0.5)]);
 
-	const infoBL = splashesOpener[2];
+	const infoBL = SplashesOpener[2];
 	const splashBL = compBL.layers.add(GetFootage(infoBL[0], DirFootage), D.opener); splashBL.name = 'splash-opener-bl';
 	splashBL.scale.setValue([scaleSplash2, scaleSplash2]);
 
@@ -66,7 +66,7 @@ this.AddOpener = () => {
 	const compTR = EnsureComp('subcomp-splash-opener-tr', D.opener, DirComp, widthGrid, heightGrid2);
 	layerOpener.add(compTR, D.opener).position.setValue([wGrid(3, 0.5), hGrid2(1, 0.5)]);
 
-	const infoTR = splashesOpener[3];
+	const infoTR = SplashesOpener[3];
 	const splashTR = compTR.layers.add(GetFootage(infoTR[0], DirFootage), D.opener); splashTR.name = 'splash-opener-tr';
 	splashTR.scale.setValue([scaleSplash2, scaleSplash2]);
 
@@ -82,7 +82,7 @@ this.AddOpener = () => {
 	const compBR = EnsureComp('subcomp-splash-opener-br', D.opener, DirComp, widthGrid, heightGrid2);
 	layerOpener.add(compBR, D.opener).position.setValue([wGrid(3, 0.5), hGrid2(2, 0.5)]);
 
-	const infoBR = splashesOpener[4];
+	const infoBR = SplashesOpener[4];
 	const splashBR = compBR.layers.add(GetFootage(infoBR[0], DirFootage), D.opener); splashBR.name = 'splash-opener-br';
 	splashBR.scale.setValue([scaleSplash2, scaleSplash2]);
 
@@ -105,7 +105,7 @@ this.AddOpener = () => {
 	avCompTC.position.setValueAtTime(4, [wGrid(2, 0.5), hGrid3(1.5, 0.5)]);
 	SetEase(avCompTC.position, 3, 4, Ease1);
 
-	const infoTC = splashesOpener[5];
+	const infoTC = SplashesOpener[5];
 	const splashTC = compTC.layers.add(GetFootage(infoTC[0], DirFootage), D.opener); splashTC.name = 'splash-opener-tc';
 	splashTC.scale.setValue([scaleSplash3, scaleSplash3]);
 
@@ -128,7 +128,7 @@ this.AddOpener = () => {
 	avCompBC.position.setValueAtTime(4, [wGrid(2, 0.5), hGrid3(2.5, 0.5)]);
 	SetEase(avCompBC.position, 3, 4, Ease1);
 
-	const infoBC = splashesOpener[6];
+	const infoBC = SplashesOpener[6];
 	const splashBC = compBC.layers.add(GetFootage(infoBC[0], DirFootage), D.opener); splashBC.name = 'splash-opener-bc';
 	splashBC.scale.setValue([scaleSplash3, scaleSplash3]);
 
@@ -153,7 +153,7 @@ this.AddOpener = () => {
 	avCompMC.scale.setValueAtTime(4, [100, 0]);
 	SetEase(avCompMC.scale, 3, 4, Ease1);
 
-	const infoMC = splashesOpener[0];
+	const infoMC = SplashesOpener[0];
 	const splashMC = compMC.layers.add(GetFootage(infoMC[0], DirFootage), D.opener); splashMC.name = 'splash-opener-mc';
 	splashMC.scale.setValue([scaleSplash3, scaleSplash3]);
 
@@ -211,5 +211,5 @@ this.AddOpener = () => {
 	colorKeyLogoImage[L.colorTolerance].setValue(64);
 
 
-	return [compOpener, (C.isLandscape ? 0 : infoMC[1])];
+	return compOpener;
 };

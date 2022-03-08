@@ -1,6 +1,6 @@
 const padding = 40;
 
-const thatLayer = thisComp.layer(1);
+const thatLayer = thisComp.layer('Line');
 
 const thatRect = thatLayer.sourceRectAtTime(time);
 const width = thatRect.width + padding * 2;

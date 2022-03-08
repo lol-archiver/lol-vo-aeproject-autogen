@@ -10,9 +10,12 @@ const events = CalcDuration();
 CompMain.duration = D.full;
 CompMain.openInViewer();
 
+AddBGM();
+
 
 // 原图
 const scaleSplashBackground = C.isLandscape ? 158 : 268;
+const offsetSplashBackground = C.isLandscape ? 0 : SplashesOpener?.[0]?.[1] ?? 0;
 
 const splashBackground = CompMain.layers.add(GetFootage(C.fileSplash, DirFootage), D.full);
 splashBackground.startTime = D.opener - 1;
@@ -25,13 +28,11 @@ splashBackground.position.setValue(positionSplashBackground);
 
 const blurSplashBackground = splashBackground.effect.addProperty('ADBE Box Blur2');
 blurSplashBackground[L.blurRadius].setValueAtTime(5, 0);
-blurSplashBackground[L.blurRadius].setValueAtTime(9, 14);
+blurSplashBackground[L.blurRadius].setValueAtTime(9, 7);
 
 
 // 开头
-const resultOpener = AddOpener();
-const compOpener = resultOpener[0];
-const offsetSplashBackground = resultOpener[1];
+const compOpener = AddOpener();
 
 const avLayerOpener = CompMain.layers.add(compOpener, D.opener);
 // avLayerOpener.stretch = -C.video.duration.opener / compOpener.duration * 100;
@@ -107,3 +108,5 @@ EnumLine(events, (line, lid, index) => {
 
 	accumDuration += line.duration + D.interval;
 });
+
+AddEnding();

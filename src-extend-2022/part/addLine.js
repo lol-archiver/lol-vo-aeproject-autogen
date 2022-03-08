@@ -30,6 +30,8 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 	const layerBoxLine = compLine.layers.addShape();
 
+	const layerWaterMark = compLine.layers.addText();
+
 	const layerCircleMainShadow = compLine.layers.addShape();
 
 	const layerBoxEvent = hasEvent ? compLine.layers.addShape() : null;
@@ -48,6 +50,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 
 
+
 	layerBoxLine.name = 'BoxLine';
 	if(hasEvent) { layerBoxEvent.name = 'BoxEvent'; }
 
@@ -63,13 +66,14 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 	if(hasEvent) { layerEvent.name = 'Event'; }
 	layerLineBox.name = 'Line';
+	layerWaterMark.name = 'WaterMark';
 
 	// -------Line Box-------
 	const groupBoxLine = layerBoxLine.content.addProperty('ADBE Vector Group');
 
 	const borderBoxLine = groupBoxLine.content.addProperty('ADBE Vector Shape - Rect');
 	borderBoxLine.size.expression = GetExpression(side + '/' + 'followSizeBoxLine');
-	borderBoxLine.roundness.setValue(34);
+	borderBoxLine.roundness.setValue(24);
 	borderBoxLine.position.setValue([0, 0]);
 
 	const fillBoxLine = groupBoxLine.content.addProperty('ADBE Vector Graphic - Fill');
@@ -83,7 +87,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 		const borderBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Shape - Rect');
 		borderBoxEvent.size.expression = GetExpression(side + '/' + 'followSizeBoxEvent');
-		borderBoxEvent.roundness.setValue(24);
+		borderBoxEvent.roundness.setValue(14);
 		borderBoxEvent.position.setValue([0, 0]);
 
 		const fillBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Graphic - Fill');
@@ -201,7 +205,9 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	// -------Line-------
 	layerLineBox.transform.position.setValue([0, 1000]);
 	layerLineBox.transform.position.expression = GetExpression(side + '/' + 'limitPositionLine')
-		.replace(/\$bottomMark/g, (line.boxHeightMark + 20) || 0);
+		.replace(/\$side\$/g, C.isLandscape ? 340 : 140)
+		.replace(/\$bottom\$/g, C.isLandscape ? 100 : 160)
+		.replace(/\$bottomMark\$/g, (line.boxHeightMark + 20) || 0);
 
 	const colorLine = RGBH('FFFAFA');
 
@@ -213,10 +219,28 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	textDocLine.applyStroke = true;
 	textDocLine.strokeColor = colorLine;
 	textDocLine.strokeWidth = 2;
+
 	textDocLine.boxTextSize = line.boxTextSize;
-	textDocLine.leading = 60;
+	textDocLine.leading = C.video.size.fontLine + C.video.size.heightLeading;
 	textDocLine.text = line.line;
 	layerLineBox.sourceText.setValue(textDocLine);
+
+	// -------WaterMark-------
+	layerWaterMark.transform.position.setValue([0, 1000]);
+	layerWaterMark.transform.position.expression = GetExpression(side + '/' + 'followPositionWaterMark');
+
+
+	const textWaterMark = layerWaterMark.sourceText.value;
+	textWaterMark.resetCharStyle();
+	textWaterMark.fontSize = C.video.size.fontLine - 15;
+	textWaterMark.fillColor = colorLine;
+	textWaterMark.font = 'Source Han Mono SC';
+	textWaterMark.applyStroke = true;
+	textWaterMark.strokeWidth = 0;
+	// textWaterMark.leading = 60;
+	textWaterMark.text = 'DR';
+	layerWaterMark.opacity.setValue(34);
+	layerWaterMark.sourceText.setValue(textWaterMark);
 
 
 	// -------Mark-------
@@ -258,6 +282,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		textDocMark.text = markFinal;
 		layerMarkBox.sourceText.setValue(textDocMark);
 	}
+
 
 	return compLine;
 };

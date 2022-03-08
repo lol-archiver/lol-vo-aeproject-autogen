@@ -12,9 +12,11 @@ Each(app.project, function(item) {
 	}
 });
 
-this.DirLine = EnsureDir('01-Line', app.project);
-this.DirVoice = EnsureDir('02-Voice', app.project);
-this.DirFootage = EnsureDir('03-Footage', app.project);
-this.DirComp = EnsureDir('04-Comp', app.project);
+app.executeCommand(2373);
 
-this.CompMain = EnsureComp('Main', 1, app.project);
+this.DirLine = EnsureDir('01-台词', app.project);
+this.DirVoice = EnsureDir('02-音频', app.project);
+this.DirFootage = EnsureDir('03-素材', app.project);
+this.DirComp = EnsureDir('04-合成', app.project);
+
+this.CompMain = EnsureComp('主合成', 1, app.project);

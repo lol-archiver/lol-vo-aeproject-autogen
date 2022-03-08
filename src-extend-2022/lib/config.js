@@ -12,6 +12,16 @@ C.pixelAspect = 1;
 C.frameRate = 60;
 
 
+if(!C.isLandscape) {
+	C.video.size.fontLine -= 16;
+	C.video.size.fontMark -= 16;
+	C.video.size.paddingLine -= 16;
+	C.video.size.paddingMark -= 16;
+}
+
+$.writeln('isLandscape: ' + C.isLandscape);
+
+
 this.D = {
 	interval: C.video.duration.interval,
 	opener: C.video.duration.opener,

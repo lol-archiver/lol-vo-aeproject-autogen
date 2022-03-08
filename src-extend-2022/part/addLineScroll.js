@@ -1,19 +1,17 @@
 this.AddLineScroll = (line, compLine, index, accumDuration, durationLine) => {
-	const xCenter = 960;
-	const yCenter = 540;
+	const xCenter = C.widthVideo / 2;
+	const yCenter = C.heightVideo / 2;
 
 	const layerLine = CompMain.layers.add(compLine, durationLine);
 
 	layerLine.startTime = accumDuration;
 	layerLine.transform.position.setValue([xCenter, yCenter + line.boxHeight]);
 
-	const bcLine = AddProperty(layerLine.effect, 'ADBE Brightness & Contrast 2');
-	bcLine.Brightness.setValueAtTime(accumDuration, 0);
-	bcLine.Brightness.setValueAtTime(accumDuration + line.duration, 0);
-	bcLine.Brightness.setValueAtTime(accumDuration + line.duration + 0.1, -70);
-	bcLine.Contrast.setValueAtTime(accumDuration, 0);
-	bcLine.Contrast.setValueAtTime(accumDuration + line.duration, 0);
-	bcLine.Contrast.setValueAtTime(accumDuration + line.duration + 0.1, -70);
+
+	layerLine.transform.opacity.setValueAtTime(accumDuration, 100);
+	layerLine.transform.opacity.setValueAtTime(accumDuration + line.duration, 100);
+	layerLine.transform.opacity.setValueAtTime(accumDuration + line.duration + 0.1, 80);
+
 
 	let yLine = yCenter + line.boxHeight;
 	let accumDurationLine = accumDuration;
