@@ -11,6 +11,7 @@ export default {
 		name: '_Base'
 	},
 	emote: 'ヽ(=^･ω･^=)丿',
+	color: '#bc84a0',
 	events: {
 		'[初遇:英雄:卡蜜尔]':
 			{ target: '${C.dirAutogen}/reso/icon/Camille/0.png' },

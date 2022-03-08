@@ -10,7 +10,7 @@ this.AddTitle = () => {
 	const widthVideoHalf = C.widthVideo / 2;
 	const heightVideoHalf = C.heightVideo / 2;
 
-	const colorBar = RGBH('1FAAF1');
+	const colorBar = RGBH(I.color || '1FAAF1');
 	const colorText = RGBH('FFFAFA');
 	const colorShadow = RGBH('000000');
 

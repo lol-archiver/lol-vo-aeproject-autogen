@@ -33,6 +33,10 @@ const rcExtend2022 = {
 		EnsureComp: 'readonly',
 		RGB: 'readonly',
 		RGBH: 'readonly',
+		EvalString: 'readonly',
+		EnumLine: 'readonly',
+		GetBoxSize: 'readonly',
+		GetBoxSizeMark: 'readonly',
 
 		C: 'readonly',
 		I: 'readonly',
@@ -47,6 +51,10 @@ const rcExtend2022 = {
 
 		AddOpener: 'readonly',
 		AddTitle: 'readonly',
+		CalcDuration: 'readonly',
+		AddLine: 'readonly',
+		AddLineScroll: 'readonly',
+
 
 
 

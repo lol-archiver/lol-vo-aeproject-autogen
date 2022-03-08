@@ -16,6 +16,10 @@
 		"./lib/ensure.js",
 
 		"./part/addOpener.js",
+		"./part/addTitle.js",
+		"./part/calcDuration.js",
+		"./part/addLine.js",
+		"./part/addLineScroll.js",
 
 		"./index.js",
 	]

@@ -7,6 +7,8 @@ import { dirReso, dirSrcExtend } from './lib/global.js';
 import parseLine from './lib/parseLine.js';
 
 
+C.slot = C.slots[0];
+
 const fileInfo = resolve(dirReso, 'info', `${C.slot}.json`);
 
 writeFileSync(resolve(dirSrcExtend, 'lib', 'config.json'), JSON.stringify(C, null, '\t'));
@@ -120,6 +122,7 @@ writeFileSync(fileInfo, JSON.stringify({
 	champion: CR.champion,
 	skin: CR.skin,
 	emote: CR.emote,
+	color: CR.color,
 	head: CR.head,
 	splash: CR.splash,
 	audios: CR.audios,

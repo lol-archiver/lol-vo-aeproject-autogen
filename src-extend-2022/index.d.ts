@@ -84,6 +84,7 @@ interface C {
 	readonly dirExtract: DirectoryPath
 	readonly dirDictation: DirectoryPath
 	readonly dirRaw: DirectoryPath
+	readonly dirSplashes: DirectoryPath
 	readonly dirAutogen: DirectoryPath
 	readonly dirExpression: DirectoryPath
 	readonly dirAudio: DirectoryPath

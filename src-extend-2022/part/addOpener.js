@@ -1,35 +1,17 @@
-const dirSplash = 'D:/Desk/splash/';
-
-const splashesOpener = [
-	[dirSplash + '888000.jpg', -70],
-	[dirSplash + '81025.jpg', -40],
-	[dirSplash + '238031.jpg', -120],
-	[dirSplash + '51000.jpg', -380],
-	[dirSplash + '157055.jpg', -210],
-	[dirSplash + '157054.jpg', -140],
-	[dirSplash + '777019.jpg', -60],
-
-	[dirSplash + '221000.jpg', -70],
-	[dirSplash + '221000.jpg', 0],
-	[dirSplash + '221001.jpg', 0],
-	[dirSplash + '166000.jpg', 0],
-	[dirSplash + '166001.jpg', 0],
-	[dirSplash + '67025.jpg', 0],
-	[dirSplash + '104035.jpg', 0],
-	[dirSplash + '711000.jpg', 0],
-	[dirSplash + '711001.jpg', 0],
-	[dirSplash + '36000.jpg', 0],
-	[dirSplash + '36003.jpg', 0],
-	[dirSplash + '28024.jpg', 0]
-];
+const splashesOpener = [];
+for(const slot of C.slots) {
+	splashesOpener.push([
+		`${C.dirSplashes}/${Number(slot.slice(0, 3))}/${Number(slot)}.jpg`,
+		I.offsetsSplash[slot] || 0
+	]);
+}
+splashesOpener.shift();
 
 /**
  * 添加片头
  * @returns {[CompItem, number]} [片头合成, 背景立绘偏移]
  */
 this.AddOpener = () => {
-	D.opener = 10;
-
 	const compOpener = EnsureComp('comp-opener', D.opener, DirComp);
 	const layerOpener = compOpener.layers;
 
@@ -37,9 +19,9 @@ this.AddOpener = () => {
 	const widthGrid = C.widthVideo / 3;
 	const heightGrid2 = C.heightVideo / 2;
 	const heightGrid3 = C.heightVideo / 3;
-	const wGrid = function(grid, offset) { return widthGrid * (grid - 1 + (offset || 0)); };
-	const hGrid2 = function(grid, offset) { return heightGrid2 * (grid - 1 + (offset || 0)); };
-	const hGrid3 = function(grid, offset) { return heightGrid3 * (grid - 1 + (offset || 0)); };
+	const wGrid = (grid, offset) => widthGrid * (grid - 1 + (offset || 0));
+	const hGrid2 = (grid, offset) => heightGrid2 * (grid - 1 + (offset || 0));
+	const hGrid3 = (grid, offset) => heightGrid3 * (grid - 1 + (offset || 0));
 
 
 	const widthSplash = 1215;
@@ -59,6 +41,9 @@ this.AddOpener = () => {
 	splashTL.position.setValueAtTime(0, [wGrid(1, 0.5), hGrid2(2, 0.5)]);
 	splashTL.position.setValueAtTime(1, [wGrid(1, 0.5), hGrid2(1, 0.5)]);
 	SetEase(splashTL.position, 1, 2, Ease1);
+	splashTL.position.setValueAtTime(3, [wGrid(1, 0.5), hGrid2(1, 0.5)]);
+	splashTL.position.setValueAtTime(4, [wGrid(1, 0.5), hGrid2(2, 0.5)]);
+	SetEase(splashTL.position, 3, 4, Ease1);
 
 	// splash-opener-bl
 	const compBL = EnsureComp('subcomp-splash-opener-bl', D.opener, DirComp, widthGrid, heightGrid2);
@@ -72,6 +57,9 @@ this.AddOpener = () => {
 	splashBL.position.setValueAtTime(0, [xBL, hGrid2(0, 0.5)]);
 	splashBL.position.setValueAtTime(1, [xBL, hGrid2(1, 0.5)]);
 	SetEase(splashBL.position, 1, 2, Ease1);
+	splashBL.position.setValueAtTime(3, [xBL, hGrid2(1, 0.5)]);
+	splashBL.position.setValueAtTime(4, [xBL, hGrid2(0, 0.5)]);
+	SetEase(splashBL.position, 3, 4, Ease1);
 
 
 	// splash-opener-tr
@@ -86,6 +74,9 @@ this.AddOpener = () => {
 	splashTR.position.setValueAtTime(0, [xTR, hGrid2(2, 0.5)]);
 	splashTR.position.setValueAtTime(1, [xTR, hGrid2(1, 0.5)]);
 	SetEase(splashTR.position, 1, 2, Ease1);
+	splashTR.position.setValueAtTime(3, [xTR, hGrid2(1, 0.5)]);
+	splashTR.position.setValueAtTime(4, [xTR, hGrid2(2, 0.5)]);
+	SetEase(splashTR.position, 3, 4, Ease1);
 
 	// splash-opener-br
 	const compBR = EnsureComp('subcomp-splash-opener-br', D.opener, DirComp, widthGrid, heightGrid2);
@@ -99,6 +90,9 @@ this.AddOpener = () => {
 	splashBR.position.setValueAtTime(0, [xBR, hGrid2(0, 0.5)]);
 	splashBR.position.setValueAtTime(1, [xBR, hGrid2(1, 0.5)]);
 	SetEase(splashBR.position, 1, 2, Ease1);
+	splashBR.position.setValueAtTime(3, [xBR, hGrid2(1, 0.5)]);
+	splashBR.position.setValueAtTime(4, [xBR, hGrid2(0, 0.5)]);
+	SetEase(splashBR.position, 3, 4, Ease1);
 
 
 	// splash-opener-tc
@@ -107,6 +101,9 @@ this.AddOpener = () => {
 	avCompTC.position.setValueAtTime(0, [wGrid(2, 0.5), hGrid3(1.5, 0.5)]);
 	avCompTC.position.setValueAtTime(1, [wGrid(2, 0.5), hGrid3(1, 0.5)]);
 	SetEase(avCompTC.position, 1, 2, Ease1);
+	avCompTC.position.setValueAtTime(3, [wGrid(2, 0.5), hGrid3(1, 0.5)]);
+	avCompTC.position.setValueAtTime(4, [wGrid(2, 0.5), hGrid3(1.5, 0.5)]);
+	SetEase(avCompTC.position, 3, 4, Ease1);
 
 	const infoTC = splashesOpener[5];
 	const splashTC = compTC.layers.add(GetFootage(infoTC[0], DirFootage), D.opener); splashTC.name = 'splash-opener-tc';
@@ -116,6 +113,9 @@ this.AddOpener = () => {
 	splashTC.position.setValueAtTime(0, [xTC, hGrid3(2, 0.5)]);
 	splashTC.position.setValueAtTime(1, [xTC, hGrid3(1, 0.5)]);
 	SetEase(splashTC.position, 1, 2, Ease1);
+	splashTC.position.setValueAtTime(3, [xTC, hGrid3(1, 0.5)]);
+	splashTC.position.setValueAtTime(4, [xTC, hGrid3(2, 0.5)]);
+	SetEase(splashTC.position, 3, 4, Ease1);
 
 
 	// splash-opener-bc
@@ -124,6 +124,9 @@ this.AddOpener = () => {
 	avCompBC.position.setValueAtTime(0, [wGrid(2, 0.5), hGrid3(2.5, 0.5)]);
 	avCompBC.position.setValueAtTime(1, [wGrid(2, 0.5), hGrid3(3, 0.5)]);
 	SetEase(avCompBC.position, 1, 2, Ease1);
+	avCompBC.position.setValueAtTime(3, [wGrid(2, 0.5), hGrid3(3, 0.5)]);
+	avCompBC.position.setValueAtTime(4, [wGrid(2, 0.5), hGrid3(2.5, 0.5)]);
+	SetEase(avCompBC.position, 3, 4, Ease1);
 
 	const infoBC = splashesOpener[6];
 	const splashBC = compBC.layers.add(GetFootage(infoBC[0], DirFootage), D.opener); splashBC.name = 'splash-opener-bc';
@@ -133,6 +136,9 @@ this.AddOpener = () => {
 	splashBC.position.setValueAtTime(0, [xBC, hGrid3(0, 0.5)]);
 	splashBC.position.setValueAtTime(1, [xBC, hGrid3(1, 0.5)]);
 	SetEase(splashBC.position, 1, 2, Ease1);
+	splashBC.position.setValueAtTime(3, [xBC, hGrid3(1, 0.5)]);
+	splashBC.position.setValueAtTime(4, [xBC, hGrid3(0, 0.5)]);
+	SetEase(splashBC.position, 3, 4, Ease1);
 
 
 	// splash-opener-mc
@@ -143,6 +149,9 @@ this.AddOpener = () => {
 	avCompMC.scale.setValueAtTime(0, [100, 0]);
 	avCompMC.scale.setValueAtTime(1, [100, 100]);
 	SetEase(avCompMC.scale, 1, 2, Ease1);
+	avCompMC.scale.setValueAtTime(3, [100, 100]);
+	avCompMC.scale.setValueAtTime(4, [100, 0]);
+	SetEase(avCompMC.scale, 3, 4, Ease1);
 
 	const infoMC = splashesOpener[0];
 	const splashMC = compMC.layers.add(GetFootage(infoMC[0], DirFootage), D.opener); splashMC.name = 'splash-opener-mc';
@@ -154,47 +163,47 @@ this.AddOpener = () => {
 
 	// mask-opener
 	const maskMC = layerOpener.addSolid(RGBH('2D2D2D'), 'mask-opener', C.widthVideo, C.heightVideo, 1);
-	maskMC.startTime = 1;
+	maskMC.startTime = 0;
 	maskMC.outPoint = 5;
 	maskMC.adjustmentLayer = true;
 
-	maskMC.opacity.setValueAtTime(1, 0);
-	maskMC.opacity.setValueAtTime(2, 100);
+	maskMC.opacity.setValueAtTime(0, 0);
+	maskMC.opacity.setValueAtTime(1, 100);
 	SetEase(maskMC.opacity, 1, 2, Ease1);
-	maskMC.opacity.setValueAtTime(4, 100);
-	maskMC.opacity.setValueAtTime(5, 0);
+	maskMC.opacity.setValueAtTime(3, 100);
+	maskMC.opacity.setValueAtTime(4, 0);
 	SetEase(maskMC.opacity, 3, 4, Ease1);
 
 	const blurLogoMask = maskMC.effect.addProperty('ADBE Box Blur2');
-	blurLogoMask[L.blurRadius].setValue(14);
+	blurLogoMask[L.blurRadius].setValue(7);
 
 
 	// logo-font
-	const logoFont = layerOpener.add(GetFootage(dirSplash + 'logo.png', DirFootage), 6); logoFont.name = 'logo-font';
-	logoFont.startTime = 1;
+	const logoFont = layerOpener.add(GetFootage(`${C.dirAutogen}/reso/other/logo.png`, DirFootage), 6); logoFont.name = 'logo-font';
+	logoFont.startTime = 0;
 	logoFont.outPoint = 5;
 	logoFont.scale.setValue([50, 50]);
 
-	logoFont.opacity.setValueAtTime(1, 0);
-	logoFont.opacity.setValueAtTime(2, 100);
+	logoFont.opacity.setValueAtTime(0, 0);
+	logoFont.opacity.setValueAtTime(1, 100);
 	SetEase(logoFont.opacity, 1, 2, Ease2);
-	logoFont.opacity.setValueAtTime(4, 100);
-	logoFont.opacity.setValueAtTime(5, 0);
+	logoFont.opacity.setValueAtTime(3, 100);
+	logoFont.opacity.setValueAtTime(4, 0);
 	SetEase(logoFont.opacity, 3, 4, Ease1);
 
 
 	// logo-image
-	const logoImage = layerOpener.add(GetFootage(dirSplash + 'jugong480-500.mp4', DirFootage), 6); logoImage.name = 'logo-image';
-	logoImage.startTime = 1;
+	const logoImage = layerOpener.add(GetFootage(`${C.dirAutogen}/reso/other/jugong480-500.mp4`, DirFootage), 6); logoImage.name = 'logo-image';
+	logoImage.startTime = 0;
 	logoImage.outPoint = 5;
 	logoImage.scale.setValue([40, 40]);
 	logoImage.position.setValue([C.widthVideo / 2 - 240, C.heightVideo / 2]);
 
-	logoImage.opacity.setValueAtTime(1, 0);
-	logoImage.opacity.setValueAtTime(2, 100);
+	logoImage.opacity.setValueAtTime(0, 0);
+	logoImage.opacity.setValueAtTime(1, 100);
 	SetEase(logoImage.opacity, 1, 2, Ease2);
-	logoImage.opacity.setValueAtTime(4, 100);
-	logoImage.opacity.setValueAtTime(5, 0);
+	logoImage.opacity.setValueAtTime(3, 100);
+	logoImage.opacity.setValueAtTime(4, 0);
 	SetEase(logoImage.opacity, 3, 4, Ease1);
 
 	const colorKeyLogoImage = logoImage.effect.addProperty('ADBE Color Key');

@@ -37,12 +37,17 @@ this.GetExpression = name => ReadFile(C.dirExpression + '/' + name + '.js');
  * @param {Function} callback 回调函数
  */
 this.Each = (target, callback) => {
-	if(!(target instanceof Project) && !(target instanceof FolderItem)) { throw '目标不能遍历'; }
+	// if(!(target instanceof Project) && !(target instanceof FolderItem)) { throw '目标不能遍历'; }
 	if(!(callback instanceof Function)) { throw '回调函数不是函数'; }
 
+	const items = [];
 
 	for(let i = 1; i <= target.numItems; i++) {
-		callback(target.item(i), i);
+		items.push(target.item(i));
+	}
+
+	for(let i = 0; i < items.length; i++) {
+		callback(items[i], i);
 	}
 };
 
@@ -142,4 +147,89 @@ this.AddText = (group, string, nameText) => {
 	if(typeof nameText == 'string') { text.name = nameText; }
 
 	return text;
+};
+
+
+this.EvalString = str => {
+	return str.replace(/\$\{.+?\}/g, text => {
+		C;
+		I;
+		try {
+			return eval(text.replace(/(^\$\{)|(\}$)/g, ''));
+		}
+		catch(error) {
+			return text;
+		}
+	});
+};
+
+
+this.EnumLine = (lines, callback) => {
+	let index = 0;
+
+	for(let lid = 0; lid < lines.length; lid++) {
+		const line = lines[lid];
+
+		if(line.duration) {
+			callback(line, lid, index++);
+		}
+	}
+};
+
+
+this.GetBoxSize = text => {
+	const fontSize = C.video.size.fontLine;
+	const heightLeading = C.video.size.heightLeading;
+	const widthMax = 1080;
+	const heightMax = 1080;
+
+	const layerLine = CompMain.layers.addBoxText([widthMax, heightMax], text);
+
+	const textDocLine = layerLine.sourceText.value;
+	textDocLine.resetCharStyle();
+	textDocLine.fontSize = fontSize;
+	textDocLine.font = 'Source Han Mono SC';
+	textDocLine.applyStroke = true;
+	textDocLine.strokeWidth = 2;
+	textDocLine.text = text;
+	textDocLine.name = 'Test';
+	textDocLine.leading = fontSize + heightLeading;
+	layerLine.sourceText.setValue(textDocLine);
+
+	const rect = layerLine.sourceRectAtTime(0, false);
+
+	const widthBox = Math.ceil(rect.width) + fontSize;
+	const lineBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
+
+	layerLine.remove();
+
+	return [widthBox, lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
+};
+this.GetBoxSizeMark = text => {
+	const fontSize = C.video.size.fontMark;
+	const heightLeading = C.video.size.heightLeading;
+	const widthMax = 1080;
+	const heightMax = 1080;
+
+	const layerLine = CompMain.layers.addBoxText([widthMax, heightMax], text);
+
+	const textDocLine = layerLine.sourceText.value;
+	textDocLine.resetCharStyle();
+	textDocLine.fontSize = fontSize;
+	textDocLine.font = 'Source Han Mono SC';
+	textDocLine.applyStroke = true;
+	textDocLine.strokeWidth = 1;
+	textDocLine.text = text;
+	textDocLine.name = 'TestMark';
+	textDocLine.leading = fontSize + heightLeading;
+	layerLine.sourceText.setValue(textDocLine);
+
+	const rect = layerLine.sourceRectAtTime(0, false);
+
+	const widthBox = Math.ceil(rect.width) + fontSize;
+	const lineBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
+
+	layerLine.remove();
+
+	return [widthBox, lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
 };

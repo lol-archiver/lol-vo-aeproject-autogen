@@ -1,6 +1,7 @@
 /** @type {C} */
 this.C = JSON.parse(ReadFile(PATH_CONFIG));
 this.I = JSON.parse(ReadFile(PATH_INFO));
+this.I.offsetsSplash = JSON.parse(ReadFile(`${C.dirAutogen}/reso/splash-offset.json`));
 
 
 C.widthVideo = C.video.width;
@@ -13,6 +14,6 @@ C.frameRate = 60;
 
 this.D = {
 	interval: C.video.duration.interval,
-	title: C.video.duration.title,
-	credit: C.video.duration.credit,
+	opener: C.video.duration.opener,
+	ending: C.video.duration.ending,
 };

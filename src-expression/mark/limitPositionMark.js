@@ -4,8 +4,8 @@ const rect = thisLayer.sourceRectAtTime(time);
 
 const padding = 20;
 
-const right = 240;
-const bottom = 30;
+const right = 340;
+const bottom = 40;
 
 if($side == 'right') {
 	[
