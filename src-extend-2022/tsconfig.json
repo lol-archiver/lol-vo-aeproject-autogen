@@ -8,6 +8,7 @@
 		"outFile": "./dist.js",
 	},
 	"files": [
+		"./lib/config.path.js",
 		"./lib/tool.js",
 		"./lib/config.js",
 		"./lib/footage.js",

@@ -46,6 +46,7 @@ const rcExtend2022 = {
 		CompMain: 'readonly',
 
 		AddOpener: 'readonly',
+		AddTitle: 'readonly',
 
 
 

@@ -1,3 +1,6 @@
+// @include 'lib/json2.js';
+
+
 /**
  * 读取文件
  * @param {string} path 文件路径

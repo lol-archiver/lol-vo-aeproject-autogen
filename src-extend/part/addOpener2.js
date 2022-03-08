@@ -1,4 +1,4 @@
-var dirSplash = 'D:/Desktop/splash/';
+var dirSplash = 'D:/Desk/splash/';
 
 var splashesOpener = [
 	[dirSplash + '888000.jpg', -70],

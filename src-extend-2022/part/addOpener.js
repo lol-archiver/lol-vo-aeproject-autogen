@@ -1,4 +1,4 @@
-const dirSplash = 'D:/Desktop/splash/';
+const dirSplash = 'D:/Desk/splash/';
 
 const splashesOpener = [
 	[dirSplash + '888000.jpg', -70],
