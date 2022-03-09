@@ -57,13 +57,15 @@ EnumLine(events, (line, lid, index) => {
 	AddLineScroll(line, compLine, index, accumDuration, durationLine);
 
 	accumDuration += line.duration + D.interval;
+
+	$.writeln(`${index}: ${line.line}`);
 });
 
 
 if(!C.video.simple) {
 	AddBGM();
-	AddEnding();
 	AddCounter();
+	AddEnding();
 }
 
 CompMain.openInViewer();

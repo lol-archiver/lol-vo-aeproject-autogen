@@ -1,6 +1,4 @@
 const makeTitle = () => {
-	D.title = 3;
-
 	const offsetBar = 80;
 	const offsetText = 12;
 	const offsetTrim = 10;

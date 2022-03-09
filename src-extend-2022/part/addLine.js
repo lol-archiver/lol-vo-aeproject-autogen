@@ -265,7 +265,9 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		// -------备注-------
 		layerMarkBox.transform.position.setValue([0, 1000]);
 		layerMarkBox.transform.position.expression = GetExpression('mark/limitPositionMark')
-			.replace(/\$side/g, '\'' + line.side + '\'');
+			.replace(/\$sider\$/g, '\'' + line.side + '\'')
+			.replace(/\$side\$/g, C.isLandscape ? 340 : 140)
+			.replace(/\$bottom\$/g, C.isLandscape ? 100 : 160);
 
 		const colorMark = RGBH('FFFAFA');
 

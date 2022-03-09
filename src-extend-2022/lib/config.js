@@ -26,4 +26,5 @@ this.D = {
 	interval: C.video.duration.interval,
 	opener: C.video.duration.opener,
 	ending: C.video.duration.ending,
+	title: C.video.duration.title,
 };

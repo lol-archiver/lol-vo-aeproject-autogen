@@ -52,7 +52,7 @@
 			"name": "6: 测试2022工程（2020，不编译）",
 			"program": "${workspaceFolder}/src-extend-2022/dist.js",
 			"stopOnEntry": false,
-			"targetSpecifier": "aftereffects-22.0",
+			"targetSpecifier": "aftereffects-17.0",
 			"internalConsoleOptions": "neverOpen"
 		},
 	]
