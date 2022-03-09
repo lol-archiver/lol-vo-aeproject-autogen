@@ -232,14 +232,14 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 	const textWaterMark = layerWaterMark.sourceText.value;
 	textWaterMark.resetCharStyle();
-	textWaterMark.fontSize = C.video.size.fontLine - 15;
+	textWaterMark.fontSize = C.video.size.fontLine - 20;
 	textWaterMark.fillColor = colorLine;
 	textWaterMark.font = 'Source Han Mono SC';
 	textWaterMark.applyStroke = true;
 	textWaterMark.strokeWidth = 0;
-	textWaterMark.leading = C.video.size.fontLine - 15 + C.video.size.heightLeading;
+	textWaterMark.leading = C.video.size.fontLine - 20 + C.video.size.heightLeading;
 	textWaterMark.text = 'DR';
-	layerWaterMark.opacity.setValue(34);
+	layerWaterMark.opacity.setValue(24);
 	layerWaterMark.sourceText.setValue(textWaterMark);
 
 

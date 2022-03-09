@@ -38,7 +38,7 @@ export default {
 			{ skill: '${C.dirAutogen}/reso/icon/MissFortune/W.png' },
 		'[使用:E技能:枪林弹雨]':
 			{ skill: '${C.dirAutogen}/reso/icon/MissFortune/E.png' },
-		'[冷却:R技能:弹幕时间]':
+		'[初次升级:R技能:弹幕时间]':
 			{ skill: '${C.dirAutogen}/reso/icon/MissFortune/R.png' },
 		'[使用:R技能:弹幕时间]':
 			{ skill: '${C.dirAutogen}/reso/icon/MissFortune/R.png' },
