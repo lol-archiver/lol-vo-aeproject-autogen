@@ -1,12 +1,11 @@
 this.AddBackGround = () => {
 	const scaleSplashBackground = C.isLandscape ? 158 : 268;
-	const offsetSplashBackground = C.isLandscape ? 0 : SplashesOpener?.[0]?.[1] ?? 0;
 
 	const splashBackground = CompMain.layers.add(GetFootage(C.fileSplash, DirFootage), D.full);
 	splashBackground.startTime = D.opener - 1;
 	splashBackground.scale.setValueAtTime(D.opener - 1, [scaleSplashBackground * 1.5, scaleSplashBackground * 1.5]);
 	splashBackground.scale.setValueAtTime(D.opener + 2, [scaleSplashBackground, scaleSplashBackground]);
-	const positionSplashBackground = splashBackground.position.value; positionSplashBackground[0] += offsetSplashBackground;
+	const positionSplashBackground = splashBackground.position.value; positionSplashBackground[0] += OffsetSplashBackground;
 	splashBackground.position.setValue(positionSplashBackground);
 
 

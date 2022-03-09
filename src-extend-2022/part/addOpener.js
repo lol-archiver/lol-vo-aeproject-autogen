@@ -5,7 +5,7 @@ for(const slot of C.slots) {
 		I.offsetsSplash[slot] || 0
 	]);
 }
-SplashesOpener.shift();
+this.OffsetSplashBackground = SplashesOpener.shift()?.[1];
 
 /**
  * 添加片头

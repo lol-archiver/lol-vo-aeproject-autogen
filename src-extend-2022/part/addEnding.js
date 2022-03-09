@@ -2,11 +2,17 @@ this.AddEnding = () => {
 	const textThankyou = '感谢观看！\n';
 	const textInfo = '解包/听写/整理/制作\n    by DanoR (Nuogz)\n\n如有错漏，敬请留言\n\n所有素材依赖于最新测试服进度\n视频内容可能多次变动，请勿见怪';
 
+
+	const scaleSplashBackground = C.isLandscape ? 158 : 268;
+
+
 	const splashEnd = GetFootage(C.fileSplash);
 	const layerSplashEnd = CompMain.layers.add(splashEnd, D.full);
 	layerSplashEnd.startTime = D.linesEnd + 2;
 
-	layerSplashEnd.transform.scale.setValue([160, 160]);
+	layerSplashEnd.transform.scale.setValue([scaleSplashBackground, scaleSplashBackground]);
+	const positionSplashBackground = layerSplashEnd.position.value; positionSplashBackground[0] += OffsetSplashBackground;
+	layerSplashEnd.position.setValue(positionSplashBackground);
 	layerSplashEnd.transform.opacity.setValueAtTime(D.linesEnd + 2, 0);
 	layerSplashEnd.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 100);
 

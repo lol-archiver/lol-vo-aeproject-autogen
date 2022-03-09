@@ -61,6 +61,7 @@ const rcExtend2022 = {
 
 
 		SplashesOpener: 'readonly',
+		OffsetSplashBackground: 'readonly',
 
 
 

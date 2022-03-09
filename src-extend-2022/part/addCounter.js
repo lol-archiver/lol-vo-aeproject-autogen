@@ -2,18 +2,27 @@ this.AddCounter = () => {
 	const layerWaterMark = CompMain.layers.add(GetFootage(C.fileWaterMark));
 
 	layerWaterMark.transform.scale.setValue([14, 14]);
-	layerWaterMark.transform.position.setValue([40, 1040]);
+	layerWaterMark.transform.position.setValue([40, C.heightVideo - 40]);
 
 	layerWaterMark.startTime = 0;
 	layerWaterMark.duration = D.linesEnd;
 
 
+	const effectDropShadowWaterMark = layerWaterMark.effect.addProperty('ADBE Drop Shadow');
+	effectDropShadowWaterMark[L.shadowColor].setValue(RGBH('040404'));
+	effectDropShadowWaterMark[L.direction].setValue(135);
+	effectDropShadowWaterMark[L.opacity].setValue(255);
+	effectDropShadowWaterMark[L.distance].setValue(7);
+	effectDropShadowWaterMark[L.softness].setValue(4);
+	effectDropShadowWaterMark[L.shadowOnly].setValue(0);
+
+
 	const layerCounter = CompMain.layers.addText('');
-	layerCounter.transform.position.setValue([70, 1020]);
+	layerCounter.transform.position.setValue([(40 + 30), C.heightVideo - (40 + 20)]);
 
 	const textDocCounter = layerCounter.sourceText.value;
 	textDocCounter.resetCharStyle();
-	textDocCounter.fontSize = 24;
+	textDocCounter.fontSize = 34;
 	textDocCounter.fillColor = RGBH('E0E0E0');
 	textDocCounter.font = 'Source Han Mono SC';
 	textDocCounter.applyStroke = true;
@@ -22,7 +31,7 @@ this.AddCounter = () => {
 
 	layerCounter.sourceText.setValue(textDocCounter);
 
-	layerCounter.startTime = D.opener + D.title;
+	layerCounter.startTime = D.opener + D.title - 0.5;
 	layerCounter.duration = D.lines;
 
 	let duration = D.opener + D.title;
