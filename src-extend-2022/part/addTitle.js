@@ -1,4 +1,4 @@
-this.AddTitle = () => {
+const makeTitle = () => {
 	D.title = 3;
 
 	const offsetBar = 80;
@@ -141,4 +141,26 @@ this.AddTitle = () => {
 
 
 	return [compTitle, widthTextMax / 2, fontSize, offsetBar];
+};
+
+this.AddTitle = () => {
+	const [compTitle, widthTextMaxHalf, fontSize, offsetBar] = makeTitle();
+	const scaleTitle = 70;
+	const offsetTitleTop = Math.max(offsetBar, C.widthVideo * 0.05);
+	const offsetTitleLeft = Math.max(offsetBar, C.heightVideo * 0.05);
+
+	// compTitle.addGuide(0, C.heightVideo / 2);
+	// compTitle.addGuide(1, C.widthVideo / 2);
+	// compTitle.openInViewer().views[0].options.guidesVisibility = true;
+
+	const layerTitle = CompMain.layers.add(compTitle, D.title);
+	layerTitle.startTime = 4;
+	layerTitle.scale.setValue([scaleTitle, scaleTitle]);
+	layerTitle.position.setValue([widthTextMaxHalf * (scaleTitle / 100) + offsetTitleTop, fontSize * (scaleTitle / 100) + offsetTitleLeft]);
+
+
+	layerTitle.copyToComp(CompMain);
+	const layerTitleR = CompMain.layer(1);
+	layerTitleR.stretch = -100;
+	layerTitleR.startTime = 4 + D.title * 2;
 };
