@@ -4,7 +4,7 @@ this.AddCounter = () => {
 	layerWaterMark.transform.scale.setValue([14, 14]);
 	layerWaterMark.transform.position.setValue([40, C.heightVideo - 40]);
 
-	layerWaterMark.startTime = 0;
+	layerWaterMark.startTime = D.opener + 1;
 	layerWaterMark.duration = D.linesEnd;
 
 

@@ -5,7 +5,8 @@ for(const slot of C.slots) {
 		I.offsetsSplash[slot] || 0
 	]);
 }
-this.OffsetSplashBackground = SplashesOpener.shift()?.[1];
+const offsetSplashBackground = SplashesOpener.shift()[1];
+this.OffsetSplashBackground = C.isLandscape ? 0 : offsetSplashBackground;
 
 /**
  * 添加片头

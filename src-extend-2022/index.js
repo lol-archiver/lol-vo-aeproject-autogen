@@ -64,8 +64,11 @@ EnumLine(events, (line, lid, index) => {
 
 if(!C.video.simple) {
 	AddBGM();
+	$.writeln('Statge: AddBGM');
 	AddCounter();
+	$.writeln('Statge: AddCounter');
 	AddEnding();
+	$.writeln('Statge: AddEnding');
 }
 
 CompMain.openInViewer();

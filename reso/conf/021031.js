@@ -11,15 +11,16 @@ export default {
 		name: 'Battle Bunny'
 	},
 	color: '#D36CB5',
+	// splash: 'D:/project/@lol/lol-wad-extract/test3.png',
 	events: {
 		'[初遇:皮肤:幻灵战斗兔 锐雯]':
-			{ target: '${C.dirAutogen}/reso/icon/Jinx/38.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Riven/44.png' },
 		'[击杀:皮肤:幻灵战斗兔 锐雯]':
-			{ target: '${C.dirAutogen}/reso/icon/Jinx/38.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Riven/44.png' },
 		'[初遇:皮肤:幻灵战斗猫 金克斯]':
-			{ target: '${C.dirAutogen}/reso/icon/Riven/44.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Jinx/38.png' },
 		'[击杀:皮肤:幻灵战斗猫 金克斯]':
-			{ target: '${C.dirAutogen}/reso/icon/Riven/44.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Jinx/38.png' },
 		'[初遇:皮肤:幻灵战斗狼 塞拉斯]':
 			{ target: '${C.dirAutogen}/reso/icon/Sylas/24.png' },
 		'[击杀:皮肤:幻灵战斗狼 塞拉斯]':
@@ -43,7 +44,7 @@ export default {
 			{ skill: '${C.dirAutogen}/reso/icon/MissFortune/R.png' },
 	},
 	lines: {
-		'9F10DE2D': { mark: '“砰”原文“bang”，拟声词' },
+		'0D802C67': { mark: '“砰”原文“bang”，拟声词' },
 		'42615038': { mark: '“狡兔01”原文“BB01”。发音使用了数字军语：洞=0，幺=1' },
 		'5469D16A': { mark: '“狡兔01”原文“BB01”。发音使用了数字军语：洞=0，幺=1' },
 		'8C37744B': { mark: '“狡兔01”原文“BB01”。发音使用了数字军语：洞=0，幺=1' },
