@@ -22,6 +22,8 @@
 		"./part/addLineScroll.js",
 		"./part/addBGM.js",
 		"./part/addEnding.js",
+		"./part/addBackground.js",
+		"./part/addCounter.js",
 
 		"./index.js",
 	]

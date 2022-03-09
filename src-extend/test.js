@@ -21,13 +21,13 @@ var resultOpner = P.addOpener2();
 var compOpener = resultOpner[0];
 var offsetSplashBackground = resultOpner[1];
 
-var avLayerOpener = T.compMain.layers.add(compOpener, D.opener);
-avLayerOpener.stretch = 50;
+var layerOpener = T.compMain.layers.add(compOpener, D.opener);
+layerOpener.stretch = 50;
 
 var scaleOpenerFinal = 300;
-avLayerOpener.scale.setValueAtTime(2, [100, 100]);
-avLayerOpener.scale.setValueAtTime(4, [scaleOpenerFinal, scaleOpenerFinal]);
-SetEase(avLayerOpener.scale, 1, 2, Ease1);
+layerOpener.scale.setValueAtTime(2, [100, 100]);
+layerOpener.scale.setValueAtTime(4, [scaleOpenerFinal, scaleOpenerFinal]);
+SetEase(layerOpener.scale, 1, 2, Ease1);
 
 compOpener.openInViewer();
 
@@ -56,16 +56,16 @@ compTitle.addGuide(0, C.heightVideo / 2);
 compTitle.addGuide(1, C.widthVideo / 2);
 compTitle.openInViewer().views[0].options.guidesVisibility = true;
 
-var avLayerTitleO = compMain.layers.add(compTitle, D.title);
-avLayerTitleO.startTime = 4;
-avLayerTitleO.scale.setValue([scaleTitle, scaleTitle]);
-avLayerTitleO.position.setValue([widthTextMaxHalf * (scaleTitle / 100) + offsetTitleTop, fontSize * (scaleTitle / 100) + offsetTitleLeft]);
+var layerTitle = compMain.layers.add(compTitle, D.title);
+layerTitle.startTime = 4;
+layerTitle.scale.setValue([scaleTitle, scaleTitle]);
+layerTitle.position.setValue([widthTextMaxHalf * (scaleTitle / 100) + offsetTitleTop, fontSize * (scaleTitle / 100) + offsetTitleLeft]);
 
 
-avLayerTitleO.copyToComp(compMain);
-var avLayerTitleR = compMain.layer(1);
-avLayerTitleR.stretch = -100;
-avLayerTitleR.startTime = 4 + D.title * 2;
+layerTitle.copyToComp(compMain);
+var layerTitleR = compMain.layer(1);
+layerTitleR.stretch = -100;
+layerTitleR.startTime = 4 + D.title * 2;
 
 
 // compMain.openInViewer();

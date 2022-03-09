@@ -56,6 +56,8 @@ const rcExtend2022 = {
 		AddLineScroll: 'readonly',
 		AddBGM: 'readonly',
 		AddEnding: 'readonly',
+		AddBackGround: 'readonly',
+		AddCounter: 'readonly',
 
 
 		SplashesOpener: 'readonly',

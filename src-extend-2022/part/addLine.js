@@ -225,10 +225,10 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	textDocLine.text = line.line;
 	layerLineBox.sourceText.setValue(textDocLine);
 
-	// -------WaterMark-------
+
+	// -------水印-------
 	layerWaterMark.transform.position.setValue([0, 1000]);
 	layerWaterMark.transform.position.expression = GetExpression(side + '/' + 'followPositionWaterMark');
-
 
 	const textWaterMark = layerWaterMark.sourceText.value;
 	textWaterMark.resetCharStyle();
@@ -237,18 +237,18 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	textWaterMark.font = 'Source Han Mono SC';
 	textWaterMark.applyStroke = true;
 	textWaterMark.strokeWidth = 0;
-	// textWaterMark.leading = 60;
+	textWaterMark.leading = C.video.size.fontLine - 15 + C.video.size.heightLeading;
 	textWaterMark.text = 'DR';
 	layerWaterMark.opacity.setValue(34);
 	layerWaterMark.sourceText.setValue(textWaterMark);
 
 
-	// -------Mark-------
+	// -------备注-------
 	if(hasMark) {
 		layerBoxMark.name = 'BoxMark';
 		layerMarkBox.name = 'Mark';
 
-		// -------Mark Box-------
+		// -------备注框-------
 		const groupBoxMark = layerBoxMark.content.addProperty('ADBE Vector Group');
 
 		const borderBoxMark = groupBoxMark.content.addProperty('ADBE Vector Shape - Rect');
@@ -262,7 +262,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		layerBoxMark.transform.position.expression = GetExpression('mark/followPositionBoxMark');
 		layerBoxMark.transform.opacity.setValueAtTime(0, 66);
 
-		// -------Mark-------
+		// -------备注-------
 		layerMarkBox.transform.position.setValue([0, 1000]);
 		layerMarkBox.transform.position.expression = GetExpression('mark/limitPositionMark')
 			.replace(/\$side/g, '\'' + line.side + '\'');

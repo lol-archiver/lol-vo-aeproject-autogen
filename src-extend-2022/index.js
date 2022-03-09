@@ -7,73 +7,23 @@ $.writeln('-------date-------'.replace('date', new Date()));
 
 const events = CalcDuration();
 
+
 CompMain.duration = D.full;
 CompMain.openInViewer();
 
-AddBGM();
 
-
-// 原图
-const scaleSplashBackground = C.isLandscape ? 158 : 268;
-const offsetSplashBackground = C.isLandscape ? 0 : SplashesOpener?.[0]?.[1] ?? 0;
-
-const splashBackground = CompMain.layers.add(GetFootage(C.fileSplash, DirFootage), D.full);
-splashBackground.startTime = D.opener - 1;
-splashBackground.scale.setValueAtTime(D.opener - 1, [scaleSplashBackground * 1.5, scaleSplashBackground * 1.5]);
-splashBackground.scale.setValueAtTime(D.opener + 2, [scaleSplashBackground, scaleSplashBackground]);
-const positionSplashBackground = splashBackground.position.value; positionSplashBackground[0] += offsetSplashBackground;
-splashBackground.position.setValue(positionSplashBackground);
-// const positionSplashBackground = splashBackground.position.value; positionSplashBackground[0] += offsetSplashBackground * (scaleOpenerFinal / 100);
-
-
-const blurSplashBackground = splashBackground.effect.addProperty('ADBE Box Blur2');
-blurSplashBackground[L.blurRadius].setValueAtTime(5, 0);
-blurSplashBackground[L.blurRadius].setValueAtTime(9, 7);
+if(!C.video.simple) {
+	AddBackGround();
+	AddTitle();
+}
 
 
 // 开头
 const compOpener = AddOpener();
 
-const avLayerOpener = CompMain.layers.add(compOpener, D.opener);
-// avLayerOpener.stretch = -C.video.duration.opener / compOpener.duration * 100;
-avLayerOpener.startTime = D.opener;
-avLayerOpener.stretch = -100;
-
-// const scaleOpenerFinal = 100;
-// avLayerOpener.scale.setValueAtTime(2, [100, 100]);
-// avLayerOpener.scale.setValueAtTime(4, [scaleOpenerFinal, scaleOpenerFinal]);
-// SetEase(avLayerOpener.scale, 1, 2, Ease1);
-
-compOpener.openInViewer();
-
-
-// 标题
-const resultTitle = AddTitle();
-const compTitle = resultTitle[0];
-const widthTextMaxHalf = resultTitle[1];
-const fontSize = resultTitle[2];
-const offsetBar = resultTitle[3];
-const scaleTitle = 70;
-const offsetTitleTop = Math.max(offsetBar, C.widthVideo * 0.05);
-const offsetTitleLeft = Math.max(offsetBar, C.heightVideo * 0.05);
-
-compTitle.addGuide(0, C.heightVideo / 2);
-compTitle.addGuide(1, C.widthVideo / 2);
-compTitle.openInViewer().views[0].options.guidesVisibility = true;
-
-const avLayerTitleO = CompMain.layers.add(compTitle, D.title);
-avLayerTitleO.startTime = 4;
-avLayerTitleO.scale.setValue([scaleTitle, scaleTitle]);
-avLayerTitleO.position.setValue([widthTextMaxHalf * (scaleTitle / 100) + offsetTitleTop, fontSize * (scaleTitle / 100) + offsetTitleLeft]);
-
-
-avLayerTitleO.copyToComp(CompMain);
-const avLayerTitleR = CompMain.layer(1);
-avLayerTitleR.stretch = -100;
-avLayerTitleR.startTime = 4 + D.title * 2;
-
-
-CompMain.openInViewer();
+const layerOpener = CompMain.layers.add(compOpener, D.opener);
+layerOpener.startTime = D.opener;
+layerOpener.stretch = -100;
 
 
 // 台词
@@ -109,4 +59,11 @@ EnumLine(events, (line, lid, index) => {
 	accumDuration += line.duration + D.interval;
 });
 
-AddEnding();
+
+if(!C.video.simple) {
+	AddBGM();
+	AddEnding();
+	AddCounter();
+}
+
+CompMain.openInViewer();
