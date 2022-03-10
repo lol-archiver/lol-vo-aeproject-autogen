@@ -180,8 +180,8 @@ this.EnumLine = (lines, callback) => {
 this.GetBoxSize = text => {
 	const fontSize = C.video.size.fontLine;
 	const heightLeading = C.video.size.heightLeading;
-	const widthMax = C.isLandscape ? 1080 : 720;
-	const heightMax = C.isLandscape ? 1080 : 720;
+	const widthMax = 1080;
+	const heightMax = 1080;
 
 	const layerLine = CompMain.layers.addBoxText([widthMax, heightMax], text);
 
@@ -208,8 +208,8 @@ this.GetBoxSize = text => {
 this.GetBoxSizeMark = text => {
 	const fontSize = C.video.size.fontMark;
 	const heightLeading = C.video.size.heightLeading;
-	const widthMax = C.isLandscape ? 1080 : 720;
-	const heightMax = C.isLandscape ? 1080 : 720;
+	const widthMax = 1080;
+	const heightMax = 1080;
 
 	const layerLine = CompMain.layers.addBoxText([widthMax, heightMax], text);
 

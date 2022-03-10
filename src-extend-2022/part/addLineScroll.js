@@ -1,11 +1,15 @@
 this.AddLineScroll = (line, compLine, index, accumDuration, durationLine) => {
-	const xCenter = C.widthVideo / 2;
+	const xCenter = C.widthVideo / 2 - (C.isLandscape ? 0 : 220);
 	const yCenter = C.heightVideo / 2;
 
 	const layerLine = CompMain.layers.add(compLine, durationLine);
 
 	layerLine.startTime = accumDuration;
 	layerLine.transform.position.setValue([xCenter, yCenter + line.boxHeight]);
+
+	if(!C.isLandscape) {
+		layerLine.transform.scale.setValue([80, 80]);
+	}
 
 
 	layerLine.transform.opacity.setValueAtTime(accumDuration, 100);

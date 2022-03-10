@@ -11,7 +11,11 @@ export default {
 		name: 'Battle Bunny'
 	},
 	color: '#D36CB5',
-	// splash: 'D:/project/@lol/lol-wad-extract/test3.png',
+	splash: 'D:/project/@lol/lol-wad-extract/test3.png',
+	shade: {
+		file: 'D:/project/@lol/lol-vo-aeproject-autogen-dev/reso/shade/021031.png',
+		// scale: [100, 140],
+	},
 	events: {
 		'[初遇:皮肤:幻灵战斗兔 锐雯]':
 			{ target: '${C.dirAutogen}/reso/icon/Riven/44.png' },

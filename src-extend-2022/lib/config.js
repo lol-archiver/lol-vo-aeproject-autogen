@@ -6,20 +6,17 @@ this.I.offsetsSplash = JSON.parse(ReadFile(`${C.dirAutogen}/reso/splash-offset.j
 
 C.widthVideo = C.video.width;
 C.heightVideo = C.video.height;
-// [C.widthVideo, C.heightVideo] = [C.heightVideo, C.widthVideo];
 C.isLandscape = C.widthVideo > C.heightVideo;
 C.pixelAspect = 1;
 C.frameRate = 60;
 
 
 if(!C.isLandscape) {
-	C.video.size.fontLine -= 16;
-	C.video.size.fontMark -= 16;
-	C.video.size.paddingLine -= 16;
-	C.video.size.paddingMark -= 16;
+	C.video.size.fontMark = C.video.size.fontLine - 8;
+	C.video.size.paddingMark = C.video.size.fontLine - 8;
 }
 
-$.writeln('isLandscape: ' + C.isLandscape);
+$.writeln('是否横屏: ' + C.isLandscape);
 
 
 this.D = {

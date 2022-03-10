@@ -17,12 +17,13 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	const hasMark = !!markFinal;
 
 
-	const compLine = EnsureComp(indexText + line.line, duration, dirLine);
+	const compLine = EnsureComp(indexText + line.line, duration, dirLine, 1920);
 	compLine.bgColor = RGBH('0E0E0E');
 
-	if(line.audio && !C.video.mute) {
-		compLine.layers.add(GetFootage(EvalString(line.audio), DirVoice));
-	}
+	if(lid == 0) { compLine.openInViewer(); }
+
+
+	if(line.audio && !C.video.mute) { compLine.layers.add(GetFootage(EvalString(line.audio), DirVoice)); }
 
 
 	const layerBoxMark = hasMark ? compLine.layers.addShape() : null;
@@ -31,6 +32,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	const layerBoxLine = compLine.layers.addShape();
 
 	const layerWaterMark = compLine.layers.addText();
+	const layerShade = (I.shade?.file) ? compLine.layers.add(GetFootage(EvalString(I.shade.file), DirFootage)) : null;
 
 	const layerCircleMainShadow = compLine.layers.addShape();
 
@@ -202,7 +204,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		layerEvent.sourceText.setValue(textDocEvent);
 	}
 
-	// -------Line-------
+	// -------台词-------
 	layerLineBox.transform.position.setValue([0, 1000]);
 	layerLineBox.transform.position.expression = GetExpression(side + '/' + 'limitPositionLine')
 		.replace(/\$side\$/g, C.isLandscape ? 340 : 140)
@@ -226,6 +228,8 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	layerLineBox.sourceText.setValue(textDocLine);
 
 
+
+
 	// -------水印-------
 	layerWaterMark.transform.position.setValue([0, 1000]);
 	layerWaterMark.transform.position.expression = GetExpression(side + '/' + 'followPositionWaterMark');
@@ -239,8 +243,18 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	textWaterMark.strokeWidth = 0;
 	textWaterMark.leading = C.video.size.fontLine - 20 + C.video.size.heightLeading;
 	textWaterMark.text = 'DR';
-	layerWaterMark.opacity.setValue(24);
+	layerWaterMark.opacity.setValue(14);
 	layerWaterMark.sourceText.setValue(textWaterMark);
+
+
+	// -------底纹-------
+	if(layerShade) {
+		layerShade.transform.position.setValue([0, 1000]);
+		layerShade.transform.position.expression = GetExpression(side + '/' + 'followPositionShade');
+		layerShade.opacity.setValue(24);
+		layerShade.scale.setValue(I.shade.scale ?? [100, 100]);
+		layerShade.effect.addProperty('ADBE Black&White');
+	}
 
 
 	// -------备注-------

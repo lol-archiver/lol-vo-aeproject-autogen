@@ -114,15 +114,18 @@ for(const event of events) {
 	}
 }
 
+const titleComp = `${C.video.width > C.video.height ? '' : '[竖屏] '}${C.slot} ${CR.skin.id > 0 ? '皮肤' : '英雄'} ${CR.title1} ${CR.title2}`;
+
 
 writeFileSync(fileInfo, JSON.stringify({
-	title: CR.title,
+	titleComp,
 	title1: CR.title1,
 	title2: CR.title2,
 	champion: CR.champion,
 	skin: CR.skin,
 	emote: CR.emote,
 	color: CR.color,
+	shade: CR.shade,
 	head: CR.head,
 	splash: CR.splash,
 	audios: CR.audios,
