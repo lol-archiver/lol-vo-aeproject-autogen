@@ -1,6 +1,6 @@
 {
 	"name": "lol-vo-aeproject-autogen",
-	"version": "2.0.2",
+	"version": "3.0.0",
 	"description": "",
 	"author": "Nuogz",
 	"license": "LGPL-3.0-or-later",
@@ -10,7 +10,7 @@
 		"node": ">=14.18.1"
 	},
 	"scripts": {
-		"构建": "cd src-extend-2022 && tsc"
+		"构建": "cd src-extend && tsc"
 	},
 	"dependencies": {
 		"music-metadata": "^7.12.2",
