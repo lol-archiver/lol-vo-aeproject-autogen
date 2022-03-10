@@ -4,9 +4,7 @@
 /reso/info
 
 /config.js
-/src-extend/config.json
-/src-extend/config.js
 
-/src-extend-2022/lib/config.path.js
-/src-extend-2022/lib/config.json
-/src-extend-2022/dist.js
+/src-extend/lib/config.path.js
+/src-extend/lib/config.json
+/src-extend/dist.js

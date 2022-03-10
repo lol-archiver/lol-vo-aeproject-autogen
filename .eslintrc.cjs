@@ -1,6 +1,6 @@
-const rcExtend2022 = {
-	files: ['./src-extend-2022/**'],
-	excludedFiles: ['./src-extend-2022/dist.js'],
+const rcExtend = {
+	files: ['./src-extend/**'],
+	excludedFiles: ['./src-extend/dist.js'],
 	env: { es2022: true, node: false },
 	parserOptions: { sourceType: 'script', },
 	rules: {
@@ -89,53 +89,6 @@ const rcExtend2022 = {
 };
 
 
-const rcExtend = {
-	files: ['./src-extend/**'],
-	env: { es2022: false, node: false },
-	parserOptions: { sourceType: 'script', ecmaVersion: 3 },
-	rules: {
-		noVar: [0],
-	},
-	globals: {
-		pathConfig: 'readonly',
-		pathInfo: 'readonly',
-
-		app: 'readonly',
-
-		Project: 'readonly',
-		CompItem: 'readonly',
-		FolderItem: 'readonly',
-
-		TextDocument: 'readonly',
-		ImportOptions: 'readonly',
-
-		File: 'readonly',
-
-		KeyframeInterpolationType: 'readonly',
-		KeyframeEase: 'readonly',
-		TrackMatteType: 'readonly',
-
-
-		I: 'readonly',
-		D: 'readonly',
-		P: 'readonly',
-		F: 'readonly',
-		C: 'readonly',
-		E: 'readonly',
-		L: 'readonly',
-		T: 'readonly',
-		LL: 'readonly',
-
-		AddProperty: 'readonly',
-		AddShape: 'readonly',
-		AddText: 'readonly',
-		Ease1: 'readonly',
-		Ease2: 'readonly',
-		SetEase: 'readonly',
-	},
-};
-
-
 const rcExpression = {
 	files: ['./src-expression/**'],
 	env: { es2022: false, node: false, es6: true },
@@ -151,7 +104,7 @@ const rcExpression = {
 
 const rcNode = {
 	root: true,
-	ignorePatterns: ['src-extend-2022/dist.js'],
+	ignorePatterns: ['src-extend/dist.js'],
 	env: { es2022: true, node: true },
 	extends: ['eslint:recommended'],
 	parserOptions: { sourceType: 'module' },
@@ -164,14 +117,13 @@ const rcNode = {
 		noVar: [2],
 		noConsole: [2],
 	},
-	overrides: [rcExtend2022, rcExtend, rcExpression]
+	overrides: [rcExtend, rcExpression]
 };
 
 
 const parseKey = (raw, target) => { const key = raw.split(/(?=[A-Z])/).join('-').toLowerCase(); if(key != raw) { target[key] = target[raw]; delete target[raw]; } };
 Object.keys(rcNode.rules).forEach((key) => parseKey(key, rcNode.rules));
 Object.keys(rcExtend.rules).forEach((key) => parseKey(key, rcExtend.rules));
-Object.keys(rcExtend2022.rules).forEach((key) => parseKey(key, rcExtend2022.rules));
 
 
 module.exports = rcNode;
