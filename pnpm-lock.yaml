@@ -1,30 +1,30 @@
 lockfileVersion: 5.3
 
 specifiers:
-  eslint: ^8.10.0
-  music-metadata: ^7.12.2
+  eslint: ^8.13.0
+  music-metadata: ^7.12.3
   types-for-adobe: ^7.0.0
-  typescript: ^4.6.2
+  typescript: ^4.6.3
 
 dependencies:
-  music-metadata: 7.12.2
+  music-metadata: 7.12.3
   types-for-adobe: 7.0.0
-  typescript: 4.6.2
+  typescript: 4.6.3
 
 devDependencies:
-  eslint: 8.10.0
+  eslint: 8.13.0
 
 packages:
 
-  /@eslint/eslintrc/1.2.0:
-    resolution: {integrity: sha512-igm9SjJHNEJRiUnecP/1R5T3wKLEJ7pL6e2P+GUSfCd0dGjPYYZve08uzw8L2J8foVHFz+NGu12JxRcU2gGo6w==}
+  /@eslint/eslintrc/1.2.1:
+    resolution: {integrity: sha512-bxvbYnBPN1Gibwyp6NrpnFzA3YtRL3BBAyEAFVIpNTm2Rn4Vy87GA5M4aSn3InRrlsbX5N0GW7XIx+U4SAEKdQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.3
+      debug: 4.3.4
       espree: 9.3.1
-      globals: 13.12.1
-      ignore: 4.0.6
+      globals: 13.13.0
+      ignore: 5.2.0
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       minimatch: 3.1.2
@@ -38,7 +38,7 @@ packages:
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
-      debug: 4.3.3
+      debug: 4.3.4
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -144,8 +144,8 @@ packages:
       which: 2.0.2
     dev: true
 
-  /debug/4.3.3:
-    resolution: {integrity: sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==}
+  /debug/4.3.4:
+    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -179,13 +179,13 @@ packages:
       estraverse: 5.3.0
     dev: true
 
-  /eslint-utils/3.0.0_eslint@8.10.0:
+  /eslint-utils/3.0.0_eslint@8.13.0:
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.10.0
+      eslint: 8.13.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -199,21 +199,21 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /eslint/8.10.0:
-    resolution: {integrity: sha512-tcI1D9lfVec+R4LE1mNDnzoJ/f71Kl/9Cv4nG47jOueCMBrCCKYXr4AUVS7go6mWYGFD4+EoN6+eXSrEbRzXVw==}
+  /eslint/8.13.0:
+    resolution: {integrity: sha512-D+Xei61eInqauAyTJ6C0q6x9mx7kTUC1KZ0m0LSEexR0V+e94K12LmWX076ZIsldwfQ2RONdaJe0re0TRGQbRQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
-      '@eslint/eslintrc': 1.2.0
+      '@eslint/eslintrc': 1.2.1
       '@humanwhocodes/config-array': 0.9.5
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
-      debug: 4.3.3
+      debug: 4.3.4
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-utils: 3.0.0_eslint@8.10.0
+      eslint-utils: 3.0.0_eslint@8.13.0
       eslint-visitor-keys: 3.3.0
       espree: 9.3.1
       esquery: 1.4.0
@@ -222,7 +222,7 @@ packages:
       file-entry-cache: 6.0.1
       functional-red-black-tree: 1.0.1
       glob-parent: 6.0.2
-      globals: 13.12.1
+      globals: 13.13.0
       ignore: 5.2.0
       import-fresh: 3.3.0
       imurmurhash: 0.1.4
@@ -342,8 +342,8 @@ packages:
       path-is-absolute: 1.0.1
     dev: true
 
-  /globals/13.12.1:
-    resolution: {integrity: sha512-317dFlgY2pdJZ9rspXDks7073GpDmXdfbM3vYYp0HAMKGDh1FfWPleI2ljVNLQX5M5lXcAslTcPTrOrMEFOjyw==}
+  /globals/13.13.0:
+    resolution: {integrity: sha512-EQ7Q18AJlPwp3vUDL4mKA0KXrXyNIQyWon6T6XQiBQF0XHvRsiCSrWmmeATpUzdJN2HhWZU6Pdl0a9zdep5p6A==}
     engines: {node: '>=8'}
     dependencies:
       type-fest: 0.20.2
@@ -357,11 +357,6 @@ packages:
   /ieee754/1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
     dev: false
-
-  /ignore/4.0.6:
-    resolution: {integrity: sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==}
-    engines: {node: '>= 4'}
-    dev: true
 
   /ignore/5.2.0:
     resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==}
@@ -448,13 +443,13 @@ packages:
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
-  /music-metadata/7.12.2:
-    resolution: {integrity: sha512-KO1L6q30b6HfGlDQk1VAdrZqCKi4Gy7pN7eZOZ0YZQkhF/KCLHxKCjKKli9ao9kIBC/9s+uXHvjW3bDIBWuGew==}
+  /music-metadata/7.12.3:
+    resolution: {integrity: sha512-6pZngaroNxGBf8KZjE8reGZJiS533eJq7dBFsyoiEAZIORQAxmVVx20ABh9W2tsLT+5mKYyDzcNi5GuHf3jitg==}
     engines: {node: '>=10'}
     dependencies:
       '@tokenizer/token': 0.3.0
       content-type: 1.0.4
-      debug: 4.3.3
+      debug: 4.3.4
       file-type: 16.5.3
       media-typer: 1.1.0
       strtok3: 6.3.0
@@ -627,8 +622,8 @@ packages:
     resolution: {integrity: sha512-1QHqplLvmoPj7ZNx01KhwS4WR3590xHu1EDJ49PE4MWHAx7NHM61Hx1R300d832WnWqr9qWpLkKChSqMZ1XdtQ==}
     dev: false
 
-  /typescript/4.6.2:
-    resolution: {integrity: sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==}
+  /typescript/4.6.3:
+    resolution: {integrity: sha512-yNIatDa5iaofVozS/uQJEl3JRWLKKGJKh6Yaiv0GLGSuhpFJe7P3SbHZ8/yjAHRQwKRoA6YZqlfjXWmVzoVSMw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: false

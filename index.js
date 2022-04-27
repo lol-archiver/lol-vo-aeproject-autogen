@@ -128,6 +128,7 @@ writeFileSync(fileInfo, JSON.stringify({
 	shade: CR.shade,
 	head: CR.head,
 	splash: CR.splash,
+	splashMiddle: CR.splashMiddle,
 	audios: CR.audios,
 	lines: linesFinal,
 }, null, '\t'));

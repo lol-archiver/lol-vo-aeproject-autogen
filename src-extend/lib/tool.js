@@ -180,8 +180,8 @@ this.EnumLine = (lines, callback) => {
 this.GetBoxSize = text => {
 	const fontSize = C.video.size.fontLine;
 	const heightLeading = C.video.size.heightLeading;
-	const widthMax = 1080;
-	const heightMax = 1080;
+	const widthMax = 1050;
+	const heightMax = 1050;
 
 	const layerLine = CompMain.layers.addBoxText([widthMax, heightMax], text);
 
@@ -196,15 +196,36 @@ this.GetBoxSize = text => {
 	textDocLine.leading = fontSize + heightLeading;
 	layerLine.sourceText.setValue(textDocLine);
 
+	const lengthsLine = [];
+	const lines = text.split('\n');
+	for(let i = 0; i < lines.length; i++) {
+		lengthsLine.push(lines[i].length);
+	}
+
+	const lengthMaxLine = Math.max.apply(this, lengthsLine);
+
+	const widthLineText = lengthMaxLine * (text == '(.......)' ? Math.ceil(fontSize * 2 / 3) : fontSize);
+
 	const rect = layerLine.sourceRectAtTime(0, false);
 
-	const widthBox = Math.ceil(rect.width) + fontSize;
+	// const widthBox = Math.ceil(rect.width) + fontSize;
 	const lineBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
 
 	layerLine.remove();
 
-	return [widthBox, lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
+
+
+	return [Math.min(widthLineText, widthMax), lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
 };
+
+// const rrr1 = GetBoxSize('你不好好');
+// $.writeln('你不好好 ' + rrr1[0]);
+// const rrr2 = GetBoxSize('测试文字');
+// $.writeln('测试文字 ' + rrr2[0]);
+// const rrr3 = GetBoxSize('“可以”');
+// $.writeln('“可以” ' + rrr3[0]);
+
+
 this.GetBoxSizeMark = text => {
 	const fontSize = C.video.size.fontMark;
 	const heightLeading = C.video.size.heightLeading;
@@ -232,4 +253,51 @@ this.GetBoxSizeMark = text => {
 	layerLine.remove();
 
 	return [widthBox, lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
+};
+
+
+/**
+ * 设置文本
+ * @param {TextLayer} target 目标文本层
+ * @param {Object} options 新文本选项
+ * @returns {TextLayer} 目标文本层
+ */
+this.SetText = (target, options) => {
+	if(!(target instanceof TextLayer)) { throw '目标不是文本层'; }
+
+
+	const textDoc = target.property('ADBE Text Properties').property('ADBE Text Document').value;
+
+	textDoc.resetCharStyle();
+
+
+	let hasOptionStroke = false;
+	for(const key in options) {
+		if(key.indexOf('stroke') > -1) { hasOptionStroke = true; }
+	}
+	if(hasOptionStroke) { textDoc.applyStroke = true; }
+
+
+	for(const key in options) {
+		textDoc[key] = options[key];
+	}
+
+	target.sourceText.setValue(textDoc);
+
+	return target;
+};
+
+
+/**
+ * 设置属性
+ * @param {*} target 目标文本层
+ * @param {Object} options 新文本选项
+ * @returns {*} 目标文本层
+ */
+this.SetAttr = (target, options) => {
+	for(const key in options) {
+		target[key].setValue(options[key]);
+	}
+
+	return target;
 };

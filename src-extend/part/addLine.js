@@ -6,7 +6,11 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	const side = line.side;
 	const isMain = side == 'right';
 
-	const colorLineBox = !isMain ? (line.colorLineBox ? RGB.apply(this, line.colorLineBox) : RGBH('902222')) : RGBH(I.color || '1FAAF1');
+	const colorBoxLine = !isMain ?
+		(line.colorLineBox ?
+			RGB.apply(this, line.colorLineBox) :
+			RGBH('902222')) :
+		RGBH(I.color || '1FAAF1');
 
 	const eventText = line.eventDirect || line.event;
 	const markFinal = line.mark;
@@ -17,287 +21,407 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	const hasMark = !!markFinal;
 
 
-	const compLine = EnsureComp(indexText + line.line, duration, dirLine, 1920);
+	/** 合成宽度 */
+	const widthCompLine = Math.max(C.widthVideo, C.heightVideo);
+	/** 合成长度 */
+	const heightCompLine = C.heightVideo;
+
+	/** 台词字体颜色 */
+	const colorLine = RGBH('FFFAFA');
+	/** 备注字体颜色 */
+	const colorMark = RGBH('FFFAFA');
+
+	/** 台词盒边宽 */
+	const paddingLine = 40;
+	/** 台词盒到侧边的距离 */
+	const siteLine = C.isLandscape ? 200 : 140;
+	/** 台词盒到底边的距离 */
+	const bottomLine = C.isLandscape ? 100 : 160;
+
+	const leadingLine = C.video.size.heightLeading;
+
+	const topPaddingLineBox = 70;
+	const sidePaddingEvent = 50;
+	const sizeBoxTarget = 90;
+	const strokeBoxTarget = 24;
+	const sizeBoxSkill = 72;
+	const strokeBoxSkill = 7;
+
+	// --------------台词合成--------------
+	const compLine = EnsureComp(indexText + line.line, duration, dirLine, widthCompLine, heightCompLine);
 	compLine.bgColor = RGBH('0E0E0E');
 
+	/** 打开第一个台词的合成 */
 	if(lid == 0) { compLine.openInViewer(); }
 
-
+	/** 添加台词音频 */
 	if(line.audio && !C.video.mute) { compLine.layers.add(GetFootage(EvalString(line.audio), DirVoice)); }
 
 
 	const layerBoxMark = hasMark ? compLine.layers.addShape() : null;
-	const layerMarkBox = hasMark ? compLine.layers.addBoxText([1, 1], markFinal) : null;
+	const layerMark = hasMark ? compLine.layers.addBoxText([1, 1], markFinal) : null;
+
 
 	const layerBoxLine = compLine.layers.addShape();
+
 
 	const layerWaterMark = compLine.layers.addText();
 	const layerShade = (I.shade?.file) ? compLine.layers.add(GetFootage(EvalString(I.shade.file), DirFootage)) : null;
 
-	const layerCircleMainShadow = compLine.layers.addShape();
+	const layerBoxHeaderShadow = compLine.layers.addShape();
 
 	const layerBoxEvent = hasEvent ? compLine.layers.addShape() : null;
-
-	const layerCircleMain = compLine.layers.addShape();
-	const layerPictureMain = compLine.layers.add(GetFootage(EvalString(line.head), DirFootage));
-
-	const layerCircleTarget = hasTarget ? compLine.layers.addShape() : null;
-	const layerPictureTarget = hasTarget ? compLine.layers.add(GetFootage(EvalString(hasTarget), DirFootage)) : null;
-
-	const layerPictureSkill = hasSkill ? compLine.layers.add(GetFootage(EvalString(hasSkill), DirFootage)) : null;
-	const layerSquareSkill = hasSkill ? compLine.layers.addShape() : null;
-
 	const layerEvent = hasEvent ? compLine.layers.addText(eventText) : null;
-	const layerLineBox = compLine.layers.addBoxText([1, 1], line.line);
+
+	const layerBoxHeader = compLine.layers.addShape();
+	const layerHeader = compLine.layers.add(GetFootage(EvalString(line.head), DirFootage));
+
+	const layerBoxTarget = hasTarget ? compLine.layers.addShape() : null;
+	const layerTarget = hasTarget ? compLine.layers.add(GetFootage(EvalString(hasTarget), DirFootage)) : null;
+
+	const layerSkill = hasSkill ? compLine.layers.add(GetFootage(EvalString(hasSkill), DirFootage)) : null;
+	const layerBoxSkill = hasSkill ? compLine.layers.addShape() : null;
+
+
+	const layerLine = compLine.layers.addBoxText([1, 1], line.line);
 
 
 
+	layerLine.name = '台词';
+	layerBoxLine.name = '台词盒';
 
-	layerBoxLine.name = 'BoxLine';
-	if(hasEvent) { layerBoxEvent.name = 'BoxEvent'; }
+	layerHeader.name = '头像';
+	layerBoxHeader.name = '头像盒';
+	layerBoxHeaderShadow.name = '头像盒影';
 
-	if(hasTarget) { layerCircleTarget.name = 'CircleTarget'; }
-	if(hasTarget) { layerPictureTarget.name = 'PictureTarget'; }
+	layerWaterMark.name = '水印';
+	layerShade.name = '底纹';
 
-	layerCircleMain.name = 'CircleMain';
-	layerCircleMainShadow.name = 'CircleMainShadow';
-	layerPictureMain.name = 'PictureMain';
-
-	if(hasSkill) { layerPictureSkill.name = 'PictureSkill'; }
-	if(hasSkill) { layerSquareSkill.name = 'SquareSkill'; }
-
-	if(hasEvent) { layerEvent.name = 'Event'; }
-	layerLineBox.name = 'Line';
-	layerWaterMark.name = 'WaterMark';
-
-	// -------Line Box-------
-	const groupBoxLine = layerBoxLine.content.addProperty('ADBE Vector Group');
-
-	const borderBoxLine = groupBoxLine.content.addProperty('ADBE Vector Shape - Rect');
-	borderBoxLine.size.expression = GetExpression(side + '/' + 'followSizeBoxLine');
-	borderBoxLine.roundness.setValue(24);
-	borderBoxLine.position.setValue([0, 0]);
-
-	const fillBoxLine = groupBoxLine.content.addProperty('ADBE Vector Graphic - Fill');
-	fillBoxLine.color.setValue(colorLineBox);
-
-	layerBoxLine.transform.position.expression = GetExpression(side + '/' + 'followPositionBoxLine');
-
-	// -------Event Box-------
 	if(hasEvent) {
-		const groupBoxEvent = layerBoxEvent.content.addProperty('ADBE Vector Group');
-
-		const borderBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Shape - Rect');
-		borderBoxEvent.size.expression = GetExpression(side + '/' + 'followSizeBoxEvent');
-		borderBoxEvent.roundness.setValue(14);
-		borderBoxEvent.position.setValue([0, 0]);
-
-		const fillBoxEvent = groupBoxEvent.content.addProperty('ADBE Vector Graphic - Fill');
-		fillBoxEvent.color.setValue(RGBH('FFFAFA'));
-
-		layerBoxEvent.transform.position.expression = GetExpression(side + '/' + 'followPositionBoxEvent');
-
-		const effectDropShadowBoxEvent = layerBoxEvent.effect.addProperty('ADBE Drop Shadow');
-		effectDropShadowBoxEvent[L.shadowColor].setValue(RGBH('495051'));
-		effectDropShadowBoxEvent[L.direction].setValue(135);
-		effectDropShadowBoxEvent[L.opacity].setValue((70 / 100) * 255);
-		effectDropShadowBoxEvent[L.distance].setValue(14);
-		effectDropShadowBoxEvent[L.softness].setValue(7);
-	}
-
-	// -------Main Circle-------
-	const groupCircleMain = layerCircleMain.content.addProperty('ADBE Vector Group');
-
-	const borderCircleMain = groupCircleMain.content.addProperty('ADBE Vector Shape - Ellipse');
-	borderCircleMain.size.setValue([160, 160]);
-	borderCircleMain.position.setValue([0, 0]);
-
-	const strokeCircleMain = groupCircleMain.content.addProperty('ADBE Vector Graphic - Stroke');
-	strokeCircleMain.color.setValue(RGBH('FFFAFA'));
-	strokeCircleMain.strokeWidth.setValue(40);
-
-	const fillCircleMain = groupCircleMain.content.addProperty('ADBE Vector Graphic - Fill');
-	fillCircleMain.color.setValue(RGBH('FFFFFF'));
-
-	layerCircleMain.transform.position.expression = GetExpression(side + '/' + 'followPositionCircleMain');
-
-	const groupCircleMainShadow = layerCircleMainShadow.content.addProperty('ADBE Vector Group');
-
-	const borderCircleMainShadow = groupCircleMainShadow.content.addProperty('ADBE Vector Shape - Ellipse');
-	borderCircleMainShadow.size.setValue([160, 160]);
-	borderCircleMainShadow.position.setValue([0, 0]);
-
-	const strokeCircleMainShadow = groupCircleMainShadow.content.addProperty('ADBE Vector Graphic - Stroke');
-	strokeCircleMainShadow.color.setValue(RGBH('FFFAFA'));
-	strokeCircleMainShadow.strokeWidth.setValue(40);
-
-	layerCircleMainShadow.transform.position.expression = GetExpression(side + '/' + 'followPositionCircleMain');
-
-	const effectDropShadowCircleMain = layerCircleMainShadow.effect.addProperty('ADBE Drop Shadow');
-	effectDropShadowCircleMain[L.shadowColor].setValue(RGBH('495051'));
-	effectDropShadowCircleMain[L.direction].setValue(isMain ? 225 : 135);
-	effectDropShadowCircleMain[L.opacity].setValue((70 / 100) * 255);
-	effectDropShadowCircleMain[L.distance].setValue(11);
-	effectDropShadowCircleMain[L.softness].setValue(7);
-	effectDropShadowCircleMain[L.shadowOnly].setValue(1);
-
-	// -------Main Picture-------
-	layerPictureMain.transform.scale.setValue([150 * (line.flipHor ? -1 : 1), 150]);
-	layerPictureMain.transform.position.expression = GetExpression(side + '/' + 'followPositionCircleMain');
-
-
-	if(hasSkill) {
-		// -------Skill Square-------
-		const groupSquareSkill = layerSquareSkill.content.addProperty('ADBE Vector Group');
-
-		const borderSquareSkill = groupSquareSkill.content.addProperty('ADBE Vector Shape - Rect');
-		borderSquareSkill.size.setValue([72, 72]);
-		borderSquareSkill.position.setValue([0, 0]);
-		borderSquareSkill.roundness.setValue(7);
-
-		const strokeSquareSkill = groupSquareSkill.content.addProperty('ADBE Vector Graphic - Stroke');
-		strokeSquareSkill.color.setValue(RGBH('FFFAFA'));
-		strokeSquareSkill.strokeWidth.setValue(7);
-
-		layerSquareSkill.transform.position.expression = GetExpression(side + '/' + 'followPositionSquareSkill');
-
-		// -------Skill Picture-------
-		layerPictureSkill.transform.scale.setValue([114, 114]);
-		layerPictureSkill.transform.position.expression = GetExpression(side + '/' + 'followPositionSquareSkill');
+		layerEvent.name = '事件';
+		layerBoxEvent.name = '事件盒';
 	}
 
 	if(hasTarget) {
-		// -------Target Circle-------
-		const groupCircleTarget = layerCircleTarget.content.addProperty('ADBE Vector Group');
-
-		const borderCircleTarget = groupCircleTarget.content.addProperty('ADBE Vector Shape - Ellipse');
-		borderCircleTarget.size.setValue([90, 90]);
-		borderCircleTarget.position.setValue([0, 0]);
-
-		const strokeCircleTarget = groupCircleTarget.content.addProperty('ADBE Vector Graphic - Stroke');
-		strokeCircleTarget.color.setValue(RGBH('FFFAFA'));
-		strokeCircleTarget.strokeWidth.setValue(24);
-
-		const fillCircleTarget = groupCircleTarget.content.addProperty('ADBE Vector Graphic - Fill');
-		fillCircleTarget.color.setValue(RGBH('FFFFFF'));
-
-		layerCircleTarget.transform.position.expression = GetExpression(side + '/' + 'followPositionCircleTarget');
-
-		// -------Target Picture-------
-		layerPictureTarget.transform.scale.setValue([80, 80]);
-		layerPictureTarget.transform.position.expression = GetExpression(side + '/' + 'followPositionCircleTarget');
+		layerTarget.name = '对象';
+		layerBoxTarget.name = '对象盒';
 	}
 
-	// -------Event-------
-	if(hasEvent) {
-		layerEvent.transform.position.expression = GetExpression(side + '/' + 'followPositionTextEvent');
-
-		const textDocEvent = layerEvent.sourceText.value;
-		textDocEvent.resetCharStyle();
-		textDocEvent.fontSize = C.video.size.fontLine;
-		textDocEvent.fillColor = RGBH('495051');
-		textDocEvent.font = 'Source Han Mono SC';
-		textDocEvent.applyStroke = true;
-		textDocEvent.strokeColor = RGBH('495051');
-		textDocEvent.strokeWidth = 2;
-		textDocEvent.text = eventText;
-		layerEvent.sourceText.setValue(textDocEvent);
+	if(hasSkill) {
+		layerSkill.name = '技能';
+		layerBoxSkill.name = '技能盒';
 	}
 
-	// -------台词-------
-	layerLineBox.transform.position.setValue([0, 1000]);
-	layerLineBox.transform.position.expression = GetExpression(side + '/' + 'limitPositionLine')
-		.replace(/\$side\$/g, C.isLandscape ? 340 : 140)
-		.replace(/\$bottom\$/g, C.isLandscape ? 100 : 160)
-		.replace(/\$bottomMark\$/g, (line.boxHeightMark + 20) || 0);
-
-	const colorLine = RGBH('FFFAFA');
-
-	const textDocLine = layerLineBox.sourceText.value;
-	textDocLine.resetCharStyle();
-	textDocLine.fontSize = C.video.size.fontLine;
-	textDocLine.fillColor = colorLine;
-	textDocLine.font = 'Source Han Mono SC';
-	textDocLine.applyStroke = true;
-	textDocLine.strokeColor = colorLine;
-	textDocLine.strokeWidth = 2;
-
-	textDocLine.boxTextSize = line.boxTextSize;
-	textDocLine.leading = C.video.size.fontLine + C.video.size.heightLeading;
-	textDocLine.text = line.line;
-	layerLineBox.sourceText.setValue(textDocLine);
-
-
-
-
-	// -------水印-------
-	layerWaterMark.transform.position.setValue([0, 1000]);
-	layerWaterMark.transform.position.expression = GetExpression(side + '/' + 'followPositionWaterMark');
-
-	const textWaterMark = layerWaterMark.sourceText.value;
-	textWaterMark.resetCharStyle();
-	textWaterMark.fontSize = C.video.size.fontLine - 20;
-	textWaterMark.fillColor = colorLine;
-	textWaterMark.font = 'Source Han Mono SC';
-	textWaterMark.applyStroke = true;
-	textWaterMark.strokeWidth = 0;
-	textWaterMark.leading = C.video.size.fontLine - 20 + C.video.size.heightLeading;
-	textWaterMark.text = 'DR';
-	layerWaterMark.opacity.setValue(14);
-	layerWaterMark.sourceText.setValue(textWaterMark);
-
-
-	// -------底纹-------
-	if(layerShade) {
-		layerShade.transform.position.setValue([0, 1000]);
-		layerShade.transform.position.expression = GetExpression(side + '/' + 'followPositionShade');
-		layerShade.opacity.setValue(24);
-		layerShade.scale.setValue(I.shade.scale ?? [100, 100]);
-		layerShade.effect.addProperty('ADBE Black&White');
-	}
-
-
-	// -------备注-------
 	if(hasMark) {
-		layerBoxMark.name = 'BoxMark';
-		layerMarkBox.name = 'Mark';
-
-		// -------备注框-------
-		const groupBoxMark = layerBoxMark.content.addProperty('ADBE Vector Group');
-
-		const borderBoxMark = groupBoxMark.content.addProperty('ADBE Vector Shape - Rect');
-		borderBoxMark.size.expression = GetExpression('mark/followSizeBoxMark');
-		borderBoxMark.roundness.setValue(14);
-		borderBoxMark.position.setValue([0, 0]);
-
-		const fillBoxMark = groupBoxMark.content.addProperty('ADBE Vector Graphic - Fill');
-		fillBoxMark.color.setValue(RGBH('495051'));
-
-		layerBoxMark.transform.position.expression = GetExpression('mark/followPositionBoxMark');
-		layerBoxMark.transform.opacity.setValueAtTime(0, 66);
-
-		// -------备注-------
-		layerMarkBox.transform.position.setValue([0, 1000]);
-		layerMarkBox.transform.position.expression = GetExpression('mark/limitPositionMark')
-			.replace(/\$sider\$/g, '\'' + line.side + '\'')
-			.replace(/\$side\$/g, C.isLandscape ? 340 : 140)
-			.replace(/\$bottom\$/g, C.isLandscape ? 100 : 160);
-
-		const colorMark = RGBH('FFFAFA');
-
-		const textDocMark = layerMarkBox.sourceText.value;
-		textDocMark.resetCharStyle();
-		textDocMark.fontSize = C.video.size.fontMark;
-		textDocMark.fillColor = colorMark;
-		textDocMark.font = 'Source Han Mono SC';
-		textDocMark.applyStroke = true;
-		textDocMark.strokeColor = colorMark;
-		textDocMark.strokeWidth = 1;
-		textDocMark.boxTextSize = line.boxTextSizeMark;
-		textDocMark.leading = C.video.size.fontMark + C.video.size.heightLeading;
-		textDocMark.text = markFinal;
-		layerMarkBox.sourceText.setValue(textDocMark);
+		layerMark.name = '备注';
+		layerBoxMark.name = '备注盒';
 	}
+
+
+
+	// --------------台词--------------
+	SetText(layerLine, {
+		fillColor: colorLine,
+		font: 'Source Han Mono SC',
+		fontSize: C.video.size.fontLine,
+		strokeColor: colorLine,
+		strokeWidth: 2,
+		boxTextSize: line.boxTextSize,
+		leading: C.video.size.fontLine + leadingLine,
+		text: line.line,
+	});
+	// const baselineLocationLine = layerLine.sourceText.value.baselineLocs;
+
+
+	const rectLine = layerLine.sourceRectAtTime(0, false);
+
+	const paddingMark = 20;
+	const xLine = widthCompLine - line.boxTextSize[0] - siteLine - paddingLine;
+	const yLine = heightCompLine - rectLine.height - bottomLine - paddingLine - (hasMark ? line.boxHeightMark + paddingMark : 0);
+
+
+	SetAttr(layerLine.transform, { position: [xLine, yLine] });
+
+
+	// --------------台词盒--------------
+	const widthBoxLine = line.boxTextSize[0] + paddingLine * 2;
+	const heightBoxLine = rectLine.height + paddingLine * 2 + topPaddingLineBox;
+
+	const boxLine = AddProperty(layerBoxLine.content, 'ADBE Vector Group');
+
+	SetAttr(AddProperty(boxLine.content, 'ADBE Vector Shape - Rect'), {
+		size: [widthBoxLine, heightBoxLine],
+		roundness: 14,
+	});
+	$.writeln(widthBoxLine);
+	$.writeln(heightBoxLine);
+
+	SetAttr(AddProperty(boxLine.content, 'ADBE Vector Graphic - Fill'), { color: colorBoxLine });
+
+	SetAttr(layerBoxLine.transform, {
+		position: [
+			xLine + widthBoxLine / 2 - paddingLine,
+			yLine + heightBoxLine / 2 - paddingLine - topPaddingLineBox - leadingLine / 2,
+		],
+	});
+
+
+
+	// --------------底纹--------------
+	if(layerShade) {
+		const rectShade = layerShade.sourceRectAtTime(0, false);
+
+		SetAttr(layerShade.transform, {
+			position: [
+				xLine + rectShade.width / 2 - paddingLine,
+				yLine - rectShade.height / 2 + paddingLine,
+			],
+			opacity: I.shade.opacity ?? 24,
+			scale: I.shade.scale ?? [100, 100],
+		});
+
+		if(I.shade.gray === undefined || I.shade.gray) {
+			AddProperty(layerShade.effect, 'ADBE Black&White');
+		}
+
+		if(I.shade.invert === undefined || I.shade.invert) {
+			AddProperty(layerShade.effect, 'ADBE Invert');
+		}
+	}
+
+
+
+	// --------------头像--------------
+	const xHeader = xLine + widthBoxLine - paddingLine;
+	const yHeader = yLine - paddingLine - topPaddingLineBox - leadingLine / 2;
+
+	SetAttr(layerHeader.transform, { scale: [(line.flipHor ? -1 : 1) * 150, 150] });
+
+	SetAttr(layerHeader.transform, { position: [xHeader, yHeader] });
+
+
+	// --------------头像盒--------------
+	const boxHeader = AddProperty(layerBoxHeader.content, 'ADBE Vector Group');
+	const sizeBoxHeader = 200;
+
+	SetAttr(AddProperty(boxHeader.content, 'ADBE Vector Shape - Ellipse'), {
+		size: [sizeBoxHeader, sizeBoxHeader],
+	});
+
+	SetAttr(AddProperty(boxHeader.content, 'ADBE Vector Graphic - Fill'), { color: RGBH('FFFAFA'), });
+
+	SetAttr(layerBoxHeader.transform, { position: [xHeader, yHeader] });
+
+	const boxHeaderShadow = AddProperty(layerBoxHeaderShadow.content, 'ADBE Vector Group');
+
+	SetAttr(AddProperty(boxHeaderShadow.content, 'ADBE Vector Shape - Ellipse'), {
+		size: [sizeBoxHeader, sizeBoxHeader],
+	});
+	SetAttr(AddProperty(boxHeaderShadow.content, 'ADBE Vector Graphic - Fill'), { color: RGBH('FFFAFA'), });
+
+	SetAttr(layerBoxHeaderShadow.transform, { position: [xHeader, yHeader] });
+
+	SetAttr(AddProperty(layerBoxHeaderShadow.effect, 'ADBE Drop Shadow'), {
+		[L.shadowColor]: RGBH('495051'),
+		[L.direction]: isMain ? 225 : 135,
+		[L.opacity]: (70 / 100) * 255,
+		[L.distance]: 11,
+		[L.softness]: 7,
+		[L.shadowOnly]: 1,
+	});
+
+
+
+	// --------------水印--------------
+	const fontSizeWaterMark = C.video.size.fontLine - 20;
+
+	SetText(layerWaterMark, {
+		fontSize: fontSizeWaterMark,
+		fillColor: colorLine,
+		font: 'Source Han Mono',
+		strokeWidth: 2,
+		strokeColor: colorLine,
+		leading: fontSizeWaterMark + leadingLine,
+		text: 'DR',
+	});
+	const rectWaterMark = layerWaterMark.sourceRectAtTime(0, false);
+
+
+	SetAttr(layerWaterMark.transform, {
+		position: [
+			xHeader - rectWaterMark.width / 2,
+			yHeader + rectWaterMark.height + sizeBoxHeader / 2 - 5,
+		],
+		opacity: 14,
+	});
+
+
+
+
+
+
+	if(hasEvent) {
+		// --------------事件--------------
+		SetText(layerEvent, {
+			fontSize: C.video.size.fontLine,
+			fillColor: RGBH('495051'),
+			font: 'Source Han Mono SC',
+			applyStroke: true,
+			strokeColor: RGBH('495051'),
+			strokeWidth: 2,
+			text: eventText,
+		});
+		const rectEvent = layerEvent.sourceRectAtTime(0, false);
+
+
+		const xEvent = xHeader - rectEvent.width - paddingLine * 2 - sidePaddingEvent;
+		const yEvent = yHeader + rectEvent.height / 2 - leadingLine / 2;
+
+		SetAttr(layerEvent.transform, { position: [xEvent, yEvent] });
+
+
+
+		// --------------事件盒--------------
+		const boxEvent = AddProperty(layerBoxEvent.content, 'ADBE Vector Group');
+
+		SetAttr(AddProperty(boxEvent.content, 'ADBE Vector Shape - Rect'), {
+			size: [
+				rectEvent.width + paddingLine * 2 + topPaddingLineBox,
+				rectEvent.height + paddingLine * 2,
+			],
+			roundness: 14,
+		});
+
+		SetAttr(AddProperty(boxEvent.content, 'ADBE Vector Graphic - Fill'), { color: RGBH('FFFAFA') });
+
+		SetAttr(layerBoxEvent.transform, {
+			position: [
+				xEvent + rectEvent.width / 2 + sidePaddingEvent - paddingLine / 2 - 10,
+				yEvent - rectEvent.height / 2 + leadingLine / 2,
+			],
+		});
+
+
+		SetAttr(AddProperty(layerBoxEvent.effect, 'ADBE Drop Shadow'), {
+			[L.shadowColor]: RGBH('495051'),
+			[L.direction]: 135,
+			[L.opacity]: (70 / 100) * 255,
+			[L.distance]: 14,
+			[L.softness]: 7,
+		});
+	}
+
+
+
+	if(hasSkill) {
+
+
+		// --------------技能图标--------------
+		SetAttr(layerSkill.transform, { scale: [114, 114] });
+
+		SetAttr(layerSkill.transform, {
+			position: [
+				xHeader + sizeBoxHeader / 2 - sizeBoxSkill / 2 + strokeBoxSkill,
+				yHeader + sizeBoxHeader / 2 - sizeBoxSkill / 2 + strokeBoxSkill,
+			],
+		});
+
+
+		// --------------技能盒--------------
+		SetAttr(layerBoxSkill.transform, {
+			position: [
+				xHeader + sizeBoxHeader / 2 - sizeBoxSkill / 2 + strokeBoxSkill,
+				yHeader + sizeBoxHeader / 2 - sizeBoxSkill / 2 + strokeBoxSkill,
+			],
+		});
+
+		const boxSkill = AddProperty(layerBoxSkill.content, 'ADBE Vector Group');
+
+		SetAttr(AddProperty(boxSkill.content, 'ADBE Vector Shape - Rect'), {
+			size: [72, 72],
+			roundness: 7,
+		});
+
+		SetAttr(AddProperty(boxSkill.content, 'ADBE Vector Graphic - Stroke'), { color: RGBH('FFFAFA'), strokeWidth: 7 });
+	}
+
+
+
+	if(hasTarget) {
+		const xTarget = xHeader - sizeBoxHeader / 2 + 14;
+		const yTarget = yHeader - sizeBoxHeader / 2 + 14;
+
+		// --------------技能图标--------------
+		SetAttr(layerTarget.transform, { scale: [80, 80], position: [xTarget, yTarget] });
+
+
+
+		// --------------对象盒--------------
+		const boxTarget = AddProperty(layerBoxTarget.content, 'ADBE Vector Group');
+
+		SetAttr(AddProperty(boxTarget.content, 'ADBE Vector Shape - Ellipse'), {
+			size: [sizeBoxTarget, sizeBoxTarget],
+		});
+
+		SetAttr(AddProperty(boxTarget.content, 'ADBE Vector Graphic - Stroke'), { color: RGBH('FFFAFA'), strokeWidth: strokeBoxTarget });
+
+
+		SetAttr(layerBoxTarget.transform, { position: [xTarget, yTarget] });
+	}
+
+
+
+	if(hasMark) {
+		// --------------备注--------------
+		SetText(layerMark, {
+			fillColor: colorMark,
+			font: 'Source Han Mono SC',
+			fontSize: C.video.size.fontMark,
+			strokeColor: colorMark,
+			strokeWidth: 1,
+			boxTextSize: line.boxTextSizeMark,
+			leading: C.video.size.fontMark + leadingLine,
+			text: markFinal,
+		});
+		const baselineLocationMark = layerMark.sourceText.value.baselineLocs;
+		const rectMark = layerMark.sourceRectAtTime(0, false);
+
+		const xMark = widthCompLine - baselineLocationMark[2] - siteLine - paddingMark;
+		const yMark = heightCompLine - rectMark.height - bottomLine - paddingMark;
+
+		SetAttr(layerMark.transform, {
+			position: [
+				widthCompLine - baselineLocationMark[2] - siteLine - paddingMark,
+				heightCompLine - rectMark.height - bottomLine - paddingMark,
+			],
+		});
+
+
+
+		// --------------备注框--------------
+		const boxMark = AddProperty(layerBoxMark.content, 'ADBE Vector Group');
+
+
+		SetAttr(AddProperty(boxMark.content, 'ADBE Vector Shape - Rect'), {
+			roundness: 14,
+			size: [
+				baselineLocationMark[2] + paddingMark * 2,
+				rectMark.height + paddingMark * 2,
+			]
+		});
+
+		SetAttr(AddProperty(boxMark.content, 'ADBE Vector Graphic - Fill'), { color: RGBH('495051'), });
+
+
+		SetAttr(layerBoxMark.transform, {
+			opacity: 66,
+			position: [
+				xMark + baselineLocationMark[2] / 2,
+				yMark + rectMark.height / 2,
+			]
+		});
+	}
+
 
 
 	return compLine;

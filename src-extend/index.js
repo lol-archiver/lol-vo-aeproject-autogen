@@ -71,4 +71,5 @@ if(!C.video.simple) {
 	$.writeln('Statge: AddEnding');
 }
 
+
 CompMain.openInViewer();

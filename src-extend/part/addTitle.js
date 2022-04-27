@@ -1,8 +1,8 @@
 const makeTitle = () => {
-	const offsetBar = 80;
+	const offsetBar = 200;
 	const offsetText = 12;
 	const offsetTrim = 10;
-	const fontSize = 100;
+	const fontSize = 140;
 
 	const fontSizeHalf = fontSize / 2;
 	const widthVideoHalf = C.widthVideo / 2;
@@ -39,8 +39,8 @@ const makeTitle = () => {
 
 	textT.transform.anchorPoint.setValue([widthTextT, -(fontSizeHalf - offsetText)]);
 
-	textT.transform.position.setValueAtTime(0.7, [widthVideoHalf - offsetTrim, heightVideoHalf - fontSizeHalf]);
-	textT.transform.position.setValueAtTime(2, [widthVideoHalf + (widthTextT / 2), heightVideoHalf - fontSizeHalf]);
+	textT.transform.position.setValueAtTime(0.7, [widthVideoHalf - offsetTrim, heightVideoHalf - fontSizeHalf - 5]);
+	textT.transform.position.setValueAtTime(2, [widthVideoHalf + (widthTextT / 2), heightVideoHalf - fontSizeHalf - 5]);
 	SetEase(textT.transform.position, 1, 2, Ease1);
 
 	const dropShadowTextT = AddProperty(textT.effect, 'ADBE Drop Shadow');
@@ -68,8 +68,8 @@ const makeTitle = () => {
 
 	textB.transform.anchorPoint.setValue([0, -(fontSizeHalf - offsetText)]);
 
-	textB.transform.position.setValueAtTime(0.7, [widthVideoHalf + offsetTrim, heightVideoHalf + fontSizeHalf]);
-	textB.transform.position.setValueAtTime(2, [widthVideoHalf - (widthTextB / 2), heightVideoHalf + fontSizeHalf]);
+	textB.transform.position.setValueAtTime(0.7, [widthVideoHalf + offsetTrim, heightVideoHalf + fontSizeHalf + 5]);
+	textB.transform.position.setValueAtTime(2, [widthVideoHalf - (widthTextB / 2), heightVideoHalf + fontSizeHalf + 5]);
 	SetEase(textB.transform.position, 1, 2, Ease1);
 
 	const dropShadowTextB = AddProperty(textB.effect, 'ADBE Drop Shadow');

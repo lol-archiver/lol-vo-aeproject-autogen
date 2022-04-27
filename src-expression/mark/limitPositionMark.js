@@ -9,6 +9,7 @@ const bottom = $bottom$;
 
 if($sider$ == 'right') {
 	[
+		// rect.width,
 		thisComp.width - rect.width + 0.5 - (padding + right),
 		thisComp.height - rect.height - bottom
 	];

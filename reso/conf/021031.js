@@ -11,9 +11,9 @@ export default {
 		name: 'Battle Bunny'
 	},
 	color: '#D36CB5',
-	splash: 'D:/project/@lol/lol-wad-extract/test3.png',
+	splashMiddle: '${C.dirAutogen}/reso/splash-left/021031.png',
 	shade: {
-		file: 'D:/project/@lol/lol-vo-aeproject-autogen-dev/reso/shade/021031.png',
+		file: '${C.dirAutogen}/reso/shade/021031.png',
 		// scale: [100, 140],
 	},
 	events: {

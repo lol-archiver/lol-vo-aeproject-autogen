@@ -6,6 +6,8 @@ this.AddCounter = () => {
 
 	layerWaterMark.startTime = D.opener + 1;
 	layerWaterMark.duration = D.linesEnd;
+	layerWaterMark.transform.opacity.setValueAtTime(D.opener + 1, 0);
+	layerWaterMark.transform.opacity.setValueAtTime(D.opener + 3, 100);
 
 
 	const effectDropShadowWaterMark = layerWaterMark.effect.addProperty('ADBE Drop Shadow');

@@ -20,6 +20,7 @@ const rcExtend = {
 		Item: 'readonly',
 		FolderItem: 'readonly',
 		CompItem: 'readonly',
+		TextLayer: 'readonly',
 
 
 		PATH_CONFIG: 'readonly',
@@ -37,6 +38,8 @@ const rcExtend = {
 		EnumLine: 'readonly',
 		GetBoxSize: 'readonly',
 		GetBoxSizeMark: 'readonly',
+		SetText: 'readonly',
+		SetAttr: 'readonly',
 
 		C: 'readonly',
 		I: 'readonly',
