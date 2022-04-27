@@ -10,7 +10,13 @@ export default {
 		id: 34,
 		name: 'High Noon'
 	},
-	color: '#D36CB5',
+	color: '#D43C2B',
+	splashMiddle: '${C.dirAutogen}/reso/splash-left/089034.png',
+	shade: {
+		file: '${C.dirAutogen}/reso/shade/089034.png',
+		opacity: 20,
+		// invert: false,
+	},
 	events: {
 		'[初遇:英雄:崔斯特]、[初遇:英雄:格雷福斯]':
 			{ target: '${C.dirAutogen}/reso/other/TwistedFateGraves.png' },
@@ -23,9 +29,9 @@ export default {
 		'[击杀:皮肤:西部魔影 莫德凯撒]':
 			{ target: '${C.dirAutogen}/reso/icon/Mordekaiser/32.png' },
 		'[初遇:皮肤:西部天使 艾希]':
-			{ target: '${C.dirAutogen}/reso/icon/Ashe/20.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Ashe/17.png' },
 		'[击杀:皮肤:西部天使 艾希]':
-			{ target: '${C.dirAutogen}/reso/icon/Ashe/20.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Ashe/17.png' },
 		'[初遇:皮肤:西部魔影 卢锡安]':
 			{ target: '${C.dirAutogen}/reso/icon/Lucian/8.png' },
 		'[击杀:皮肤:西部魔影 卢锡安]':
@@ -34,28 +40,28 @@ export default {
 			{ target: '${C.dirAutogen}/reso/icon/Senna/10.png' },
 		'[击杀:皮肤:西部天使 赛娜]':
 			{ target: '${C.dirAutogen}/reso/icon/Senna/10.png' },
-		'[初遇:皮肤:西部天使 卡特琳娜]':
+		'[初遇:皮肤:西部魔影 卡特琳娜]':
 			{ target: '${C.dirAutogen}/reso/icon/Katarina/37.png' },
+		'[初遇:皮肤:西部魔影 泰隆]':
+			{ target: '${C.dirAutogen}/reso/icon/Talon/38.png' },
+		'[初遇:皮肤:西部魔影 维鲁斯]':
+			{ target: '${C.dirAutogen}/reso/icon/Varus/34.png' },
+
 		'[初遇:皮肤:西部魔影 莎弥拉]':
-			{ target: '${C.dirAutogen}/reso/icon/Katarina/37.png' },
+			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
+		// { target: '${C.dirAutogen}/reso/icon/Samira/20.png' },
 		'[初遇:皮肤:西部魔影 塞恩]':
 			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
-			// { target: '${C.dirAutogen}/reso/icon/Sion/30.png' },
+		// { target: '${C.dirAutogen}/reso/icon/Sion/30.png' },
 		'[初遇:皮肤:西部魔影 塔姆]':
 			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
-			// { target: '${C.dirAutogen}/reso/icon/TahmKench/20.png' },
-		'[初遇:皮肤:西部魔影 泰隆]':
-			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
-			// { target: '${C.dirAutogen}/reso/icon/Talon/38.png' },
+		// { target: '${C.dirAutogen}/reso/icon/TahmKench/20.png' },
 		'[初遇:皮肤:西部魔影 图奇]':
 			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
-			// { target: '${C.dirAutogen}/reso/icon/Twitch/45.png' },
-		'[初遇:皮肤:西部魔影 维鲁斯]':
-			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
-			// { target: '${C.dirAutogen}/reso/icon/Varus/34.png' },
+		// { target: '${C.dirAutogen}/reso/icon/Twitch/45.png' },
 		'[初遇:皮肤:西部魔影 维克托]':
 			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
-			// { target: '${C.dirAutogen}/reso/icon/Viktor/14.png' },
+		// { target: '${C.dirAutogen}/reso/icon/Viktor/14.png' },
 
 		'[使用:Q技能:破晓之盾]':
 			{ skill: '${C.dirAutogen}/reso/icon/Leona/Q.png' },
@@ -65,6 +71,13 @@ export default {
 			{ skill: '${C.dirAutogen}/reso/icon/Leona/E.png' },
 		'[使用:R技能:日炎耀斑]':
 			{ skill: '${C.dirAutogen}/reso/icon/Leona/R.png' },
+		'[学习:R技能:日炎耀斑::1级]':
+			{ skill: '${C.dirAutogen}/reso/icon/Leona/R.png' },
+
+		'[使用:道具:监视图腾]':
+			{ skill: '${C.dirAutogen}/reso/icon/Item/3350_greateryellowtrinket.png' },
+		'[击杀:道具:监视图腾]':
+			{ skill: '${C.dirAutogen}/reso/icon/Item/3350_greateryellowtrinket.png' },
 	},
 	lines: {
 		'16BAC83F': { mark: '20%机率触发，每次触发相隔至少60秒，每局最多触发4次' },
