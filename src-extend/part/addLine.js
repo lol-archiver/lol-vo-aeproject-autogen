@@ -64,9 +64,9 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 	const layerBoxLine = compLine.layers.addShape();
 
+	const layerShade = (I.shade?.file) ? compLine.layers.add(GetFootage(EvalString(I.shade.file), DirFootage)) : null;
 
 	const layerWaterMark = compLine.layers.addText();
-	const layerShade = (I.shade?.file) ? compLine.layers.add(GetFootage(EvalString(I.shade.file), DirFootage)) : null;
 
 	const layerBoxHeaderShadow = compLine.layers.addShape();
 
@@ -170,11 +170,11 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	// --------------底纹--------------
 	if(layerShade) {
 		const rectShade = layerShade.sourceRectAtTime(0, false);
-
+		layerBoxLine.trackMatteType = TrackMatteType.ALPHA_INVERTED;
 		SetAttr(layerShade.transform, {
 			position: [
-				xLine + rectShade.width / 2 - paddingLine,
-				yLine - rectShade.height / 2 + paddingLine,
+				xLine - paddingLine + rectShade.width / 2,
+				yLine - paddingLine - topPaddingLineBox + rectShade.height / 2,
 			],
 			opacity: I.shade.opacity ?? 24,
 			scale: I.shade.scale ?? [100, 100],
