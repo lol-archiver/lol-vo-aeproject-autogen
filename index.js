@@ -7,7 +7,7 @@ import { dirReso, dirSrcExtend } from './lib/global.js';
 import parseLine from './lib/parseLine.js';
 
 
-C.slot = C.slots[0];
+C.slot = C.special ?? C.slots[0];
 
 const fileInfo = resolve(dirReso, 'info', `${C.slot}.json`);
 
@@ -20,50 +20,41 @@ writeFileSync(resolve(dirSrcExtend, 'lib', 'config.path.js'),
 );
 
 
-// const parseConfig = function(str) {
-// 	return str.replace(/\$\{.+?\}/g, function(text) {
-// 		try {
-// 			C;
-// 			return eval(text.replace(/(^\$\{)|(\}$)/g, ''));
-// 		}
-// 		catch(error) {
-// 			return text;
-// 		}
-// 	});
-// };
-
-const textsLine = readFileSync(C.fileDictation, 'UTF8').split('\n').filter((text) => text.trim() && !text.trim().startsWith('<!--'));
-
-const eventsExtra = CR.events ?? {};
-
 const eventsRaw = [];
 
-let isLineStart = false;
-let linesNow;
-for(const textLine of textsLine) {
-	if(!isLineStart) {
-		if(textLine == '## Lines:台词') { isLineStart = true; }
+if(C.fileDictation) {
+	const textsLine = readFileSync(C.fileDictation, 'UTF8').split('\n').filter((text) => text.trim() && !text.trim().startsWith('<!--'));
 
-		continue;
-	}
+	const eventsExtra = CR.events ?? {};
 
-	if(textLine.startsWith('### ')) {
-		const event = {
-			event: textLine.replace('### **', '').replace('**', '').replace(/^\d+ /, ''),
-			lines: [],
-		};
 
-		linesNow = event.lines;
+	let isLineStart = false;
+	let linesNow;
+	for(const textLine of textsLine) {
+		if(!isLineStart) {
+			if(textLine == '## Lines:台词') { isLineStart = true; }
 
-		eventsRaw.push(Object.assign(event, eventsExtra[event.event] ?? {}));
-	}
-	else {
-		if(textLine.startsWith('<!-- ')) { continue; }
+			continue;
+		}
 
-		const [idLineRaw, line] = textLine.replace(/^- `/, '').split('` ');
-		const [id, hash] = idLineRaw.split('|');
+		if(textLine.startsWith('### ')) {
+			const event = {
+				event: textLine.replace('### **', '').replace('**', '').replace(/^\d+ /, ''),
+				lines: [],
+			};
 
-		linesNow.push({ id, hash, line, });
+			linesNow = event.lines;
+
+			eventsRaw.push(Object.assign(event, eventsExtra[event.event] ?? {}));
+		}
+		else {
+			if(textLine.startsWith('<!-- ')) { continue; }
+
+			const [idLineRaw, line] = textLine.replace(/^- `/, '').split('` ');
+			const [id, hash] = idLineRaw.split('|');
+
+			linesNow.push({ id, hash, line, });
+		}
 	}
 }
 
@@ -104,17 +95,26 @@ includes?.forEach((id) => matchLine(id));
 
 const linesFinal = [];
 
-const namesAudio = readdirSync(C.dirAudio);
-for(const event of events) {
-	for(const line of event.lines) {
-		const eventSlice = Object.assign({}, event);
-		delete eventSlice.lines;
+if(!C.special) {
+	const namesAudio = readdirSync(C.dirAudio);
 
-		linesFinal.push(...(await parseLine(line, eventSlice, namesAudio, (CR.lines ?? {})[line.id])));
+	for(const event of events) {
+		for(const line of event.lines) {
+			const eventSlice = Object.assign({}, event);
+			delete eventSlice.lines;
+
+			linesFinal.push(...(await parseLine(line, eventSlice, namesAudio, (CR.lines ?? {})[line.id])));
+		}
+	}
+}
+else {
+	for(const lineSpecial of CR.linesSpecial) {
+		linesFinal.push(...(await parseLine(lineSpecial)));
 	}
 }
 
-const titleComp = `${C.video.width > C.video.height ? '' : '[竖屏] '}${C.slot} ${CR.skin.id > 0 ? '皮肤' : '英雄'} ${CR.title1} ${CR.title2}`;
+
+const titleComp = `${C.video.width > C.video.height ? '' : '[竖屏] '}${C.slot} ${C.special ? '特别' : (CR.skin.id > 0 ? '皮肤' : '英雄')} ${CR.title1} ${CR.title2}`;
 
 
 writeFileSync(fileInfo, JSON.stringify({
@@ -134,4 +134,9 @@ writeFileSync(fileInfo, JSON.stringify({
 }, null, '\t'));
 
 
-(console ?? {}).log(`已生成 [${C.slot}] ${CR.skin.name} ${CR.champion.name}`);
+if(C.special) {
+	(console ?? {}).log(`已生成 [${C.slot}] ${CR.title}`);
+}
+else {
+	(console ?? {}).log(`已生成 [${C.slot}] ${CR.skin.name} ${CR.champion.name}`);
+}

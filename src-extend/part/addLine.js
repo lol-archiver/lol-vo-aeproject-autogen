@@ -95,7 +95,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	layerBoxHeaderShadow.name = '头像盒影';
 
 	layerWaterMark.name = '水印';
-	layerShade.name = '底纹';
+	if(layerShade) { layerShade.name = '底纹'; }
 
 	if(hasEvent) {
 		layerEvent.name = '事件';
@@ -314,8 +314,6 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 
 	if(hasSkill) {
-
-
 		// --------------技能图标--------------
 		SetAttr(layerSkill.transform, { scale: [114, 114] });
 
@@ -383,15 +381,17 @@ this.AddLine = (line, lid, dirLine, duration) => {
 			leading: C.video.size.fontMark + leadingLine,
 			text: markFinal,
 		});
-		const baselineLocationMark = layerMark.sourceText.value.baselineLocs;
+		// const baselineLocationMark = layerMark.sourceText.value.baselineLocs;
+
+
 		const rectMark = layerMark.sourceRectAtTime(0, false);
 
-		const xMark = widthCompLine - baselineLocationMark[2] - siteLine - paddingMark;
+		const xMark = widthCompLine - line.boxTextSizeMark[0] - siteLine - paddingMark;
 		const yMark = heightCompLine - rectMark.height - bottomLine - paddingMark;
 
 		SetAttr(layerMark.transform, {
 			position: [
-				widthCompLine - baselineLocationMark[2] - siteLine - paddingMark,
+				widthCompLine - line.boxTextSizeMark[0] - siteLine - paddingMark,
 				heightCompLine - rectMark.height - bottomLine - paddingMark,
 			],
 		});
@@ -405,8 +405,8 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		SetAttr(AddProperty(boxMark.content, 'ADBE Vector Shape - Rect'), {
 			roundness: 14,
 			size: [
-				baselineLocationMark[2] + paddingMark * 2,
-				rectMark.height + paddingMark * 2,
+				line.boxTextSizeMark[0] + paddingMark * 2,
+				line.boxTextSizeMark[1] + paddingMark * 2,
 			]
 		});
 
@@ -416,7 +416,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		SetAttr(layerBoxMark.transform, {
 			opacity: 66,
 			position: [
-				xMark + baselineLocationMark[2] / 2,
+				xMark + line.boxTextSizeMark[0] / 2,
 				yMark + rectMark.height / 2,
 			]
 		});

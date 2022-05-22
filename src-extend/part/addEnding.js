@@ -6,7 +6,7 @@ this.AddEnding = () => {
 	const scaleSplashBackground = C.isLandscape ? 158 : 268;
 
 
-	const splashEnd = GetFootage(C.fileSplash);
+	const splashEnd = GetFootage(EvalString(C.fileSplash));
 	const layerSplashEnd = CompMain.layers.add(splashEnd, D.full);
 	layerSplashEnd.startTime = D.linesEnd + 2;
 

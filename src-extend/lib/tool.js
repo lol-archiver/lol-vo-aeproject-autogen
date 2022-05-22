@@ -196,6 +196,7 @@ this.GetBoxSize = text => {
 	textDocLine.leading = fontSize + heightLeading;
 	layerLine.sourceText.setValue(textDocLine);
 
+
 	const lengthsLine = [];
 	const lines = text.split('\n');
 	for(let i = 0; i < lines.length; i++) {
@@ -229,8 +230,8 @@ this.GetBoxSize = text => {
 this.GetBoxSizeMark = text => {
 	const fontSize = C.video.size.fontMark;
 	const heightLeading = C.video.size.heightLeading;
-	const widthMax = 1080;
-	const heightMax = 1080;
+	const widthMax = 1050;
+	const heightMax = 1050;
 
 	const layerLine = CompMain.layers.addBoxText([widthMax, heightMax], text);
 
@@ -245,14 +246,30 @@ this.GetBoxSizeMark = text => {
 	textDocLine.leading = fontSize + heightLeading;
 	layerLine.sourceText.setValue(textDocLine);
 
+
+	const widthsLine = [];
+	const lines = text.split('\n');
+	for(let i = 0; i < lines.length; i++) {
+		const line = lines[i];
+		const sizeHalf = (line.match(/[A-Za-z0-9.()%]/g) || []).length;
+
+		const widthLine = lines[i].length * fontSize - sizeHalf * Math.ceil(fontSize * 1 / 3 - 1);
+
+		widthsLine.push(widthLine);
+	}
+
+
+	const widthLineText = Math.max.apply(this, widthsLine);
+
+
 	const rect = layerLine.sourceRectAtTime(0, false);
 
-	const widthBox = Math.ceil(rect.width) + fontSize;
+	// const widthBox = Math.ceil(rect.width) + fontSize;
 	const lineBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
 
 	layerLine.remove();
 
-	return [widthBox, lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
+	return [Math.min(widthLineText, widthMax), lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
 };
 
 

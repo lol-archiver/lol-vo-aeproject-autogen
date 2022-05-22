@@ -1,6 +1,6 @@
 export default {
-	title: '西部魔影 蕾欧娜',
-	title1: '西部魔影',
+	title: '西部魔影 大小姐 蕾欧娜',
+	title1: '西部魔影 大小姐',
 	title2: '蕾欧娜',
 	champion: {
 		id: 89,
@@ -14,7 +14,8 @@ export default {
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/089034.png',
 	shade: {
 		file: '${C.dirAutogen}/reso/shade/089034.png',
-		opacity: 20,
+		scale: [150, 150],
+		opacity: 45,
 		// invert: false,
 	},
 	events: {
@@ -24,9 +25,9 @@ export default {
 			{ target: '${C.dirAutogen}/reso/icon/Diana/0.png' },
 		'[击杀:英雄:黛安娜]':
 			{ target: '${C.dirAutogen}/reso/icon/Diana/0.png' },
-		'[初遇:皮肤:西部魔影 莫德凯撒]':
+		'[初遇:皮肤:西部魔影 地狱列车长 莫德凯撒]':
 			{ target: '${C.dirAutogen}/reso/icon/Mordekaiser/32.png' },
-		'[击杀:皮肤:西部魔影 莫德凯撒]':
+		'[击杀:皮肤:西部魔影 地狱列车长 莫德凯撒]':
 			{ target: '${C.dirAutogen}/reso/icon/Mordekaiser/32.png' },
 		'[初遇:皮肤:西部天使 艾希]':
 			{ target: '${C.dirAutogen}/reso/icon/Ashe/17.png' },
@@ -40,28 +41,23 @@ export default {
 			{ target: '${C.dirAutogen}/reso/icon/Senna/10.png' },
 		'[击杀:皮肤:西部天使 赛娜]':
 			{ target: '${C.dirAutogen}/reso/icon/Senna/10.png' },
-		'[初遇:皮肤:西部魔影 卡特琳娜]':
+		'[初遇:皮肤:西部魔影 执行人 卡特琳娜]':
 			{ target: '${C.dirAutogen}/reso/icon/Katarina/37.png' },
-		'[初遇:皮肤:西部魔影 泰隆]':
+		'[初遇:皮肤:西部魔影 猎天使恶魔 泰隆]':
 			{ target: '${C.dirAutogen}/reso/icon/Talon/38.png' },
-		'[初遇:皮肤:西部魔影 维鲁斯]':
+		'[初遇:皮肤:西部魔影 天使 韦鲁斯]':
 			{ target: '${C.dirAutogen}/reso/icon/Varus/34.png' },
 
-		'[初遇:皮肤:西部魔影 莎弥拉]':
-			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
-		// { target: '${C.dirAutogen}/reso/icon/Samira/20.png' },
-		'[初遇:皮肤:西部魔影 塞恩]':
-			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
-		// { target: '${C.dirAutogen}/reso/icon/Sion/30.png' },
-		'[初遇:皮肤:西部魔影 塔姆]':
-			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
-		// { target: '${C.dirAutogen}/reso/icon/TahmKench/20.png' },
-		'[初遇:皮肤:西部魔影 图奇]':
-			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
-		// { target: '${C.dirAutogen}/reso/icon/Twitch/45.png' },
-		'[初遇:皮肤:西部魔影 维克托]':
-			{ target: '${C.dirAutogen}/reso/other/icon/-1.png' },
-		// { target: '${C.dirAutogen}/reso/icon/Viktor/14.png' },
+		'[初遇:皮肤:西部魔影 持枪女巫 莎弥拉]':
+			{ target: '${C.dirAutogen}/reso/icon/Samira/20.png' },
+		'[初遇:皮肤:西部魔影 合成天使 塞恩]':
+			{ target: '${C.dirAutogen}/reso/icon/Sion/30.png' },
+		'[初遇:皮肤:西部魔影 恶魔大亨 塔姆]':
+			{ target: '${C.dirAutogen}/reso/icon/TahmKench/20.png' },
+		'[初遇:皮肤:西部魔影 送葬人 图奇]':
+			{ target: '${C.dirAutogen}/reso/icon/Twitch/45.png' },
+		'[初遇:皮肤:西部魔影 天才机械师 维克托]':
+			{ target: '${C.dirAutogen}/reso/icon/Viktor/14.png' },
 
 		'[使用:Q技能:破晓之盾]':
 			{ skill: '${C.dirAutogen}/reso/icon/Leona/Q.png' },
@@ -74,30 +70,30 @@ export default {
 		'[学习:R技能:日炎耀斑::1级]':
 			{ skill: '${C.dirAutogen}/reso/icon/Leona/R.png' },
 
-		'[使用:道具:监视图腾]':
+		'[使用:道具:守卫]':
+		{
+			skill: '${C.dirAutogen}/reso/icon/Item/3350_greateryellowtrinket.png',
+			mark: '20%概率触发\\。以往的英雄或皮肤，只能通过放置侦查守卫来触发语音\\。但西部蕾欧娜可以放置任意种类守卫来触发语音'
+		},
+		'[击杀:道具:守卫]':
 			{ skill: '${C.dirAutogen}/reso/icon/Item/3350_greateryellowtrinket.png' },
-		'[击杀:道具:监视图腾]':
-			{ skill: '${C.dirAutogen}/reso/icon/Item/3350_greateryellowtrinket.png' },
+
+		'[升级]':
+			{ mark: '20%概率触发，触发后冷却60秒\\，单局游戏最多触发4次' },
+
+		'[打开:商店]':
+			{ mark: '25%概率触发，触发后冷却180秒' },
+
+		'[信号:协助我]':
+			{ mark: '25%概率触发' },
+		'[信号:危险]':
+			{ mark: '25%概率触发' },
+		'[信号:敌人不见了]':
+			{ mark: '25%概率触发' },
+		'[信号:正在路上]':
+			{ mark: '25%概率触发' },
 	},
 	lines: {
-		'16BAC83F': { mark: '20%机率触发，每次触发相隔至少60秒，每局最多触发4次' },
-		'76B8D209': { mark: '20%机率触发，每次触发相隔至少60秒，每局最多触发4次' },
-		'7CA2CB4C': { mark: '20%机率触发，每次触发相隔至少60秒，每局最多触发4次' },
-
-		'ECF40D4D': { mark: '25%机率触发' },
-		'B0F07A4A': { mark: '25%机率触发' },
-		'3C63FC75': { mark: '25%机率触发' },
-		'F20EBE56': { mark: '25%机率触发' },
-
-		'072C3B67': { mark: '25%机率触发，每次触发相隔至少180秒' },
-		'13CBC327': { mark: '25%机率触发，每次触发相隔至少180秒' },
-		'84CC721D': { mark: '25%机率触发，每次触发相隔至少180秒' },
-
-		'890FA24D': { mark: '20%机率触发' },
-		'D146DE06': { mark: '20%机率触发' },
-		'F234E67D': { mark: '20%机率触发' },
-		'FED72836': { mark: '20%机率触发' },
-
 		'09C60A51': { mark: 'Bessie，贝茜' },
 		'D6E70D11': { mark: 'Bessie，贝茜' },
 	}
