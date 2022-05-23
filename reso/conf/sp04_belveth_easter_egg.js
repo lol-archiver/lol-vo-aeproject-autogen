@@ -1,17 +1,10 @@
 export default {
-	title: '虚空女皇 卑尔摩斯',
-	title1: '虚空女皇 卑尔摩斯',
+	title: '虚空女皇 卑尔维斯',
+	title1: '虚空女皇 卑尔维斯',
 	title2: '预热语音彩蛋',
 	splash: '${C.dirAutogen}/reso/special/belveth_easter_egg/belveth-color-story.jpg',
 	color: '#9530CB',
 	head: '${C.dirAutogen}/reso/other/icon/Belveth.png',
-	// events: {
-	// 	'[初遇:英雄:阿克尚]':
-	// 		{ target: '${C.dirAutogen}/reso/icon/Akshan/0.png' },
-
-	// 	'[使用:Q技能:快刀剪乱]':
-	// 		{ skill: '${C.dirAutogen}/reso/icon/Gwen/Q.png' },
-	// },
 	linesSpecial: [
 		// 卡莎
 		{
@@ -71,14 +64,14 @@ export default {
 		{
 			event: '[对局:开始:注释:虚空英雄触发]',
 			line: '虚空的孩子啊\\，我对你并不熟悉，展现你的忠心吧',
-			mark: '仅 卡莎/卡萨丁/玛尔扎哈/维克兹/卡兹克/克格莫/雷克赛/科加斯 可触发。50%概率触发，科加斯还会在重生、初次移动时触发',
+			mark: '仅 卡莎/卡萨丁/玛尔扎哈/维克兹/卡兹克/克格莫/雷克赛/科加斯 可触发。50%概率触发。科加斯还会在重生、初次移动时触发',
 			file: '${C.dirAutogen}/reso/special/belveth_easter_egg/VoidSpawnIn[7BE21F03][7E1EF6C9].wav',
 			target: '${C.dirAutogen}/reso/other/void-champion-1.png',
 		},
 		{
 			event: '[对局:开始:注释:虚空英雄触发]',
 			line: '我们将吞噬你，再成为你',
-			mark: '仅 卡莎/卡萨丁/玛尔扎哈/维克兹/卡兹克/克格莫/雷克赛/科加斯 可触发。50%概率触发，科加斯还会在重生、初次移动时触发',
+			mark: '仅 卡莎/卡萨丁/玛尔扎哈/维克兹/卡兹克/克格莫/雷克赛/科加斯 可触发。50%概率触发。科加斯还会在重生、初次移动时触发',
 			file: '${C.dirAutogen}/reso/special/belveth_easter_egg/VoidSpawnIn[568CFB50][8FDA531F].wav',
 			target: '${C.dirAutogen}/reso/other/void-champion-2.png',
 		},
