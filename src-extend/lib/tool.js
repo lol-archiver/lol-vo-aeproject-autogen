@@ -197,15 +197,40 @@ this.GetBoxSize = text => {
 	layerLine.sourceText.setValue(textDocLine);
 
 
-	const lengthsLine = [];
+	// const lengthsLine = [];
+	// const lines = text.split('\n');
+	// for(let i = 0; i < lines.length; i++) {
+	// 	lengthsLine.push(lines[i].length);
+	// }
+
+	// const lengthMaxLine = Math.max.apply(this, lengthsLine);
+
+	// const widthLineText = lengthMaxLine * (text == '(.......)' ? Math.ceil(fontSize * 2 / 3) : fontSize);
+
+	// const rect = layerLine.sourceRectAtTime(0, false);
+
+	// // const widthBox = Math.ceil(rect.width) + fontSize;
+	// const lineBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
+
+	// layerLine.remove();
+
+
+
+	// return [Math.min(widthLineText, widthMax), lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
+	const widthsLine = [];
 	const lines = text.split('\n');
 	for(let i = 0; i < lines.length; i++) {
-		lengthsLine.push(lines[i].length);
+		const line = lines[i];
+		const sizeHalf = (line.match(/[A-Za-z0-9.()<> %]/g) || []).length;
+
+		const widthLine = lines[i].length * fontSize - sizeHalf * Math.ceil(fontSize * 1 / 3 - 1);
+
+		widthsLine.push(widthLine);
 	}
 
-	const lengthMaxLine = Math.max.apply(this, lengthsLine);
 
-	const widthLineText = lengthMaxLine * (text == '(.......)' ? Math.ceil(fontSize * 2 / 3) : fontSize);
+	const widthLineText = Math.max.apply(this, widthsLine);
+
 
 	const rect = layerLine.sourceRectAtTime(0, false);
 
@@ -214,9 +239,8 @@ this.GetBoxSize = text => {
 
 	layerLine.remove();
 
-
-
 	return [Math.min(widthLineText, widthMax), lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
+
 };
 
 // const rrr1 = GetBoxSize('你不好好');
@@ -251,7 +275,7 @@ this.GetBoxSizeMark = text => {
 	const lines = text.split('\n');
 	for(let i = 0; i < lines.length; i++) {
 		const line = lines[i];
-		const sizeHalf = (line.match(/[A-Za-z0-9.()%]/g) || []).length;
+		const sizeHalf = (line.match(/[A-Za-z0-9.()<> %]/g) || []).length;
 
 		const widthLine = lines[i].length * fontSize - sizeHalf * Math.ceil(fontSize * 1 / 3 - 1);
 
