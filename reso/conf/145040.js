@@ -11,15 +11,7 @@ export default {
 		name: 'Star Guardian'
 	},
 	color: '#E97894',
-	head: '${C.dirAutogen}/reso/other/icon/sg-kaisa.png',
-	splash: 'D:/desk/145040.png',
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/145040.png',
-	// shade: {
-	// 	file: '${C.dirAutogen}/reso/shade/145040.png',
-	// 	scale: [150, 150],
-	// 	opacity: 45,
-	// 	// invert: false,
-	// },
 	events: {
 		'[击杀:建筑:防御塔]':
 			{ target: '${C.dirAutogen}/reso/other/turret.png' },
@@ -30,42 +22,32 @@ export default {
 
 
 		'[初遇:皮肤:星之守护者 阿卡丽]':
-			// { target: '${C.dirAutogen}/reso/icon/Akali/61.png' },
-			{ target: '${C.dirAutogen}/reso/other/icon/sg-akali.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Akali/61.png' },
 		'[击杀:皮肤:星之守护者 阿卡丽]':
-			// { target: '${C.dirAutogen}/reso/icon/Akali/61.png' },
-			{ target: '${C.dirAutogen}/reso/other/icon/sg-akali.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Akali/61.png' },
 		'[移动:初次:友方:皮肤:星之守护者 阿卡丽]':
-			// { target: '${C.dirAutogen}/reso/icon/Akali/61.png' },
-			{ target: '${C.dirAutogen}/reso/other/icon/sg-akali.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Akali/61.png' },
 		'[初遇:皮肤:星之守护者 奎因]':
-			// { target: '${C.dirAutogen}/reso/icon/.png' },
-			{ target: '${C.dirAutogen}/reso/other/icon/sg-quinn.png' },
+			{ target: '${C.dirAutogen}/reso/icon/14.png' },
 		'[初遇:皮肤:星之守护者 塔莉娅]':
-			// { target: '${C.dirAutogen}/reso/icon/Taliyah/11.png' },
-			{ target: '${C.dirAutogen}/reso/other/icon/sg-taliyah.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Taliyah/11.png' },
 		'[初遇:皮肤:星之守护者 芮尔]':
-			// { target: '${C.dirAutogen}/reso/icon/Rell/10.png' },
-			{ target: '${C.dirAutogen}/reso/other/icon/sg-rell.png' },
-		'[初遇:皮肤:星之守护者 复仇女神 莫甘娜]':
-			// { target: '${C.dirAutogen}/reso/icon/Morgana/50.png' },
-			{ target: '${C.dirAutogen}/reso/other/icon/sg-morgana.png' },
-		'[击杀:皮肤:星之守护者 复仇女神 莫甘娜]':
-			// { target: '${C.dirAutogen}/reso/icon/Morgana/50.png' },
-			{ target: '${C.dirAutogen}/reso/other/icon/sg-morgana.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Rell/10.png' },
+		'[初遇:皮肤:星之吞噬者 莫甘娜]':
+			{ target: '${C.dirAutogen}/reso/icon/Morgana/50.png' },
+		'[击杀:皮肤:星之吞噬者 莫甘娜]':
+			{ target: '${C.dirAutogen}/reso/icon/Morgana/50.png' },
 
-		'[初遇:皮肤:星之守护者 复仇女神 费德提克]':
+		'[初遇:皮肤:星之吞噬者 费德提克]':
 			{ target: '${C.dirAutogen}/reso/icon/Fiddlesticks/27.png' },
-		'[击杀:皮肤:星之守护者 复仇女神 费德提克]':
+		'[击杀:皮肤:星之吞噬者 费德提克]':
 			{ target: '${C.dirAutogen}/reso/icon/Fiddlesticks/27.png' },
 		'[初遇:皮肤:星之守护者 娑娜]':
 			{ target: '${C.dirAutogen}/reso/icon/Sona/35.png' },
 		'[初遇:皮肤:星之守护者 艾克]':
-			// { target: '${C.dirAutogen}/reso/icon/Ekko/45.png' },
-			{ target: '${C.dirAutogen}/reso/other/icon/sg-ekko.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Ekko/45.png' },
 		'[初遇:皮肤:星之守护者 尼菈]':
-			// { target: '${C.dirAutogen}/reso/icon/Nilah/1.png' },
-			{ target: '${C.dirAutogen}/reso/other/icon/sg-nilah.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Nilah/1.png' },
 		'[初遇:皮肤:星之守护者COS 厄加特]':
 			{ target: '${C.dirAutogen}/reso/icon/Urgot/15.png' },
 		'[击杀:皮肤:星之守护者COS 厄加特]':

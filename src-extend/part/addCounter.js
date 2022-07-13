@@ -2,7 +2,7 @@ this.AddCounter = () => {
 	const layerWaterMark = CompMain.layers.add(GetFootage(C.fileWaterMark));
 
 	layerWaterMark.transform.scale.setValue([14, 14]);
-	layerWaterMark.transform.position.setValue([40, C.heightVideo - 40]);
+	layerWaterMark.transform.position.setValue([40, C.heightVideo - (40 + 40)]);
 
 	layerWaterMark.startTime = D.opener + 1;
 	layerWaterMark.duration = D.linesEnd;
@@ -20,11 +20,11 @@ this.AddCounter = () => {
 
 
 	const layerCounter = CompMain.layers.addText('');
-	layerCounter.transform.position.setValue([(40 + 30), C.heightVideo - (40 + 20)]);
+	layerCounter.transform.position.setValue([(40 + 30), C.heightVideo - (40 + 20 + 40)]);
 
 	const textDocCounter = layerCounter.sourceText.value;
 	textDocCounter.resetCharStyle();
-	textDocCounter.fontSize = 34;
+	textDocCounter.fontSize = 24;
 	textDocCounter.fillColor = RGBH('E0E0E0');
 	textDocCounter.font = 'Source Han Mono SC';
 	textDocCounter.applyStroke = true;

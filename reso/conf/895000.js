@@ -1,6 +1,6 @@
 export default {
-	title: '不羁的欢乐 尼菈',
-	title1: '不羁的欢乐（猜的）',
+	title: '畅流者 尼菈',
+	title1: '畅流者',
 	title2: '尼菈',
 	champion: {
 		id: 895,
@@ -12,12 +12,6 @@ export default {
 	},
 	color: '#1faaf1',
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/895000.png',
-	// shade: {
-	// 	file: '${C.dirAutogen}/reso/shade/895000.png',
-	// 	scale: [150, 150],
-	// 	opacity: 45,
-	// 	// invert: false,
-	// },
 	events: {
 		'[攻击:生物:纳什男爵]':
 			{ target: '${C.dirAutogen}/reso/other/icon/baron.png' },
