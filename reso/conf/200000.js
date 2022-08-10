@@ -20,11 +20,11 @@ export default {
 	},
 	events: {
 		'[攻击:生物:纳什男爵]':
-			{ target: '${C.dirAutogen}/reso/other/icon/baron.png' },
+			{ target: '${C.dirAutogen}/reso/icon/monster/baron.png' },
 		'[攻击:生物:峡谷先锋]':
-			{ target: '${C.dirAutogen}/reso/other/icon/rift-herald.png' },
+			{ target: '${C.dirAutogen}/reso/icon/monster/rift-herald.png' },
 		'[攻击:生物:龙]':
-			{ target: '${C.dirAutogen}/reso/other/icon/elder-dragon.png' },
+			{ target: '${C.dirAutogen}/reso/icon/monster/elder-dragon.png' },
 		'[初遇:英雄:卡莎]':
 			{ target: '${C.dirAutogen}/reso/icon/Kaisa/0.png' },
 		'[击杀:英雄:卡莎]':

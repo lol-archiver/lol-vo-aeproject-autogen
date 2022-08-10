@@ -43,7 +43,7 @@ export default {
 		'[击杀:皮肤:至尊魔女 莫甘娜]':
 			{ target: '${C.dirAutogen}/reso/icon/Morgana/26.png' },
 		'[击杀:建筑:防御塔]':
-			{ target: '${C.dirAutogen}/reso/other/turret.png' },
+			{ target: '${C.dirAutogen}/reso/icon/turret.png' },
 
 
 		'[使用:Q技能:回旋之刃]':

@@ -14,11 +14,11 @@ export default {
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/145040.png',
 	events: {
 		'[击杀:建筑:防御塔]':
-			{ target: '${C.dirAutogen}/reso/other/turret.png' },
+			{ target: '${C.dirAutogen}/reso/icon/turret.png' },
 		'[攻击:生物:纳什男爵]':
-			{ target: '${C.dirAutogen}/reso/other/icon/baron.png' },
+			{ target: '${C.dirAutogen}/reso/icon/monster/baron.png' },
 		'[攻击:生物:龙]':
-			{ target: '${C.dirAutogen}/reso/other/icon/elder-dragon.png' },
+			{ target: '${C.dirAutogen}/reso/icon/monster/elder-dragon.png' },
 
 
 		'[初遇:皮肤:星之守护者 阿卡丽]':
