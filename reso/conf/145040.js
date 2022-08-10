@@ -28,7 +28,7 @@ export default {
 		'[移动:初次:友方:皮肤:星之守护者 阿卡丽]':
 			{ target: '${C.dirAutogen}/reso/icon/Akali/61.png' },
 		'[初遇:皮肤:星之守护者 奎因]':
-			{ target: '${C.dirAutogen}/reso/icon/14.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Quinn/14.png' },
 		'[初遇:皮肤:星之守护者 塔莉娅]':
 			{ target: '${C.dirAutogen}/reso/icon/Taliyah/11.png' },
 		'[初遇:皮肤:星之守护者 芮尔]':

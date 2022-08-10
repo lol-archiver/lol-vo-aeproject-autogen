@@ -4,7 +4,7 @@ export default {
 	title2: '卑尔维斯',
 	champion: {
 		id: 200,
-		name: 'Belveth',
+		name: 'BelVeth',
 	},
 	skin: {
 		id: 0,
@@ -69,17 +69,17 @@ export default {
 			{ target: '${C.dirAutogen}/reso/icon/Reksai/0.png' },
 
 		'[使用:Q技能:虚空激流]':
-			{ skill: '${C.dirAutogen}/reso/icon/Belveth/Q_15.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/BelVeth/Q_15.png' },
 		'[使用:W技能:上觐沉渊]':
-			{ skill: '${C.dirAutogen}/reso/icon/Belveth/W.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/BelVeth/W.png' },
 		'[使用:E技能:搠面皇锋]':
-			{ skill: '${C.dirAutogen}/reso/icon/Belveth/E.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/BelVeth/E.png' },
 		'[学习:R技能:万载豪筵::1级]':
-			{ skill: '${C.dirAutogen}/reso/icon/Belveth/R.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/BelVeth/R.png' },
 		'[使用:R技能:万载豪筵]':
-			{ skill: '${C.dirAutogen}/reso/icon/Belveth/R.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/BelVeth/R.png' },
 		'[使用:R技能:万载豪筵]、[使用:R技能:万载豪筵:命中]':
-			{ skill: '${C.dirAutogen}/reso/icon/Belveth/R.png' },
+			{ skill: '${C.dirAutogen}/reso/icon/BelVeth/R.png' },
 
 		'[使用:道具:守卫]':
 		{

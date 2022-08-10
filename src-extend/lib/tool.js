@@ -221,7 +221,7 @@ this.GetBoxSize = text => {
 	const lines = text.split('\n');
 	for(let i = 0; i < lines.length; i++) {
 		const line = lines[i];
-		const sizeHalf = (line.match(/[A-Za-z0-9.()<> %]/g) || []).length;
+		const sizeHalf = (line.match(/[A-Za-z0-9.()<> …%]/g) || []).length;
 
 		const widthLine = lines[i].length * fontSize - sizeHalf * Math.ceil(fontSize * 1 / 3 - 1);
 
@@ -275,7 +275,7 @@ this.GetBoxSizeMark = text => {
 	const lines = text.split('\n');
 	for(let i = 0; i < lines.length; i++) {
 		const line = lines[i];
-		const sizeHalf = (line.match(/[A-Za-z0-9.()<> %]/g) || []).length;
+		const sizeHalf = (line.match(/[A-Za-z0-9.()<> …%]/g) || []).length;
 
 		const widthLine = lines[i].length * fontSize - sizeHalf * Math.ceil(fontSize * 1 / 3 - 1);
 

@@ -1,6 +1,6 @@
 export default {
-	title: '畅流者 尼菈',
-	title1: '畅流者',
+	title: '不羁之悦 尼菈',
+	title1: '不羁之悦',
 	title2: '尼菈',
 	champion: {
 		id: 895,
@@ -61,7 +61,7 @@ export default {
 
 		'[普攻]、[使用:Q技能:游刃万变:强化攻击]':
 			{ skill: '${C.dirAutogen}/reso/icon/Nilah/Q.png' },
-		'[触发:P被动:酣庆无终:治疗或提供护盾]':
+		'[触发:P被动:喜色川流:治疗或提供护盾]':
 			{ skill: '${C.dirAutogen}/reso/icon/Nilah/P.png' },
 		'[使用:Q技能:游刃万变]':
 			{ skill: '${C.dirAutogen}/reso/icon/Nilah/Q.png' },

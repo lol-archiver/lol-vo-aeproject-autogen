@@ -1,7 +1,7 @@
 this.SplashesOpener = [];
 for(const slot of C.slots) {
 	SplashesOpener.push([
-		`${C.dirSplashes}/${Number(slot.slice(0, 3))}/${Number(slot)}.jpg`,
+		`${C.dirReso}/splash/${slot}.jpg`,
 		I.offsetsSplash[slot] || 0
 	]);
 }
