@@ -14,13 +14,13 @@ export default {
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/895000.png',
 	events: {
 		'[攻击:生物:纳什男爵]':
-			{ target: '${C.dirAutogen}/reso/icon/monster/baron.png' },
+			{ target: '${C.dirAutogen}/reso/icon/@monster/baron.png' },
 		'[攻击:生物:峡谷先锋]':
-			{ target: '${C.dirAutogen}/reso/icon/monster/rift-herald.png' },
+			{ target: '${C.dirAutogen}/reso/icon/@monster/rift-herald.png' },
 		'[攻击:生物:元素亚龙]':
-			{ target: '${C.dirAutogen}/reso/icon/monster/fire-dragon.png' },
+			{ target: '${C.dirAutogen}/reso/icon/@monster/fire-dragon.png' },
 		'[攻击:生物:远古巨龙]':
-			{ target: '${C.dirAutogen}/reso/icon/monster/elder-dragon.png' },
+			{ target: '${C.dirAutogen}/reso/icon/@monster/elder-dragon.png' },
 
 		'[初遇:英雄:费德提克]':
 			{ target: '${C.dirAutogen}/reso/icon/Fiddlesticks/0.png' },
