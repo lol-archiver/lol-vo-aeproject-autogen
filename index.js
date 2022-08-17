@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, writeFileSync } from 'fs';
+import { copyFileSync, readdirSync, readFileSync, writeFileSync } from 'fs';
 import { resolve, } from 'path';
 
 import { C, CR } from './config.js';
@@ -10,12 +10,13 @@ import parseLine from './lib/parseLine.js';
 C.slot = C.special ?? C.slots[0];
 
 const fileInfo = resolve(dirReso, 'info', `${C.slot}.json`);
+const fileInfoExtend = resolve(dirSrcExtend, 'lib', 'info.json');
 
 writeFileSync(resolve(dirSrcExtend, 'lib', 'config.json'), JSON.stringify(C, null, '\t'));
 writeFileSync(resolve(dirSrcExtend, 'lib', 'config.path.js'),
 	[
 		`this.PATH_CONFIG = '${resolve(dirSrcExtend, 'lib', 'config.json').replace(/\\/g, '\\\\')}';`,
-		`this.PATH_INFO = '${fileInfo.replace(/\\/g, '\\\\')}';`,
+		`this.PATH_INFO = '${fileInfoExtend.replace(/\\/g, '\\\\')}';`,
 	].join('\n')
 );
 
@@ -132,6 +133,7 @@ writeFileSync(fileInfo, JSON.stringify({
 	audios: CR.audios,
 	lines: linesFinal,
 }, null, '\t'));
+copyFileSync(fileInfo, fileInfoExtend);
 
 
 if(C.special) {

@@ -1,0 +1,1709 @@
+{
+	"titleComp": "077003 皮肤 灵魂守卫 乌迪尔",
+	"title1": "灵魂守卫",
+	"title2": "乌迪尔",
+	"champion": {
+		"id": 77,
+		"name": "Udyr"
+	},
+	"skin": {
+		"id": 3,
+		"name": "Spirit Guard"
+	},
+	"color": "#991F16",
+	"splash": "${C.dirAutogen}/reso/splash/077003.mp4",
+	"splashMiddle": "${C.dirAutogen}/reso/splash-left/077003.mp4",
+	"lines": [
+		{
+			"id": "E6BF1E3B",
+			"line": "(.......)",
+			"duration": 3.1906666666666665,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DPenta[E6BF1E3B][E88B3914].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【五杀】"
+		},
+		{
+			"id": "66E7AE23",
+			"line": "刺骨的寒冷，遍地的冰霜\n嚎哭的烈风，我到家了",
+			"duration": 10.299501133786848,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DFirstHowlingAbyss[66E7AE23][B26D7386].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初次移动（弗雷尔卓德）"
+		},
+		{
+			"id": "4083F32E",
+			"line": "贼人放肆庆祝，当心乐极生悲",
+			"duration": 5.529333333333334,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DEpicEnemyTeam[4083F32E][E8FF6123].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "敌方击杀【史诗级生物】"
+		},
+		{
+			"id": "6AC7E830",
+			"line": "即使是现在\n我依然能听到那头巨兽的咆哮",
+			"duration": 6.38,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DEpicEnemyTeam[6AC7E830][D040EFF6].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "敌方击杀【史诗级生物】"
+		},
+		{
+			"id": "8A7FC37A",
+			"line": "伟大的野兽值得拥有高贵的死亡",
+			"duration": 5.6306666666666665,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DEpicEnemyTeam[8A7FC37A][42841159].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "敌方击杀【史诗级生物】"
+		},
+		{
+			"id": "08044D6C",
+			"line": "丑恶之物\n我要把你身上的虚空剔除干净",
+			"duration": 6.610430839002268,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DBaron[08044D6C][CC9B84DD].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【纳什男爵】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/baron.png"
+		},
+		{
+			"id": "6A62F72C",
+			"line": "无尽的黑暗，无比的虚空\n你必须死",
+			"duration": 7.257687074829932,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DBaron[6A62F72C][3003B3D5].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【纳什男爵】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/baron.png"
+		},
+		{
+			"id": "AF680311",
+			"line": "呼唤巨龙，它将回以烈焰",
+			"duration": 5.153378684807256,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DElderDragon[AF680311][A8EC29DE].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【远古巨龙】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/elder-dragon.png"
+		},
+		{
+			"id": "FCC8AB66",
+			"line": "我曾走过巨龙开辟的路",
+			"duration": 4.282630385487528,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DElderDragon[FCC8AB66][00D6C560].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【远古巨龙】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/elder-dragon.png"
+		},
+		{
+			"id": "59C20601",
+			"line": "我对巨龙之怒了如指掌",
+			"duration": 4.285532879818594,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DDragon[59C20601][93137B55].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【龙】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/fire-dragon.png"
+		},
+		{
+			"id": "B80B104A",
+			"line": "巨龙的灵魂就是生命本身",
+			"duration": 5.310113378684807,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DDragon[B80B104A][21719799].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【龙】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/fire-dragon.png"
+		},
+		{
+			"id": "94B3F746",
+			"line": "先锋，它们扭曲了你的灵魂\n但我会给你自由",
+			"duration": 7.466666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DHerald[94B3F746][7FEBCDAB].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【峡谷先锋】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/rift-herald.png"
+		},
+		{
+			"id": "AE571352",
+			"line": "我会让你从这牢笼中解脱出来，先锋",
+			"duration": 5.365260770975056,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DHerald[AE571352][7B1CDD7F].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【峡谷先锋】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/rift-herald.png"
+		},
+		{
+			"id": "B432CD2C",
+			"line": "这种，活泼，让我不太习惯",
+			"duration": 5.7687074829931975,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGromp[B432CD2C][3AD5EFD9].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【魔沼蛙】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/gromp.png"
+		},
+		{
+			"id": "D7A96753",
+			"line": "高贵的心，饱受毒害的灵魂",
+			"duration": 5.4320181405895696,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGromp[D7A96753][A1E1A21F].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【魔沼蛙】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/gromp.png"
+		},
+		{
+			"id": "67949A01",
+			"line": "警觉地守护，忠实地保卫",
+			"duration": 4.8224943310657595,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DJungleBuff[67949A01][794E3C26].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【野区增益生物】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/jungle-buff.png"
+		},
+		{
+			"id": "FAD2E612",
+			"line": "我会珍惜你的赐福，灵物",
+			"duration": 4.268117913832199,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DJungleBuff[FAD2E612][40F0AF91].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【野区增益生物】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/jungle-buff.png"
+		},
+		{
+			"id": "5D62466D",
+			"line": "顽石的身躯，玻璃般的心",
+			"duration": 4.567074829931973,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DKrug[5D62466D][D9E9C70B].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【远古石甲虫】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/krug.png"
+		},
+		{
+			"id": "C95B1317",
+			"line": "破碎的石块可以修复",
+			"duration": 4.291337868480726,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DKrug[C95B1317][A7B7FC6D].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【远古石甲虫】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/krug.png"
+		},
+		{
+			"id": "03D56F53",
+			"line": "狼群啊，你们的灵魂将不再饥饿",
+			"duration": 5.478458049886621,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DMurkwolf[03D56F53][8DED9FAD].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【暗影狼】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/murkwolf.png"
+		},
+		{
+			"id": "136D1A0A",
+			"line": "暗影狼在嚎叫，它们已经饥不择食",
+			"duration": 5.52780045351474,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DMurkwolf[136D1A0A][F80058E8].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【暗影狼】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/murkwolf.png"
+		},
+		{
+			"id": "8D199328",
+			"line": "锋喙鸟的怒火是狂乱的尖叫",
+			"duration": 5.603265306122449,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DRaptor[8D199328][C72698C2].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【锋喙鸟】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/raptor.png"
+		},
+		{
+			"id": "FBFB1B29",
+			"line": "母鸟保护着她的巢穴",
+			"duration": 3.565714285714286,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DRaptor[FBFB1B29][5B295926].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【锋喙鸟】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/raptor.png"
+		},
+		{
+			"id": "31FA103C",
+			"line": "请原谅我的残忍，迅捷蟹",
+			"duration": 4.317460317460317,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DRiftScuttler[31FA103C][BCEBC2E3].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【峡谷迅捷蟹】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/rift-scuttler.png"
+		},
+		{
+			"id": "997F3114",
+			"line": "请赐福我的路，小螃蟹",
+			"duration": 4.21297052154195,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DRiftScuttler[997F3114][40DA9693].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【峡谷迅捷蟹】",
+			"target": "${C.dirAutogen}/reso/icon/@monster/rift-scuttler.png"
+		},
+		{
+			"id": "DF87257F",
+			"line": "兄弟，我的知己，克己就意味着胜利",
+			"duration": 6.9209977324263035,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DFirstAllyLeeSin[DF87257F][857A476B].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初次移动友方【李青】",
+			"target": "${C.dirAutogen}/reso/icon/LeeSin/0.png"
+		},
+		{
+			"id": "DD66077C",
+			"line": "阿青兄弟\n真正精湛的武艺将由我们展现",
+			"duration": 6.668,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\FirstEncounter3DLeeSin[DD66077C][FC47CA37].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初遇【李青】",
+			"target": "${C.dirAutogen}/reso/icon/LeeSin/0.png"
+		},
+		{
+			"id": "C3956C66",
+			"line": "我们的修炼颇有成效\n阿青兄弟，你和我非常合拍",
+			"duration": 6.796,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DLeeSin[C3956C66][88606F07].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【李青】",
+			"target": "${C.dirAutogen}/reso/icon/LeeSin/0.png"
+		},
+		{
+			"id": "24450163",
+			"line": "我能感受到你在试探，瓦尔哈尔\n但你永远都别想占据我的心灵",
+			"duration": 8.270657596371882,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DFirstAllyVolibear[24450163][E0D20C38].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初次移动友方【沃利贝尔】",
+			"target": "${C.dirAutogen}/reso/icon/Volibear/0.png"
+		},
+		{
+			"id": "CA9D4D57",
+			"line": "把瑟庄妮还给我，瓦尔哈尔\n不然我将不惜一切把她夺回来",
+			"duration": 7.804,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\FirstEncounter3DVolibear[CA9D4D57][0C6F2B94].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初遇【沃利贝尔】",
+			"target": "${C.dirAutogen}/reso/icon/Volibear/0.png"
+		},
+		{
+			"id": "D0284730",
+			"line": "我会解放那些被你侵蚀的头脑\n受过千万刀枪的巨熊",
+			"duration": 7.862666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DVolibear[D0284730][3A2FDB24].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【沃利贝尔】",
+			"target": "${C.dirAutogen}/reso/icon/Volibear/0.png"
+		},
+		{
+			"id": "FCF73967",
+			"line": "我知道我辜负了你，瑟庄妮\n我会做出补偿",
+			"duration": 6.0357369614512475,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DFirstAllySejuani[FCF73967][81339790].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初次移动友方【瑟庄妮】",
+			"target": "${C.dirAutogen}/reso/icon/Sejuani/0.png"
+		},
+		{
+			"id": "F5B60B1E",
+			"line": "我知道我辜负了你，瑟庄妮\n我会做出补偿",
+			"duration": 6.124,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\FirstEncounter3DSejuani[F5B60B1E][E72B3BB8].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初遇【瑟庄妮】",
+			"mark": "这两句没弄错，原文件如此",
+			"target": "${C.dirAutogen}/reso/icon/Sejuani/0.png"
+		},
+		{
+			"id": "D5FE4408",
+			"line": "瑟庄妮，我\n从来都不想要这样的结果，对不起",
+			"duration": 7.214666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DSejuani[D5FE4408][DA470F31].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【瑟庄妮】",
+			"target": "${C.dirAutogen}/reso/icon/Sejuani/0.png"
+		},
+		{
+			"id": "0C12A93E",
+			"line": "愿艾欧尼亚之灵指引你我，卡尔玛",
+			"duration": 5.188208616780045,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DFirstAllyKarma[0C12A93E][63280F82].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初次移动友方【卡尔玛】",
+			"target": "${C.dirAutogen}/reso/icon/Karma/0.png"
+		},
+		{
+			"id": "E3EDAA31",
+			"line": "让我看看你都获得了什么启迪，卡尔玛",
+			"duration": 5.078666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\FirstEncounter3DKarma[E3EDAA31][63881352].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初遇【卡尔玛】",
+			"target": "${C.dirAutogen}/reso/icon/Karma/0.png"
+		},
+		{
+			"id": "7D0AE447",
+			"line": "你获得了很多启迪，卡尔玛。下次继续",
+			"duration": 5.3213333333333335,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DKarma[7D0AE447][095C06E2].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【卡尔玛】",
+			"target": "${C.dirAutogen}/reso/icon/Karma/0.png"
+		},
+		{
+			"id": "10594523",
+			"line": "你不能忤逆弗雷尔卓德的意志，艾希\n它渴望战乱",
+			"duration": 6.705333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\FirstEncounter3DAshe[10594523][4B173747].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初遇【艾希】",
+			"target": "${C.dirAutogen}/reso/icon/Ashe/0.png"
+		},
+		{
+			"id": "866A9E61",
+			"line": "艾希，不懂得爱惜自己",
+			"duration": 4.708,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DAshe[866A9E61][2B1A4419].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【艾希】",
+			"target": "${C.dirAutogen}/reso/icon/Ashe/0.png"
+		},
+		{
+			"id": "2D917566",
+			"line": "你的心声太吵闹了",
+			"duration": 3.604,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\FirstEncounter3DGeneral[2D917566][54897C57].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初遇【英雄】"
+		},
+		{
+			"id": "A1413221",
+			"line": "不必闲聊",
+			"duration": 2.1933333333333334,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\FirstEncounter3DGeneral[A1413221][C1FAEA82].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初遇【英雄】"
+		},
+		{
+			"id": "A6488254",
+			"line": "你的牺牲将疗愈这片土地",
+			"duration": 4.276,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\FirstEncounter3DGeneral[A6488254][CF3CF735].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初遇【英雄】"
+		},
+		{
+			"id": "AE509F7C",
+			"line": "请赐教",
+			"duration": 2.038666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\FirstEncounter3DGeneral[AE509F7C][8555B290].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初遇【英雄】"
+		},
+		{
+			"id": "CF593D1F",
+			"line": "你阻挡了灵的道路",
+			"duration": 3.636,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\FirstEncounter3DGeneral[CF593D1F][C3CE3799].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初遇【英雄】"
+		},
+		{
+			"id": "82735D4A",
+			"line": "哪来的风？",
+			"duration": 2.1853333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Joke3DGeneral[82735D4A][0B03DC54].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "玩笑"
+		},
+		{
+			"id": "8F4BC356",
+			"line": "你心有二狼，可惜实在不擅长讲笑话",
+			"duration": 5.761333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\JokeResponse3DGeneral[8F4BC356][905C485C].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "回应【玩笑】",
+			"mark": "“二狼”原文“TWO WOLVES”"
+		},
+		{
+			"id": "23300B7D",
+			"line": "你的饥饿永远都别想平息",
+			"duration": 4.3293333333333335,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Taunt3DGeneral[23300B7D][21D1A4EF].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "嘲讽"
+		},
+		{
+			"id": "C616FF4A",
+			"line": "咬狗不叫，叫狗不咬",
+			"duration": 4.230666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\TauntResponse3DGeneral[C616FF4A][4BE8862D].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "回应【嘲讽】"
+		},
+		{
+			"id": "44717935",
+			"line": "(.......)",
+			"duration": 3.449333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Laugh3DGeneral[44717935][7F814A66].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "大笑"
+		},
+		{
+			"id": "AE75C76F",
+			"line": "(.......)",
+			"duration": 3.3293333333333335,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Laugh3DGeneral[AE75C76F][E5A37B50].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "大笑"
+		},
+		{
+			"id": "0A8C5C09",
+			"line": "艾欧尼亚的万灵、初生之土的先祖\n都与我同行",
+			"duration": 8.235827664399093,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DFirst[0A8C5C09][DCE8A787].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初次移动"
+		},
+		{
+			"id": "7FB7F273",
+			"line": "在弗雷尔卓德平静就是死亡\n但在艾欧尼亚却是生命",
+			"duration": 9.399727891156463,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DFirst[7FB7F273][8134B791].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初次移动"
+		},
+		{
+			"id": "9DF9B87A",
+			"line": "懊悔如影随形，但我无暇回望",
+			"duration": 5.675827664399093,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DFirst[9DF9B87A][895093CF].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "初次移动"
+		},
+		{
+			"id": "FB28646B",
+			"line": "我和猛虎在山中巡行\n我们的爪子无往不利",
+			"duration": 7.118367346938776,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DLong[FB28646B][5AAF294D].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "长途移动（猛虎<巨熊>姿态）"
+		},
+		{
+			"id": "BF311A36",
+			"line": "即便我们内心动摇，外壳也始终坚固",
+			"duration": 6.061859410430839,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DLong[BF311A36][E8AE89BC].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "长途移动（灵龟<野猪>姿态）"
+		},
+		{
+			"id": "45F53D12",
+			"line": "我和熊母将庇护这个世界",
+			"duration": 4.958911564625851,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DLong[45F53D12][B60BBCC8].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "长途移动（巨熊<山羊>姿态）"
+		},
+		{
+			"id": "1D6DC260",
+			"line": "诞生、死亡、重生\n我们必须遵循的轮回",
+			"duration": 7.768526077097506,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DLong[1D6DC260][69279B56].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "长途移动（火凤<凤凰>姿态）"
+		},
+		{
+			"id": "018C001D",
+			"line": "只要我还有一口气\n就要扛起这个世界的重量",
+			"duration": 6.256326530612245,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DLong[018C001D][509E9C37].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "长途移动"
+		},
+		{
+			"id": "1861C204",
+			"line": "名字蕴含力量\n许多灵物都把真名托付给我",
+			"duration": 7.460861678004536,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DLong[1861C204][CF2AC791].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "长途移动"
+		},
+		{
+			"id": "3106510C",
+			"line": "艾欧尼亚之灵遭受了苦难\n但只要有足够的时间\n所有伤口都会弥合",
+			"duration": 9.959909297052155,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DLong[3106510C][FEAA4309].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "长途移动"
+		},
+		{
+			"id": "B2CD6C12",
+			"line": "在希拉娜训导学徒，让我懂得了耐心",
+			"duration": 6.172154195011338,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DLong[B2CD6C12][C0704706].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "长途移动"
+		},
+		{
+			"id": "F59BDB4F",
+			"line": "上善若水，不卑不亢，无形无妄",
+			"duration": 6.7555555555555555,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DLong[F59BDB4F][0F5C8729].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "长途移动"
+		},
+		{
+			"id": "75F1855A",
+			"line": "心如止水，心如止水，心如止水",
+			"duration": 10.1,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Recall3DGeneral[75F1855A][660417FE].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "回城"
+		},
+		{
+			"id": "D7DDE27B",
+			"line": "撤退不等于失败\n我们养精蓄锐，择机再战",
+			"duration": 6.436,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Recall3DGeneral[D7DDE27B][4EB4EEFE].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "回城"
+		},
+		{
+			"id": "E274651B",
+			"line": "与灵同行，我首先要知道自己的极限",
+			"duration": 5.294666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Recall3DGeneral[E274651B][C35D3231].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "回城"
+		},
+		{
+			"id": "FBC40C72",
+			"line": "我是万物，我是空无",
+			"duration": 4.94,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Recall3DGeneral[FBC40C72][A9DB471C].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "回城"
+		},
+		{
+			"id": "081D367F",
+			"line": "我们已将百兽之王取而代之",
+			"duration": 4.91827664399093,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[081D367F][36304DCF].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（猛虎<巨熊>姿态）"
+		},
+		{
+			"id": "8FCA2F1E",
+			"line": "我们独自狩猎",
+			"duration": 3.1941950113378685,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[8FCA2F1E][C3A199F9].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（猛虎<巨熊>姿态）"
+		},
+		{
+			"id": "97E1E261",
+			"line": "我们的血液炽热澎湃",
+			"duration": 4.1984580498866215,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[97E1E261][8A52B6D1].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（猛虎<巨熊>姿态）"
+		},
+		{
+			"id": "582DEE00",
+			"line": "我们的意志坚不可摧",
+			"duration": 4.6715646258503405,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[582DEE00][CC533B01].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（灵龟<野猪>姿态）"
+		},
+		{
+			"id": "CE25B706",
+			"line": "这个世界因我们而动",
+			"duration": 4.204263038548753,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[CE25B706][D33A631A].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（灵龟<野猪>姿态）"
+		},
+		{
+			"id": "D2CD0816",
+			"line": "我们能伸能屈，但永远不会崩溃",
+			"duration": 5.820952380952381,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[D2CD0816][C908F3C6].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（灵龟<野猪>姿态）"
+		},
+		{
+			"id": "0C29AE36",
+			"line": "我们的心就是家园",
+			"duration": 4.154920634920635,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[0C29AE36][45ED0C95].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（巨熊<山羊>姿态）"
+		},
+		{
+			"id": "6615000C",
+			"line": "谁要挡路",
+			"duration": 2.7878458049886623,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[6615000C][5B07CC14].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（巨熊<山羊>姿态）"
+		},
+		{
+			"id": "8F354020",
+			"line": "我们为保护家人而战",
+			"duration": 3.7398639455782314,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[8F354020][EBD7EF92].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（巨熊<山羊>姿态）"
+		},
+		{
+			"id": "94137C38",
+			"line": "我们转动生命的轮盘",
+			"duration": 4.2884353741496595,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[94137C38][0065D54A].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（火凤<凤凰>姿态）"
+		},
+		{
+			"id": "BD4AAF75",
+			"line": "与灰烬中重生",
+			"duration": 3.795011337868481,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[BD4AAF75][C7E8BF04].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（火凤<凤凰>姿态）"
+		},
+		{
+			"id": "ECC56C14",
+			"line": "我们是生与死的守护者",
+			"duration": 4.599002267573696,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[ECC56C14][FDD7DD27].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动（火凤<凤凰>姿态）"
+		},
+		{
+			"id": "01A99203",
+			"line": "我们跟随着命运的脚步",
+			"duration": 3.9662585034013604,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[01A99203][90A8D8D0].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "1776E02B",
+			"line": "安静是一种天赐",
+			"duration": 4.140408163265306,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[1776E02B][B40EB062].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "361F0518",
+			"line": "平衡未至，我们绝不能放弃",
+			"duration": 4.503219954648526,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[361F0518][C5C5384D].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "465F8805",
+			"line": "弗雷尔卓德是一个声音\n而这个世界是一场合唱",
+			"duration": 7.591473922902495,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[465F8805][E155FCB6].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "4719DB2E",
+			"line": "万物之灵请引导我",
+			"duration": 4.430657596371882,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[4719DB2E][70C098E3].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "6B38FF18",
+			"line": "与灵同行，就要理解它们的所求",
+			"duration": 5.313015873015873,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[6B38FF18][41DC378F].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "6DF7FC05",
+			"line": "我是许多鸿沟间的纽带",
+			"duration": 4.015600907029478,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[6DF7FC05][DBC1CCCF].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "729CA30D",
+			"line": "艾欧尼亚的命运就是我的命运",
+			"duration": 4.868934240362812,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[729CA30D][3BCCA06B].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "99CC7604",
+			"line": "献出一切，不图回报",
+			"duration": 4.636734693877551,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[99CC7604][9023A9A8].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "9C92241D",
+			"line": "我与你同行\n仲夏之巨龙盘绕世界的大蛇",
+			"duration": 7.01968253968254,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[9C92241D][B6AD7A0B].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "A6C38443",
+			"line": "我能按下头脑中的风暴",
+			"duration": 4.331972789115646,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[A6C38443][9649C7DF].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "CCCD7C0A",
+			"line": "专注",
+			"duration": 2.0796371882086166,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[CCCD7C0A][FF7CFB85].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "D5CD3E0A",
+			"line": "掌控自我，掌控力量",
+			"duration": 4.8979591836734695,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[D5CD3E0A][E5E110AB].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "DDACFF01",
+			"line": "平衡之中，万物苏生",
+			"duration": 5.179501133786848,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[DDACFF01][A8C80076].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "F49F6300",
+			"line": "艾欧尼亚的终灵与我同行",
+			"duration": 5.011156462585034,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[F49F6300][35C282E5].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "F7736112",
+			"line": "凡界与灵界，我在其间游走",
+			"duration": 6.070566893424036,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[F7736112][8A9BFA46].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "F81E2B11",
+			"line": "我没有部族，也没有归宿",
+			"duration": 4.7267120181405895,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Move2DStandard[F81E2B11][E414C12B].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "移动"
+		},
+		{
+			"id": "9F08F427",
+			"line": "利爪与尖牙",
+			"duration": 2.991020408163265,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[9F08F427][A750DF65].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（猛虎<巨熊>姿态）"
+		},
+		{
+			"id": "A154D67E",
+			"line": "我们的怒火无边无际",
+			"duration": 3.9227210884353743,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[A154D67E][A4677C6F].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（猛虎<巨熊>姿态）"
+		},
+		{
+			"id": "A462AC29",
+			"line": "我们不知疲倦",
+			"duration": 2.944580498866213,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[A462AC29][4543167A].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（猛虎<巨熊>姿态）"
+		},
+		{
+			"id": "0FCCFE07",
+			"line": "我们寸步不让",
+			"duration": 2.642721088435374,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[0FCCFE07][C7233192].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（灵龟<野猪>姿态）"
+		},
+		{
+			"id": "68B0AC4F",
+			"line": "不动如山",
+			"duration": 2.2276643990929705,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[68B0AC4F][4B5E7721].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（灵龟<野猪>姿态）"
+		},
+		{
+			"id": "EB65190A",
+			"line": "奔流如水",
+			"duration": 2.5063038548752834,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[EB65190A][27E8BF23].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（灵龟<野猪>姿态）"
+		},
+		{
+			"id": "18774811",
+			"line": "你想打一架？",
+			"duration": 2.3843990929705217,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[18774811][E0E0BB86].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（巨熊<山羊>姿态）"
+		},
+		{
+			"id": "522C2E31",
+			"line": "我们知道你的怒火",
+			"duration": 3.2551473922902496,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[522C2E31][36C1C8D2].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（巨熊<山羊>姿态）"
+		},
+		{
+			"id": "E57ACD7D",
+			"line": "就到这里",
+			"duration": 2.1463945578231294,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[E57ACD7D][CEACF064].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（巨熊<山羊>姿态）"
+		},
+		{
+			"id": "2A96D36E",
+			"line": "化成灰烬",
+			"duration": 3.2145124716553286,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[2A96D36E][3C77A1E9].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（火凤<凤凰>姿态）"
+		},
+		{
+			"id": "92D71211",
+			"line": "轮回的原点",
+			"duration": 3.2754648526077097,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[92D71211][0B3E6411].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（火凤<凤凰>姿态）"
+		},
+		{
+			"id": "A1C49E7F",
+			"line": "净化之焰",
+			"duration": 2.8429931972789118,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[A1C49E7F][E1BC953B].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】（火凤<凤凰>姿态）"
+		},
+		{
+			"id": "0159EE0A",
+			"line": "弗雷尔卓德之拳",
+			"duration": 3.10421768707483,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[0159EE0A][B8F3E12C].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】"
+		},
+		{
+			"id": "10F34F00",
+			"line": "感受寂静吧",
+			"duration": 2.9765079365079363,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[10F34F00][1B39E8F4].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】"
+		},
+		{
+			"id": "16DC8304",
+			"line": "别再忧虑了",
+			"duration": 2.657233560090703,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[16DC8304][3826E1F1].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】"
+		},
+		{
+			"id": "4619BC00",
+			"line": "拥抱死亡",
+			"duration": 2.7878458049886623,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[4619BC00][CEE38ED3].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】"
+		},
+		{
+			"id": "4CD68335",
+			"line": "与你的神明和解",
+			"duration": 3.1854875283446713,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[4CD68335][E85630E1].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】"
+		},
+		{
+			"id": "4FAAFA05",
+			"line": "兽灵之力",
+			"duration": 2.596281179138322,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[4FAAFA05][4C100108].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】"
+		},
+		{
+			"id": "6EBCAB01",
+			"line": "炎夏冲拳",
+			"duration": 2.5179138321995467,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[6EBCAB01][962CA454].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】"
+		},
+		{
+			"id": "764C0451",
+			"line": "暴力在所难免",
+			"duration": 3.2667573696145125,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[764C0451][13C5BC81].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】"
+		},
+		{
+			"id": "9CD7A700",
+			"line": "希拉娜之拳",
+			"duration": 2.7443083900226757,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[9CD7A700][390FF9C7].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】"
+		},
+		{
+			"id": "B2A4FB22",
+			"line": "引领我吧",
+			"duration": 2.4830839002267573,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Attack2DGeneral[B2A4FB22][31193068].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "攻击【英雄】"
+		},
+		{
+			"id": "19D2A700",
+			"line": "也许下一次",
+			"duration": 2.8893333333333335,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DGeneral[19D2A700][D675CA55].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【英雄】"
+		},
+		{
+			"id": "35C00F0D",
+			"line": "重生吧",
+			"duration": 2.921333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DGeneral[35C00F0D][BE7C3F02].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【英雄】"
+		},
+		{
+			"id": "54DD9178",
+			"line": "轮回在继续",
+			"duration": 3.0733333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DGeneral[54DD9178][C9E6F05F].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【英雄】"
+		},
+		{
+			"id": "6EB87811",
+			"line": "落叶归根",
+			"duration": 3.14,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DGeneral[6EB87811][1E310F76].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【英雄】"
+		},
+		{
+			"id": "763DE91E",
+			"line": "回到大地的怀抱",
+			"duration": 3.3613333333333335,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DGeneral[763DE91E][F1B62A2D].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【英雄】"
+		},
+		{
+			"id": "7D95356B",
+			"line": "必要的牺牲",
+			"duration": 2.9186666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Kill3DGeneral[7D95356B][7486F667].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "击杀【英雄】"
+		},
+		{
+			"id": "0E3B2C36",
+			"line": "(.......)",
+			"duration": 5.705333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Death3D[0E3B2C36][1B95256E].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "阵亡"
+		},
+		{
+			"id": "580D9B16",
+			"line": "我已结束，我将开始",
+			"duration": 5.3613333333333335,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Death3D[580D9B16][4987243C].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "阵亡"
+		},
+		{
+			"id": "7AAC706A",
+			"line": "生命最终的秘密",
+			"duration": 5.06,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Death3D[7AAC706A][F2C4ED66].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "阵亡"
+		},
+		{
+			"id": "E841530B",
+			"line": "(.......)",
+			"duration": 6.425333333333334,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Death3D[E841530B][CD76BB2F].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "阵亡"
+		},
+		{
+			"id": "1133E420",
+			"line": "我们死亡，我们重生",
+			"duration": 4.215873015873016,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Respawn2DGeneral[1133E420][847DE3ED].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "重生"
+		},
+		{
+			"id": "4455CB0E",
+			"line": "我们重归完整",
+			"duration": 3.1709750566893424,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Respawn2DGeneral[4455CB0E][5224740F].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "重生"
+		},
+		{
+			"id": "9D6BFC06",
+			"line": "生命与死亡都是暂时的",
+			"duration": 5.655510204081633,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Respawn2DGeneral[9D6BFC06][F6D4DBAA].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "重生"
+		},
+		{
+			"id": "C152C360",
+			"line": "我的灵魂已经得到了修养\n我们再来一遍",
+			"duration": 5.463945578231293,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Respawn2DGeneral[C152C360][2816BD88].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "重生"
+		},
+		{
+			"id": "59552961",
+			"line": "(.......)",
+			"duration": 1.8946666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\UdyrBasicAttack_cast3D&UdyrBasicAttack2_cast3D[59552961][EC270C23].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "普攻"
+		},
+		{
+			"id": "7E5ACF02",
+			"line": "(.......)",
+			"duration": 1.9266666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\UdyrBasicAttack_cast3D&UdyrBasicAttack2_cast3D[7E5ACF02][93B2A95E].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "普攻"
+		},
+		{
+			"id": "8E32B82B",
+			"line": "(.......)",
+			"duration": 1.916,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\UdyrBasicAttack_cast3D&UdyrBasicAttack2_cast3D[8E32B82B][D8A0528D].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "普攻"
+		},
+		{
+			"id": "F9BB807F",
+			"line": "(.......)",
+			"duration": 1.7613333333333334,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\UdyrBasicAttack_cast3D&UdyrBasicAttack2_cast3D[F9BB807F][0050AD0B].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "普攻"
+		},
+		{
+			"id": "28600675",
+			"line": "猛虎开始狩猎了",
+			"duration": 3.478666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell2DQRankOne[28600675][5B1CC5BA].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "升级Q技能【狂暴爪击】且初次时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/Q.png"
+		},
+		{
+			"id": "9536E874",
+			"line": "(.......)",
+			"duration": 2.42,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DQ1Cast[9536E874][FDD8BC6A].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用Q技能【狂暴爪击】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/Q.png"
+		},
+		{
+			"id": "9F85F57F",
+			"line": "潜巡之虎",
+			"duration": 2.542666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DQ1Cast[9F85F57F][3BAE90E9].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用Q技能【狂暴爪击】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/Q.png"
+		},
+		{
+			"id": "D40ABB7E",
+			"line": "(.......)",
+			"duration": 3.022666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DQ1Cast[D40ABB7E][D910233C].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用Q技能【狂暴爪击】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/Q.png"
+		},
+		{
+			"id": "E68DBE19",
+			"line": "青丘之风",
+			"duration": 2.550666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DQ1Cast[E68DBE19][58836DA2].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用Q技能【狂暴爪击】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/Q.png"
+		},
+		{
+			"id": "EA153577",
+			"line": "我们不需要帮助",
+			"duration": 2.8386666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DQ1Cast[EA153577][39D4A4F5].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用Q技能【狂暴爪击】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/Q.png"
+		},
+		{
+			"id": "21A52D3C",
+			"line": "秋之咆哮",
+			"duration": 2.868,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DQ2Cast[21A52D3C][3EA9E345].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用Q技能【狂暴爪击】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/Q.png"
+		},
+		{
+			"id": "23EB2E66",
+			"line": "(.......)",
+			"duration": 3.1906666666666665,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DQ2Cast[23EB2E66][065BB73B].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用Q技能【狂暴爪击】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/Q.png"
+		},
+		{
+			"id": "38F4850B",
+			"line": "觉醒吧，猛虎",
+			"duration": 3.3773333333333335,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DQ2Cast[38F4850B][C218953E].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用Q技能【狂暴爪击】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/Q.png"
+		},
+		{
+			"id": "D9C9795C",
+			"line": "猛虎之力",
+			"duration": 2.764,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DQ2Cast[D9C9795C][5DEEEE84].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用Q技能【狂暴爪击】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/Q.png"
+		},
+		{
+			"id": "F3DE4420",
+			"line": "(.......)",
+			"duration": 3.084,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DQ2Cast[F3DE4420][BCD5F645].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用Q技能【狂暴爪击】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/Q.png"
+		},
+		{
+			"id": "FEA07541",
+			"line": "灵龟固体",
+			"duration": 2.7186666666666666,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell2DWRankOne[FEA07541][D73E6AB2].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "升级W技能【坚铁甲胄】且初次时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/W.png"
+		},
+		{
+			"id": "88672646",
+			"line": "(.......)",
+			"duration": 2.582666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DW1Cast[88672646][764382A5].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用W技能【坚铁甲胄】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/W.png"
+		},
+		{
+			"id": "8B165541",
+			"line": "不动窥然",
+			"duration": 2.5933333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DW1Cast[8B165541][B887EF5E].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用W技能【坚铁甲胄】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/W.png"
+		},
+		{
+			"id": "AF94C837",
+			"line": "固若灵龟",
+			"duration": 2.484,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DW1Cast[AF94C837][560F6AC1].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用W技能【坚铁甲胄】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/W.png"
+		},
+		{
+			"id": "CA11D01E",
+			"line": "寒冬之潮",
+			"duration": 2.5853333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DW1Cast[CA11D01E][3D448107].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用W技能【坚铁甲胄】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/W.png"
+		},
+		{
+			"id": "E4C3B71F",
+			"line": "(.......)",
+			"duration": 2.5853333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DW1Cast[E4C3B71F][1A256802].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用W技能【坚铁甲胄】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/W.png"
+		},
+		{
+			"id": "3ADA5D71",
+			"line": "灵龟之志",
+			"duration": 3.172,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DW2Cast[3ADA5D71][C68F769F].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用W技能【坚铁甲胄】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/W.png"
+		},
+		{
+			"id": "81BF4A68",
+			"line": "寒冬呼嚎",
+			"duration": 3.116,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DW2Cast[81BF4A68][D4EF48D9].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用W技能【坚铁甲胄】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/W.png"
+		},
+		{
+			"id": "82E55128",
+			"line": "(.......)",
+			"duration": 2.582666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DW2Cast[82E55128][52E3ACDC].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用W技能【坚铁甲胄】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/W.png"
+		},
+		{
+			"id": "C650F57E",
+			"line": "灵龟觉醒",
+			"duration": 3.3693333333333335,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DW2Cast[C650F57E][489EADD3].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用W技能【坚铁甲胄】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/W.png"
+		},
+		{
+			"id": "D7C4A22B",
+			"line": "(.......)",
+			"duration": 2.812,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DW2Cast[D7C4A22B][DD3EA63E].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用W技能【坚铁甲胄】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/W.png"
+		},
+		{
+			"id": "A35D0406",
+			"line": "巨熊已从长眠中苏醒",
+			"duration": 4.561333333333334,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell2DERankOne[A35D0406][1013C21E].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "升级E技能【踏火蛮冲】且初次时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/E.png"
+		},
+		{
+			"id": "2C325D6B",
+			"line": "我们照料所有同胞",
+			"duration": 3.3053333333333335,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DE1Cast[2C325D6B][29BC73DD].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用E技能【踏火蛮冲】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/E.png"
+		},
+		{
+			"id": "4CD3E04A",
+			"line": "熊母",
+			"duration": 2.036,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DE1Cast[4CD3E04A][93789A8E].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用E技能【踏火蛮冲】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/E.png"
+		},
+		{
+			"id": "5A77CC5E",
+			"line": "(.......)",
+			"duration": 2.7853333333333334,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DE1Cast[5A77CC5E][F5EF3DE9].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用E技能【踏火蛮冲】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/E.png"
+		},
+		{
+			"id": "65830D60",
+			"line": "春意蓬勃",
+			"duration": 2.8573333333333335,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DE1Cast[65830D60][E18F0CCA].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用E技能【踏火蛮冲】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/E.png"
+		},
+		{
+			"id": "81416322",
+			"line": "(.......)",
+			"duration": 2.9133333333333336,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DE1Cast[81416322][EA04DE31].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用E技能【踏火蛮冲】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/E.png"
+		},
+		{
+			"id": "107E6D50",
+			"line": "(.......)",
+			"duration": 2.1773333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DE2Cast[107E6D50][830CBD3D].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用E技能【踏火蛮冲】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/E.png"
+		},
+		{
+			"id": "2C86AD64",
+			"line": "巨熊的忠厚",
+			"duration": 2.985333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DE2Cast[2C86AD64][CCEEE4DD].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用E技能【踏火蛮冲】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/E.png"
+		},
+		{
+			"id": "4E424D6E",
+			"line": "春之咆哮",
+			"duration": 2.972,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DE2Cast[4E424D6E][C07492AF].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用E技能【踏火蛮冲】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/E.png"
+		},
+		{
+			"id": "8BB01270",
+			"line": "(.......)",
+			"duration": 2.2253333333333334,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DE2Cast[8BB01270][46083598].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用E技能【踏火蛮冲】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/E.png"
+		},
+		{
+			"id": "E9522042",
+			"line": "觉醒吧，巨熊",
+			"duration": 3.473333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DE2Cast[E9522042][28034652].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用E技能【踏火蛮冲】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/E.png"
+		},
+		{
+			"id": "F8B4CE7C",
+			"line": "凤凰浴火重生",
+			"duration": 3.996,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell2DRRankOne[F8B4CE7C][868FE9A7].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "升级R技能【极凌飓风】且初次时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/R.png"
+		},
+		{
+			"id": "08531F75",
+			"line": "(.......)",
+			"duration": 2.556,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DR1Cast[08531F75][BD101987].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用R技能【极凌飓风】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/R.png"
+		},
+		{
+			"id": "23493A5A",
+			"line": "烈焰火凤",
+			"duration": 3.1,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DR1Cast[23493A5A][49B303C0].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用R技能【极凌飓风】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/R.png"
+		},
+		{
+			"id": "29F08258",
+			"line": "夏日炎炎",
+			"duration": 2.9346666666666668,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DR1Cast[29F08258][2EACB14C].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用R技能【极凌飓风】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/R.png"
+		},
+		{
+			"id": "7EC05560",
+			"line": "(.......)",
+			"duration": 2.1453333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DR1Cast[7EC05560][74AA4F1A].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用R技能【极凌飓风】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/R.png"
+		},
+		{
+			"id": "E089C65D",
+			"line": "我们永恒不灭",
+			"duration": 3.1533333333333333,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DR1Cast[E089C65D][B5E0745B].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用R技能【极凌飓风】",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/R.png"
+		},
+		{
+			"id": "3E91DF22",
+			"line": "(.......)",
+			"duration": 2.8493333333333335,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DR2Cast[3E91DF22][954328B7].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用R技能【极凌飓风】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/R.png"
+		},
+		{
+			"id": "4ADD7A4B",
+			"line": "盛夏长歌",
+			"duration": 3.468,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DR2Cast[4ADD7A4B][2D035254].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用R技能【极凌飓风】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/R.png"
+		},
+		{
+			"id": "A7EE927E",
+			"line": "觉醒吧，火凤",
+			"duration": 3.3506666666666667,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DR2Cast[A7EE927E][F8963413].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用R技能【极凌飓风】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/R.png"
+		},
+		{
+			"id": "B1A2DF63",
+			"line": "凤凰高飞",
+			"duration": 3.132,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DR2Cast[B1A2DF63][808F997A].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用R技能【极凌飓风】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/R.png"
+		},
+		{
+			"id": "F05AAD65",
+			"line": "(.......)",
+			"duration": 2.86,
+			"audio": "D:\\project\\@lol\\lol-vo-extract\\@final\\[077003]灵魂守卫 乌迪尔[Udyr@PBE1@zh_cn]\\Spell3DR2Cast[F05AAD65][751377ED].wav",
+			"side": "right",
+			"head": "D:\\project\\@lol\\lol-vo-aeproject-autogen\\reso\\icon\\Udyr\\3.png",
+			"event": "使用R技能【极凌飓风】且觉醒时",
+			"skill": "${C.dirAutogen}/reso/icon/Udyr/R.png"
+		}
+	]
+}

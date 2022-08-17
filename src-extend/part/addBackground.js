@@ -15,13 +15,31 @@ this.AddBackGround = () => {
 
 
 	if(I.splashMiddle) {
-		const splashMiddle = CompMain.layers.add(GetFootage(EvalString(I.splashMiddle), DirFootage), D.full);
+		const footageSplashMiddle = GetFootage(EvalString(I.splashMiddle), DirFootage);
+
+		const splashMiddle = CompMain.layers.add(footageSplashMiddle, D.full);
 
 		splashMiddle.startTime = 8;
 		splashMiddle.scale.setValue([scaleSplashBackground, scaleSplashBackground]);
 
 		splashMiddle.transform.opacity.setValueAtTime(8, 0);
 		splashMiddle.transform.opacity.setValueAtTime(8 + 2, 100);
+
+
+		if((footageSplashMiddle.file.name.match(/\.mp4$/) || []).length) {
+			const timesLoop = Math.ceil((D.full - 8) / (footageSplashMiddle.duration - 2)) - 1;
+
+			for(let t = 0; t < timesLoop; t++) {
+				const splashMiddle = CompMain.layers.add(footageSplashMiddle, D.full);
+
+				const timeStart = 8 + (footageSplashMiddle.duration - 2) * (t + 1);
+				splashMiddle.startTime = timeStart;
+				splashMiddle.scale.setValue([scaleSplashBackground, scaleSplashBackground]);
+
+				splashMiddle.transform.opacity.setValueAtTime(timeStart, 0);
+				splashMiddle.transform.opacity.setValueAtTime(timeStart + 2, 100);
+			}
+		}
 
 	}
 };
