@@ -4,7 +4,7 @@ import { resolve, } from 'path';
 import { C, CR } from './config.js';
 
 import { dirReso, dirSrcExtend } from './lib/global.js';
-import parseLine from './lib/parseLine.js';
+import parseLine from './lib/parse-line.js';
 
 
 C.slot = C.special ?? C.slots[0];
