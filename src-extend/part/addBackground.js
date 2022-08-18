@@ -37,7 +37,7 @@ this.AddBackGround = () => {
 				splashMiddle.scale.setValue([scaleSplashBackground, scaleSplashBackground]);
 
 				splashMiddle.transform.opacity.setValueAtTime(timeStart, 0);
-				splashMiddle.transform.opacity.setValueAtTime(timeStart + 2, 100);
+				splashMiddle.transform.opacity.setValueAtTime(timeStart + 0.5, 100);
 			}
 		}
 
