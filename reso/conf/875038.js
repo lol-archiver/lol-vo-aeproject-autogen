@@ -83,5 +83,6 @@ export default {
 	},
 	lines: {
 		'9C1ABC3F': { mark: '特指设计师August在2021年上班摸鱼时在推特分享动图\\。动图中防御塔成为了瑟提R技能的目标' },
+		'D2C0EF04': { mark: '是“蠢”不是“准”，原文“unqualified”' },
 	}
 };

@@ -74,4 +74,4 @@ if(!C.video.simple) {
 
 CompMain.openInViewer();
 
-true;
+'success';
