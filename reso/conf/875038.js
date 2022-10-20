@@ -10,7 +10,7 @@ export default {
 		id: 38,
 		name: 'Spirit Blossom'
 	},
-	color: '#ED87D1',
+	color: '#EA7652',
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/875038.png',
 	events: {
 		'[攻击:生物:纳什男爵]':
