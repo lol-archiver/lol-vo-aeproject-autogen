@@ -11,43 +11,42 @@ export default {
 		name: 'Empyrean'
 	},
 	color: '#D23F45',
-	head: '${C.dirAutogen}/reso/other/icon/emp-pyke.png',
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/555045.png',
 	events: {
 		'[攻击:生物:纳什男爵]':
 			{ target: '${C.dirAutogen}/reso/icon/@monster/baron.png' },
-
 		'[击杀:建筑:防御塔]':
 			{ target: '${C.dirAutogen}/reso/icon/turret.png' },
+
 
 		'[初遇:英雄:派克]':
 			{ target: '${C.dirAutogen}/reso/icon/Pyke/0.png' },
 		'[击杀:英雄:派克]':
 			{ target: '${C.dirAutogen}/reso/icon/Pyke/0.png' },
 		'[初遇:英雄:烬]':
-			{ target: '${C.dirAutogen}/reso/icon/Jhin/0.png', mark: '检查了触发逻辑，确实是任意皮肤的烬均可触发\\，不知道是否拳头设置错误' },
+			{ target: '${C.dirAutogen}/reso/icon/Jhin/0.png', mark: '检查了触发逻辑，确实是任意皮肤的烬均可触发\\，不知道是否拳头故意设置的' },
 		'[击杀:皮肤:至高天 烬]':
-			{ target: '${C.dirAutogen}/reso/other/icon/emp-jhin.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Jhin/25.png' },
 		'[初遇:皮肤:至高天 劫]':
-			{ target: '${C.dirAutogen}/reso/other/icon/emp-zed.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Zed/38.png' },
 		'[击杀:皮肤:至高天 劫]':
-			{ target: '${C.dirAutogen}/reso/other/icon/emp-zed.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Zed/38.png' },
 		'[初遇:皮肤:至高天 贾克斯]':
-			{ target: '${C.dirAutogen}/reso/other/icon/emp-jax.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Jax/22.png' },
 		'[击杀:皮肤:至高天 贾克斯]':
-			{ target: '${C.dirAutogen}/reso/other/icon/emp-jax.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Jax/22.png' },
 		'[初遇:皮肤:至高天 薇古丝]':
-			{ target: '${C.dirAutogen}/reso/other/icon/emp-vex.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Vex/10.png' },
 		'[击杀:皮肤:至高天 薇古丝]':
-			{ target: '${C.dirAutogen}/reso/other/icon/emp-vex.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Vex/10.png' },
 		'[初遇:英雄:拉克丝]':
-			{ target: '${C.dirAutogen}/reso/icon/Lux/0.png', mark: '检查了触发逻辑，确实是任意皮肤的拉克丝均可触发\\，不知道是否拳头设置错误' },
+			{ target: '${C.dirAutogen}/reso/icon/Lux/0.png', mark: '检查了触发逻辑，确实是任意皮肤的拉克丝均可触发\\，不知道是否拳头故意设置的' },
 		'[击杀:皮肤:至高天 拉克丝]':
-			{ target: '${C.dirAutogen}/reso/other/icon/emp-lux.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Lux/42.png' },
 		'[初遇:皮肤:至高天 扎克]':
-			{ target: '${C.dirAutogen}/reso/other/icon/emp-zac.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Zac/14.png' },
 		'[击杀:皮肤:至高天 扎克]':
-			{ target: '${C.dirAutogen}/reso/other/icon/emp-zac.png' },
+			{ target: '${C.dirAutogen}/reso/icon/Zac/14.png' },
 
 
 
@@ -71,7 +70,8 @@ export default {
 			{ skill: '${C.dirAutogen}/reso/icon/Pyke/R.png' },
 	},
 	lines: {
-		'396BE156': { mark: '奶油，原文“butter”，可能是指固体状的黄油。' },
-		'9BDF0861': { mark: '至高天，原文“empyrean”，宗教用语\\。是十层天中的最高层，那里有至纯的纯火\\。因此该系列和语音中有不少关于火的元素' },
+		'396BE156': { mark: '奶油，原文“butter”，其实是指固体状的黄油' },
+		'9BDF0861': { mark: '至高天，原文“empyrean”，宗教用语\\。是十层天中的最高层，那里有至纯的纯火\\。因此该皮肤系列和语音中会有不少与火相关的设计' },
+		'09CEBF4A': { mark: '盈晖，原文“foreglow”' },
 	}
 };
