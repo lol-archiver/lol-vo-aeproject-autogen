@@ -1,6 +1,6 @@
 export default {
-	title: '太空律动 提莫',
-	title1: '太空律动',
+	title: '太空律动 "律动队长" 提莫',
+	title1: '太空律动 "律动队长"',
 	title2: '提莫',
 	champion: {
 		id: 17,
@@ -19,33 +19,33 @@ export default {
 			{ target: '${C.dirAutogen}/reso/icon/turret.png' },
 
 
-		'[初遇:皮肤:太空律动 “猫猫” 布里和里茨]':
+		'[初遇:皮肤:太空律动 "猫猫" 布里和里茨]':
 			{ target: '${C.dirAutogen}/reso/other/icon/spg-blitzcrank.png' },
-		'[击杀:皮肤:太空律动 “猫猫” 布里和里茨]':
+		'[击杀:皮肤:太空律动 "猫猫" 布里和里茨]':
 			{ target: '${C.dirAutogen}/reso/other/icon/spg-blitzcrank.png' },
-		'[初遇:皮肤:太空律动 古拉加斯]':
+		'[初遇:皮肤:太空律动 "电音酒桶" 古拉加斯]':
 			{ target: '${C.dirAutogen}/reso/icon/Gragas/20.png' },
-		'[击杀:皮肤:太空律动 古拉加斯]':
+		'[击杀:皮肤:太空律动 "电音酒桶" 古拉加斯]':
 			{ target: '${C.dirAutogen}/reso/icon/Gragas/20.png' },
-		'[初遇:皮肤:太空律动 丽桑卓]':
+		'[初遇:皮肤:太空律动 "噪音女王" 丽桑卓]':
 			{ target: '${C.dirAutogen}/reso/icon/Lissandra/34.png' },
-		'[击杀:皮肤:太空律动 丽桑卓]':
+		'[击杀:皮肤:太空律动 "噪音女王" 丽桑卓]':
 			{ target: '${C.dirAutogen}/reso/icon/Lissandra/34.png' },
-		'[初遇:皮肤:太空律动 娜美]':
+		'[初遇:皮肤:太空律动 "魔音海妖" 娜美]':
 			{ target: '${C.dirAutogen}/reso/icon/Nami/41.png' },
-		'[击杀:皮肤:太空律动 娜美]':
+		'[击杀:皮肤:太空律动 "魔音海妖" 娜美]':
 			{ target: '${C.dirAutogen}/reso/icon/Nami/41.png' },
-		'[初遇:皮肤:太空律动 奥恩]':
+		'[初遇:皮肤:太空律动 "创乐之神" 奥恩]':
 		{ target: '${C.dirAutogen}/reso/icon/Ornn/11.png' },
-		'[击杀:皮肤:太空律动 奥恩]':
+		'[击杀:皮肤:太空律动 "创乐之神" 奥恩]':
 		{ target: '${C.dirAutogen}/reso/icon/Ornn/11.png' },
-		'[初遇:皮肤:太空律动 塔里克]':
+		'[初遇:皮肤:太空律动 "爱乐之子" 塔里克]':
 		{ target: '${C.dirAutogen}/reso/icon/Taric/18.png' },
-		'[击杀:皮肤:太空律动 塔里克]':
+		'[击杀:皮肤:太空律动 "爱乐之子" 塔里克]':
 		{ target: '${C.dirAutogen}/reso/icon/Taric/18.png' },
-		'[初遇:皮肤:太空律动 崔斯特]':
+		'[初遇:皮肤:太空律动 "万能舞王" 崔斯特]':
 			{ target: '${C.dirAutogen}/reso/icon/TwistedFate/36.png' },
-		'[击杀:皮肤:太空律动 崔斯特]':
+		'[击杀:皮肤:太空律动 "万能舞王" 崔斯特]':
 			{ target: '${C.dirAutogen}/reso/icon/TwistedFate/36.png' },
 
 
