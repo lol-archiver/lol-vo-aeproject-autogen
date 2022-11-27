@@ -31,17 +31,17 @@ export default {
 			{ target: '${C.dirAutogen}/reso/icon/Warwick/45.png' },
 		'[击杀:皮肤:北极星之兽 沃里克]':
 			{ target: '${C.dirAutogen}/reso/icon/Warwick/45.png' },
-		'[初遇:皮肤:北极星猎人 斯维因]':
+		'[初遇:皮肤:北极星使者 斯维因]':
 			{ target: '${C.dirAutogen}/reso/icon/Swain/21.png' },
-		'[击杀:皮肤:北极星猎人 斯维因]':
+		'[击杀:皮肤:北极星使者 斯维因]':
 			{ target: '${C.dirAutogen}/reso/icon/Swain/21.png' },
 		'[初遇:皮肤:北极星圣贤 基兰]':
 			{ target: '${C.dirAutogen}/reso/icon/Zilean/14.png' },
 		'[击杀:皮肤:北极星圣贤 基兰]':
 			{ target: '${C.dirAutogen}/reso/icon/Zilean/14.png' },
-		'[初遇:皮肤:北极星人偶 萨科]':
+		'[初遇:皮肤:北极星使者 萨科]':
 			{ target: '${C.dirAutogen}/reso/icon/Shaco/33.png' },
-		'[击杀:皮肤:北极星人偶 萨科]':
+		'[击杀:皮肤:北极星使者 萨科]':
 			{ target: '${C.dirAutogen}/reso/icon/Shaco/33.png' },
 
 
