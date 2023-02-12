@@ -115,13 +115,15 @@ else {
 }
 
 
-const titleComp = `${C.video.width > C.video.height ? '' : '[竖屏] '}${C.slot} ${C.special ? '特别' : (CR.skin.id > 0 ? '皮肤' : '英雄')} ${CR.title1} ${CR.title2}`;
+const titleComp = `${C.video.width > C.video.height ? '' : '[竖屏] '}${C.slotMain} ${C.special ? '特别' : (CR.skin.id > 0 ? '皮肤' : '英雄')} ${CR.title1} ${CR.title2}${CR.title2Suffix}`;
 
 
 writeFileSync(fileInfo, JSON.stringify({
 	titleComp,
 	title1: CR.title1,
 	title2: CR.title2,
+	title2Suffix: CR.title2Suffix,
+	textInfo: CR.textInfo,
 	champion: CR.champion,
 	skin: CR.skin,
 	emote: CR.emote,
@@ -137,7 +139,7 @@ copyFileSync(fileInfo, fileInfoExtend);
 
 
 if(C.special) {
-	(console ?? {}).log(`已生成 [${C.slot}] ${CR.title}`);
+	(console ?? {}).log(`已生成 [${C.slot}] ${CR.title1}${CR.title2}${CR.title2Suffix}`);
 }
 else {
 	(console ?? {}).log(`已生成 [${C.slot}] ${CR.skin.name} ${CR.champion.name}`);

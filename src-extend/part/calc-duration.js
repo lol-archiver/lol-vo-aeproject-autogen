@@ -46,7 +46,7 @@ this.CalcDuration = () => {
 	D.full = D.opener + D.lines + D.ending;
 	D.linesEnd = D.opener + D.lines;
 
-	$.writeln(`${I.champion?.name ?? `${I.title1} ${I.title2}`} ${D.full.toFixed(2)} ${D.lines.toFixed(2)}`);
+	$.writeln(`${I.champion?.name ?? `${I.title1} ${I.title2}${I.title2Suffix}`} ${D.full.toFixed(2)} ${D.lines.toFixed(2)}`);
 
 	return lines;
 };
