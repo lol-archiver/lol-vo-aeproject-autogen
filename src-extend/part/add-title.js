@@ -18,7 +18,7 @@ const makeTitle = () => {
 
 	const textT = AddText(compTitle.layers, I.title1, 'text-top');
 	const maskTextT = AddShape(compTitle.layers, 'mask-text-top');
-	const textB = AddText(compTitle.layers, I.title2 + I.title2Suffix, 'text-bottom');
+	const textB = AddText(compTitle.layers, I.title2 + (I.title2Suffix || ''), 'text-bottom');
 	const maskTextB = AddShape(compTitle.layers, 'mask-text-bottom');
 
 	// Text Top
