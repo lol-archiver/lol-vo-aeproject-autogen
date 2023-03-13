@@ -46,11 +46,11 @@ export default {
 		'[击杀:英雄:乌迪尔]':
 			{ target: '${C.dirAutogen}/reso/icon/Udyr/0.png' },
 		'[初遇:英雄:米利欧]': {
-			target: '${C.dirAutogen}/reso/other/icon/milio.png',
+			target: '${C.dirAutogen}/reso/icon/Milio/0.png',
 			mark: '幼猫，原文“pakiti”\\，奈德丽所在氏族表达“小猫”的用词',
 		},
 		'[击杀:英雄:米利欧]': {
-			target: '${C.dirAutogen}/reso/other/icon/milio.png',
+			target: '${C.dirAutogen}/reso/icon/Milio/0.png',
 		},
 		'[初遇:英雄:Naafiri]': {
 			target: '${C.dirAutogen}/reso/icon/-1.png',
