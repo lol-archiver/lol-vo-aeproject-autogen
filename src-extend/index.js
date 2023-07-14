@@ -12,8 +12,9 @@ CompMain.duration = D.full;
 CompMain.openInViewer();
 
 
+AddBackGround();
+
 if(!C.video.simple) {
-	AddBackGround();
 	AddTitle();
 }
 
