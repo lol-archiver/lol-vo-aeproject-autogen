@@ -11,7 +11,6 @@ export default {
 		name: 'Soul Fighter'
 	},
 	color: '#D85639',
-	head: '${C.dirAutogen}/reso/icon/@unofficial/sf-samira.png',
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/360030.png',
 	events: {
 		'[攻击:生物:纳什男爵]':
@@ -32,21 +31,21 @@ export default {
 		'[击杀:皮肤:斗魂觉醒 烬]':
 			{ target: '${C.dirAutogen}/reso/icon/@unofficial/sf-jhin.png' },
 		'[初遇:皮肤:斗魂觉醒 拉克丝]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/sf-lux.png' },
+			{ target: '${C.dirAutogen}/reso/icon/lux/38.png' },
 		'[击杀:皮肤:斗魂觉醒 拉克丝]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/sf-lux.png' },
+			{ target: '${C.dirAutogen}/reso/icon/lux/38.png' },
 		'[初遇:皮肤:斗魂觉醒 纳亚菲利]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/sf-naafiri.png' },
+			{ target: '${C.dirAutogen}/reso/icon/naafiri/1.png' },
 		'[击杀:皮肤:斗魂觉醒 纳亚菲利]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/sf-naafiri.png' },
+			{ target: '${C.dirAutogen}/reso/icon/naafiri/1.png' },
 		'[初遇:皮肤:斗魂觉醒 派克]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/sf-pyke.png' },
+			{ target: '${C.dirAutogen}/reso/icon/pyke/53.png' },
 		'[击杀:皮肤:斗魂觉醒 派克]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/sf-pyke.png' },
+			{ target: '${C.dirAutogen}/reso/icon/pyke/53.png' },
 		'[初遇:皮肤:斗魂觉醒 瑟提]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/sf-sett.png' },
+			{ target: '${C.dirAutogen}/reso/icon/sett/45.png' },
 		'[击杀:皮肤:斗魂觉醒 瑟提]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/sf-sett.png' },
+			{ target: '${C.dirAutogen}/reso/icon/sett/45.png' },
 		'[初遇:皮肤:斗魂觉醒 萨科]':
 			{ target: '${C.dirAutogen}/reso/icon/@unofficial/sf-shaco.png' },
 		'[击杀:皮肤:斗魂觉醒 萨科]':

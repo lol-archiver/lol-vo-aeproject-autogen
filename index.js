@@ -96,22 +96,20 @@ includes?.forEach((id) => matchLine(id));
 
 const linesFinal = [];
 
-if(!C.special) {
-	const namesAudio = readdirSync(C.dirAudio);
+const namesAudio = readdirSync(C.dirAudio);
 
-	for(const event of events) {
-		for(const line of event.lines) {
-			const eventSlice = Object.assign({}, event);
-			delete eventSlice.lines;
+for(const event of events) {
+	for(const line of event.lines) {
+		const eventSlice = Object.assign({}, event);
+		delete eventSlice.lines;
 
-			linesFinal.push(...(await parseLine(line, eventSlice, namesAudio, (CR.lines ?? {})[line.id])));
-		}
+		linesFinal.push(...(await parseLine(line, eventSlice, namesAudio, (CR.lines ?? {})[line.id])));
 	}
 }
-else {
-	for(const lineSpecial of CR.linesSpecial) {
-		linesFinal.push(...(await parseLine(lineSpecial)));
-	}
+
+const linesSpecial = CR.linesSpecial ?? [];
+for(const lineSpecial of linesSpecial) {
+	linesFinal.push(...(await parseLine(lineSpecial)));
 }
 
 
@@ -138,9 +136,4 @@ writeFileSync(fileInfo, JSON.stringify({
 copyFileSync(fileInfo, fileInfoExtend);
 
 
-if(C.special) {
-	(console ?? {}).log(`已生成 [${C.slot}] ${CR.title1}${CR.title2}${CR.title2Suffix || ''}`);
-}
-else {
-	(console ?? {}).log(`已生成 [${C.slot}] ${CR.skin.name} ${CR.champion.name}`);
-}
+globalThis.console.log(`已生成 [${C.slot}] ${CR.title1}${CR.title2}${CR.title2Suffix || ''}`);
