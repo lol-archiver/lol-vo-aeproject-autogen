@@ -42,7 +42,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 	const topPaddingLineBox = 70;
 	const sidePaddingEvent = 50;
-	const sizeBoxTarget = 90;
+	const sizeBoxTarget = 100;
 	const strokeBoxTarget = 24;
 	const sizeBoxSkill = 72;
 	const strokeBoxSkill = 7;
@@ -103,8 +103,8 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	}
 
 	if(hasTarget) {
-		layerTarget.name = '对象';
-		layerBoxTarget.name = '对象盒';
+		layerTarget.name = '目标';
+		layerBoxTarget.name = '目标盒';
 	}
 
 	if(hasSkill) {
@@ -350,11 +350,11 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		const yTarget = yHeader - sizeBoxHeader / 2 + 14;
 
 		// --------------技能图标--------------
-		SetAttr(layerTarget.transform, { scale: [80, 80], position: [xTarget, yTarget] });
+		SetAttr(layerTarget.transform, { scale: [86, 86], position: [xTarget, yTarget] });
 
 
 
-		// --------------对象盒--------------
+		// --------------目标盒--------------
 		const boxTarget = AddProperty(layerBoxTarget.content, 'ADBE Vector Group');
 
 		SetAttr(AddProperty(boxTarget.content, 'ADBE Vector Shape - Ellipse'), {
