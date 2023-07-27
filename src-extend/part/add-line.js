@@ -147,6 +147,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	const widthBoxLine = line.boxTextSize[0] + paddingLine * 2;
 	const heightBoxLine = rectLine.height + paddingLine * 2 + topPaddingLineBox;
 
+	/** @type {Group} */
 	const boxLine = AddProperty(layerBoxLine.content, 'ADBE Vector Group');
 
 	SetAttr(AddProperty(boxLine.content, 'ADBE Vector Shape - Rect'), {
@@ -156,7 +157,9 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	$.writeln(widthBoxLine);
 	$.writeln(heightBoxLine);
 
-	SetAttr(AddProperty(boxLine.content, 'ADBE Vector Graphic - Fill'), { color: colorBoxLine });
+	const propFill = AddProperty(boxLine.content, 'ADBE Vector Graphic - Fill');
+	SetAttr(propFill, { color: colorBoxLine });
+	propFill.color.expression = 'comp("00-全局变量").layer("01-台词盒颜色").content("组 1").content("填充 1").color';
 
 	SetAttr(layerBoxLine.transform, {
 		position: [

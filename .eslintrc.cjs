@@ -52,6 +52,7 @@ const rcExtend = {
 		DirComp: 'readonly',
 		CompMain: 'readonly',
 
+		AddGlobal: 'readonly',
 		AddOpener: 'readonly',
 		AddTitle: 'readonly',
 		CalcDuration: 'readonly',

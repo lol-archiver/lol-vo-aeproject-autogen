@@ -11,6 +11,7 @@ const events = CalcDuration();
 CompMain.duration = D.full;
 CompMain.openInViewer();
 
+AddGlobal();
 
 AddBackGround();
 

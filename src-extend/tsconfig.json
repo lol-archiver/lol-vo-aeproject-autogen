@@ -16,6 +16,7 @@
 		"./lib/lang.js",
 		"./lib/ensure.js",
 
+		"./part/add-global.js",
 		"./part/add-opener.js",
 		"./part/add-title.js",
 		"./part/calc-duration.js",
