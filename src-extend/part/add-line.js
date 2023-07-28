@@ -48,7 +48,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	const strokeBoxSkill = 7;
 
 	// --------------台词合成--------------
-	const compLine = EnsureComp(indexText + line.line, duration, dirLine, widthCompLine, heightCompLine);
+	const compLine = EnsureComp(indexText + line.line.replace(/\n/g, ' '), duration, dirLine, widthCompLine, heightCompLine);
 	compLine.bgColor = RGBH('0E0E0E');
 
 	/** 打开第一个台词的合成 */
@@ -127,10 +127,10 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		strokeColor: colorLine,
 		strokeWidth: 2,
 		boxTextSize: line.boxTextSize,
+		justification: ParagraphJustification.LEFT_JUSTIFY,
 		leading: C.video.size.fontLine + leadingLine,
 		text: line.line,
 	});
-	// const baselineLocationLine = layerLine.sourceText.value.baselineLocs;
 
 
 	const rectLine = layerLine.sourceRectAtTime(0, false);
@@ -381,10 +381,10 @@ this.AddLine = (line, lid, dirLine, duration) => {
 			strokeColor: colorMark,
 			strokeWidth: 1,
 			boxTextSize: line.boxTextSizeMark,
+			justification: ParagraphJustification.RIGHT_JUSTIFY,
 			leading: C.video.size.fontMark + leadingLine,
 			text: markFinal,
 		});
-		// const baselineLocationMark = layerMark.sourceText.value.baselineLocs;
 
 
 		const rectMark = layerMark.sourceRectAtTime(0, false);

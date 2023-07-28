@@ -37,6 +37,8 @@ this.CalcDuration = () => {
 		line.durationLine = durationLine + 0.4 + (index >= D.lengthLine - 3 ? 4 : 0);
 	});
 
+	CompTest.remove();
+
 	D.list = durations;
 
 	D.lines = durationLines;

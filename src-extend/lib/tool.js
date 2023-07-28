@@ -186,7 +186,7 @@ this.GetBoxSize = text => {
 	const widthMax = 1050;
 	const heightMax = 1050;
 
-	const layerLine = CompMain.layers.addBoxText([widthMax, heightMax], text);
+	const layerLine = CompTest.layers.addBoxText([widthMax, heightMax], text);
 
 	const textDocLine = layerLine.sourceText.value;
 	textDocLine.resetCharStyle();
@@ -240,7 +240,7 @@ this.GetBoxSize = text => {
 	// const widthBox = Math.ceil(rect.width) + fontSize;
 	const lineBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
 
-	layerLine.remove();
+	// layerLine.remove();
 
 	return [Math.min(widthLineText, widthMax), lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
 
@@ -260,18 +260,18 @@ this.GetBoxSizeMark = text => {
 	const widthMax = 1200;
 	const heightMax = 1050;
 
-	const layerLine = CompMain.layers.addBoxText([widthMax, heightMax], text);
+	const layerMark = CompTest.layers.addBoxText([widthMax, heightMax], text);
 
-	const textDocLine = layerLine.sourceText.value;
-	textDocLine.resetCharStyle();
-	textDocLine.fontSize = fontSize;
-	textDocLine.font = 'Source Han Mono SC';
-	textDocLine.applyStroke = true;
-	textDocLine.strokeWidth = 1;
-	textDocLine.text = text;
-	textDocLine.name = 'TestMark';
-	textDocLine.leading = fontSize + heightLeading;
-	layerLine.sourceText.setValue(textDocLine);
+	const textDocMark = layerMark.sourceText.value;
+	textDocMark.resetCharStyle();
+	textDocMark.fontSize = fontSize;
+	textDocMark.font = 'Source Han Mono SC';
+	textDocMark.applyStroke = true;
+	textDocMark.strokeWidth = 1;
+	textDocMark.text = text;
+	textDocMark.name = 'TestMark';
+	textDocMark.leading = fontSize + heightLeading;
+	layerMark.sourceText.setValue(textDocMark);
 
 
 	const widthsLine = [];
@@ -289,12 +289,12 @@ this.GetBoxSizeMark = text => {
 	const widthLineText = Math.max.apply(this, widthsLine);
 
 
-	const rect = layerLine.sourceRectAtTime(0, false);
+	const rect = layerMark.sourceRectAtTime(0, false);
 
 	// const widthBox = Math.ceil(rect.width) + fontSize;
 	const lineBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
 
-	layerLine.remove();
+	// layerLine.remove();
 
 	return [Math.min(widthLineText, widthMax), lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
 };
@@ -327,6 +327,12 @@ this.SetText = (target, options) => {
 	}
 
 	target.sourceText.setValue(textDoc);
+
+
+	if('justification' in options && options.justification != ParagraphJustification.RIGHT_JUSTIFY) {
+		textDoc.justification = ParagraphJustification.RIGHT_JUSTIFY;
+	}
+
 
 	return target;
 };

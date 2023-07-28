@@ -13,7 +13,7 @@ const makeTitle = () => {
 	const colorShadow = RGBH('000000');
 
 
-	const compTitle = EnsureComp('comp-title', D.title, DirComp);
+	const compTitle = EnsureComp('02-标题', D.title, DirComp);
 
 
 	const textT = AddText(compTitle.layers, I.title1, 'text-top');

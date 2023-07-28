@@ -51,6 +51,7 @@ const rcExtend = {
 		DirFootage: 'readonly',
 		DirComp: 'readonly',
 		CompMain: 'readonly',
+		CompTest: 'readonly',
 
 		AddGlobal: 'readonly',
 		AddOpener: 'readonly',
@@ -66,6 +67,7 @@ const rcExtend = {
 
 		SplashesOpener: 'readonly',
 		OffsetSplashBackground: 'readonly',
+		ParagraphJustification: 'readonly',
 
 
 

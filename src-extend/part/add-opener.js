@@ -13,7 +13,7 @@ this.OffsetSplashBackground = C.isLandscape ? 0 : offsetSplashBackground;
  * @returns {[CompItem, number]} [片头合成, 背景立绘偏移]
  */
 this.AddOpener = () => {
-	const compOpener = EnsureComp('comp-opener', D.opener, DirComp);
+	const compOpener = EnsureComp('01.0-片头', D.opener, DirComp);
 	const layerOpener = compOpener.layers;
 
 
@@ -33,7 +33,7 @@ this.AddOpener = () => {
 
 
 	// splash-opener-tl
-	const compTL = EnsureComp('subcomp-splash-opener-tl', D.opener, DirComp, widthGrid, heightGrid2);
+	const compTL = EnsureComp('01.1-片头左上', D.opener, DirComp, widthGrid, heightGrid2);
 	layerOpener.add(compTL, D.opener).position.setValue([wGrid(1, 0.5), hGrid2(1, 0.5)]);
 
 	const splashTL = compTL.layers.add(GetFootage(SplashesOpener[1][0], DirFootage), D.opener); splashTL.name = 'splash-opener-tl';
@@ -47,7 +47,7 @@ this.AddOpener = () => {
 	SetEase(splashTL.position, 3, 4, Ease1);
 
 	// splash-opener-bl
-	const compBL = EnsureComp('subcomp-splash-opener-bl', D.opener, DirComp, widthGrid, heightGrid2);
+	const compBL = EnsureComp('01.2-片头左下', D.opener, DirComp, widthGrid, heightGrid2);
 	layerOpener.add(compBL, D.opener).position.setValue([wGrid(1, 0.5), hGrid2(2, 0.5)]);
 
 	const infoBL = SplashesOpener[2];
@@ -64,7 +64,7 @@ this.AddOpener = () => {
 
 
 	// splash-opener-tr
-	const compTR = EnsureComp('subcomp-splash-opener-tr', D.opener, DirComp, widthGrid, heightGrid2);
+	const compTR = EnsureComp('01.3-片头右上', D.opener, DirComp, widthGrid, heightGrid2);
 	layerOpener.add(compTR, D.opener).position.setValue([wGrid(3, 0.5), hGrid2(1, 0.5)]);
 
 	const infoTR = SplashesOpener[3];
@@ -80,7 +80,7 @@ this.AddOpener = () => {
 	SetEase(splashTR.position, 3, 4, Ease1);
 
 	// splash-opener-br
-	const compBR = EnsureComp('subcomp-splash-opener-br', D.opener, DirComp, widthGrid, heightGrid2);
+	const compBR = EnsureComp('01.4-片头右下', D.opener, DirComp, widthGrid, heightGrid2);
 	layerOpener.add(compBR, D.opener).position.setValue([wGrid(3, 0.5), hGrid2(2, 0.5)]);
 
 	const infoBR = SplashesOpener[4];
@@ -97,7 +97,7 @@ this.AddOpener = () => {
 
 
 	// splash-opener-tc
-	const compTC = EnsureComp('subcomp-splash-opener-tc', D.opener, DirComp, widthGrid, heightGrid3);
+	const compTC = EnsureComp('01.5-片头中上', D.opener, DirComp, widthGrid, heightGrid3);
 	const avCompTC = layerOpener.add(compTC, D.opener);
 	avCompTC.position.setValueAtTime(0, [wGrid(2, 0.5), hGrid3(1.5, 0.5)]);
 	avCompTC.position.setValueAtTime(1, [wGrid(2, 0.5), hGrid3(1, 0.5)]);
@@ -120,7 +120,7 @@ this.AddOpener = () => {
 
 
 	// splash-opener-bc
-	const compBC = EnsureComp('subcomp-splash-opener-bc', D.opener, DirComp, widthGrid, heightGrid3);
+	const compBC = EnsureComp('01.6-片头中下', D.opener, DirComp, widthGrid, heightGrid3);
 	const avCompBC = layerOpener.add(compBC, D.opener);
 	avCompBC.position.setValueAtTime(0, [wGrid(2, 0.5), hGrid3(2.5, 0.5)]);
 	avCompBC.position.setValueAtTime(1, [wGrid(2, 0.5), hGrid3(3, 0.5)]);
@@ -143,7 +143,7 @@ this.AddOpener = () => {
 
 
 	// splash-opener-mc
-	const compMC = EnsureComp('subcomp-splash-opener-mc', D.opener, DirComp, widthGrid, heightGrid3);
+	const compMC = EnsureComp('01.7-片头正中', D.opener, DirComp, widthGrid, heightGrid3);
 	const avCompMC = layerOpener.add(compMC, D.opener);
 	avCompMC.position.setValue([wGrid(2, 0.5), hGrid3(2, 0.5)]);
 
