@@ -177,6 +177,9 @@ this.EnumLine = (lines, callback) => {
 };
 
 
+// eslint-disable-next-line no-useless-escape
+const regexSizeHalf = /[A-Za-z0-9,.!()<> …%\\\/'":]/g;
+
 this.GetBoxSize = text => {
 	const fontSize = C.video.size.fontLine;
 	const heightLeading = C.video.size.heightLeading;
@@ -221,7 +224,7 @@ this.GetBoxSize = text => {
 	const lines = text.split('\n');
 	for(let i = 0; i < lines.length; i++) {
 		const line = lines[i];
-		const sizeHalf = (line.match(/[A-Za-z0-9.()<> …%]/g) || []).length;
+		const sizeHalf = (line.match(regexSizeHalf) || []).length;
 
 		const widthLine = lines[i].length * fontSize - sizeHalf * Math.ceil(fontSize * 1 / 3 - 1);
 
@@ -254,7 +257,7 @@ this.GetBoxSize = text => {
 this.GetBoxSizeMark = text => {
 	const fontSize = C.video.size.fontMark;
 	const heightLeading = C.video.size.heightLeading;
-	const widthMax = 1050;
+	const widthMax = 1200;
 	const heightMax = 1050;
 
 	const layerLine = CompMain.layers.addBoxText([widthMax, heightMax], text);
@@ -275,7 +278,7 @@ this.GetBoxSizeMark = text => {
 	const lines = text.split('\n');
 	for(let i = 0; i < lines.length; i++) {
 		const line = lines[i];
-		const sizeHalf = (line.match(/[A-Za-z0-9.()<> …%]/g) || []).length;
+		const sizeHalf = (line.match(regexSizeHalf) || []).length;
 
 		const widthLine = lines[i].length * fontSize - sizeHalf * Math.ceil(fontSize * 1 / 3 - 1);
 
