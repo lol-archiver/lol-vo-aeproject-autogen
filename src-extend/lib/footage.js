@@ -4,7 +4,7 @@
  * @param {FolderItem} parent 父项目
  * @returns {_ItemClasses} 素材
  */
-this.GetFootage = (path, parent) => {
+const getFootage = (path, parent) => {
 	/** @type {_ItemClasses} */
 	let footage = this.GetFootage.map[path];
 
@@ -25,5 +25,7 @@ this.GetFootage = (path, parent) => {
 
 	return this.GetFootage.map[path] = footage;
 };
+this.GetFootage = getFootage;
+
 
 this.GetFootage.map = {};

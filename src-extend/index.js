@@ -9,7 +9,6 @@ const events = CalcDuration();
 
 
 CompMain.duration = D.full;
-CompMain.openInViewer();
 
 AddGlobal();
 
@@ -75,5 +74,6 @@ if(!C.video.simple) {
 
 
 CompMain.openInViewer();
+
 
 'success';

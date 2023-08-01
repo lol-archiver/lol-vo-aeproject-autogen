@@ -41,14 +41,10 @@ export default {
 			{ target: '${C.dirAutogen}/reso/icon/Gwen/0.png' },
 		'[初遇:英雄:悠米]':
 			{ target: '${C.dirAutogen}/reso/icon/Yuumi/0.png' },
-		'[初遇:英雄:Naafiri]': {
-			target: '${C.dirAutogen}/reso/icon/-1.png',
-			mark: '新英雄“Naafiri”，简中译名未知'
-		},
-		'[击杀:英雄:Naafiri]': {
-			target: '${C.dirAutogen}/reso/icon/-1.png',
-			mark: '新英雄“Naafiri”，简中译名未知'
-		},
+		'[初遇:英雄:纳亚菲利]':
+			{ target: '${C.dirAutogen}/reso/icon/Naafiri/0.png', },
+		'[击杀:英雄:纳亚菲利]':
+			{ target: '${C.dirAutogen}/reso/icon/Naafiri/0.png', },
 		'[初遇:英雄:妮蔻]':
 			{ target: '${C.dirAutogen}/reso/icon/Neeko/0.png' },
 		'[击杀:英雄:妮蔻]':

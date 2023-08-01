@@ -10,7 +10,6 @@ export default {
 		id: 89,
 		name: 'Inkshadow'
 	},
-	head: '${C.dirAutogen}/reso/icon/@unofficial/ink-masteryi.png',
 	color: '#F16629',
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/011089.png',
 	events: {
@@ -30,29 +29,29 @@ export default {
 
 
 		'[初遇:皮肤:墨之影武者 卡莎]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-kaisa.png' },
+			{ target: '${C.dirAutogen}/reso/icon/kaisa/48.png' },
 		'[击杀:皮肤:墨之影武者 卡莎]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-kaisa.png' },
+			{ target: '${C.dirAutogen}/reso/icon/kaisa/48.png' },
 		'[初遇:皮肤:墨影行者 乌迪尔]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-udyr.png' },
+			{ target: '${C.dirAutogen}/reso/icon/udyr/6.png' },
 		'[击杀:皮肤:墨影行者 乌迪尔]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-udyr.png' },
+			{ target: '${C.dirAutogen}/reso/icon/udyr/6.png' },
 		'[初遇:皮肤:墨影之灵 奥瑞利安·索尔]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-aurelionsol.png' },
+			{ target: '${C.dirAutogen}/reso/icon/aurelionsol/21.png' },
 		'[击杀:皮肤:墨影之灵 奥瑞利安·索尔]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-aurelionsol.png' },
+			{ target: '${C.dirAutogen}/reso/icon/aurelionsol/21.png' },
 		'[初遇:皮肤:墨影之灵 沃利贝尔]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-volibear.png' },
+			{ target: '${C.dirAutogen}/reso/icon/volibear/19.png' },
 		'[击杀:皮肤:墨影之灵 沃利贝尔]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-volibear.png' },
+			{ target: '${C.dirAutogen}/reso/icon/volibear/19.png' },
 		'[初遇:皮肤:墨之影武者 亚索]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-yasuo.png' },
+			{ target: '${C.dirAutogen}/reso/icon/yasuo/56.png' },
 		'[击杀:皮肤:墨之影武者 亚索]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-yasuo.png' },
+			{ target: '${C.dirAutogen}/reso/icon/yasuo/56.png' },
 		'[击杀:皮肤:墨之影武者 永恩]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-yone.png' },
+			{ target: '${C.dirAutogen}/reso/icon/yone/35.png' },
 		'[初遇:皮肤:墨之影武者 永恩]':
-			{ target: '${C.dirAutogen}/reso/icon/@unofficial/ink-yone.png' },
+			{ target: '${C.dirAutogen}/reso/icon/yone/35.png' },
 
 
 		'[移动::注释:R技能激活时]':

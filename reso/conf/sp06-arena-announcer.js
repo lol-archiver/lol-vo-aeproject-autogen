@@ -6,7 +6,7 @@ export default {
 	splash: '${C.dirAutogen}/reso/splash/sp06-arena-announcer.png',
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/sp06-arena-announcer.png',
 	head: '${C.dirAutogen}/reso/icon/@other/arena.png',
-	dictation: 'D:/project/@lol/lol-vo-lines-dictation/@Announcer/Arena Battlecaster@zh_cn.md',
+	dictation: 'D:/project/@lol/lol-vo-lines-dictation/@Announcer/Arena@zh_cn.md',
 	audios: 'D:/project/@lol/lol-vo-extract/@final/斗魂竞技场',
 	events: {
 		'[标题:场景英雄【莎弥拉】出场]':

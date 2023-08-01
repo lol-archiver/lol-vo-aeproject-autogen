@@ -13,9 +13,6 @@ export default {
 	color: '#64AA66',
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/076000.png',
 	events: {
-		'[初遇:皮肤:绝息圣堂 弗拉基米尔]':
-			{ target: '${C.dirAutogen}/reso/icon/Vladimir/39.png' },
-
 		'[初遇:地区:皮尔特沃夫]':
 			{ target: '${C.dirAutogen}/reso/region/piltover.png' },
 		'[击杀:地区:皮尔特沃夫]':
@@ -49,17 +46,12 @@ export default {
 			target: '${C.dirAutogen}/reso/icon/Milio/0.png',
 			mark: '幼猫，原文“pakiti”\\，奈德丽所在氏族表达“小猫”的用词',
 		},
-		'[击杀:英雄:米利欧]': {
-			target: '${C.dirAutogen}/reso/icon/Milio/0.png',
-		},
-		'[初遇:英雄:Naafiri]': {
-			target: '${C.dirAutogen}/reso/icon/-1.png',
-			mark: '新英雄“Naafiri”，简中译名未知'
-		},
-		'[击杀:英雄:Naafiri]': {
-			target: '${C.dirAutogen}/reso/icon/-1.png',
-			mark: '新英雄“Naafiri”，简中译名未知'
-		},
+		'[击杀:英雄:米利欧]':
+			{ target: '${C.dirAutogen}/reso/icon/Milio/0.png', },
+		'[初遇:英雄:纳亚菲利]':
+			{ target: '${C.dirAutogen}/reso/icon/Naafiri/0.png', },
+		'[击杀:英雄:纳亚菲利]':
+			{ target: '${C.dirAutogen}/reso/icon/Naafiri/0.png', },
 		'[初遇:英雄:奎桑提]':
 			{ target: '${C.dirAutogen}/reso/icon/KSante/0.png' },
 		'[击杀:英雄:奎桑提]':

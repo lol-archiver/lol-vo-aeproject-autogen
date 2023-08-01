@@ -3,18 +3,40 @@ this.AddEnding = () => {
 	const textInfo = C.textInfo;
 
 
-	const scaleSplashBackground = C.isLandscape ? 158 : 268;
+	const scaleBackground = C.isLandscape ? 158 : 268;
 
 
-	const splashEnd = GetFootage(EvalString(C.fileSplash));
-	const layerSplashEnd = CompMain.layers.add(splashEnd, D.full);
-	layerSplashEnd.startTime = D.linesEnd + 2;
+	const footageBackground = GetFootage(EvalString(C.fileSplash));
+	const isVideoBackground = (footageBackground.file.name.match(/\.mp4$/) || []).length > 0;
 
-	layerSplashEnd.transform.scale.setValue([scaleSplashBackground, scaleSplashBackground]);
-	const positionSplashBackground = layerSplashEnd.position.value; positionSplashBackground[0] += OffsetSplashBackground;
-	layerSplashEnd.position.setValue(positionSplashBackground);
-	layerSplashEnd.transform.opacity.setValueAtTime(D.linesEnd + 2, 0);
-	layerSplashEnd.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 100);
+
+	const layerBackground = CompMain.layers.add(footageBackground, D.full);
+	layerBackground.startTime = D.linesEnd + 2;
+
+	layerBackground.transform.scale.setValue([scaleBackground, scaleBackground]);
+
+	const positionSplashBackground = layerBackground.position.value;
+	positionSplashBackground[0] += OffsetSplashBackground;
+	layerBackground.position.setValue(positionSplashBackground);
+
+	layerBackground.transform.opacity.setValueAtTime(D.linesEnd + 2, 0);
+	layerBackground.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 100);
+
+
+	if(isVideoBackground) {
+		const layerBackground2 = CompMain.layers.add(footageBackground, D.full);
+		layerBackground2.startTime = D.linesEnd + 2 + footageBackground.duration;
+
+		layerBackground2.transform.scale.setValue([scaleBackground, scaleBackground]);
+
+		const positionSplashBackground = layerBackground2.position.value;
+		positionSplashBackground[0] += OffsetSplashBackground;
+		layerBackground2.position.setValue(positionSplashBackground);
+
+		layerBackground2.transform.opacity.setValueAtTime(D.linesEnd + 2, 0);
+		layerBackground2.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 100);
+	}
+
 
 
 	const layerThankyou = CompMain.layers.addText(textThankyou);
