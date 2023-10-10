@@ -6,11 +6,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	const side = line.side;
 	const isMain = side == 'right';
 
-	const colorBoxLine = !isMain ?
-		(line.colorLineBox ?
-			RGB.apply(this, line.colorLineBox) :
-			RGBH('902222')) :
-		RGBH(I.color || '1FAAF1');
+	const colorBoxLine = line.colorBoxLine ? RGBH(line.colorBoxLine) : null;
 
 	const eventText = line.eventDirect || line.event;
 	const markFinal = line.mark;
@@ -158,8 +154,13 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	$.writeln(heightBoxLine);
 
 	const propFill = AddProperty(boxLine.content, 'ADBE Vector Graphic - Fill');
-	SetAttr(propFill, { color: colorBoxLine });
-	propFill.color.expression = 'comp("00-全局变量").layer("01-台词盒颜色").content("组 1").content("填充 1").color';
+
+	if(colorBoxLine) {
+		SetAttr(propFill, { color: colorBoxLine });
+	}
+	else {
+		propFill.color.expression = 'comp("00-全局变量").layer("01-台词盒颜色").content("组 1").content("填充 1").color';
+	}
 
 	SetAttr(layerBoxLine.transform, {
 		position: [
@@ -280,7 +281,12 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		const xEvent = xHeader - rectEvent.width - paddingLine * 2 - sidePaddingEvent;
 		const yEvent = yHeader + rectEvent.height / 2 - leadingLine / 2;
 
-		SetAttr(layerEvent.transform, { position: [xEvent, yEvent] });
+		SetAttr(layerEvent.transform, {
+			position: [
+				xEvent - (line.event[0] == '（' ? 2 * Math.ceil(C.video.size.fontLine * 1 / 3 - 1) : 0),
+				yEvent,
+			]
+		});
 
 
 

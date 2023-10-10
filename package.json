@@ -10,6 +10,7 @@
 		"node": ">=14.18.1"
 	},
 	"scripts": {
+		"更新配置": "node index",
 		"构建": "cd src-extend && tsc"
 	},
 	"dependencies": {

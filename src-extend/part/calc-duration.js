@@ -2,7 +2,7 @@ this.CalcDuration = () => {
 	/** @type {Array} */
 	let lines = I.lines;
 
-	if(C.video.range) { lines = lines.slice(C.video.range[0], C.video.range[1]); }
+	if(C.video.range) { lines = lines.slice(C.video.range[0] - 1, C.video.range[1]); }
 
 
 	const durations = [];

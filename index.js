@@ -1,13 +1,21 @@
-import { copyFileSync, readdirSync, readFileSync, writeFileSync } from 'fs';
+import { copyFileSync, readdirSync, writeFileSync } from 'fs';
 import { resolve, } from 'path';
 
 import { C, CR } from './config.js';
 
 import { dirReso, dirSrcExtend } from './lib/global.js';
 import parseLine from './lib/parse-line.js';
+import readRawLines from './lib/read-raw-lines.js';
 
 
-C.slot = C.special ?? C.slots[0];
+const parseConfig = string => string.replace(/\$\{.+?\}/g, text => {
+	try {
+		C; CR;
+		return eval(text.replace(/(^\$\{)|(\}$)/g, ''));
+	}
+	catch(error) { return text; }
+});
+
 
 const fileInfo = resolve(dirReso, 'info', `${C.slot}.json`);
 const fileInfoExtend = resolve(dirSrcExtend, 'lib', 'info.json');
@@ -21,43 +29,25 @@ writeFileSync(resolve(dirSrcExtend, 'lib', 'config.path.js'),
 );
 
 
-const eventsRaw = [];
+const [eventsRaw, linesRaw] = C.fileDictation ? readRawLines(C.fileDictation, CR.events) : [[], []];
 
-if(C.fileDictation) {
-	const textsLine = readFileSync(C.fileDictation, 'UTF8').split('\n').filter((text) => text.trim() && !text.trim().startsWith('<!--'));
+if(C.slotsExtra.length) {
+	for(const slotExtra of C.slotsExtra) {
+		const extra = CR.extras[slotExtra];
+		if(!extra) { continue; }
 
-	const eventsExtra = CR.events ?? {};
+		linesRaw.push(...readRawLines(parseConfig(extra.fileDictation))[1]
+			.map(lineRaw => {
+				lineRaw.from = slotExtra;
 
+				Object.assign(lineRaw, extra.append);
 
-	let isLineStart = false;
-	let linesNow;
-	for(const textLine of textsLine) {
-		if(!isLineStart) {
-			if(textLine == '## Lines:台词') { isLineStart = true; }
-
-			continue;
-		}
-
-		if(textLine.startsWith('### ')) {
-			const event = {
-				event: textLine.replace('### **', '').replace('**', '').replace(/^\d+ /, ''),
-				lines: [],
-			};
-
-			linesNow = event.lines;
-
-			eventsRaw.push(Object.assign(event, eventsExtra[event.event] ?? {}));
-		}
-		else {
-			if(textLine.startsWith('<!-- ')) { continue; }
-
-			const [idLineRaw, line] = textLine.replace(/^- `/, '').split('` ');
-			const [id, hash] = idLineRaw.split('|');
-
-			linesNow.push({ id, hash, line, });
-		}
+				return lineRaw;
+			})
+		);
 	}
 }
+
 
 
 const includes = CR.includes instanceof Array && CR.includes.length ? CR.includes : null;
@@ -103,7 +93,13 @@ for(const event of events) {
 		const eventSlice = Object.assign({}, event);
 		delete eventSlice.lines;
 
-		linesFinal.push(...(await parseLine(line, eventSlice, namesAudio, (CR.lines ?? {})[line.id])));
+		linesFinal.push(...(await parseLine(
+			line,
+			eventSlice,
+			namesAudio,
+			CR.lines,
+			linesRaw,
+		)));
 	}
 }
 
@@ -136,4 +132,4 @@ writeFileSync(fileInfo, JSON.stringify({
 copyFileSync(fileInfo, fileInfoExtend);
 
 
-globalThis.console.log(`已生成 [${C.slot}] ${CR.title1}${CR.title2}${CR.title2Suffix || ''}`);
+globalThis.console.log(`已生成 [${C.slot}] ${CR.title1} ${CR.title2} ${CR.title2Suffix || ''}`);
