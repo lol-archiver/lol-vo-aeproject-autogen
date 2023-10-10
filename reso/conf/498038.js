@@ -26,7 +26,7 @@ export default {
 			fileDictation: '${C.dirDictation}/rakan/Redeemed Star Guardian@zh_cn.md',
 			append: {
 				folder: '${C.dirExtract}/@final/497036@星之守护者 净化之翎 洛@pbe',
-				head: '${C.dirAutogen}/reso/icon/rakan/36.png',
+				head: headRakan,
 				target: headXayah,
 				colorBoxLine: '27B4A0',
 			},
@@ -34,6 +34,7 @@ export default {
 	},
 	events: {
 		...eventsPublic,
+
 
 		'[初遇:皮肤:星之守护者 净化之翎 洛]':
 			{ target: '${C.dirAutogen}/reso/icon/rakan/36.png' },
