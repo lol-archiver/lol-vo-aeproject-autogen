@@ -9,12 +9,12 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	const colorBoxLine = line.colorBoxLine ? RGBH(line.colorBoxLine) : null;
 
 	const eventText = line.eventDirect || line.event;
-	const markFinal = line.mark;
 
 	const hasTarget = isMain ? line.target : false;
 	const hasSkill = isMain ? line.skill : false;
 	const hasEvent = line.hideEvent ? false : !!eventText;
-	const hasMark = !!markFinal;
+	const hasCond = !!line.cond;
+	const hasMark = !!line.mark;
 
 
 	/** 合成宽度 */
@@ -25,18 +25,20 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	/** 台词字体颜色 */
 	const colorLine = RGBH('FFFAFA');
 	/** 备注字体颜色 */
+	const colorCond = RGBH('FFFAFA');
+	/** 备注字体颜色 */
 	const colorMark = RGBH('FFFAFA');
 
 	/** 台词盒边宽 */
-	const paddingLine = 40;
+	const paddingLine = C.video.size.paddingLine;
 	/** 台词盒到侧边的距离 */
-	const siteLine = C.isLandscape ? 200 : 140;
+	const paddingSideVideo = C.video.size.paddingSideVideo;
 	/** 台词盒到底边的距离 */
-	const bottomLine = C.isLandscape ? 100 : 160;
+	const paddingBottomVideo = C.video.size.paddingBottomVideo;
 
 	const leadingLine = C.video.size.heightLeading;
 
-	const topPaddingLineBox = 70;
+	const paddingTopExtra$event = C.video.size.paddingTopExtra$event;
 	const sidePaddingEvent = 50;
 	const sizeBoxTarget = 100;
 	const strokeBoxTarget = 24;
@@ -54,8 +56,12 @@ this.AddLine = (line, lid, dirLine, duration) => {
 	if(line.audio && !C.video.mute) { compLine.layers.add(GetFootage(EvalString(line.audio), DirVoice)); }
 
 
+	const layerBoxCond = hasCond ? compLine.layers.addShape() : null;
+	const layerCond = hasCond ? compLine.layers.addBoxText([1, 1], line.cond) : null;
+
+
 	const layerBoxMark = hasMark ? compLine.layers.addShape() : null;
-	const layerMark = hasMark ? compLine.layers.addBoxText([1, 1], markFinal) : null;
+	const layerMark = hasMark ? compLine.layers.addBoxText([1, 1], line.mark) : null;
 
 
 	const layerBoxLine = compLine.layers.addShape();
@@ -108,6 +114,11 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		layerBoxSkill.name = '技能盒';
 	}
 
+	if(hasCond) {
+		layerCond.name = '条件';
+		layerBoxCond.name = '条件盒';
+	}
+
 	if(hasMark) {
 		layerMark.name = '备注';
 		layerBoxMark.name = '备注盒';
@@ -122,53 +133,53 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		fontSize: C.video.size.fontLine,
 		strokeColor: colorLine,
 		strokeWidth: 2,
-		boxTextSize: line.boxTextSize,
+		boxTextSize: [line.widthTextLine, line.heightTextLine],
 		justification: ParagraphJustification.LEFT_JUSTIFY,
 		leading: C.video.size.fontLine + leadingLine,
 		text: line.line,
 	});
 
 
-	const rectLine = layerLine.sourceRectAtTime(0, false);
+	// const rectLine = layerLine.sourceRectAtTime(0, false);
 
+	const paddingCond = 20;
 	const paddingMark = 20;
-	const xLine = widthCompLine - line.boxTextSize[0] - siteLine - paddingLine;
-	const yLine = heightCompLine - rectLine.height - bottomLine - paddingLine - (hasMark ? line.boxHeightMark + paddingMark : 0);
+	const xLine = widthCompLine - paddingSideVideo - line.widthTextLine - paddingLine;
+	const yLine = heightCompLine - paddingBottomVideo - line.heightTextLine - paddingLine
+		- (hasCond ? paddingCond + line.heightTextCond + paddingCond : 0)
+		- (hasMark ? C.video.size.gapBoxLive + paddingMark + line.heightTextMark + paddingMark : 0);
 
 
 	SetAttr(layerLine.transform, { position: [xLine, yLine] });
 
 
 	// --------------台词盒--------------
-	const widthBoxLine = line.boxTextSize[0] + paddingLine * 2;
-	const heightBoxLine = rectLine.height + paddingLine * 2 + topPaddingLineBox;
+	const widthTextLine = line.widthTextLine + paddingLine * 2;
+	const heightTextLine = line.heightTextLine + paddingLine * 2 + paddingTopExtra$event;
 
 	/** @type {Group} */
 	const boxLine = AddProperty(layerBoxLine.content, 'ADBE Vector Group');
 
 	SetAttr(AddProperty(boxLine.content, 'ADBE Vector Shape - Rect'), {
-		size: [widthBoxLine, heightBoxLine],
+		size: [widthTextLine, heightTextLine],
 		roundness: 14,
 	});
-	$.writeln(widthBoxLine);
-	$.writeln(heightBoxLine);
 
-	const propFill = AddProperty(boxLine.content, 'ADBE Vector Graphic - Fill');
+	const propFillBoxLine = AddProperty(boxLine.content, 'ADBE Vector Graphic - Fill');
 
 	if(colorBoxLine) {
-		SetAttr(propFill, { color: colorBoxLine });
+		SetAttr(propFillBoxLine, { color: colorBoxLine });
 	}
 	else {
-		propFill.color.expression = 'comp("00-全局变量").layer("01-台词盒颜色").content("组 1").content("填充 1").color';
+		propFillBoxLine.color.expression = 'comp("00-全局变量").layer("01-台词盒颜色").content("组 1").content("填充 1").color';
 	}
 
 	SetAttr(layerBoxLine.transform, {
 		position: [
-			xLine + widthBoxLine / 2 - paddingLine,
-			yLine + heightBoxLine / 2 - paddingLine - topPaddingLineBox - leadingLine / 2,
+			xLine + widthTextLine / 2 - paddingLine,
+			yLine + heightTextLine / 2 - paddingLine - paddingTopExtra$event - leadingLine / 2,
 		],
 	});
-
 
 
 	// --------------底纹--------------
@@ -178,7 +189,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		SetAttr(layerShade.transform, {
 			position: [
 				xLine - paddingLine + rectShade.width / 2,
-				yLine - paddingLine - topPaddingLineBox + rectShade.height / 2,
+				yLine - paddingLine - paddingTopExtra$event + rectShade.height / 2,
 			],
 			opacity: I.shade.opacity ?? 24,
 			scale: I.shade.scale ?? [100, 100],
@@ -196,8 +207,8 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 
 	// --------------头像--------------
-	const xHeader = xLine + widthBoxLine - paddingLine;
-	const yHeader = yLine - paddingLine - topPaddingLineBox - leadingLine / 2;
+	const xHeader = xLine + widthTextLine - paddingLine;
+	const yHeader = yLine - paddingLine - paddingTopExtra$event - leadingLine / 2;
 
 	SetAttr(layerHeader.transform, { scale: [(line.flipHor ? -1 : 1) * 150, 150] });
 
@@ -206,7 +217,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 	// --------------头像盒--------------
 	const boxHeader = AddProperty(layerBoxHeader.content, 'ADBE Vector Group');
-	const sizeBoxHeader = 200;
+	const sizeBoxHeader = C.video.size.sizeBoxHeader;
 
 	SetAttr(AddProperty(boxHeader.content, 'ADBE Vector Shape - Ellipse'), {
 		size: [sizeBoxHeader, sizeBoxHeader],
@@ -295,7 +306,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 		SetAttr(AddProperty(boxEvent.content, 'ADBE Vector Shape - Rect'), {
 			size: [
-				rectEvent.width + paddingLine * 2 + topPaddingLineBox,
+				rectEvent.width + paddingLine * 2 + paddingTopExtra$event,
 				rectEvent.height + paddingLine * 2,
 			],
 			roundness: 14,
@@ -378,6 +389,65 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 
 
+	if(hasCond) {
+		// --------------条件--------------
+		SetText(layerCond, {
+			fillColor: colorCond,
+			font: 'Source Han Mono SC',
+			fontSize: C.video.size.fontCond,
+			strokeColor: colorCond,
+			strokeWidth: 1,
+			boxTextSize: [line.widthTextCond, line.heightTextCond],
+			justification: ParagraphJustification.RIGHT_JUSTIFY,
+			leading: C.video.size.fontCond + leadingLine,
+			text: line.cond,
+		});
+
+
+		const xCond = widthCompLine - paddingSideVideo - line.widthTextCond - paddingCond;
+		const yCond = heightCompLine - paddingBottomVideo
+			- line.heightTextCond - paddingCond
+			- (!hasMark ? 0 : C.video.size.gapBoxLive + paddingMark + line.heightTextMark + paddingMark);
+
+		SetAttr(layerCond.transform, {
+			position: [xCond, yCond + 4],
+		});
+
+
+
+		// --------------条件框--------------
+		const boxCond = AddProperty(layerBoxCond.content, 'ADBE Vector Group');
+
+
+		SetAttr(AddProperty(boxCond.content, 'ADBE Vector Shape - Rect'), {
+			roundness: 14,
+			size: [
+				paddingCond + line.widthTextCond + paddingCond,
+				paddingCond + line.heightTextCond + paddingCond + 20,
+			]
+		});
+
+
+		const propFillCond = AddProperty(boxCond.content, 'ADBE Vector Graphic - Fill');
+		if(colorBoxLine) {
+			SetAttr(propFillCond, { color: colorBoxLine });
+		}
+		else {
+			propFillCond.color.expression = 'comp("00-全局变量").layer("01-台词盒颜色").content("组 1").content("填充 1").color';
+		}
+
+
+		SetAttr(layerBoxCond.transform, {
+			opacity: 66,
+			position: [
+				xCond + line.widthTextCond / 2,
+				yCond + line.heightTextCond / 2 - 20 / 2,
+			]
+		});
+	}
+
+
+
 	if(hasMark) {
 		// --------------备注--------------
 		SetText(layerMark, {
@@ -386,23 +456,19 @@ this.AddLine = (line, lid, dirLine, duration) => {
 			fontSize: C.video.size.fontMark,
 			strokeColor: colorMark,
 			strokeWidth: 1,
-			boxTextSize: line.boxTextSizeMark,
+			boxTextSize: [line.widthTextMark, line.heightTextMark],
 			justification: ParagraphJustification.RIGHT_JUSTIFY,
 			leading: C.video.size.fontMark + leadingLine,
-			text: markFinal,
+			text: line.mark,
 		});
 
 
-		const rectMark = layerMark.sourceRectAtTime(0, false);
-
-		const xMark = widthCompLine - line.boxTextSizeMark[0] - siteLine - paddingMark;
-		const yMark = heightCompLine - rectMark.height - bottomLine - paddingMark;
+		const xMark = widthCompLine - paddingSideVideo - line.widthTextMark - paddingMark;
+		const yMark = heightCompLine - paddingBottomVideo
+			- line.heightTextMark - paddingMark;
 
 		SetAttr(layerMark.transform, {
-			position: [
-				widthCompLine - line.boxTextSizeMark[0] - siteLine - paddingMark,
-				heightCompLine - rectMark.height - bottomLine - paddingMark,
-			],
+			position: [xMark, yMark + 4],
 		});
 
 
@@ -414,8 +480,8 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		SetAttr(AddProperty(boxMark.content, 'ADBE Vector Shape - Rect'), {
 			roundness: 14,
 			size: [
-				line.boxTextSizeMark[0] + paddingMark * 2,
-				line.boxTextSizeMark[1] + paddingMark * 2,
+				line.widthTextMark + paddingMark * 2,
+				line.heightTextMark + paddingMark * 2,
 			]
 		});
 
@@ -425,8 +491,8 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		SetAttr(layerBoxMark.transform, {
 			opacity: 66,
 			position: [
-				xMark + line.boxTextSizeMark[0] / 2,
-				yMark + rectMark.height / 2,
+				xMark + line.widthTextMark / 2,
+				yMark + line.heightTextMark / 2,
 			]
 		});
 	}

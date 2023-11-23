@@ -1,6 +1,6 @@
 this.AddBackGround = () => {
 	const startBackgroundMiddle = 8;
-	const scaleBackground = C.isLandscape ? 158 : 268;
+	const scaleBackground = C.video.isLandscape ? 158 : 268;
 
 
 	/** @type {FootageItem} */

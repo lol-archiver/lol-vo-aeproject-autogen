@@ -6,17 +6,16 @@ this.I.offsetsSplash = JSON.parse(ReadFile(`${C.dirAutogen}/reso/splash-offset.j
 
 C.widthVideo = C.video.width;
 C.heightVideo = C.video.height;
-C.isLandscape = C.widthVideo > C.heightVideo;
 C.pixelAspect = 1;
 C.frameRate = 60;
 
 
-if(!C.isLandscape) {
+if(!C.video.isLandscape) {
 	C.video.size.fontMark = C.video.size.fontLine - 8;
 	C.video.size.paddingMark = C.video.size.fontLine - 8;
 }
 
-$.writeln('是否横屏: ' + C.isLandscape);
+$.writeln(C.isLandscape ? '横屏' : '竖屏');
 
 
 this.D = {

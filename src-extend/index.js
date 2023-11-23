@@ -32,25 +32,22 @@ let accumDuration = D.opener + D.title - 0.5;
 EnumLine(events, (line, lid, index) => {
 	const yCenter = 540;
 
-	let yLine = yCenter + line.boxHeight;
+	let yLine = yCenter + (line.heightLive + C.video.size.gapLive);
 	let indexLine = index;
 
 	let durationLine = line.durationLine;
 
 	while(yLine >= -yCenter) {
 		const lineInfoExtra = D.list[++indexLine];
+		if(!lineInfoExtra) { break; }
 
-		if(lineInfoExtra) {
-			const nextDuration = lineInfoExtra[0];
-			const nextBoxHeight = lineInfoExtra[1];
 
-			yLine -= nextBoxHeight;
+		const nextDuration = lineInfoExtra[0];
+		const nextBoxHeight = lineInfoExtra[1] + C.video.size.gapLive;
 
-			durationLine += nextDuration + D.interval;
-		}
-		else {
-			break;
-		}
+		yLine -= nextBoxHeight;
+
+		durationLine += nextDuration + D.interval;
 	}
 
 	const compLine = AddLine(line, lid, DirLine, durationLine);

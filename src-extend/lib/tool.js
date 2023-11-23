@@ -178,7 +178,7 @@ this.EnumLine = (lines, callback) => {
 
 
 // eslint-disable-next-line no-useless-escape
-const regexSizeHalf = /[A-Za-z0-9,.!()<> …%\\\/'":]/g;
+const regexSize13 = /[A-Za-z0-9,.!()<> …%\\\/'":]/g;
 
 this.GetBoxSize = text => {
 	const fontSize = C.video.size.fontLine;
@@ -217,33 +217,32 @@ this.GetBoxSize = text => {
 
 	// layerLine.remove();
 
-
-
 	// return [Math.min(widthLineText, widthMax), lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
-	const widthsLine = [];
+
+
+	const widthsRow = [];
 	const lines = text.split('\n');
 	for(let i = 0; i < lines.length; i++) {
 		const line = lines[i];
-		const sizeHalf = (line.match(regexSizeHalf) || []).length;
+		const sizeHalf = (line.match(regexSize13) || []).length;
 
-		const widthLine = lines[i].length * fontSize - sizeHalf * Math.ceil(fontSize * 1 / 3 - 1);
+		const widthRow = lines[i].length * fontSize - sizeHalf * Math.ceil(fontSize * 1 / 3 - 1);
 
-		widthsLine.push(widthLine);
+		widthsRow.push(widthRow);
 	}
 
-
-	const widthLineText = Math.max.apply(this, widthsLine);
+	const widthRowMax = Math.max.apply(this, widthsRow);
 
 
 	const rect = layerLine.sourceRectAtTime(0, false);
+	const countRowBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
 
-	// const widthBox = Math.ceil(rect.width) + fontSize;
-	const lineBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
 
-	// layerLine.remove();
-
-	return [Math.min(widthLineText, widthMax), lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
-
+	return [
+		Math.min(widthRowMax, widthMax),
+		countRowBox * (fontSize + heightLeading) - heightLeading,
+		countRowBox,
+	];
 };
 
 // const rrr1 = GetBoxSize('你不好好');
@@ -274,29 +273,29 @@ this.GetBoxSizeMark = text => {
 	layerMark.sourceText.setValue(textDocMark);
 
 
-	const widthsLine = [];
+	const widthsRow = [];
 	const lines = text.split('\n');
 	for(let i = 0; i < lines.length; i++) {
 		const line = lines[i];
-		const sizeHalf = (line.match(regexSizeHalf) || []).length;
+		const countSize13 = (line.match(regexSize13) || []).length;
 
-		const widthLine = lines[i].length * fontSize - sizeHalf * Math.ceil(fontSize * 1 / 3 - 1);
+		const widthRow = lines[i].length * fontSize - countSize13 * Math.ceil(fontSize * 1 / 3 - 1);
 
-		widthsLine.push(widthLine);
+		widthsRow.push(widthRow);
 	}
 
-
-	const widthLineText = Math.max.apply(this, widthsLine);
+	const widthRowMax = Math.max.apply(this, widthsRow);
 
 
 	const rect = layerMark.sourceRectAtTime(0, false);
+	const countRowBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
 
-	// const widthBox = Math.ceil(rect.width) + fontSize;
-	const lineBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
 
-	// layerLine.remove();
-
-	return [Math.min(widthLineText, widthMax), lineBox * (fontSize + heightLeading) - heightLeading, lineBox];
+	return [
+		Math.min(widthRowMax, widthMax),
+		countRowBox * (fontSize + heightLeading) - heightLeading,
+		countRowBox,
+	];
 };
 
 

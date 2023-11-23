@@ -46,19 +46,37 @@ interface VideoParam {
 	readonly width: number
 	/** 视频高度 */
 	readonly height: number
+	/** 视频是否横屏（自动生成）依据：C.widthVideo > C.heightVideo */
+	readonly isLandscape: number
 
 	/** 各种持续时间 */
 	readonly size: {
 		/** 台词字体大小 */
 		readonly fontLine: number
+		/** 条件字体大小 */
+		readonly fontCond: number
 		/** 备注字体大小 */
 		readonly fontMark: number
-		/** 台词内间隔 */
+		/** 台词盒填充 */
 		readonly paddingLine: number
-		/** 备注内间隔 */
+		/** 条件盒填充 */
+		readonly paddingCond: number
+		/** 备注盒填充 */
 		readonly paddingMark: number
 		/** 台词字体行距 */
 		readonly heightLeading: number
+		/** 台词盒顶部填充（因事件盒的重叠而额外增加的） */
+		paddingTopExtra$event: number,
+		/** 头像盒直径 */
+		sizeBoxHeader: number,
+		/** 台词总成间距 */
+		gapLive: number,
+		/** 台词总成中台词、条件、备注的间距 */
+		gapBoxLive: number,
+		/** 台词盒到视频侧边的填充 */
+		paddingSideVideo: number,
+		/** 台词盒到视频底边的填充 */
+		paddingBottomVideo: number,
 	}
 }
 
@@ -100,8 +118,6 @@ interface C {
 	readonly widthVideo: number
 	/** 视频高度（自动生成） */
 	readonly heightVideo: number
-	/** 视频是否横屏（自动生成）依据：C.widthVideo > C.heightVideo */
-	readonly isLandscape: boolean
 	/** 视频像素比例（自动生成） */
 	readonly pixelAspect: 1
 	/** 视频帧率（自动生成） */

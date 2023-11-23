@@ -3,7 +3,7 @@ this.AddEnding = () => {
 	const textInfo = C.textInfo;
 
 
-	const scaleBackground = C.isLandscape ? 158 : 268;
+	const scaleBackground = C.video.isLandscape ? 158 : 268;
 
 
 	const footageBackground = GetFootage(EvalString(C.fileSplash));
