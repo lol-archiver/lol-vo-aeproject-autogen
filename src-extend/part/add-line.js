@@ -212,7 +212,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 	SetAttr(layerHeader.transform, { scale: [(line.flipHor ? -1 : 1) * 150, 150] });
 
-	SetAttr(layerHeader.transform, { position: [xHeader, yHeader] });
+	SetAttr(layerHeader.transform, { position: [xHeader, yHeader + 1] });
 
 
 	// --------------头像盒--------------

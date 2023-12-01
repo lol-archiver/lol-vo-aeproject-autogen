@@ -16,7 +16,6 @@ export default {
 	},
 	color: '4DA8D0',
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/235056.png',
-	head: '${C.dirAutogen}/reso/icon/senna/56a.png',
 	events: {
 		...eventsPublic,
 	},

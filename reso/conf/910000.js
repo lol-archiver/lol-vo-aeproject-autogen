@@ -14,7 +14,7 @@ export default {
 	splashMiddle: '${C.dirAutogen}/reso/splash-left/910000.png',
 	events: {},
 	lines: {
-		'11BA690A': { mark: '“勾崖”原文“Koyehn”，彗早年生活的故乡，直到烬摧毁了彗所在的寺庙' },
+		'11BA690A': { mark: '“勾崖”原文“Koyehn”\\，彗早年生活的故乡，直到烬摧毁了彗所在的寺庙' },
 		'188EA508': { mark: '若初次移动时随机到该语音，则会该局游戏添加【光明】标记' },
 		'B071B30C': { mark: '若初次移动时随机到该语音，则会该局游戏添加【光明】标记' },
 		'E5AF0D05': { mark: '若初次移动时随机到该语音，则会该局游戏添加【黑暗】标记' },
