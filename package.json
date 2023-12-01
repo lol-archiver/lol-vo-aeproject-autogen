@@ -1,8 +1,8 @@
 {
-	"name": "lol-vo-aeproject-autogen",
-	"version": "3.1.1",
+	"name": "@lol-archiver/lol-vo-aeproject-autogen",
+	"version": "3.1.2",
 	"description": "",
-	"author": "Nuogz",
+	"author": "DanoR",
 	"license": "LGPL-3.0-or-later",
 	"main": "index.js",
 	"type": "module",
@@ -14,11 +14,11 @@
 		"构建": "cd src-extend && tsc"
 	},
 	"dependencies": {
-		"music-metadata": "^8.1.4",
+		"music-metadata": "^8.2.0",
 		"types-for-adobe": "^7.0.12",
-		"typescript": "^5.1.6"
+		"typescript": "^5.3.2"
 	},
 	"devDependencies": {
-		"eslint": "^8.45.0"
+		"eslint": "^8.54.0"
 	}
 }
