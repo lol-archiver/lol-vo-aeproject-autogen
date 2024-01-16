@@ -15,7 +15,7 @@ if(!C.video.isLandscape) {
 	C.video.size.paddingMark = C.video.size.fontLine - 8;
 }
 
-$.writeln(C.isLandscape ? '横屏' : '竖屏');
+$.writeln(C.video.isLandscape ? '横屏' : '竖屏');
 
 
 this.D = {
