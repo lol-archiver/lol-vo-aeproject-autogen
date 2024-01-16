@@ -44,18 +44,6 @@ export default {
 			{ target: '${C.dirAutogen}/reso/icon/@unofficial/janna-56.png' },
 		'[击杀:皮肤:天龙之子 迦娜]':
 			{ target: '${C.dirAutogen}/reso/icon/@unofficial/janna-56.png' },
-
-
-		'[使用:Q天音波]':
-			{ skill: '${C.dirAutogen}/reso/icon/leesin/q.png' },
-		'[使用:Q回音击]':
-			{ skill: '${C.dirAutogen}/reso/icon/leesin/q_2.png' },
-		'[使用:W金钟罩]':
-			{ skill: '${C.dirAutogen}/reso/icon/leesin/w.png' },
-		'[使用:E天雷破]':
-			{ skill: '${C.dirAutogen}/reso/icon/leesin/e.png' },
-		'[使用:R猛龙摆尾]':
-			{ skill: '${C.dirAutogen}/reso/icon/leesin/r.png' },
 	},
 	lines: {}
 };
