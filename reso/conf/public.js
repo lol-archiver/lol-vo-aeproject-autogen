@@ -19,6 +19,9 @@ export const eventsPublic = {
 	'[攻击:生物:暗影狼]': { target: '${C.dirAutogen}/reso/icon/@monster/murkwolf.png' },
 	'[攻击:生物:锋喙鸟]': { target: '${C.dirAutogen}/reso/icon/@monster/raptor.png' },
 
+	'[攻击:小兵]': { target: '${C.dirAutogen}/reso/icon/@minion/melee-blue.png' },
+	'[击杀:小兵]': { target: '${C.dirAutogen}/reso/icon/@minion/melee-blue.png' },
+
 	'[击杀:建筑:防御塔]': { target: '${C.dirAutogen}/reso/icon/turret.png' },
 	'[使用:道具:监视图腾]': { skill: '${C.dirAutogen}/reso/icon/@item/3350_greateryellowtrinket.png' },
 	'[使用:道具:守卫]': { skill: '${C.dirAutogen}/reso/icon/@item/3350_greateryellowtrinket.png' },
