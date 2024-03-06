@@ -88,7 +88,7 @@ includes?.forEach((id) => matchLine(id));
 
 
 // 对话处理
-const dialogists = Object.keys(CR.dialogist);
+const dialogists = Object.keys(CR.dialogist ?? {});
 
 const assignDialog$rev = {};
 for(let indexDialog = 1; indexDialog <= CR.dialogs?.length ?? 0; indexDialog++) {
