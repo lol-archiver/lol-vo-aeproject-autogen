@@ -40,7 +40,7 @@ this.AddLine = (line, lid, dirLine, duration) => {
 
 	const paddingTopExtra$event = C.video.size.paddingTopExtra$event;
 	const sidePaddingEvent = 50;
-	const sizeBoxTarget = 100;
+	const sizeBoxTarget = 96;
 	const strokeBoxTarget = 24;
 	const sizeBoxSkill = 72;
 	const strokeBoxSkill = 7;
