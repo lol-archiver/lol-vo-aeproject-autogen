@@ -19,6 +19,9 @@ export const eventsPublic = {
 	'[攻击:生物:暗影狼]': { target: '${C.dirAutogen}/reso/icon/@monster/murkwolf.png' },
 	'[攻击:生物:锋喙鸟]': { target: '${C.dirAutogen}/reso/icon/@monster/raptor.png' },
 
+	'[初遇:地区:以绪塔尔]': { target: '${C.dirAutogen}/reso/icon/@region/ixtal.png' },
+	'[初遇:地区:虚空]': { target: '${C.dirAutogen}/reso/icon/@region/void.png' },
+
 	'[攻击:小兵]': { target: '${C.dirAutogen}/reso/icon/@minion/melee-blue.png' },
 	'[击杀:小兵]': { target: '${C.dirAutogen}/reso/icon/@minion/melee-blue.png' },
 

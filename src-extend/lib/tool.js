@@ -179,6 +179,7 @@ this.EnumLine = (lines, callback) => {
 
 // eslint-disable-next-line no-useless-escape
 const regexSize13 = /[A-Za-z0-9,.!()<> …%\\\/'":]/g;
+const charsSize13 = ['Ọ̀', 'ẹ'];
 
 this.GetBoxSize = text => {
 	const fontSize = C.video.size.fontLine;
@@ -224,9 +225,13 @@ this.GetBoxSize = text => {
 	const lines = text.split('\n');
 	for(let i = 0; i < lines.length; i++) {
 		const line = lines[i];
-		const sizeHalf = (line.match(regexSize13) || []).length;
 
-		const widthRow = lines[i].length * fontSize - sizeHalf * Math.ceil(fontSize * 1 / 3 - 1);
+		let countCharSize13 = 0;
+		for(const c of charsSize13) { countCharSize13 += line.indexOf(c) > -1; }
+
+		const countSize13 = (line.match(regexSize13) || []).length + countCharSize13;
+
+		const widthRow = lines[i].length * fontSize - countSize13 * Math.ceil(fontSize * 1 / 3 - 1);
 
 		widthsRow.push(widthRow);
 	}
@@ -277,7 +282,11 @@ this.GetBoxSizeMark = text => {
 	const lines = text.split('\n');
 	for(let i = 0; i < lines.length; i++) {
 		const line = lines[i];
-		const countSize13 = (line.match(regexSize13) || []).length;
+
+		let countCharSize13 = 0;
+		for(const c of charsSize13) { countCharSize13 += line.indexOf(c) > -1; }
+
+		const countSize13 = (line.match(regexSize13) || []).length + countCharSize13;
 
 		const widthRow = lines[i].length * fontSize - countSize13 * Math.ceil(fontSize * 1 / 3 - 1);
 
