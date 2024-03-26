@@ -18,6 +18,7 @@ export const eventsPublic = {
 	'[攻击:生物:远古石甲虫]': { target: '${C.dirAutogen}/reso/icon/@monster/krug.png' },
 	'[攻击:生物:暗影狼]': { target: '${C.dirAutogen}/reso/icon/@monster/murkwolf.png' },
 	'[攻击:生物:锋喙鸟]': { target: '${C.dirAutogen}/reso/icon/@monster/raptor.png' },
+	'[攻击:生物:峡谷迅捷蟹]': { target: '${C.dirAutogen}/reso/icon/@monster/rift-scuttler.png' },
 
 	'[初遇:地区:以绪塔尔]': { target: '${C.dirAutogen}/reso/icon/@region/ixtal.png' },
 	'[初遇:地区:虚空]': { target: '${C.dirAutogen}/reso/icon/@region/void.png' },
