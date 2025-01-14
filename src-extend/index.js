@@ -50,7 +50,7 @@ EnumLine(events, (line, lid, index) => {
 		durationLine += nextDuration + D.interval;
 	}
 
-	const compLine = AddLine(line, lid, DirLine, durationLine);
+	const compLine = AddLine(line, lid, DirLine, durationLine, accumDuration);
 
 	AddLineScroll(line, compLine, index, accumDuration, durationLine);
 

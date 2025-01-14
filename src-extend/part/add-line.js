@@ -3,9 +3,10 @@
  * @param {number} lid
  * @param {string} dirLine
  * @param {number} duration
+ * @param {number} accumDuration
  * @returns {CompItem|undefined}
  */
-this.AddLine = (line, lid, dirLine, duration) => {
+this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 	if(!line.duration) { return; }
 
 	const indexText = lid + 1;
@@ -530,6 +531,10 @@ this.AddLine = (line, lid, dirLine, duration) => {
 		});
 	}
 
+
+	if(line.back) {
+		AddLineBackGround(line.back, accumDuration);
+	}
 
 
 	return compLine;

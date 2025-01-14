@@ -109,8 +109,9 @@ const fileHead = configProject.fileHead ? parsePresetPath(configProject.fileHead
 const fileBackground = configProject.fileBackground ? parsePresetPath(configProject.fileBackground)
 	: resolvePath(dirResourcesProject, `${isSkinMode ? `${idSkinPad}-` : ''}splash.jpg`);
 /** 默认主背景文件 */
-const fileBackgroundMain = configProject.fileBackgroundMain ? parsePresetPath(configProject.fileBackgroundMain)
-	: resolvePath(dirResourcesProject, `${isSkinMode ? `${idSkinPad}-` : ''}splash-left.png`);
+const fileBackgroundMain = configProject.fileBackgroundMain === false ? null :
+	configProject.fileBackgroundMain ? parsePresetPath(configProject.fileBackgroundMain)
+		: resolvePath(dirResourcesProject, `${isSkinMode ? `${idSkinPad}-` : ''}splash-left.png`);
 
 /** 默认主Logo文件 */
 const fileLogo = configProject.fileLogo ? resolvePath(dirResourcesProject, configProject.fileLogo)
@@ -140,11 +141,11 @@ const textEnding = configProject.textEnding || configUser.textEnding || configDe
 
 
 // 台词文件
-const fileDictation = parsePresetPath(configProject.fileDictation) || resolvePath(dirDictations,
-	readdirSync(dirDictations).find(file => file.includes(runcom.slot) && file.includes('@zh-cn') && !file.includes('.bak')));
+const fileSlot = readdirSync(dirDictations).find(file => file.includes(runcom.slot) && file.includes('@zh-cn') && !file.includes('.bak'));
+const fileDictation = parsePresetPath(configProject.fileDictation) || (fileSlot ? resolvePath(dirDictations, fileSlot) : null);
 // 语音目录
-const dirVoices = configProject.dirVoices || resolvePath(dirVoicesAll,
-	readdirSync(dirVoicesAll).find(dir => dir.includes(runcom.slot) && dir.includes('@zh')));
+const dirSlot = readdirSync(dirVoicesAll).find(dir => dir.includes(runcom.slot) && dir.includes('@zh'));
+const dirVoices = configProject.dirVoices || (dirSlot ? resolvePath(dirVoicesAll, dirSlot) : null);
 
 
 
@@ -179,6 +180,8 @@ const linesDictation = (fileDictation ? readDictationLines(fileDictation) : [])
 				|| intersected(idsLineExclude, lineDictation.idsSound ?? []))
 		) { return false; }
 
+		if(lineDictation.extras.skip) { return false; }
+
 		return idsLineInclude
 			? (idsLineInclude.includes(lineDictation.idAudio) || intersected(idsLineInclude, lineDictation.idsSound ?? []))
 			: true;
@@ -191,7 +194,7 @@ const linesDictation = (fileDictation ? readDictationLines(fileDictation) : [])
  * @param {string} [from]
  * @returns {LineConfig}
  */
-const parseDictaionLineConfig = (lineDictation, from) => {
+const parseDictaionLineConfig = (lineDictation, from = 'unknown') => {
 	const extras = lineDictation.extras;
 
 	/** @type {LineConfig} */
@@ -243,17 +246,37 @@ const parseDictaionLineConfig = (lineDictation, from) => {
 /** 额外台词集 @type {LineConfig[]} */
 const linesExtra = configProject.linesExtra?.map(lineExtra => parseDictaionLineConfig(lineExtra, 'project')) ?? [];
 
-if(runcom.slotsExtra?.length) {
-	for(const slotExtra of runcom.slotsExtra) {
-		const configExtra = configProject.configsExtra[slotExtra];
-		if(!configExtra) { continue; }
+for(const slotExtraRaw of configProject.slotsExtra ?? []) {
+	const [modeExtra, slotExtra] = slotExtraRaw.split(':');
+
+	const configExtra = configProject.configsExtra[slotExtra] ?? (configProject.configsExtra[slotExtra] = {});
 
 
-		linesExtra.push(...readDictationLines(parsePresetPath(configExtra.fileDictation))
-			.map(lineDictation => parseDictaionLineConfig(lineDictation, slotExtra))
-		);
+	if(modeExtra == 'cs') {
+		if(!configExtra.fileDictation) {
+			const fileSlotExtra = readdirSync(dirDictations).find(file => file.includes(slotExtra) && file.includes('@zh-cn') && !file.includes('.bak'));
+
+			configExtra.fileDictation = fileSlotExtra ? resolvePath(dirDictations, fileSlotExtra) : null;
+		}
+		if(!configExtra.dirVoices) {
+			const dirSlotExtra = readdirSync(dirVoicesAll).find(dir => dir.includes(slotExtra) && dir.includes('@zh'));
+
+			configExtra.dirVoices = dirSlotExtra ? resolvePath(dirVoicesAll, dirSlotExtra) : null;
+		}
 	}
+
+	if(!configExtra.fileDictation) { continue; }
+
+	if(!configExtra.slot) { configExtra.slot = slotExtra; }
+
+
+
+	linesExtra.push(...readDictationLines(parsePresetPath(configExtra.fileDictation))
+		.map(lineDictation => parseDictaionLineConfig(lineDictation, slotExtra))
+		.filter(line => !line.lineDictation.extras.skip)
+	);
 }
+
 
 
 /** @type {LineConfig[]} */
@@ -264,7 +287,7 @@ for(const lineDictation of linesDictation) {
 
 
 	// 优先级0：台词文件自身及其额外指令
-	const line = parseDictaionLineConfig(lineDictation);
+	const line = parseDictaionLineConfig(lineDictation, 'dictation');
 
 	linesFinal.push(line);
 	line.order = linesFinal.length;
@@ -290,6 +313,14 @@ for(const lineDictation of linesDictation) {
 		}
 	}
 }
+
+// 从附加文件追加台词
+for(const idLineAppend of configProject.idsLineAppend ?? []) {
+	const lineExtra = linesExtra.find(lineDictationExtra => lineDictationExtra.ids.includes(idLineAppend));
+
+	linesFinal.push(lineExtra);
+}
+
 
 
 // 范围限制
@@ -396,6 +427,8 @@ for(const line of linesFinal) {
 	/** @type {DictationLineConfig} */
 	const lineDictation = line.lineDictation;
 
+	// 额外配置（可能无）
+	const configExtra = configProject.configsExtra?.[line.from];
 
 
 	// 优先级1：公共事件匹配
@@ -428,7 +461,7 @@ for(const line of linesFinal) {
 
 
 	// 优先级4：工程角色匹配
-	const lineWho = lines$who[lineDictation.extras.who?.[0] ?? '$'];
+	const lineWho = lines$who[configExtra?.who ?? configExtra?.slot ?? lineDictation.extras.who?.[0] ?? '$'];
 
 	Object.assign(line, lineWho);
 
@@ -453,13 +486,14 @@ for(const line of linesFinal) {
 	if(line.cond) { line.cond = `子条件：${line.cond}`; line.cond = formatLine(line.cond); }
 	if(line.mark) { line.mark = formatLine(line.mark); }
 	if(line.head) { line.head = parsePresetPath(line.head); }
+	if(line.back) { line.back = parsePresetPath(line.back); }
 	if(line.target) { line.target = parsePresetPath(line.target); }
 	if(line.skill) { line.skill = parsePresetPath(line.skill); }
 
 
 
 	// 处理音频和读取时长
-	const dirVoicesLine = parsePresetPath(line.dirVoices ?? (line.from && line.from != 'project' ? configProject.configsExtra[line.from]?.dirVoices : dirVoices));
+	const dirVoicesLine = parsePresetPath(line.dirVoices ?? (configExtra?.dirVoices || dirVoices));
 
 	if(!line.audio && dirVoicesLine) {
 		const nameFileMatch = (filesAudio$dirVoices[dirVoicesLine] || (filesAudio$dirVoices[dirVoicesLine] = readdirSync(dirVoicesLine)))

@@ -181,7 +181,8 @@ this.GetBoxSize = text => {
 	textDocLine.font = 'Source Han Mono SC';
 	textDocLine.applyStroke = true;
 	textDocLine.strokeWidth = 2;
-	textDocLine.text = text;
+	// eslint-disable-next-line no-useless-escape
+	textDocLine.text = text.replace(/[A-Za-z0-9,.!(){}<> …%\\\/'":]/g, 'A').replace(/[^A-Za-z0-9,.!(){}<> …%\\\/'":\n]/g, '因');
 	textDocLine.name = 'Test';
 	textDocLine.leading = fontSize + heightLeading;
 	layerLine.sourceText.setValue(textDocLine);
@@ -226,7 +227,7 @@ this.GetBoxSize = text => {
 
 
 	const rect = layerLine.sourceRectAtTime(0, false);
-	const countRowBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
+	const countRowBox = Math.ceil((rect.height + heightLeading) / (fontSize + heightLeading));
 
 
 	return [
@@ -258,7 +259,8 @@ this.GetBoxSizeMark = text => {
 	textDocMark.font = 'Source Han Mono SC';
 	textDocMark.applyStroke = true;
 	textDocMark.strokeWidth = 1;
-	textDocMark.text = text;
+	// eslint-disable-next-line no-useless-escape
+	textDocMark.text = text.replace(/[A-Za-z0-9,.!(){}<> …%\\\/'":]/g, 'A').replace(/[^A-Za-z0-9,.!(){}<> …%\\\/'":\n]/g, '因');
 	textDocMark.name = 'TestMark';
 	textDocMark.leading = fontSize + heightLeading;
 	layerMark.sourceText.setValue(textDocMark);
@@ -283,7 +285,7 @@ this.GetBoxSizeMark = text => {
 
 
 	const rect = layerMark.sourceRectAtTime(0, false);
-	const countRowBox = Math.round((rect.height - fontSize) / (fontSize + heightLeading)) + 1;
+	const countRowBox = Math.ceil((rect.height + heightLeading) / (fontSize + heightLeading));
 
 
 	return [

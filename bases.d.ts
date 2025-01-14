@@ -156,10 +156,19 @@ type ProjectConfig = BasePathConfig & ResourcePathConfig & VideoConfig & VideoDe
 	/** 排除台词ID，优先级高于包含ID */
 	readonly idsLineExclude: string[];
 
+	/** 附加插槽，用于附加其他台词文件 */
+	readonly slotsExtra: string[];
+	/** 从附加台词中，追加台词作为主台词 */
+	readonly idsLineAppend: string[];
+
 
 	/** 扩展配置 */
 	readonly configsExtra: {
 		readonly [slotExtra: string]: {
+			/** 附加插槽 */
+			readonly slot: string;
+			/** 角色 */
+			readonly who: string;
 			/** 台词文件 */
 			readonly fileDictation: string;
 			/** 语音目录 */
@@ -173,9 +182,9 @@ type ProjectConfig = BasePathConfig & ResourcePathConfig & VideoConfig & VideoDe
 	/** 事件匹配覆盖 */
 	readonly lines$event: { readonly [event: string]: LineConfig; };
 	/** 角色匹配覆盖 */
-	readonly lines$who: { readonly [event: string]: LineConfig; };
+	readonly lines$who: { readonly [who: string]: LineConfig; };
 	/** 台词ID匹配覆盖 */
-	readonly lines$id: { readonly [event: string]: LineConfig; };
+	readonly lines$id: { readonly [id: string]: LineConfig; };
 
 
 	/** 对话成员 */
@@ -200,40 +209,25 @@ type RuncomConfig = {
 
 	/**
 	 * 英雄或皮肤的完整插槽
-	 * - 格式：主插槽.副插槽+附加插槽
+	 * - 格式：主插槽.副插槽
 	 * @example
 	 * '025026' <== 'cs:025026' // 至尊魔女 莫甘娜
 	 * '103000.2011' <== 'cs:103000.2011' // 阿狸（2011旧版）
-	 * '498038+497036' <== 'cs:498038+497036' // 白星守霞（附加白星守洛的台词）
-	 * '497036+498038' <== 'cs:497036+498038' // 白星守洛（附加白星守霞的台词）
 	 * 'sp09-bridge-of-progress-shopkeeper' <== 'sp:sp09-bridge-of-progress-shopkeeper'
 	 */
-	readonly slotFull: string
-	/**
-	 * 主插槽.副插槽
-	 * @example
-	 * '498038.2011' <== 'cs:498038.2011+497036'
-	 * 'bridge-of-progress-shopkeeper' <== 'sp:sp09-bridge-of-progress-shopkeeper'
-	*/
 	readonly slot: string;
 	/**
 	 * 主插槽（皮肤模式）
 	 * @example
-	 * '498038' <== 'cs:498038.2011+497036'
+	 * '498038' <== 'cs:498038.2011'
 	 */
 	readonly slotMain?: string;
 	/**
 	 * 副插槽（皮肤模式）
 	 * @example
-	 * '2011' <== 'cs:498038.2011+497036'
+	 * '2011' <== 'cs:498038.2011'
 	 */
 	readonly slotSub?: string;
-	/**
-	 * 附加插槽（皮肤模式）
-	 * @example
-	 * ['497036', '497037'] <== 'cs:498038.2011+497036+497037'
-	 */
-	readonly slotsExtra?: string[];
 	/**
 	 * 特别篇编号（仅特别模式）
 	 * @example
@@ -274,6 +268,8 @@ type DictationLineConfig = {
 		readonly cond: string[];
 		/** 注释（不会用于视频中） */
 		readonly comment: string[];
+		/** 跳过该台词 */
+		readonly skip: string[];
 	};
 
 	/** 事件文件 */
@@ -317,6 +313,8 @@ type LineConfig = {
 	readonly colorTile: string;
 	/** 头像文件 */
 	readonly head: string;
+	/** 背景文件 */
+	readonly back: string;
 	/** 目标文件 */
 	readonly target: string;
 	/** 技能图标文件 */
@@ -326,7 +324,7 @@ type LineConfig = {
 	readonly side: 'right' | 'left';
 
 	/** 台词来源，如果为空则表示来自主台词文件 */
-	readonly from?: string;
+	readonly from: string;
 	/** 对话索引来源 */
 	readonly dialog?: string;
 

@@ -8,7 +8,7 @@ this.OffsetSplashBackground = I.landscape ? 0 : offsetSplashBackground;
  * @returns {[CompItem, number]} [片头合成, 背景立绘偏移]
  */
 this.AddOpener = () => {
-	const compOpener = EnsureComp('01.0-片头', D.opener, DirComp);
+	const compOpener = EnsureComp('01-片头', D.opener, DirComp);
 	const layerOpener = compOpener.layers;
 
 

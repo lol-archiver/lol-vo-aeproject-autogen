@@ -26,6 +26,7 @@ export default {
 	DirComp: false,
 	CompMain: false,
 	CompTest: false,
+	CompBack: false,
 
 	AddGlobal: false,
 	AddOpener: false,
@@ -36,6 +37,7 @@ export default {
 	AddBGM: false,
 	AddEnding: false,
 	AddBackGround: false,
+	AddLineBackGround: false,
 	AddCounter: false,
 	AddGlobalMark: false,
 

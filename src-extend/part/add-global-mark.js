@@ -15,6 +15,6 @@ this.AddGlobalMark = () => {
 
 
 		layerMarkGlobal.startTime = D.opener + D.title + markGlobal.born;
-		layerMarkGlobal.duration = markGlobal.duration == -1 ? D.lines : markGlobal.duration;
+		layerMarkGlobal.outPoint = markGlobal.duration == -1 ? D.lines : layerMarkGlobal.startTime + markGlobal.duration;
 	}
 };
