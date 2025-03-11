@@ -208,7 +208,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 			xLine + widthTextLine - paddingLine - (widthBoxLineTile / 2 - offsetBoxLineTile),
 			yLine + heightTextLine - paddingLine - paddingTopExtra$event - leadingLine / 2 - (heightBoxLineTile / 2 - offsetBoxLineTile),
 		],
-		opacity: 70,
+		opacity: 90,
 	});
 
 

@@ -119,6 +119,8 @@ type GlobalMarkConfig = {
 	readonly text: string;
 	readonly born: number;
 	readonly duration: number;
+	readonly idLineBorn: string;
+	readonly idLineDead: string;
 }
 
 /** 工程配置 */

@@ -99,6 +99,7 @@ const nameDirProject = isSkinMode ? `${idChampionPad}-${champion.slot.toLowerCas
 const dirResourcesProject = resolvePath(dirResources, 'project', nameDirProject);
 /** 工程配置 @type {ProjectConfig} */
 const configProject = (await import(pathToFileURL(resolvePath(dirResourcesProject, `${isSkinMode ? `${idSkinPad}-` : ''}config.js`)))).default;
+if(!configProject.configsExtra) { configProject.configsExtra = {}; }
 
 
 
@@ -141,7 +142,7 @@ const textEnding = configProject.textEnding || configUser.textEnding || configDe
 
 
 // 台词文件
-const fileSlot = readdirSync(dirDictations).find(file => file.includes(runcom.slot) && file.includes('@zh-cn') && !file.includes('.bak'));
+const fileSlot = readdirSync(dirDictations).find(file => file.startsWith(`${runcom.slot}@`) && file.includes('@zh-cn') && !file.includes('.bak'));
 const fileDictation = parsePresetPath(configProject.fileDictation) || (fileSlot ? resolvePath(dirDictations, fileSlot) : null);
 // 语音目录
 const dirSlot = readdirSync(dirVoicesAll).find(dir => dir.includes(runcom.slot) && dir.includes('@zh'));
@@ -294,8 +295,11 @@ for(const lineDictation of linesDictation) {
 
 
 	if(extras.before) {
-		for(const idBefore of extras.before) {
-			const lineBefore = linesExtra.find(lineDictationExtra => lineDictationExtra.idAudio == idBefore || lineDictationExtra.idsSound.includes(idBefore));
+		for(const before of extras.before) {
+			const [idBefore, from] = before.split('@');
+			const lineBefore =
+				linesExtra.filter(lineDictationExtra => lineDictationExtra.from == from).find(lineDictationExtra => lineDictationExtra.ids.split('|').includes(idBefore)) ||
+				linesExtra.find(lineDictationExtra => lineDictationExtra.ids.split('|').includes(idBefore));
 			if(!lineBefore) { continue; }
 
 			linesFinal.splice(linesFinal.length - 1, 0, lineBefore);
@@ -304,8 +308,11 @@ for(const lineDictation of linesDictation) {
 	}
 
 	if(extras.after) {
-		for(const idAfter of extras.after) {
-			const lineAfter = linesExtra.find(lineDictationExtra => lineDictationExtra.idAudio == idAfter || lineDictationExtra.idsSound.includes(idAfter));
+		for(const after of extras.after) {
+			const [idAfter, from] = after.split('@');
+			const lineAfter =
+				linesExtra.filter(lineDictationExtra => lineDictationExtra.from == from).find(lineDictationExtra => lineDictationExtra.ids.split('|').includes(idAfter)) ||
+				linesExtra.find(lineDictationExtra => lineDictationExtra.ids.split('|').includes(idAfter));
 			if(!lineAfter) { continue; }
 
 			linesFinal.push(lineAfter);
@@ -558,6 +565,36 @@ for(const rawRuncom of runcom.runcoms) {
 const marksGlobal = configProject.marksGlobal ?? [];
 for(const markGlobal of marksGlobal) {
 	markGlobal.text = formatLine(markGlobal.text);
+
+	let indexLineBorn = -2;
+	if(markGlobal.idLineBorn) {
+		indexLineBorn = linesFinal.findIndex(line => line.ids.split('|').includes(markGlobal.idLineBorn));
+		if(indexLineBorn == -1) { globalThis.console.warn(`无法匹配全局注释【${markGlobal.text}】的开始台词ID【${markGlobal.idLineBorn}】`); continue; }
+
+		markGlobal.born = 0;
+		for(let index = 0; index < indexLineBorn; index++) {
+			const line = linesFinal[index];
+
+			markGlobal.born += line.duration + configVideo.durationInterval;
+		}
+
+		if(indexLineBorn > 0) { markGlobal.born -= configVideo.durationInterval; }
+
+		if(indexLineBorn >= 0) { markGlobal.born -= 0.5; }
+	}
+
+	if(markGlobal.idLineDead) {
+		const indexLineDead = linesFinal.findIndex(line => line.ids.split('|').includes(markGlobal.idLineDead));
+		if(indexLineDead == -1) { globalThis.console.warn(`无法匹配全局注释【${markGlobal.text}】的开始台词ID【${markGlobal.idLineBorn}】`); continue; }
+		if(indexLineBorn && indexLineDead < indexLineBorn) { globalThis.console.warn(`全局注释【${markGlobal.text}】的结束台词ID【${markGlobal.idLineDead}】在开始台词ID【${markGlobal.idLineBorn}】之前`); continue; }
+
+		markGlobal.duration = 0;
+		for(let index = indexLineBorn; index <= indexLineDead; index++) {
+			const line = linesFinal[index];
+
+			markGlobal.duration += line.duration + configVideo.durationInterval;
+		}
+	}
 }
 
 
@@ -627,7 +664,7 @@ const stringInfoProjectFinal = JSON.stringify(infoProjectFinal, null, '\t');
 const filesNeed = new Set(stringInfoProjectFinal.match(/(?<=(: |\t)")([A-Z]:(\\\\|\/).+?)(?=")/ig));
 const filesLack = [...filesNeed].filter(file => !existsSync(file)).sort();
 if(filesLack.length) {
-	globalThis.console.log(`以下工程所需文件不存在：\n${filesLack.map(file => `\t${file}`).join('\n')}`);
+	globalThis.console.warn(`以下工程所需文件不存在：\n${filesLack.map(file => `\t${file}`).join('\n')}`);
 
 	process.exit(1);
 }
