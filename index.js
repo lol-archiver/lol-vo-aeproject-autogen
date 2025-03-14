@@ -142,7 +142,9 @@ const textEnding = configProject.textEnding || configUser.textEnding || configDe
 
 
 // 台词文件
-const fileSlot = readdirSync(dirDictations).find(file => file.startsWith(`${runcom.slot}@`) && file.includes('@zh-cn') && !file.includes('.bak'));
+const fileSlot = readdirSync(dirDictations).find(file =>
+	(runcom.mode == 'cs' ? file.startsWith(`${runcom.slot}@`) : file.startsWith(`000000@${runcom.slotSpecial}@${runcom.slot}@`)) && file.includes('@zh-cn') && !file.includes('.bak')
+);
 const fileDictation = parsePresetPath(configProject.fileDictation) || (fileSlot ? resolvePath(dirDictations, fileSlot) : null);
 // 语音目录
 const dirSlot = readdirSync(dirVoicesAll).find(dir => dir.includes(runcom.slot) && dir.includes('@zh'));
@@ -617,8 +619,8 @@ const infoProjectFinal = {
 
 	durationInterval: configVideo.durationInterval,
 	durationOpener: configVideo.durationOpener,
-	durationEnding: configVideo.durationEnding,
 	durationTitle: configVideo.durationTitle,
+	durationEnding: configVideo.durationEnding,
 	durationExtendLine: configVideo.durationExtendLine,
 
 	sizeFontLine: configVideo.sizeFontLine,

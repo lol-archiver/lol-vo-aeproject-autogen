@@ -1,12 +1,13 @@
 this.AddGlobalMark = () => {
-	const sizeText = 26;
-	const leadText = 4;
+	const sizeText = 24;
+	const leadText = 8;
 
 	for(const markGlobal of I.marksGlobal) {
 		const lines = markGlobal.text.split('\n');
 
 		const layerMarkGlobal = CompMain.layers.addText('');
-		layerMarkGlobal.transform.position.setValue([(40 + 30 + 60), I.heightVideo - (lines.length * sizeText + (lines.length - 1) * leadText)]);
+		const yOffsetMarkGlobal = (40 + 20 + 40) + Math.max(lines.length - 3, 0) * (sizeText + leadText);
+		layerMarkGlobal.transform.position.setValue([(40 + 30 + 60), I.heightVideo - yOffsetMarkGlobal]);
 
 		SetText(layerMarkGlobal, {
 			fillColor: RGBH('E0E0E0'),
