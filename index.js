@@ -11,7 +11,7 @@ import readDictationLines from './lib/read-raw-lines.js';
 import formatEvent from './lib/format-event.js';
 
 import { dirDistExtend, dirProject } from './lib/global.js';
-import { linesPublic$event } from './lib/public.js';
+import { linesPublic$event, appendPublicLinesFromChampions } from './lib/public.js';
 
 
 
@@ -44,6 +44,55 @@ const parsePresetPath = (string, willResolvePath = true) => {
 };
 
 
+/**
+ * @param {string} file
+ * @param {'cs'|'sp'} mode
+ */
+const parseDictaionFileName = (file, mode) => {
+	if(mode == 'cs') {
+		const [slot, slotChampion, slotSkinForm, langExt = ''] = file.split('@');
+		const [slotMain, slotSub = ''] = slot.split('.');
+		const [slotSkin, slotFormSkin] = slotSkinForm.split('.');
+		const [lang/* , ext */] = langExt.split('.');
+
+		if(lang != 'zh-cn') { return false; }
+
+		return {
+			file,
+
+			slot,
+			slotChampion,
+			slotSkinForm,
+
+			slotMain,
+			slotSub,
+			slotSkin,
+			slotFormSkin,
+
+			lang,
+		};
+	}
+	else if(mode == 'sp') {
+		const [slotZero, slotSpecial = '', slot, langExt = ''] = file.split('@');
+		const [lang/* , ext */] = langExt.split('.');
+
+		if(lang != 'zh-cn') { return false; }
+
+		return {
+			slotZero,
+
+			slotSpecial,
+			slot,
+
+			lang,
+		};
+	}
+	else {
+		throw Error('unkown mode', mode);
+	}
+};
+
+
 
 /** 命令条 */
 const runcom = readRuncomConfig();
@@ -70,6 +119,8 @@ const champions = readJSONSync(fileChampions);
 /** 是否皮肤模式 */
 const isSkinMode = runcom.mode == 'cs';
 
+
+appendPublicLinesFromChampions(linesPublic$event, champions);
 
 
 /** 英雄ID，仅皮肤模式 */
@@ -141,10 +192,27 @@ const title2Suffix = configProject.title2Suffix || '';
 const textEnding = configProject.textEnding || configUser.textEnding || configDefault.textEnding || '';
 
 
+
 // 台词文件
-const fileSlot = readdirSync(dirDictations).find(file =>
-	(runcom.mode == 'cs' ? file.startsWith(`${runcom.slot}@`) : file.startsWith(`000000@${runcom.slotSpecial}@${runcom.slot}@`)) && file.includes('@zh-cn') && !file.includes('.bak')
-);
+const fileSlot = readdirSync(dirDictations).find(file => {
+	if(file.includes('.bak.md')) { return false; }
+
+
+	if(runcom.mode == 'cs') {
+		const infoFile = parseDictaionFileName(file, 'cs');
+
+		if(infoFile.lang != 'zh-cn') { return false; }
+
+		return infoFile.slot == runcom.slot;
+	}
+	else {
+		const infoFile = parseDictaionFileName(file, 'sp');
+
+		if(infoFile.lang != 'zh-cn') { return false; }
+
+		return infoFile.slotZero == '000000' && infoFile.slotSpecial == runcom.slotSpecial;
+	}
+});
 const fileDictation = parsePresetPath(configProject.fileDictation) || (fileSlot ? resolvePath(dirDictations, fileSlot) : null);
 // 语音目录
 const dirSlot = readdirSync(dirVoicesAll).find(dir => dir.includes(runcom.slot) && dir.includes('@zh'));
@@ -257,12 +325,22 @@ for(const slotExtraRaw of configProject.slotsExtra ?? []) {
 
 	if(modeExtra == 'cs') {
 		if(!configExtra.fileDictation) {
-			const fileSlotExtra = readdirSync(dirDictations).find(file => file.includes(slotExtra) && file.includes('@zh-cn') && !file.includes('.bak'));
+			const fileSlotExtra = readdirSync(dirDictations)
+				.find(file => {
+					if(file.includes('.bak.md')) { return false; }
+
+					const infoFile = parseDictaionFileName(file, 'cs');
+
+					if(infoFile.lang != 'zh-cn') { return false; }
+
+					return infoFile.slot == slotExtra;
+				});
 
 			configExtra.fileDictation = fileSlotExtra ? resolvePath(dirDictations, fileSlotExtra) : null;
 		}
+
 		if(!configExtra.dirVoices) {
-			const dirSlotExtra = readdirSync(dirVoicesAll).find(dir => dir.includes(slotExtra) && dir.includes('@zh'));
+			const dirSlotExtra = readdirSync(dirVoicesAll).find(dir => dir.startsWith(slotExtra) && dir.includes('@zh'));
 
 			configExtra.dirVoices = dirSlotExtra ? resolvePath(dirVoicesAll, dirSlotExtra) : null;
 		}
