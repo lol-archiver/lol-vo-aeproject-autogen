@@ -13,14 +13,14 @@ this.AddGlobal = () => {
 		layerColorBoxLine.name = color;
 
 		SetAttr(layerColorBoxLine.transform, {
-			position: [120 + (120 + 80) * index, 120],
+			position: [(120 + (120 + 80) * index) * I.scaleVideo, 120 * I.scaleVideo],
 		});
 
 		/** @type {PropertyGroup} */
 		const boxColorBoxLine = AddProperty(layerColorBoxLine.content, 'ADBE Vector Group');
 		SetAttr(AddProperty(boxColorBoxLine.content, 'ADBE Vector Shape - Rect'), {
-			size: [160, 160],
-			roundness: 14,
+			size: [160 * I.scaleVideo, 160 * I.scaleVideo],
+			roundness: 14 * I.scaleVideo,
 		});
 		SetAttr(AddProperty(boxColorBoxLine.content, 'ADBE Vector Graphic - Fill'), {
 			color: RGBH(color || '1FAAF1'),

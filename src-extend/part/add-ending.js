@@ -3,11 +3,10 @@ this.AddEnding = () => {
 	const textEnding = I.textEnding;
 
 
-	const scaleBackground = I.landscape ? 158 : 268;
-
-
 	const footageBackground = GetFootage(I.fileBackground);
 	const isVideoBackground = (footageBackground.file.name.match(/\.mp4$/) || []).length > 0;
+
+	const scaleBackground = I.heightVideo / footageBackground.height * 100;
 
 
 	const layerBackground = CompMain.layers.add(footageBackground, D.full);
@@ -44,25 +43,25 @@ this.AddEnding = () => {
 	layerThankyou.startTime = D.linesEnd + 3.4;
 	layerThankyou.duration = D.credit;
 
-	layerThankyou.transform.position.setValue([40, 150]);
+	layerThankyou.transform.position.setValue([40 * I.scaleVideo, 150 * I.scaleVideo]);
 	layerThankyou.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 0);
 	layerThankyou.transform.opacity.setValueAtTime(D.linesEnd + 4.5, 100);
 
 	const textDocThankyou = layerThankyou.sourceText.value;
 	textDocThankyou.resetCharStyle();
-	textDocThankyou.fontSize = 100;
+	textDocThankyou.fontSize = I.sizeFontLine * 2;
 	textDocThankyou.font = 'Source Han Mono SC';
 	textDocThankyou.applyStroke = true;
 	textDocThankyou.fillColor = RGBH('FFFAFA');
 	textDocThankyou.strokeColor = RGBH('FFFAFA');
-	textDocThankyou.strokeWidth = 4;
+	textDocThankyou.strokeWidth = 4 * I.scaleVideo;
 	layerThankyou.sourceText.setValue(textDocThankyou);
 
 	const effectDropShadowThankyou = layerThankyou.effect.addProperty('ADBE Drop Shadow');
 	effectDropShadowThankyou[L.shadowColor].setValue(RGBH('040404'));
 	effectDropShadowThankyou[L.direction].setValue(135);
 	effectDropShadowThankyou[L.opacity].setValue(255);
-	effectDropShadowThankyou[L.distance].setValue(7);
+	effectDropShadowThankyou[L.distance].setValue(7 * I.scaleVideo);
 	effectDropShadowThankyou[L.softness].setValue(4);
 	effectDropShadowThankyou[L.shadowOnly].setValue(0);
 
@@ -72,7 +71,7 @@ this.AddEnding = () => {
 	layerCredit.startTime = D.linesEnd + 3.4;
 	layerCredit.duration = D.credit;
 
-	layerCredit.transform.position.setValue([40, 300]);
+	layerCredit.transform.position.setValue([40 * I.scaleVideo, 300 * I.scaleVideo]);
 	layerCredit.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 0);
 	layerCredit.transform.opacity.setValueAtTime(D.linesEnd + 4.5, 100);
 
@@ -83,14 +82,14 @@ this.AddEnding = () => {
 	textDocCredit.applyStroke = true;
 	textDocCredit.fillColor = RGBH('FFFAFA');
 	textDocCredit.strokeColor = RGBH('FFFAFA');
-	textDocCredit.strokeWidth = 1;
+	textDocCredit.strokeWidth = 1 * I.scaleVideo;
 	layerCredit.sourceText.setValue(textDocCredit);
 
 	const effectDropShadowCredit = layerCredit.effect.addProperty('ADBE Drop Shadow');
 	effectDropShadowCredit[L.shadowColor].setValue(RGBH('040404'));
 	effectDropShadowCredit[L.direction].setValue(135);
 	effectDropShadowCredit[L.opacity].setValue(255);
-	effectDropShadowCredit[L.distance].setValue(7);
+	effectDropShadowCredit[L.distance].setValue(7 * I.scaleVideo);
 	effectDropShadowCredit[L.softness].setValue(4);
 	effectDropShadowCredit[L.shadowOnly].setValue(0);
 };

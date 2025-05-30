@@ -1,19 +1,22 @@
 {
 	"$": {
+		"scaleVideo": 2,
 		"pixelAspect": 1,
 		"frameRate": 60,
+
 		"durationInterval": 0.4,
 		"durationOpener": 4,
-		"durationEnding": 7,
 		"durationTitle": 3,
+		"durationEnding": 7,
 		"durationExtendLine": 0.4,
+
 		"sizeFontLine": 50,
 		"sizeFontCond": 34,
 		"sizeFontMark": 34,
-		"paddingTopExtra$event": 70,
 		"paddingLine": 40,
 		"paddingCond": 34,
 		"paddingMark": 34,
+		"paddingTopExtra$event": 70,
 		"sizeBoxHeader": 200,
 		"heightLeading": 10,
 		"gapLive": 80,

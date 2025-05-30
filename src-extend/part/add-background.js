@@ -8,13 +8,11 @@ this.AddBackGround = () => {
 	layerCompBackground.startTime = D.opener - 1;
 
 
-	const scaleBackground = I.landscape ? 158 : 268;
-
-
 	/** @type {FootageItem} */
 	const footageBackground = GetFootage(I.fileBackground, DirFootage);
 	// const isVideoBackground = (footageBackground.file.name.match(/\.mp4$/) || []).length > 0;
 
+	const scaleBackground = I.heightVideo / footageBackground.height * 100;
 
 
 	const layerBackground = layersBackground.add(footageBackground, D.full);
@@ -82,10 +80,11 @@ this.AddBackGround = () => {
  */
 this.AddLineBackGround = (pathBackground, accumDuration) => {
 	const timeStart = accumDuration - 2;
-	const scaleBackground = I.landscape ? 158 : 268;
 
 	/** @type {FootageItem} */
 	const footageBackground = GetFootage(pathBackground, DirFootage);
+
+	const scaleBackground = I.heightVideo / footageBackground.height * 100;
 
 
 	const layerBackground = CompBack.layers.add(footageBackground, D.full);

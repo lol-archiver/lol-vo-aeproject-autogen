@@ -16,15 +16,14 @@ AddBackGround();
 
 if(!I.simple) {
 	AddTitle();
+
+	// 开头
+	const compOpener = AddOpener();
+
+	const layerOpener = CompMain.layers.add(compOpener, D.opener);
+	layerOpener.startTime = D.opener;
+	layerOpener.stretch = -100;
 }
-
-
-// 开头
-const compOpener = AddOpener();
-
-const layerOpener = CompMain.layers.add(compOpener, D.opener);
-layerOpener.startTime = D.opener;
-layerOpener.stretch = -100;
 
 
 // 台词
@@ -66,8 +65,12 @@ $.writeln('Statge: AddGlobalMark');
 if(!I.simple) {
 	AddBGM();
 	$.writeln('Statge: AddBGM');
-	AddCounter();
-	$.writeln('Statge: AddCounter');
+}
+
+AddCounter(I.simple);
+$.writeln('Statge: AddCounter');
+
+if(!I.simple) {
 	AddEnding();
 	$.writeln('Statge: AddEnding');
 }

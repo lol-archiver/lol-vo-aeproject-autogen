@@ -36,6 +36,8 @@ type VideoConfig = {
 	readonly widthVideo: number;
 	/** 视频高度 */
 	readonly heightVideo: number;
+	/** 视频缩放 */
+	readonly scaleVideo: number;
 
 	/** 视频像素比例 */
 	readonly pixelAspect: number;

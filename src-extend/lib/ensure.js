@@ -1,4 +1,6 @@
 // 移除所有内容
+app.project.close(1212);
+
 Each(app.project, function(item) {
 	try {
 		if(/^test-/.test(item?.name)) { return; }
@@ -12,7 +14,6 @@ Each(app.project, function(item) {
 	}
 });
 
-app.executeCommand(2373);
 
 this.DirLine = EnsureDir('01-台词', app.project);
 this.DirVoice = EnsureDir('02-音频', app.project);

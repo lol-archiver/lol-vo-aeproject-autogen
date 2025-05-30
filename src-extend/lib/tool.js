@@ -172,8 +172,8 @@ const charsSize13 = ['Ọ̀', 'ẹ'];
 this.GetBoxSize = text => {
 	const fontSize = I.sizeFontLine;
 	const heightLeading = I.heightLeading;
-	const widthMax = 1050;
-	const heightMax = 1050;
+	const widthMax = I.widthVideo * 0.546875;
+	const heightMax = I.heightVideo / 8 * 7;
 
 	const layerLine = CompTest.layers.addBoxText([widthMax, heightMax], text);
 
@@ -182,7 +182,7 @@ this.GetBoxSize = text => {
 	textDocLine.fontSize = fontSize;
 	textDocLine.font = 'Source Han Mono SC';
 	textDocLine.applyStroke = true;
-	textDocLine.strokeWidth = 2;
+	textDocLine.strokeWidth = 2 * I.scaleVideo;
 	textDocLine.text = text.replace(regexSize13, 'A').replace(regexSize33, '因');
 	textDocLine.name = 'Test';
 	textDocLine.leading = fontSize + heightLeading;
@@ -249,8 +249,8 @@ this.GetBoxSize = text => {
 this.GetBoxSizeMark = text => {
 	const fontSize = I.sizeFontMark;
 	const heightLeading = I.heightLeading;
-	const widthMax = 1200;
-	const heightMax = 1050;
+	const widthMax = I.widthVideo * 0.625;
+	const heightMax = I.heightVideo / 8 * 7;
 
 	const layerMark = CompTest.layers.addBoxText([widthMax, heightMax], text);
 
@@ -306,6 +306,7 @@ this.SetText = (target, options) => {
 	if(!(target instanceof TextLayer)) { throw '目标不是文本层'; }
 
 
+	/** @type {TextDocument} */
 	const textDoc = target.property('ADBE Text Properties').property('ADBE Text Document').value;
 
 	textDoc.resetCharStyle();

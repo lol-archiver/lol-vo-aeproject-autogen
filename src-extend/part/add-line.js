@@ -45,11 +45,11 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 	const leadingLine = I.heightLeading;
 
 	const paddingTopExtra$event = I.paddingTopExtra$event;
-	const sidePaddingEvent = 50;
-	const sizeBoxTarget = 96;
-	const strokeBoxTarget = 24;
-	const sizeBoxSkill = 72;
-	const strokeBoxSkill = 7;
+	const sidePaddingEvent = 50 * I.scaleVideo;
+	const sizeBoxTarget = 96 * I.scaleVideo;
+	const strokeBoxTarget = 24 * I.scaleVideo;
+	const sizeBoxSkill = 72 * I.scaleVideo;
+	const strokeBoxSkill = 7 * I.scaleVideo;
 
 	// --------------台词合成--------------
 	const compLine = EnsureComp(indexText + line.caption.replace(/\n/g, ' '), duration, dirLine, widthCompLine, heightCompLine);
@@ -75,7 +75,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 	// const layerShade = (I.fileShade) ? compLine.layers.add(GetFootage(I.fileShade, DirFootage)) : null;
 
-	const layerWaterMark = compLine.layers.addText();
+	const layerWaterMark = compLine.layers.addText('DR');
 
 	const layerBoxHeaderShadow = compLine.layers.addShape();
 
@@ -141,7 +141,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 		font: 'Source Han Mono SC',
 		fontSize: I.sizeFontLine,
 		strokeColor: colorLine,
-		strokeWidth: 2,
+		strokeWidth: 2 * I.scaleVideo,
 		boxTextSize: [line.widthTextLine, line.heightTextLine],
 		justification: ParagraphJustification.LEFT_JUSTIFY,
 		leading: I.sizeFontLine + leadingLine,
@@ -151,8 +151,8 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 	// const rectLine = layerLine.sourceRectAtTime(0, false);
 
-	const paddingCond = 20;
-	const paddingMark = 20;
+	const paddingCond = 20 * I.scaleVideo;
+	const paddingMark = 20 * I.scaleVideo;
 	const xLine = widthCompLine - paddingSideVideo - line.widthTextLine - paddingLine;
 	const yLine = heightCompLine - paddingBottomVideo - line.heightTextLine - paddingLine
 		- (hasCond ? paddingCond + line.heightTextCond + paddingCond : 0)
@@ -171,7 +171,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 	SetAttr(AddProperty(boxLine.content, 'ADBE Vector Shape - Rect'), {
 		size: [widthTextLine, heightTextLine],
-		roundness: 14,
+		roundness: 14 * I.scaleVideo,
 	});
 
 	const propFillBoxLine = AddProperty(boxLine.content, 'ADBE Vector Graphic - Fill');
@@ -187,16 +187,16 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 
 	// --------------台词盒小片--------------
-	const widthBoxLineTile = 140;
-	const heightBoxLineTile = 70;
-	const offsetBoxLineTile = 10;
+	const widthBoxLineTile = 140 * I.scaleVideo;
+	const heightBoxLineTile = 70 * I.scaleVideo;
+	const offsetBoxLineTile = 10 * I.scaleVideo;
 
 	/** @type {Group} */
 	const boxLineTile = AddProperty(layerBoxLineTile.content, 'ADBE Vector Group');
 
 	SetAttr(AddProperty(boxLineTile.content, 'ADBE Vector Shape - Rect'), {
 		size: [widthBoxLineTile, heightBoxLineTile],
-		roundness: 14,
+		roundness: 14 * I.scaleVideo,
 	});
 
 	const propFillBoxLineTile = AddProperty(boxLineTile.content, 'ADBE Vector Graphic - Fill');
@@ -240,12 +240,12 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 	const xHeader = xLine + widthTextLine - paddingLine;
 	const yHeader = yLine - paddingLine - paddingTopExtra$event - leadingLine / 2;
 
-	const sizeHeaderFinal = 180;
+	const sizeHeaderFinal = 180 * I.scaleVideo;
 	const scaleHeaderFinal = sizeHeaderFinal / layerHeader.width * 100;
 
 	SetAttr(layerHeader.transform, {
 		scale: [(line.flipHor ? -1 : 1) * scaleHeaderFinal, scaleHeaderFinal],
-		position: [xHeader, yHeader + 1],
+		position: [xHeader, yHeader + 1 * I.scaleVideo],
 	});
 
 
@@ -274,7 +274,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 		[L.shadowColor]: RGBH('495051'),
 		[L.direction]: isMianLine ? 225 : 135,
 		[L.opacity]: (70 / 100) * 255,
-		[L.distance]: 11,
+		[L.distance]: 11 * I.scaleVideo,
 		[L.softness]: 7,
 		[L.shadowOnly]: 1,
 	});
@@ -282,13 +282,13 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 
 	// --------------水印--------------
-	const fontSizeWaterMark = I.sizeFontLine - 20;
+	const fontSizeWaterMark = I.sizeFontLine - 20 * I.scaleVideo;
 
 	SetText(layerWaterMark, {
 		fontSize: fontSizeWaterMark,
 		fillColor: colorLine,
 		font: 'Source Han Mono',
-		strokeWidth: 2,
+		strokeWidth: 2 * I.scaleVideo,
 		strokeColor: colorLine,
 		leading: fontSizeWaterMark + leadingLine,
 		text: 'DR',
@@ -299,7 +299,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 	SetAttr(layerWaterMark.transform, {
 		position: [
 			xHeader - rectWaterMark.width / 2,
-			yHeader + rectWaterMark.height + sizeBoxHeader / 2 - 5,
+			yHeader + rectWaterMark.height / 2 + sizeBoxHeader / 2 - 5 + 5 * I.scaleVideo,
 		],
 		opacity: 14,
 	});
@@ -317,7 +317,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 			font: 'Source Han Mono SC',
 			applyStroke: true,
 			strokeColor: RGBH('495051'),
-			strokeWidth: 2,
+			strokeWidth: 2 * I.scaleVideo,
 			text: eventText,
 		});
 		const rectEvent = layerEvent.sourceRectAtTime(0, false);
@@ -343,7 +343,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 				rectEvent.width + paddingLine * 2 + paddingTopExtra$event,
 				rectEvent.height + paddingLine * 2,
 			],
-			roundness: 14,
+			roundness: 14 * I.scaleVideo,
 		});
 
 		SetAttr(AddProperty(boxEvent.content, 'ADBE Vector Graphic - Fill'), { color: RGBH('FFFAFA') });
@@ -360,7 +360,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 			[L.shadowColor]: RGBH('495051'),
 			[L.direction]: 135,
 			[L.opacity]: (70 / 100) * 255,
-			[L.distance]: 14,
+			[L.distance]: 14 * I.scaleVideo,
 			[L.softness]: 7,
 		});
 	}
@@ -369,7 +369,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 	if(hasSkill) {
 		// --------------技能图标--------------
-		SetAttr(layerSkill.transform, { scale: [114, 114] });
+		SetAttr(layerSkill.transform, { scale: [114 * I.scaleVideo, 114 * I.scaleVideo] });
 
 		SetAttr(layerSkill.transform, {
 			position: [
@@ -390,19 +390,19 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 		const boxSkill = AddProperty(layerBoxSkill.content, 'ADBE Vector Group');
 
 		SetAttr(AddProperty(boxSkill.content, 'ADBE Vector Shape - Rect'), {
-			size: [72, 72],
-			roundness: 7,
+			size: [72 * I.scaleVideo, 72 * I.scaleVideo],
+			roundness: 7 * I.scaleVideo,
 		});
 
-		SetAttr(AddProperty(boxSkill.content, 'ADBE Vector Graphic - Stroke'), { color: RGBH('FFFAFA'), strokeWidth: 7 });
+		SetAttr(AddProperty(boxSkill.content, 'ADBE Vector Graphic - Stroke'), { color: RGBH('FFFAFA'), strokeWidth: 7 * I.scaleVideo });
 	}
 
 
 
 	if(hasTarget) {
-		const xTarget = xHeader - sizeBoxHeader / 2 + 14;
-		const yTarget = yHeader - sizeBoxHeader / 2 + 14;
-		const sizeTargetFinal = 102;
+		const xTarget = xHeader - sizeBoxHeader / 2 + 14 * I.scaleVideo;
+		const yTarget = yHeader - sizeBoxHeader / 2 + 14 * I.scaleVideo;
+		const sizeTargetFinal = 102 * I.scaleVideo;
 		const scaleTargetFinal = sizeTargetFinal / layerTarget.width * 100;
 
 		// --------------目标图标--------------
@@ -435,7 +435,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 			font: 'Source Han Mono SC',
 			fontSize: I.sizeFontCond,
 			strokeColor: colorCond,
-			strokeWidth: 1,
+			strokeWidth: 1 * I.scaleVideo,
 			boxTextSize: [line.widthTextCond, line.heightTextCond],
 			justification: ParagraphJustification.RIGHT_JUSTIFY,
 			leading: I.sizeFontCond + leadingLine,
@@ -459,10 +459,10 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 
 		SetAttr(AddProperty(boxCond.content, 'ADBE Vector Shape - Rect'), {
-			roundness: 14,
+			roundness: 14 * I.scaleVideo,
 			size: [
 				paddingCond + line.widthTextCond + paddingCond,
-				paddingCond + line.heightTextCond + paddingCond + 20,
+				paddingCond + line.heightTextCond + paddingCond + 20 * I.scaleVideo,
 			]
 		});
 
@@ -489,7 +489,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 			font: 'Source Han Mono SC',
 			fontSize: I.sizeFontMark,
 			strokeColor: colorMark,
-			strokeWidth: 1,
+			strokeWidth: 1 * I.scaleVideo,
 			boxTextSize: [line.widthTextMark, line.heightTextMark],
 			justification: ParagraphJustification.RIGHT_JUSTIFY,
 			leading: I.sizeFontMark + leadingLine,
@@ -512,7 +512,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 
 		SetAttr(AddProperty(boxMark.content, 'ADBE Vector Shape - Rect'), {
-			roundness: 14,
+			roundness: 14 * I.scaleVideo,
 			size: [
 				line.widthTextMark + paddingMark * 2,
 				line.heightTextMark + paddingMark * 2,

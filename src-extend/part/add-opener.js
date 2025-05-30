@@ -20,20 +20,16 @@ this.AddOpener = () => {
 	const hGrid3 = (grid, offset) => heightGrid3 * (grid - 1 + (offset || 0));
 
 
-	const widthSplash = 1215;
-	const heightSplash = 717;
-
-	const scaleSplash2 = (heightGrid2 / heightSplash) * 100;
-	const scaleSplash3 = (I.landscape ? widthGrid / widthSplash : heightGrid3 / heightSplash) * 100;
-
 
 	// splash-opener-tl
 	const compTL = EnsureComp('01.1-片头左上', D.opener, DirComp, widthGrid, heightGrid2);
 	layerOpener.add(compTL, D.opener).position.setValue([wGrid(1, 0.5), hGrid2(1, 0.5)]);
 
 	const infoTL = I.infosSplashOpener[1];
-	const splashTL = compTL.layers.add(GetFootage(infoTL.file, DirFootage), D.opener); splashTL.name = 'splash-opener-tl';
-	splashTL.scale.setValue([scaleSplash2, scaleSplash2]);
+	const footageTL = GetFootage(infoTL.file, DirFootage);
+	const scaleTL = (heightGrid2 / footageTL.height) * 100;
+	const splashTL = compTL.layers.add(footageTL, D.opener); splashTL.name = 'splash-opener-tl';
+	splashTL.scale.setValue([scaleTL, scaleTL]);
 
 	splashTL.position.setValueAtTime(0, [wGrid(1, 0.5), hGrid2(2, 0.5)]);
 	splashTL.position.setValueAtTime(1, [wGrid(1, 0.5), hGrid2(1, 0.5)]);
@@ -47,8 +43,10 @@ this.AddOpener = () => {
 	layerOpener.add(compBL, D.opener).position.setValue([wGrid(1, 0.5), hGrid2(2, 0.5)]);
 
 	const infoBL = I.infosSplashOpener[2];
-	const splashBL = compBL.layers.add(GetFootage(infoBL.file, DirFootage), D.opener); splashBL.name = 'splash-opener-bl';
-	splashBL.scale.setValue([scaleSplash2, scaleSplash2]);
+	const footageBL = GetFootage(infoBL.file, DirFootage);
+	const scaleBL = (heightGrid2 / footageBL.height) * 100;
+	const splashBL = compBL.layers.add(footageBL, D.opener); splashBL.name = 'splash-opener-bl';
+	splashBL.scale.setValue([scaleBL, scaleBL]);
 
 	const xBL = splashBL.position.value[0] + (I.landscape ? 0 : infoBL.offset);
 	splashBL.position.setValueAtTime(0, [xBL, hGrid2(0, 0.5)]);
@@ -64,8 +62,10 @@ this.AddOpener = () => {
 	layerOpener.add(compTR, D.opener).position.setValue([wGrid(3, 0.5), hGrid2(1, 0.5)]);
 
 	const infoTR = I.infosSplashOpener[3];
-	const splashTR = compTR.layers.add(GetFootage(infoTR.file, DirFootage), D.opener); splashTR.name = 'splash-opener-tr';
-	splashTR.scale.setValue([scaleSplash2, scaleSplash2]);
+	const footageTR = GetFootage(infoTR.file, DirFootage);
+	const scaleTR = (heightGrid2 / footageTR.height) * 100;
+	const splashTR = compTR.layers.add(footageTR, D.opener); splashTR.name = 'splash-opener-tr';
+	splashTR.scale.setValue([scaleTR, scaleTR]);
 
 	const xTR = splashTR.position.value[0] + (I.landscape ? 0 : infoTR.offset);
 	splashTR.position.setValueAtTime(0, [xTR, hGrid2(2, 0.5)]);
@@ -80,8 +80,10 @@ this.AddOpener = () => {
 	layerOpener.add(compBR, D.opener).position.setValue([wGrid(3, 0.5), hGrid2(2, 0.5)]);
 
 	const infoBR = I.infosSplashOpener[4];
-	const splashBR = compBR.layers.add(GetFootage(infoBR.file, DirFootage), D.opener); splashBR.name = 'splash-opener-br';
-	splashBR.scale.setValue([scaleSplash2, scaleSplash2]);
+	const footageBR = GetFootage(infoBR.file, DirFootage);
+	const scaleBR = (heightGrid2 / footageBR.height) * 100;
+	const splashBR = compBR.layers.add(footageBR, D.opener); splashBR.name = 'splash-opener-br';
+	splashBR.scale.setValue([scaleBR, scaleBR]);
 
 	const xBR = splashBR.position.value[0] + (I.landscape ? 0 : infoBR.offset);
 	splashBR.position.setValueAtTime(0, [xBR, hGrid2(0, 0.5)]);
@@ -103,8 +105,10 @@ this.AddOpener = () => {
 	SetEase(avCompTC.position, 3, 4, Ease1);
 
 	const infoTC = I.infosSplashOpener[5];
-	const splashTC = compTC.layers.add(GetFootage(infoTC.file, DirFootage), D.opener); splashTC.name = 'splash-opener-tc';
-	splashTC.scale.setValue([scaleSplash3, scaleSplash3]);
+	const footageTC = GetFootage(infoTC.file, DirFootage);
+	const scaleTC = (I.landscape ? widthGrid / footageTC.width : heightGrid3 / footageTC.height) * 100;
+	const splashTC = compTC.layers.add(footageTC, D.opener); splashTC.name = 'splash-opener-tc';
+	splashTC.scale.setValue([scaleTC, scaleTC]);
 
 	const xTC = splashTC.position.value[0] + (I.landscape ? 0 : infoTC.offset);
 	splashTC.position.setValueAtTime(0, [xTC, hGrid3(2, 0.5)]);
@@ -126,8 +130,10 @@ this.AddOpener = () => {
 	SetEase(avCompBC.position, 3, 4, Ease1);
 
 	const infoBC = I.infosSplashOpener[6];
-	const splashBC = compBC.layers.add(GetFootage(infoBC.file, DirFootage), D.opener); splashBC.name = 'splash-opener-bc';
-	splashBC.scale.setValue([scaleSplash3, scaleSplash3]);
+	const footageBC = GetFootage(infoBC.file, DirFootage);
+	const scaleBC = (I.landscape ? widthGrid / footageBC.width : heightGrid3 / footageBC.height) * 100;
+	const splashBC = compBC.layers.add(footageBC, D.opener); splashBC.name = 'splash-opener-bc';
+	splashBC.scale.setValue([scaleBC, scaleBC]);
 
 	const xBC = splashBC.position.value[0] + (I.landscape ? 0 : infoBC.offset);
 	splashBC.position.setValueAtTime(0, [xBC, hGrid3(0, 0.5)]);
@@ -151,8 +157,10 @@ this.AddOpener = () => {
 	SetEase(avCompMC.scale, 3, 4, Ease1);
 
 	const infoMC = I.infosSplashOpener[0];
-	const splashMC = compMC.layers.add(GetFootage(infoMC.file, DirFootage), D.opener); splashMC.name = 'splash-opener-mc';
-	splashMC.scale.setValue([scaleSplash3, scaleSplash3]);
+	const footageMC = GetFootage(infoMC.file, DirFootage);
+	const scaleMC = (I.landscape ? widthGrid / footageMC.width : heightGrid3 / footageMC.height) * 100;
+	const splashMC = compMC.layers.add(footageMC, D.opener); splashMC.name = 'splash-opener-mc';
+	splashMC.scale.setValue([scaleMC, scaleMC]);
 
 	const xMC = splashMC.position.value[0] + (I.landscape ? 0 : infoMC.offset);
 	splashMC.position.setValue([xMC, hGrid3(1, 0.5)]);
@@ -193,8 +201,8 @@ this.AddOpener = () => {
 	const logoImage = layerOpener.add(GetFootage(I.fileLogoSide, DirFootage), 6); logoImage.name = 'logo-image';
 	logoImage.startTime = 0;
 	logoImage.outPoint = 5;
-	logoImage.scale.setValue([40, 40]);
-	logoImage.position.setValue([I.widthVideo / 2 - 240, I.heightVideo / 2]);
+	logoImage.scale.setValue([40 * I.scaleVideo, 40 * I.scaleVideo]);
+	logoImage.position.setValue([I.widthVideo / 2 - 240 * I.scaleVideo, I.heightVideo / 2]);
 
 	logoImage.opacity.setValueAtTime(0, 0);
 	logoImage.opacity.setValueAtTime(1, 100);

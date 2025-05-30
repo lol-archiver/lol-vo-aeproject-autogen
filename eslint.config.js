@@ -1,11 +1,11 @@
 /**
  * @file @nuogz/dynamic-eslint-config
  * @author DanoR
- * @version 5.3.0 2024.10.10 16
+ * @version 5.4.1 2025.04.08 17
  * @requires globals
  * @requires @eslint/js
  * @requires @stylistic/eslint-plugin-js
- * @requires eslint-plugin-vue (optional)
+ * @requires eslint-plugin-vue@^10 (optional)
  */
 
 
@@ -150,7 +150,7 @@ if(typesSource.has('vue')) {
 		name: 'rule-vue',
 		files: ['**/*.vue'],
 		plugins: configVueBase.plugins,
-		languageOptions: configVueBase.languageOptions,
+		languageOptions: Object.assign({ globals: globals.browser }, configVueBase.languageOptions),
 		processor: configVueBase.processor,
 		rules: {
 			...configVueBase.rules,
@@ -160,7 +160,7 @@ if(typesSource.has('vue')) {
 
 			stylistic$indent: [0],
 			vue$htmlIndent: [2, 'tab'],
-			vue$scriptIndent: [2, 'tab', { baseIndent: 0 }],
+			vue$scriptIndent: [2, 'tab', { baseIndent: 0, ignores: ['ConditionalExpression'] }],
 			vue$htmlSelfClosing: [1, { html: { void: 'always' } }],
 			vue$maxAttributesPerLine: [0],
 			vue$mustacheInterpolationSpacing: [0],
@@ -200,6 +200,32 @@ if(typesNodeConfig.length) {
 		configGlobalsBrowser?.ignores.push(`**/${typePackage}.config.?(c|m)js`);
 	}
 }
+
+
+
+if(typesSource.has('userscript')) {
+	configs.push({
+		name: 'globals-node-userscript',
+		files: ['*.?(c|m)js', 'lib/*.?(c|m)js'],
+		languageOptions: { globals: globals.nodeBuiltin },
+	});
+
+	configs.push({
+		name: 'globals-greasemonkey-userscript',
+		ignores: ['**/eslint.config.?(c|m)js'],
+		languageOptions: { globals: globals.greasemonkey },
+	});
+
+	for(const config of configs) {
+		if(config.ignores?.includes('**/eslint.config.?(c|m)js')) {
+			config.ignores.push('*.?(c|m)js', 'lib/*.?(c|m)js');
+		}
+	}
+}
+
+
+// debug configs
+// console.debug(JSON.stringify(configs.map(({ name, files, ignores }) => ({ name, files, ignores })), null, '\t'));
 
 
 

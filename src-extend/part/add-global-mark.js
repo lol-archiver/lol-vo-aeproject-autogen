@@ -1,20 +1,20 @@
 this.AddGlobalMark = () => {
-	const sizeText = 24;
-	const leadText = 8;
+	const sizeText = 24 * I.scaleVideo;
+	const leadText = 8 * I.scaleVideo;
 
 	for(const markGlobal of I.marksGlobal) {
 		const lines = markGlobal.text.split('\n');
 
-		const layerMarkGlobal = CompMain.layers.addText('');
+		const layerMarkGlobal = CompMain.layers.addText('因');
 		const yOffsetMarkGlobal = (40 + 20 + 40) + Math.max(lines.length - 3, 0) * (sizeText + leadText);
-		layerMarkGlobal.transform.position.setValue([(40 + 30 + 60), I.heightVideo - yOffsetMarkGlobal]);
+		layerMarkGlobal.transform.position.setValue([(40 + 30 + 60) * I.scaleVideo, I.heightVideo - yOffsetMarkGlobal * I.scaleVideo]);
 
 		SetText(layerMarkGlobal, {
-			fillColor: RGBH('E0E0E0'),
+			fillColor: RGBH('FFFAFA'),
 			font: 'Source Han Mono SC',
 			fontSize: sizeText,
-			strokeColor: RGBH('E0E0E0'),
-			strokeWidth: 1,
+			strokeColor: RGBH('FFFAFA'),
+			strokeWidth: 1 * I.scaleVideo,
 			leading: sizeText + leadText,
 			text: markGlobal.text,
 		});
@@ -22,5 +22,14 @@ this.AddGlobalMark = () => {
 
 		layerMarkGlobal.startTime = D.opener + D.title + markGlobal.born;
 		layerMarkGlobal.outPoint = markGlobal.duration == -1 ? D.lines : layerMarkGlobal.startTime + markGlobal.duration;
+
+
+		const effectDropShadowMarkGlobal = layerMarkGlobal.effect.addProperty('ADBE Drop Shadow');
+		effectDropShadowMarkGlobal[L.shadowColor].setValue(RGBH('474747'));
+		effectDropShadowMarkGlobal[L.direction].setValue(135);
+		effectDropShadowMarkGlobal[L.opacity].setValue(255);
+		effectDropShadowMarkGlobal[L.distance].setValue(7);
+		effectDropShadowMarkGlobal[L.softness].setValue(4);
+		effectDropShadowMarkGlobal[L.shadowOnly].setValue(0);
 	}
 };

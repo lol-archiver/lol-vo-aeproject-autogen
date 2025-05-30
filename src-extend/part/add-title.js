@@ -1,8 +1,8 @@
 const makeTitle = () => {
-	const offsetBar = 200;
-	const offsetText = 12;
-	const offsetTrim = 10;
-	const fontSize = 140;
+	const offsetBar = 200 * I.scaleVideo;
+	const offsetText = 12 * I.scaleVideo;
+	const offsetTrim = 10 * I.scaleVideo;
+	const fontSize = 140 * I.scaleVideo;
 
 	const fontSizeHalf = fontSize / 2;
 	const widthVideoHalf = I.widthVideo / 2;
@@ -30,7 +30,7 @@ const makeTitle = () => {
 	textSourceT.font = 'Source Han Mono SC';
 	textSourceT.applyStroke = true;
 	textSourceT.strokeColor = colorText;
-	textSourceT.strokeWidth = 4;
+	textSourceT.strokeWidth = 4 * I.scaleVideo;
 	textT.sourceText.setValue(textSourceT);
 
 	const rectSourceT = textT.sourceRectAtTime(0, false);
@@ -59,7 +59,7 @@ const makeTitle = () => {
 	textSourceB.font = 'Source Han Mono SC';
 	textSourceB.applyStroke = true;
 	textSourceB.strokeColor = colorText;
-	textSourceB.strokeWidth = 4;
+	textSourceB.strokeWidth = 4 * I.scaleVideo;
 	textB.sourceText.setValue(textSourceB);
 
 	const rectSourceB = textB.sourceRectAtTime(0, false);
@@ -106,7 +106,7 @@ const makeTitle = () => {
 	const shapeBar = AddShape(compTitle.layers, 'shape-bars');
 
 	const barT = AddProperty(shapeBar.content, 'ADBE Vector Group', 'bar-top');
-	AddProperty(barT.content, 'ADBE Vector Shape - Rect').size.setValue([10, fontSize]);
+	AddProperty(barT.content, 'ADBE Vector Shape - Rect').size.setValue([20 * I.scaleVideo, fontSize]);
 	AddProperty(barT.content, 'ADBE Vector Graphic - Fill').color.expression = `comp("00-全局变量").layer("${I.colorsLine[0]}").content("组 1").content("填充 1").color`;
 
 	barT.transform.anchorPoint.setValue([0, fontSizeHalf]);
@@ -122,7 +122,7 @@ const makeTitle = () => {
 
 
 	const barB = AddProperty(shapeBar.content, 'ADBE Vector Group', 'bar-bottom');
-	barB.content.addProperty('ADBE Vector Shape - Rect').size.setValue([10, fontSize]);
+	barB.content.addProperty('ADBE Vector Shape - Rect').size.setValue([20 * I.scaleVideo, fontSize]);
 	barB.content.addProperty('ADBE Vector Graphic - Fill').color.expression = `comp("00-全局变量").layer("${I.colorsLine[1] || I.colorsLine[0]}").content("组 1").content("填充 1").color`;
 
 	barB.transform.anchorPoint.setValue([0, -fontSizeHalf]);

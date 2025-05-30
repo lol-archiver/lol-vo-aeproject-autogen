@@ -159,7 +159,7 @@ const fileHead = configProject.fileHead ? parsePresetPath(configProject.fileHead
 	: resolvePath(dirResourcesProject, `${isSkinMode ? `${idSkinPad}-` : ''}header.png`);
 /** 默认背景文件 */
 const fileBackground = configProject.fileBackground ? parsePresetPath(configProject.fileBackground)
-	: resolvePath(dirResourcesProject, `${isSkinMode ? `${idSkinPad}-` : ''}splash.jpg`);
+	: resolvePath(dirResourcesProject, `${isSkinMode ? `${idSkinPad}-` : ''}splash.png`);
 /** 默认主背景文件 */
 const fileBackgroundMain = configProject.fileBackgroundMain === false ? null :
 	configProject.fileBackgroundMain ? parsePresetPath(configProject.fileBackgroundMain)
@@ -630,9 +630,11 @@ for(const rawRuncom of runcom.runcoms) {
 
 	const nameDirProjectOld = `${String(idChampionOld).padStart(3, '0')}-${championOld.slot.toLowerCase()}${runcom.slotSub ? `.${runcom.slotSub}` : ''}`;
 
+	const filePNG = resolvePath(dirResources, 'project', nameDirProjectOld, `${String(idSkinOld).padStart(3, '0')}-splash.png`);
+	const fileJPG = resolvePath(dirResources, 'project', nameDirProjectOld, `${String(idSkinOld).padStart(3, '0')}-splash.jpg`);
 
 	infosSplashOpener.push({
-		file: resolvePath(dirResources, 'project', nameDirProjectOld, `${String(idSkinOld).padStart(3, '0')}-splash.jpg`),
+		file: existsSync(filePNG) ? filePNG : fileJPG,
 		offset: offsetsSplashOpener$slot[runcomOld.slot] ?? 0,
 	});
 
@@ -649,7 +651,14 @@ for(const markGlobal of marksGlobal) {
 	let indexLineBorn = -2;
 	if(markGlobal.idLineBorn) {
 		indexLineBorn = linesFinal.findIndex(line => line.ids.split('|').includes(markGlobal.idLineBorn));
-		if(indexLineBorn == -1) { globalThis.console.warn(`无法匹配全局注释【${markGlobal.text}】的开始台词ID【${markGlobal.idLineBorn}】`); continue; }
+		if(indexLineBorn == -1) {
+			globalThis.console.warn(`无法匹配全局注释【${markGlobal.text}】的开始台词ID【${markGlobal.idLineBorn}】`);
+
+			markGlobal.born = 0;
+			markGlobal.duration = -1;
+
+			continue;
+		}
 
 		markGlobal.born = 0;
 		for(let index = 0; index < indexLineBorn; index++) {
@@ -665,7 +674,14 @@ for(const markGlobal of marksGlobal) {
 
 	if(markGlobal.idLineDead) {
 		const indexLineDead = linesFinal.findIndex(line => line.ids.split('|').includes(markGlobal.idLineDead));
-		if(indexLineDead == -1) { globalThis.console.warn(`无法匹配全局注释【${markGlobal.text}】的开始台词ID【${markGlobal.idLineBorn}】`); continue; }
+		if(indexLineDead == -1) {
+			globalThis.console.warn(`无法匹配全局注释【${markGlobal.text}】的结束台词ID【${markGlobal.idLineBorn}】`);
+
+			markGlobal.born = 0;
+			markGlobal.duration = -1;
+
+			continue;
+		}
 		if(indexLineBorn && indexLineDead < indexLineBorn) { globalThis.console.warn(`全局注释【${markGlobal.text}】的结束台词ID【${markGlobal.idLineDead}】在开始台词ID【${markGlobal.idLineBorn}】之前`); continue; }
 
 		markGlobal.duration = 0;
@@ -689,8 +705,9 @@ const infoProjectFinal = {
 	fileWaterMark,
 
 
-	widthVideo: configVideo.widthVideo,
-	heightVideo: configVideo.heightVideo,
+	widthVideo: configVideo.widthVideo * configVideo.scaleVideo,
+	heightVideo: configVideo.heightVideo * configVideo.scaleVideo,
+	scaleVideo: configVideo.scaleVideo,
 	landscape: configVideo.widthVideo > configVideo.heightVideo,
 	pixelAspect: configVideo.pixelAspect,
 	frameRate: configVideo.frameRate,
@@ -701,19 +718,19 @@ const infoProjectFinal = {
 	durationEnding: configVideo.durationEnding,
 	durationExtendLine: configVideo.durationExtendLine,
 
-	sizeFontLine: configVideo.sizeFontLine,
-	sizeFontCond: configVideo.sizeFontCond,
-	sizeFontMark: configVideo.sizeFontMark,
-	paddingLine: configVideo.paddingLine,
-	paddingCond: configVideo.paddingCond,
-	paddingMark: configVideo.paddingMark,
-	paddingTopExtra$event: configVideo.paddingTopExtra$event,
-	sizeBoxHeader: configVideo.sizeBoxHeader,
-	heightLeading: configVideo.heightLeading,
-	gapLive: configVideo.gapLive,
-	gapBoxLive: configVideo.gapBoxLive,
-	paddingSideVideo: configVideo.paddingSideVideo,
-	paddingBottomVideo: configVideo.paddingBottomVideo,
+	sizeFontLine: configVideo.sizeFontLine * configVideo.scaleVideo,
+	sizeFontCond: configVideo.sizeFontCond * configVideo.scaleVideo,
+	sizeFontMark: configVideo.sizeFontMark * configVideo.scaleVideo,
+	paddingLine: configVideo.paddingLine * configVideo.scaleVideo,
+	paddingCond: configVideo.paddingCond * configVideo.scaleVideo,
+	paddingMark: configVideo.paddingMark * configVideo.scaleVideo,
+	paddingTopExtra$event: configVideo.paddingTopExtra$event * configVideo.scaleVideo,
+	sizeBoxHeader: configVideo.sizeBoxHeader * configVideo.scaleVideo,
+	heightLeading: configVideo.heightLeading * configVideo.scaleVideo,
+	gapLive: configVideo.gapLive * configVideo.scaleVideo,
+	gapBoxLive: configVideo.gapBoxLive * configVideo.scaleVideo,
+	paddingSideVideo: configVideo.paddingSideVideo * configVideo.scaleVideo,
+	paddingBottomVideo: configVideo.paddingBottomVideo * configVideo.scaleVideo,
 
 
 	simple: configProject.simple || configUser.simple || configDefault.simple || false,
