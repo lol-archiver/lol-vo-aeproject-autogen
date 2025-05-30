@@ -741,7 +741,7 @@ const infoProjectFinal = {
 	title2,
 	title2Suffix,
 	textEnding,
-	titleComp: `${runcom.slotSpecial ? `${runcom.slotSpecial}-` : ''}${runcom.slot} ${!isSkinMode ? '特别篇' : (idSkin > 0 ? '新皮肤' : '新英雄')}：${title1} ${title2}${title2Suffix || ''}${configVideo.widthVideo > configVideo.heightVideo ? '' : ' （竖屏）'}`,
+	titleComp: `${runcom.slotSpecial ? `${runcom.slotSpecial}-` : ''}${runcom.slot} ${!isSkinMode ? '特辑' : (idSkin > 0 ? '皮肤' : '英雄')} ${title1} ${title2}${title2Suffix || ''}${configVideo.widthVideo > configVideo.heightVideo ? '' : ' （竖屏）'}`,
 
 	colorsLine: [...colorsLine$color].filter(c => c),
 

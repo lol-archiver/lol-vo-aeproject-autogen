@@ -533,7 +533,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 
 	if(line.back) {
-		AddLineBackGround(line.back, accumDuration);
+		AddLineBackGround(line.back, accumDuration, compLine.name);
 	}
 
 

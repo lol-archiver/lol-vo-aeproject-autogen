@@ -16,6 +16,8 @@ this.AddBackGround = () => {
 
 
 	const layerBackground = layersBackground.add(footageBackground, D.full);
+	layerBackground.name = '开始背景';
+
 	layerBackground.startTime = 0;
 	layerBackground.scale.setValueAtTime(0, [scaleBackground * 1.5, scaleBackground * 1.5]);
 	layerBackground.scale.setValueAtTime(1, [scaleBackground, scaleBackground]);
@@ -29,6 +31,8 @@ this.AddBackGround = () => {
 	const propertyRadiusBlurSplashBackground = blurSplashBackground[L.blurRadius];
 	propertyRadiusBlurSplashBackground.setValueAtTime(1, 0);
 	propertyRadiusBlurSplashBackground.setValueAtTime(5, 7);
+
+	layerBackground.outPoint = 6;
 
 	// if(isVideoBackground && footageBackground.duration <= (startBackgroundMiddle - layerBackground.startTime)) {
 	// 	const layerBackground2 = CompMain.layers.add(footageBackground, D.full);
@@ -51,6 +55,7 @@ this.AddBackGround = () => {
 		const startBackgroundMain = 4;
 
 		const layerBackgroundMain = layersBackground.add(footageBackgroundMain, D.full);
+		layerBackgroundMain.name = '主背景';
 
 		layerBackgroundMain.startTime = startBackgroundMain;
 		layerBackgroundMain.scale.setValue([scaleBackground, scaleBackground]);
@@ -77,17 +82,28 @@ this.AddBackGround = () => {
 /**
  * @param {string} pathBackground
  * @param {number} accumDuration
+ * @param {string} nameLine
  */
-this.AddLineBackGround = (pathBackground, accumDuration) => {
-	const timeStart = accumDuration - 2;
+this.AddLineBackGround = (pathBackground, accumDuration, nameLine) => {
+	/** @type {CompItem} */
+	const CompBack = this.CompBack;
+
+	/** 最上层Layer @type {AVLayer} */
+	const layerBackgroundTop = CompBack.layers[1];
 
 	/** @type {FootageItem} */
 	const footageBackground = GetFootage(pathBackground, DirFootage);
 
+	if(layerBackgroundTop.source == footageBackground) { return; }
+
+	const timeStart = accumDuration - 2;
+
+	layerBackgroundTop.outPoint = timeStart + 1;
+
 	const scaleBackground = I.heightVideo / footageBackground.height * 100;
 
-
 	const layerBackground = CompBack.layers.add(footageBackground, D.full);
+	layerBackground.name = nameLine || `背景${CompBack.layers.length + 1}`;
 
 	layerBackground.startTime = timeStart;
 	layerBackground.scale.setValue([scaleBackground, scaleBackground]);
