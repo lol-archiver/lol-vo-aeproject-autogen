@@ -1,16 +1,15 @@
 this.AddEnding = () => {
-	const textThankyou = '感谢观看！';
 	const textEnding = I.textEnding;
+	const textThankyou = '感谢观看！';
 
 
-	const footageBackground = GetFootage(I.fileBackground);
-	const isVideoBackground = (footageBackground.file.name.match(/\.mp4$/) || []).length > 0;
+	const footageBackground = GetFootage(I.fileBackgroundEnding);
 
 	const scaleBackground = I.heightVideo / footageBackground.height * 100;
 
 
 	const layerBackground = CompMain.layers.add(footageBackground, D.full);
-	layerBackground.startTime = D.linesEnd + 2;
+	layerBackground.startTime = D.linesDead;
 
 	layerBackground.transform.scale.setValue([scaleBackground, scaleBackground]);
 
@@ -18,39 +17,22 @@ this.AddEnding = () => {
 	positionSplashBackground[0] += OffsetSplashBackground;
 	layerBackground.position.setValue(positionSplashBackground);
 
-	layerBackground.transform.opacity.setValueAtTime(D.linesEnd + 2, 0);
-	layerBackground.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 100);
-
-
-	if(isVideoBackground) {
-		const layerBackground2 = CompMain.layers.add(footageBackground, D.full);
-		layerBackground2.startTime = D.linesEnd + 2 + footageBackground.duration;
-
-		layerBackground2.transform.scale.setValue([scaleBackground, scaleBackground]);
-
-		const positionSplashBackground2 = layerBackground2.position.value;
-		positionSplashBackground2[0] += OffsetSplashBackground;
-		layerBackground2.position.setValue(positionSplashBackground2);
-
-		layerBackground2.transform.opacity.setValueAtTime(D.linesEnd + 2, 0);
-		layerBackground2.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 100);
-	}
-
+	layerBackground.transform.opacity.setValueAtTime(D.linesDead, 0);
+	layerBackground.transform.opacity.setValueAtTime(D.linesDead + 1.5, 100);
 
 
 	const layerThankyou = CompMain.layers.addText(textThankyou);
 
-	layerThankyou.startTime = D.linesEnd + 3.4;
-	layerThankyou.duration = D.credit;
+	layerThankyou.startTime = D.linesDead + 1.5;
 
 	layerThankyou.transform.position.setValue([40 * I.scaleVideo, 150 * I.scaleVideo]);
-	layerThankyou.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 0);
-	layerThankyou.transform.opacity.setValueAtTime(D.linesEnd + 4.5, 100);
+	layerThankyou.transform.opacity.setValueAtTime(D.linesDead + 1.5, 0);
+	layerThankyou.transform.opacity.setValueAtTime(D.linesDead + 2.5, 100);
 
 	const textDocThankyou = layerThankyou.sourceText.value;
 	textDocThankyou.resetCharStyle();
 	textDocThankyou.fontSize = I.sizeFontLine * 2;
-	textDocThankyou.font = 'Source Han Mono SC';
+	textDocThankyou.font = 'SourceHanMonoSC-Regular';
 	textDocThankyou.applyStroke = true;
 	textDocThankyou.fillColor = RGBH('FFFAFA');
 	textDocThankyou.strokeColor = RGBH('FFFAFA');
@@ -68,17 +50,16 @@ this.AddEnding = () => {
 
 	const layerCredit = CompMain.layers.addText(textEnding);
 
-	layerCredit.startTime = D.linesEnd + 3.4;
-	layerCredit.duration = D.credit;
+	layerCredit.startTime = D.linesDead + 1.5;
 
 	layerCredit.transform.position.setValue([40 * I.scaleVideo, 300 * I.scaleVideo]);
-	layerCredit.transform.opacity.setValueAtTime(D.linesEnd + 3.4, 0);
-	layerCredit.transform.opacity.setValueAtTime(D.linesEnd + 4.5, 100);
+	layerCredit.transform.opacity.setValueAtTime(D.linesDead + 1.5, 0);
+	layerCredit.transform.opacity.setValueAtTime(D.linesDead + 2.5, 100);
 
 	const textDocCredit = layerCredit.sourceText.value;
 	textDocCredit.resetCharStyle();
 	textDocCredit.fontSize = I.sizeFontLine;
-	textDocCredit.font = 'Source Han Mono SC';
+	textDocCredit.font = 'SourceHanMonoSC-Regular';
 	textDocCredit.applyStroke = true;
 	textDocCredit.fillColor = RGBH('FFFAFA');
 	textDocCredit.strokeColor = RGBH('FFFAFA');

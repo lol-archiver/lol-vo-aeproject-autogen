@@ -180,7 +180,7 @@ this.GetBoxSize = text => {
 	const textDocLine = layerLine.sourceText.value;
 	textDocLine.resetCharStyle();
 	textDocLine.fontSize = fontSize;
-	textDocLine.font = 'Source Han Mono SC';
+	textDocLine.font = 'SourceHanMonoSC-Regular';
 	textDocLine.applyStroke = true;
 	textDocLine.strokeWidth = 2 * I.scaleVideo;
 	textDocLine.text = text.replace(regexSize13, 'A').replace(regexSize33, '因');
@@ -257,7 +257,7 @@ this.GetBoxSizeMark = text => {
 	const textDocMark = layerMark.sourceText.value;
 	textDocMark.resetCharStyle();
 	textDocMark.fontSize = fontSize;
-	textDocMark.font = 'Source Han Mono SC';
+	textDocMark.font = 'SourceHanMonoSC-Regular';
 	textDocMark.applyStroke = true;
 	textDocMark.strokeWidth = 1;
 	textDocMark.text = text.replace(regexSize13, 'A').replace(regexSize33, '因');

@@ -4,7 +4,7 @@
 		{
 			"type": "node",
 			"request": "launch",
-			"name": "1: 更新配置",
+			"name": "1 更新配置",
 			"console": "integratedTerminal",
 			"skipFiles": [
 				"<node_internals>/**"
@@ -17,18 +17,25 @@
 		{
 			"type": "extendscript-debug",
 			"request": "launch",
-			"name": "2: 生成工程",
-			"hostAppSpecifier": "aftereffects-22.0",
+			"name": "2 生成工程",
+			"hostAppSpecifier": "aftereffects-25.0",
 			"script": "${workspaceFolder}/dist-extend/index.js",
 			"preLaunchTask": "npm: 更新配置",
 		},
 		{
 			"type": "extendscript-debug",
 			"request": "launch",
-			"name": "3: 构建脚本 -> 生成工程",
-			"hostAppSpecifier": "aftereffects-22.0",
+			"name": "3 构建脚本 -> 生成工程",
+			"hostAppSpecifier": "aftereffects-25.0",
 			"script": "${workspaceFolder}/dist-extend/index.js",
 			"preLaunchTask": "npm: 构建",
+		},
+		{
+			"type": "extendscript-debug",
+			"request": "launch",
+			"name": "4 测试",
+			"hostAppSpecifier": "aftereffects-25.0",
+			"script": "${workspaceFolder}/dist-extend/test.js",
 		}
 	]
 }

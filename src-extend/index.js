@@ -27,7 +27,7 @@ if(!I.simple) {
 
 
 // 台词
-let accumDuration = D.opener + D.title - 0.5;
+let accumDuration = D.linesBorn;
 EnumLine(events, (line, lid, index) => {
 	const yCenter = 540;
 

@@ -5,7 +5,7 @@ this.AddCounter = (simple = false) => {
 	layerWaterMark.transform.position.setValue([40 * I.scaleVideo, I.heightVideo - (40 + 40) * I.scaleVideo]);
 
 	layerWaterMark.startTime = D.opener + 1;
-	layerWaterMark.duration = D.linesEnd;
+	layerWaterMark.duration = D.linesDead;
 	layerWaterMark.transform.opacity.setValueAtTime(D.opener + 1, 0);
 	layerWaterMark.transform.opacity.setValueAtTime(D.opener + 3, 100);
 
@@ -24,16 +24,16 @@ this.AddCounter = (simple = false) => {
 
 	SetText(layerCounter, {
 		fillColor: RGBH('FFFAFA'),
-		font: 'Source Han Mono SC',
+		font: 'SourceHanMonoSC-Regular',
 		fontSize: 24 * I.scaleVideo,
 		strokeColor: RGBH('FFFAFA'),
 		strokeWidth: 1 * I.scaleVideo,
 	});
 
-	layerCounter.startTime = D.opener + D.title - 0.5;
+	layerCounter.startTime = D.linesBorn;
 	layerCounter.duration = D.lines;
 
-	let duration = D.opener + D.title;
+	let duration = D.linesBorn;
 	let now = D.lengthLine;
 
 	if(simple) {

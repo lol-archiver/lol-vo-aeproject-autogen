@@ -12,12 +12,13 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 	const indexText = lid + 1;
 
 	const side = line.side;
-	const isMianLine = side == 'right';
+	const isMainLine = side == 'right';
 
 	const eventText = line.eventDirect || line.event;
 
-	const hasTarget = isMianLine ? line.target : false;
-	const hasSkill = isMianLine ? line.skill : false;
+	const hasTarget = isMainLine ? line.target : false;
+	const hasSkill = isMainLine ? line.skill : false;
+	const hiddenSkillBox = isMainLine ? line.hiddenSkillBox : false;
 	const hasEvent = line.hideEvent ? false : !!eventText;
 	const hasCond = !!line.cond;
 	const hasMark = !!line.mark;
@@ -89,7 +90,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 	const layerTarget = hasTarget ? compLine.layers.add(GetFootage(hasTarget, DirFootage)) : null;
 
 	const layerSkill = hasSkill ? compLine.layers.add(GetFootage(hasSkill, DirFootage)) : null;
-	const layerBoxSkill = hasSkill ? compLine.layers.addShape() : null;
+	const layerBoxSkill = hasSkill && !hiddenSkillBox ? compLine.layers.addShape() : null;
 
 
 	const layerLine = compLine.layers.addBoxText([1, 1], line.caption);
@@ -120,7 +121,10 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 	if(hasSkill) {
 		layerSkill.name = '技能';
-		layerBoxSkill.name = '技能盒';
+
+		if(!hiddenSkillBox) {
+			layerBoxSkill.name = '技能盒';
+		}
 	}
 
 	if(hasCond) {
@@ -138,7 +142,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 	// --------------台词--------------
 	SetText(layerLine, {
 		fillColor: colorLine,
-		font: 'Source Han Mono SC',
+		font: 'SourceHanMonoSC-Regular',
 		fontSize: I.sizeFontLine,
 		strokeColor: colorLine,
 		strokeWidth: 2 * I.scaleVideo,
@@ -272,7 +276,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 	SetAttr(AddProperty(layerBoxHeaderShadow.effect, 'ADBE Drop Shadow'), {
 		[L.shadowColor]: RGBH('495051'),
-		[L.direction]: isMianLine ? 225 : 135,
+		[L.direction]: isMainLine ? 225 : 135,
 		[L.opacity]: (70 / 100) * 255,
 		[L.distance]: 11 * I.scaleVideo,
 		[L.softness]: 7,
@@ -287,7 +291,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 	SetText(layerWaterMark, {
 		fontSize: fontSizeWaterMark,
 		fillColor: colorLine,
-		font: 'Source Han Mono',
+		font: 'SourceHanMonoSC-Regular',
 		strokeWidth: 2 * I.scaleVideo,
 		strokeColor: colorLine,
 		leading: fontSizeWaterMark + leadingLine,
@@ -314,7 +318,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 		SetText(layerEvent, {
 			fontSize: I.sizeFontLine,
 			fillColor: RGBH('495051'),
-			font: 'Source Han Mono SC',
+			font: 'SourceHanMonoSC-Regular',
 			applyStroke: true,
 			strokeColor: RGBH('495051'),
 			strokeWidth: 2 * I.scaleVideo,
@@ -380,21 +384,23 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 
 
 		// --------------技能盒--------------
-		SetAttr(layerBoxSkill.transform, {
-			position: [
-				xHeader + sizeBoxHeader / 2 - sizeBoxSkill / 2 + strokeBoxSkill,
-				yHeader + sizeBoxHeader / 2 - sizeBoxSkill / 2 + strokeBoxSkill,
-			],
-		});
+		if(!hiddenSkillBox) {
+			SetAttr(layerBoxSkill.transform, {
+				position: [
+					xHeader + sizeBoxHeader / 2 - sizeBoxSkill / 2 + strokeBoxSkill,
+					yHeader + sizeBoxHeader / 2 - sizeBoxSkill / 2 + strokeBoxSkill,
+				],
+			});
 
-		const boxSkill = AddProperty(layerBoxSkill.content, 'ADBE Vector Group');
+			const boxSkill = AddProperty(layerBoxSkill.content, 'ADBE Vector Group');
 
-		SetAttr(AddProperty(boxSkill.content, 'ADBE Vector Shape - Rect'), {
-			size: [72 * I.scaleVideo, 72 * I.scaleVideo],
-			roundness: 7 * I.scaleVideo,
-		});
+			SetAttr(AddProperty(boxSkill.content, 'ADBE Vector Shape - Rect'), {
+				size: [72 * I.scaleVideo, 72 * I.scaleVideo],
+				roundness: 7 * I.scaleVideo,
+			});
 
-		SetAttr(AddProperty(boxSkill.content, 'ADBE Vector Graphic - Stroke'), { color: RGBH('FFFAFA'), strokeWidth: 7 * I.scaleVideo });
+			SetAttr(AddProperty(boxSkill.content, 'ADBE Vector Graphic - Stroke'), { color: RGBH('FFFAFA'), strokeWidth: 7 * I.scaleVideo });
+		}
 	}
 
 
@@ -432,7 +438,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 		// --------------条件--------------
 		SetText(layerCond, {
 			fillColor: colorCond,
-			font: 'Source Han Mono SC',
+			font: 'SourceHanMonoSC-Regular',
 			fontSize: I.sizeFontCond,
 			strokeColor: colorCond,
 			strokeWidth: 1 * I.scaleVideo,
@@ -486,7 +492,7 @@ this.AddLine = (line, lid, dirLine, duration, accumDuration) => {
 		// --------------备注--------------
 		SetText(layerMark, {
 			fillColor: colorMark,
-			font: 'Source Han Mono SC',
+			font: 'SourceHanMonoSC-Regular',
 			fontSize: I.sizeFontMark,
 			strokeColor: colorMark,
 			strokeWidth: 1 * I.scaleVideo,

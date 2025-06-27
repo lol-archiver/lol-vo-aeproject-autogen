@@ -27,7 +27,7 @@ const makeTitle = () => {
 	textSourceT.resetCharStyle();
 	textSourceT.fontSize = fontSize;
 	textSourceT.fillColor = colorText;
-	textSourceT.font = 'Source Han Mono SC';
+	textSourceT.font = 'SourceHanMonoSC-Regular';
 	textSourceT.applyStroke = true;
 	textSourceT.strokeColor = colorText;
 	textSourceT.strokeWidth = 4 * I.scaleVideo;
@@ -56,7 +56,7 @@ const makeTitle = () => {
 	textSourceB.resetCharStyle();
 	textSourceB.fontSize = fontSize;
 	textSourceB.fillColor = colorText;
-	textSourceB.font = 'Source Han Mono SC';
+	textSourceB.font = 'SourceHanMonoSC-Regular';
 	textSourceB.applyStroke = true;
 	textSourceB.strokeColor = colorText;
 	textSourceB.strokeWidth = 4 * I.scaleVideo;

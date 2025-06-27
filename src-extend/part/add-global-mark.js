@@ -11,7 +11,7 @@ this.AddGlobalMark = () => {
 
 		SetText(layerMarkGlobal, {
 			fillColor: RGBH('FFFAFA'),
-			font: 'Source Han Mono SC',
+			font: 'SourceHanMonoSC-Regular',
 			fontSize: sizeText,
 			strokeColor: RGBH('FFFAFA'),
 			strokeWidth: 1 * I.scaleVideo,
@@ -20,8 +20,8 @@ this.AddGlobalMark = () => {
 		});
 
 
-		layerMarkGlobal.startTime = D.opener + D.title + markGlobal.born;
-		layerMarkGlobal.outPoint = markGlobal.duration == -1 ? D.lines : layerMarkGlobal.startTime + markGlobal.duration;
+		layerMarkGlobal.startTime = D.linesBorn + markGlobal.born;
+		layerMarkGlobal.outPoint = markGlobal.duration == -1 ? D.linesDead + 1.5 : (layerMarkGlobal.startTime + markGlobal.duration);
 
 
 		const effectDropShadowMarkGlobal = layerMarkGlobal.effect.addProperty('ADBE Drop Shadow');

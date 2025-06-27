@@ -20,6 +20,8 @@ type ResourcePathConfig = {
 	readonly fileBackground: string;
 	/** 默认主背景文件 */
 	readonly fileBackgroundMain: string;
+	/** 默认片尾背景文件 */
+	readonly fileBackgroundEnding: string;
 	/** 默认Logo文件 */
 	readonly fileLogo: string;
 	/** 默认Logo左侧文件 */
@@ -162,8 +164,10 @@ type ProjectConfig = BasePathConfig & ResourcePathConfig & VideoConfig & VideoDe
 
 	/** 附加插槽，用于附加其他台词文件 */
 	readonly slotsExtra: string[];
-	/** 从附加台词中，追加台词作为主台词 */
-	readonly idsLineAppend: string[];
+	/** 从附加台词中，追加台词到主台词最前 */
+	readonly idsLineAppendHead: string[];
+	/** 从附加台词中，追加台词到主台词最后 */
+	readonly idsLineAppendTail: string[];
 
 
 	/** 扩展配置 */
@@ -250,9 +254,9 @@ type DictationLineConfig = {
 	/** 额外配置 */
 	readonly extras?: {
 		/** 前置台词 */
-		readonly before: string[];
+		readonly prev: string[];
 		/** 后置台词 */
-		readonly after: string[];
+		readonly next: string[];
 
 		/** 角色 */
 		readonly who: string[];
@@ -274,12 +278,16 @@ type DictationLineConfig = {
 		readonly comment: string[];
 		/** 跳过该台词 */
 		readonly skip: string[];
+		/** 追加该台词作为主台词 */
+		readonly append: 'head' | 'tail';
 	};
 
-	/** 事件文件 */
+	/** 事件文本（已分割） */
 	readonly eventsRaw?: string[];
 	/** 台词文本 */
 	readonly caption?: string;
+	/** 音频文件（用于额外台词） */
+	readonly audio?: string;
 }
 
 /** 台词配置 */
@@ -323,6 +331,8 @@ type LineConfig = {
 	readonly target: string;
 	/** 技能图标文件 */
 	readonly skill: string;
+	/** 是否隐藏技能图标边框 */
+	readonly hiddenSkillBox: boolean;
 
 	/** 台词位置 */
 	readonly side: 'right' | 'left';

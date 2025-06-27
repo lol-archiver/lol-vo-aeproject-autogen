@@ -49,17 +49,16 @@ this.CalcDuration = () => {
 
 		durationLines += durationLine;
 
-		line.durationLine = durationLine + 0.4 + (index >= D.lengthLine - 3 ? 4 : 0);
+		line.durationLine = durationLine + D.interval + (index >= D.lengthLine - 4 ? 4 : 0);
 	});
 
 	CompTest.remove();
 
 	D.lines = durationLines;
 
-	D.ending += 4.5;
-
 	D.full = D.opener + D.lines + D.ending;
-	D.linesEnd = D.opener + D.lines;
+	D.linesBorn = D.opener + D.title - 0.5;
+	D.linesDead = D.linesBorn + D.lines;
 
 	$.writeln(`${I.titleComp} ${D.full.toFixed(2)} ${D.lines.toFixed(2)}`);
 

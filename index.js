@@ -16,8 +16,8 @@ import { linesPublic$event, appendPublicLinesFromChampions } from './lib/public.
 
 
 const formatLine = line => line
-	.replace(/\\[n.,，。…、\\]/g, '\n')
-	.replace(/\\([!?:“”[\]()！？：【】])/g, '$1\n');
+	.replace(/\\[n.,，。、\\]/g, '\n')
+	.replace(/\\([…!?:“”[\]()！？：【】])/g, '$1\n');
 
 /**
  * @param {string} string
@@ -164,6 +164,8 @@ const fileBackground = configProject.fileBackground ? parsePresetPath(configProj
 const fileBackgroundMain = configProject.fileBackgroundMain === false ? null :
 	configProject.fileBackgroundMain ? parsePresetPath(configProject.fileBackgroundMain)
 		: resolvePath(dirResourcesProject, `${isSkinMode ? `${idSkinPad}-` : ''}splash-left.png`);
+/** 默认片尾背景文件 */
+const fileBackgroundEnding = configProject.fileBackgroundEnding ? parsePresetPath(configProject.fileBackgroundEnding) : fileBackground;
 
 /** 默认主Logo文件 */
 const fileLogo = configProject.fileLogo ? resolvePath(dirResourcesProject, configProject.fileLogo)
@@ -266,14 +268,14 @@ const linesDictation = (fileDictation ? readDictationLines(fileDictation) : [])
  * @returns {LineConfig}
  */
 const parseDictaionLineConfig = (lineDictation, from = 'unknown') => {
-	const extras = lineDictation.extras;
+	const extras = lineDictation.extras ?? {};
 
 	/** @type {LineConfig} */
 	const line = {
 		order: null,
 		orderRanged: undefined,
 
-		ids: [lineDictation.idAudio, ...lineDictation.idsSound].filter(id => id).join('|'),
+		ids: [lineDictation.idAudio, ...(lineDictation.idsSound ?? [])].filter(id => id).join('|'),
 
 		event: lineDictation.eventsRaw.map(eventRaw => formatEvent(eventRaw)).join('、'),
 		caption: lineDictation.caption,
@@ -282,7 +284,7 @@ const parseDictaionLineConfig = (lineDictation, from = 'unknown') => {
 		cond: extras.cond?.[0] ?? null,
 
 		duration: 0,
-		audio: null,
+		audio: lineDictation.audio ?? null,
 
 		color: null,
 		colorTile: null,
@@ -307,6 +309,8 @@ const parseDictaionLineConfig = (lineDictation, from = 'unknown') => {
 		else {
 			line.skill = '${R}' + `/${extras.skill.join('/')}.png`;
 		}
+
+		line.hiddenSkillBox = extras.hiddenSkillBox ?? false;
 	}
 
 
@@ -402,9 +406,19 @@ for(const lineDictation of linesDictation) {
 }
 
 // 从附加文件追加台词
-for(const idLineAppend of configProject.idsLineAppend ?? []) {
-	const lineExtra = linesExtra.find(lineDictationExtra => lineDictationExtra.ids.includes(idLineAppend));
+const setIDsLineAppendHead = new Set(configProject.idsLineAppendHead);
+for(const lineExtra of linesExtra.filter(lineDictationExtra =>
+	lineDictationExtra.lineDictation.extras.append == 'head' ||
+	setIDsLineAppendHead.intersection(new Set(lineDictationExtra.ids.split('|'))).size
+).reverse()) {
+	linesFinal.unshift(lineExtra);
+}
 
+const setIDsLineAppendTail = new Set(configProject.idsLineAppendTail);
+for(const lineExtra of linesExtra.filter(lineDictationExtra =>
+	lineDictationExtra.lineDictation.extras.append == 'tail' ||
+	setIDsLineAppendTail.intersection(new Set(lineDictationExtra.ids.split('|'))).size
+)) {
 	linesFinal.push(lineExtra);
 }
 
@@ -555,14 +569,14 @@ for(const line of linesFinal) {
 
 
 	// 优先级5：对话匹配
-	const linesIDDialog = [lineDictation.idAudio, ...lineDictation.idsSound].map(idSound => linesDialog$id[idSound]).filter(l => l);
+	const linesIDDialog = [lineDictation.idAudio, ...(lineDictation.idsSound ?? [])].map(idSound => linesDialog$id[idSound]).filter(l => l);
 
 	for(const lineID of linesIDDialog) { Object.assign(line, lineID); }
 
 
 
 	// 优先级6：工程台词ID匹配
-	const linesID = [lineDictation.idAudio, ...lineDictation.idsSound].map(idSound => configProject.lines$id?.[idSound]).filter(l => l);
+	const linesID = [lineDictation.idAudio, ...(lineDictation.idsSound ?? [])].map(idSound => configProject.lines$id?.[idSound]).filter(l => l);
 
 	for(const lineID of linesID) { Object.assign(line, lineID); }
 
@@ -698,6 +712,7 @@ for(const markGlobal of marksGlobal) {
 const infoProjectFinal = {
 	fileBackground,
 	fileBackgroundMain,
+	fileBackgroundEnding,
 	fileLogo,
 	fileLogoSide,
 

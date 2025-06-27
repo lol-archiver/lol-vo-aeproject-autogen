@@ -12,7 +12,7 @@ this.AddBackGround = () => {
 	const footageBackground = GetFootage(I.fileBackground, DirFootage);
 	// const isVideoBackground = (footageBackground.file.name.match(/\.mp4$/) || []).length > 0;
 
-	const scaleBackground = I.heightVideo / footageBackground.height * 100;
+	const scaleBackground = Math.max(I.widthVideo / footageBackground.width, I.heightVideo / footageBackground.height) * 100;
 
 
 	const layerBackground = layersBackground.add(footageBackground, D.full);
@@ -100,7 +100,7 @@ this.AddLineBackGround = (pathBackground, accumDuration, nameLine) => {
 
 	layerBackgroundTop.outPoint = timeStart + 1;
 
-	const scaleBackground = I.heightVideo / footageBackground.height * 100;
+	const scaleBackground = Math.max(I.widthVideo / footageBackground.width, I.heightVideo / footageBackground.height) * 100;
 
 	const layerBackground = CompBack.layers.add(footageBackground, D.full);
 	layerBackground.name = nameLine || `背景${CompBack.layers.length + 1}`;
