@@ -1,4 +1,4 @@
-/// <reference types="types-for-adobe/AfterEffects/22.0"/>
+/// <reference types="types-for-adobe/AfterEffects/24.6/index.d.ts" />
 
 
 /** 基础路径配置 */
