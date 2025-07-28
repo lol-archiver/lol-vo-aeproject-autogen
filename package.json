@@ -20,16 +20,16 @@
 	},
 	"dependencies": {
 		"fs-extra": "^11.3.0",
-		"music-metadata": "^11.4.0",
+		"music-metadata": "^11.7.3",
 		"types-for-adobe": "^7.2.5",
 		"typescript": "^5.8.3"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.30.0",
+		"@eslint/js": "^9.32.0",
 		"@stylistic/eslint-plugin-js": "^2.13.0",
 		"@types/fs-extra": "^11.0.4",
-		"@types/node": "^24.0.7",
-		"eslint": "^9.30.0",
-		"globals": "^16.2.0"
+		"@types/node": "^24.1.0",
+		"eslint": "^9.32.0",
+		"globals": "^16.3.0"
 	}
 }
