@@ -303,7 +303,7 @@ const parseDictaionLineConfig = (lineDictation, from = 'unknown') => {
 	if(extras.head) { line.head = '${R}' + `/${extras.head.join('/')}.png`; }
 	if(extras.target) { line.target = '${R}' + `/${extras.target.join('/')}.png`; }
 	if(extras.skill) {
-		if(isSkinMode) {
+		if(isSkinMode && !extras.skill[0].startsWith('@')) {
 			line.skill = '${RP}' + `/skill-${extras.skill[0]}.png`;
 		}
 		else {
@@ -775,11 +775,6 @@ const stringInfoProjectFinal = JSON.stringify(infoProjectFinal, null, '\t');
 // 检查缺失文件
 const filesNeed = new Set(stringInfoProjectFinal.match(/(?<=(: |\t)")([A-Z]:(\\\\|\/).+?)(?=")/ig));
 const filesLack = [...filesNeed].filter(file => !existsSync(file)).sort();
-if(filesLack.length) {
-	globalThis.console.warn(`以下工程所需文件不存在：\n${filesLack.map(file => `\t${file}`).join('\n')}`);
-
-	process.exit(1);
-}
 
 
 // 计算时长
@@ -791,6 +786,12 @@ durationAll += (infoProjectFinal.durationOpener) + (infoProjectFinal.durationEnd
 globalThis.console.log(`总台词：${infoProjectFinal.lines.length}个`);
 globalThis.console.log(`总时长：${durationAll.toFixed(1)}秒 (${~~(durationAll / 60)}分${~~(durationAll - ~~(durationAll / 60) * 60)}秒)`);
 
+
+if(filesLack.length) {
+	globalThis.console.warn(`以下工程所需文件不存在：\n${filesLack.map(file => `\t${file}`).join('\n')}`);
+
+	process.exit(1);
+}
 
 const fileInfo = resolvePath(dirResources, 'info', `${runcom.slot}.json`);
 const fileInfoDist = resolvePath(dirDistExtend, 'info.json');
