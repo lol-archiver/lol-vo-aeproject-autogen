@@ -26,13 +26,15 @@ this.AddBackGround = () => {
 	positionSplashBackground[0] += OffsetSplashBackground;
 	layerBackground.position.setValue(positionSplashBackground);
 
-	const blurSplashBackground = layerBackground.effect.addProperty('ADBE Box Blur2');
-	/** @type {Property} */
-	const propertyRadiusBlurSplashBackground = blurSplashBackground[L.blurRadius];
-	propertyRadiusBlurSplashBackground.setValueAtTime(1, 0);
-	propertyRadiusBlurSplashBackground.setValueAtTime(5, 7);
+	if(I.fileBackgroundMain) {
+		const blurSplashBackground = layerBackground.effect.addProperty('ADBE Box Blur2');
+		/** @type {Property} */
+		const propertyRadiusBlurSplashBackground = blurSplashBackground[L.blurRadius];
+		propertyRadiusBlurSplashBackground.setValueAtTime(1, 0);
+		propertyRadiusBlurSplashBackground.setValueAtTime(5, 7);
 
-	layerBackground.outPoint = 6;
+		layerBackground.outPoint = 6;
+	}
 
 	// if(isVideoBackground && footageBackground.duration <= (startBackgroundMiddle - layerBackground.startTime)) {
 	// 	const layerBackground2 = CompMain.layers.add(footageBackground, D.full);
