@@ -1,6 +1,6 @@
 {
 	"name": "@lol-archiver/lol-vo-aeproject-autogen",
-	"version": "5.8.5",
+	"version": "5.8.6",
 	"description": "【英雄联盟全语音】系列视频的自动生成工程",
 	"author": "DanoR",
 	"license": "LGPL-3.0-or-later",
@@ -19,17 +19,17 @@
 		"构建": "cd src-extend && tsc -v && tsc"
 	},
 	"dependencies": {
-		"fs-extra": "^11.3.2",
-		"music-metadata": "^11.10.2",
+		"fs-extra": "^11.3.4",
+		"music-metadata": "^11.12.1",
 		"types-for-adobe": "^7.2.5",
 		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.39.1",
+		"@eslint/js": "^9.39.3",
 		"@stylistic/eslint-plugin-js": "^2.13.0",
 		"@types/fs-extra": "^11.0.4",
-		"@types/node": "^24.10.1",
-		"eslint": "^9.39.1",
+		"@types/node": "^24.11.0",
+		"eslint": "^9.39.3",
 		"globals": "^16.5.0"
 	}
 }

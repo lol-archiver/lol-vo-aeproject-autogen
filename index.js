@@ -458,7 +458,7 @@ for(let indexDialog = 1; indexDialog <= configProject.dialogs?.length ?? 0; inde
 	// 演员顺序
 	const orderWhoPlayer = (rawPlayers = rawPlayers || 'A').split('').map(slot => whosDialogist$slot[slot] ?? slot);
 	// 目标顺序
-	const orderWhoTarget = (rawTargets || (rawPlayers == 'A' ? 'B' : '')).split('').map(slot => whosDialogist$slot[slot] ?? slot);
+	const orderWhoTarget = (rawTargets || (rawPlayers.startsWith('A') ? 'B' : 'A')).split('').map(slot => whosDialogist$slot[slot] ?? slot);
 
 
 	// 补全顺序
@@ -576,7 +576,7 @@ for(const line of linesFinal) {
 
 
 	// 优先级6：工程台词ID匹配
-	const linesID = [lineDictation.idAudio, ...(lineDictation.idsSound ?? [])].map(idSound => configProject.lines$id?.[idSound]).filter(l => l);
+	const linesID = Array.from(new Set([lineDictation.idAudio, ...(lineDictation.idsSound ?? [])])).map(idSound => configProject.lines$id?.[idSound]).filter(l => l);
 
 	for(const lineID of linesID) { Object.assign(line, lineID); }
 
