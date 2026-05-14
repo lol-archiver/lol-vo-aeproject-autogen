@@ -1,6 +1,6 @@
-import { copyFileSync, existsSync, readdirSync, writeFileSync } from 'fs';
-import { resolve as resolvePath } from 'path';
-import { pathToFileURL } from 'url';
+import { copyFileSync, existsSync, readdirSync, writeFileSync } from 'node:fs';
+import { resolve as resolvePath } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 import { readJSONSync } from 'fs-extra/esm';
 import { parseFile } from 'music-metadata';
