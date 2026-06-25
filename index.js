@@ -15,9 +15,19 @@ import { linesPublic$event, appendPublicLinesFromChampions } from './lib/public.
 
 
 
+const assignWeak = (target, source) => {
+	for(const key of Object.keys(source)) {
+		if(target[key] == null) {
+			target[key] = source[key];
+		}
+	}
+
+	return target;
+};
+
 const formatLine = line => line
-	.replace(/\\[n.,，。、\\]/g, '\n')
-	.replace(/\\([…!?:“”[\]()！？：【】])/g, '$1\n');
+	.replace(/\\[n.,，。\\]/g, '\n')
+	.replace(/\\([…!?:“”[\]()！？、：【】])/g, '$1\n');
 
 /**
  * @param {string} string
@@ -537,13 +547,13 @@ for(const line of linesFinal) {
 		const lineEventMatched = linesPublic$event[eventRaw];
 		if(!lineEventMatched) { continue; }
 
-		Object.assign(line, lineEventMatched);
+		assignWeak(line, lineEventMatched);
 	};
 
 
 
 	// 优先级2：工程公共资源
-	Object.assign(line, {
+	assignWeak(line, {
 		color: configProject.color ?? null,
 		colorTile: configProject.colorTile ?? null,
 		head: fileHead ?? null,
@@ -556,7 +566,7 @@ for(const line of linesFinal) {
 		const lineEventMatched = configProject.lines$event?.[eventRaw];
 		if(!lineEventMatched) { continue; }
 
-		Object.assign(line, lineEventMatched);
+		assignWeak(line, lineEventMatched);
 	};
 
 
@@ -564,21 +574,21 @@ for(const line of linesFinal) {
 	// 优先级4：工程角色匹配
 	const lineWho = lines$who[configExtra?.who ?? configExtra?.slot ?? lineDictation.extras.who?.[0] ?? '$'];
 
-	Object.assign(line, lineWho);
+	assignWeak(line, lineWho);
 
 
 
 	// 优先级5：对话匹配
 	const linesIDDialog = [lineDictation.idAudio, ...(lineDictation.idsSound ?? [])].map(idSound => linesDialog$id[idSound]).filter(l => l);
 
-	for(const lineID of linesIDDialog) { Object.assign(line, lineID); }
+	for(const lineID of linesIDDialog) { assignWeak(line, lineID); }
 
 
 
 	// 优先级6：工程台词ID匹配
 	const linesID = Array.from(new Set([lineDictation.idAudio, ...(lineDictation.idsSound ?? [])])).map(idSound => configProject.lines$id?.[idSound]).filter(l => l);
 
-	for(const lineID of linesID) { Object.assign(line, lineID); }
+	for(const lineID of linesID) { assignWeak(line, lineID); }
 
 
 
