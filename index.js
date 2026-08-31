@@ -145,7 +145,7 @@ const idSkinPad = isSkinMode ? String(idSkin).padStart(3, '0') : null;
 /** 英雄基础数据，仅皮肤模式 */
 const champion = isSkinMode ? champions[idChampion] : null;
 /** 皮肤基础数据，仅皮肤模式 */
-const skin = isSkinMode ? champion.skins[idSkin] : null;
+const skin = isSkinMode ? (typeof champion.skins[idSkin] == 'number' ? champion.skins[champion.skins[idSkin]].chromas[idSkin] : champion.skins[idSkin]) : null;
 
 /** 主标题 */
 let title1 = isSkinMode ? (idSkin == 0 ? champion.title : skin.name.replace(champion.name, '').trim()) : null;
@@ -495,7 +495,7 @@ for(let indexDialog = 1; indexDialog <= configProject.dialogs?.length ?? 0; inde
 		`\t角色: ${orderWhoPlayer.map(order => order.padStart(alignOrder, ' ')).join(' => ')}\n`,
 		`\t目标: ${orderWhoTarget.map(order => order.padStart(alignOrder, ' ')).join(' => ')}\n`,
 		`\t台词: ${orderWhoTarget.map(order => order.padStart(alignOrder, ' ')).join(' => ')}\n`,
-		`${orderIDLine.map((order, index) => `\t   ${index}: ${linesFinal.find(line => line.ids.includes(order))?.caption ?? '（空台词？）'}`).join('\n')}\n`,
+		`${orderIDLine.map((order, index) => `\t   ${index}: ${linesFinal.find(line => line.ids.includes(order))?.caption?.replaceAll('\\', '') ?? '（空台词？）'}`).join('\n')}\n`,
 	);
 
 
@@ -574,14 +574,14 @@ for(const line of linesFinal) {
 	// 优先级4：工程角色匹配
 	const lineWho = lines$who[configExtra?.who ?? configExtra?.slot ?? lineDictation.extras.who?.[0] ?? '$'];
 
-	assignWeak(line, lineWho);
+	Object.assign(line, lineWho);
 
 
 
 	// 优先级5：对话匹配
 	const linesIDDialog = [lineDictation.idAudio, ...(lineDictation.idsSound ?? [])].map(idSound => linesDialog$id[idSound]).filter(l => l);
 
-	for(const lineID of linesIDDialog) { assignWeak(line, lineID); }
+	for(const lineID of linesIDDialog) { Object.assign(line, lineID); }
 
 
 
