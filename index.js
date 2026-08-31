@@ -792,7 +792,7 @@ let durationAll = 0;
 for(const line of infoProjectFinal.lines) {
 	durationAll += (line.duration ?? 0) + infoProjectFinal.durationInterval;
 }
-durationAll += (infoProjectFinal.durationOpener) + (infoProjectFinal.durationEnding + 4.5);
+durationAll += (infoProjectFinal.durationOpener) + (infoProjectFinal.durationEnding);
 globalThis.console.log(`总台词：${infoProjectFinal.lines.length}个`);
 globalThis.console.log(`总时长：${durationAll.toFixed(1)}秒 (${~~(durationAll / 60)}分${~~(durationAll - ~~(durationAll / 60) * 60)}秒)`);
 
